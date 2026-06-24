@@ -1,0 +1,34 @@
+{
+  "metrics": {
+    "bosonic_window_exists": true,
+    "bosonic_d_lo_ml": 0.44,
+    "bosonic_d_hi_ml": 2.85,
+    "bosonic_window_width_ml": 2.41,
+    "fermionic_window_exists": false
+  },
+  "falsifiers": [
+    {
+      "name": "F1_bosonic_passes",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_fermionic_blocked",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_window_width",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_finite_onset",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 4,
+  "n_total": 4,
+  "all_pass": true
+}

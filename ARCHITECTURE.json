@@ -9,14 +9,26 @@
       "id": "overview",
       "role": "Room-temperature superconductor (RTSC) discovery as an HONEST falsification framework — predict/screen candidates, run the falsifier cascade, and report negative rulings as results. Target = 293 K @ 1 atm.",
       "children": [
-        { "id": "stance", "role": "Falsifier-first. All gates stay GATE_OPEN / absorbed=false: no candidate is claimed to BE an RTSC. absorbed=true would require accredited 4-probe transport + Meissner expulsion + measured H_c2/T_c (none of which this map flips). 0 RTSC predicted of the funnel candidates." },
+        {
+          "id": "stance",
+          "role": "Falsifier-first. All gates stay GATE_OPEN / absorbed=false: no candidate is claimed to BE an RTSC. absorbed=true would require accredited 4-probe transport + Meissner expulsion + measured H_c2/T_c (none of which this map flips). 0 RTSC predicted of the funnel candidates."
+        },
         {
           "id": "campaigns",
           "role": "Research lanes run to date.",
           "children": [
-            { "id": "campaigns.flatband-geometry", "role": "High-Chern flat-band quantum-geometry route to ambient room-T SC — CLOSED-NEGATIVE across 10 independent paths (paper: state/papers/flatband-geometry-ambient-roomt-closed). Structural cause = Fubini-Study bound (two levers — large ∫tr g AND strong coupling Ω — cannot coexist in one material)." },
-            { "id": "campaigns.superhydrides", "role": "Ambient superhydride lane (QE + QFORGE from-scratch): Li2CuH6 / Mg2IrH6 ambient-dynamically-unstable; AcBeH8, B-C clathrates inconclusive/deferred. High-pressure hydrides (H3S, LaH10, CaH6 …) recorded as references, deprioritized after the flat-band pivot." },
-            { "id": "campaigns.qforge-engine", "role": "QFORGE from-scratch el-ph engine (SCF→DFPT→el-ph→Tc), validated on Al/Nb/Pb. Gaps walled: magmom (k-Stoner) and pbe-scf (gate-grade ecut OOM); production uses a hybrid path." }
+            {
+              "id": "campaigns.flatband-geometry",
+              "role": "High-Chern flat-band quantum-geometry route to ambient room-T SC — CLOSED-NEGATIVE across 10 independent paths (paper: state/papers/flatband-geometry-ambient-roomt-closed). Structural cause = Fubini-Study bound (two levers — large ∫tr g AND strong coupling Ω — cannot coexist in one material)."
+            },
+            {
+              "id": "campaigns.superhydrides",
+              "role": "Ambient superhydride lane (QE + QFORGE from-scratch): Li2CuH6 / Mg2IrH6 ambient-dynamically-unstable; AcBeH8, B-C clathrates inconclusive/deferred. High-pressure hydrides (H3S, LaH10, CaH6 …) recorded as references, deprioritized after the flat-band pivot."
+            },
+            {
+              "id": "campaigns.qforge-engine",
+              "role": "QFORGE from-scratch el-ph engine (SCF→DFPT→el-ph→Tc), validated on Al/Nb/Pb. Gaps walled: magmom (k-Stoner) and pbe-scf (gate-grade ecut OOM); production uses a hybrid path."
+            }
           ]
         }
       ]
@@ -25,31 +37,70 @@
       "id": "components",
       "role": "Repository components.",
       "children": [
-        { "id": "predictor-tools", "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published)." },
-        { "id": "pipeline-7verb", "role": "state/rtsc.demi — 7-verb pipeline manifest (specify · structure · design · analyze · synthesize · verify · handoff) on the hexa cellrun dispatcher. analyze=pyfemm HTS magnetics (macOS honest-skip), verify=GetDP HTS EM. All cells GATE_OPEN." },
-        { "id": "ledger", "role": "state/RTSC_LEDGER.jsonl — per-material campaign ledger (SSOT). One line/material: status·stage·λ·ω_log·Tc·stability·verdict·absorbed·record pointer. Verdict tiers: 🔵 formal · 🟢 GATE_CLOSED_MEASURED · 🔴 CLOSED-negative · 🟠 INCONCLUSIVE. Plus RTSC_HARVEST_PARTIAL.jsonl." },
-        { "id": "exports", "role": "state/exports/ — per-material verdict records + turnkey QE decks (LiBeB ambient deck-set, wave3 decks). Heavy raw staging tarball (Li2MgH16, 568 MB) intentionally excluded from this repo." },
-        { "id": "papers", "role": "state/papers/ — flatband-geometry-ambient-roomt-closed (closed-negative), rtsc-campaign-2026, rtsc-dft-h3s-textbook, rtsc-superconductor." }
+        {
+          "id": "predictor-tools",
+          "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published)."
+        },
+        {
+          "id": "pipeline-7verb",
+          "role": "state/rtsc.demi — 7-verb pipeline manifest (specify · structure · design · analyze · synthesize · verify · handoff) on the hexa cellrun dispatcher. analyze=pyfemm HTS magnetics (macOS honest-skip), verify=GetDP HTS EM. All cells GATE_OPEN."
+        },
+        {
+          "id": "ledger",
+          "role": "state/RTSC_LEDGER.jsonl — per-material campaign ledger (SSOT). One line/material: status·stage·λ·ω_log·Tc·stability·verdict·absorbed·record pointer. Verdict tiers: 🔵 formal · 🟢 GATE_CLOSED_MEASURED · 🔴 CLOSED-negative · 🟠 INCONCLUSIVE. Plus RTSC_HARVEST_PARTIAL.jsonl."
+        },
+        {
+          "id": "exports",
+          "role": "state/exports/ — per-material verdict records + turnkey QE decks (LiBeB ambient deck-set, wave3 decks). Heavy raw staging tarball (Li2MgH16, 568 MB) intentionally excluded from this repo."
+        },
+        {
+          "id": "papers",
+          "role": "state/papers/ — flatband-geometry-ambient-roomt-closed (closed-negative), rtsc-campaign-2026, rtsc-dft-h3s-textbook, rtsc-superconductor."
+        }
       ]
     },
     {
       "id": "verification",
       "role": "HYPOTHESES — hypothesis-verification system (pre-register → falsify → run → verbatim verdict), modeled on anima's UNIVERSE/. Turns campaign questions into numerically falsifiable, runnable cards.",
       "children": [
-        { "id": "verification.registry", "role": "HYPOTHESES/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis (id, slug, tier, title, card, verdict, artifacts)." },
-        { "id": "verification.cards", "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE). +@ combination chain: H_003 bilayer division-of-labor SPLITs the two levers → box opens via a phonon-transparent/electron-opaque interface (relocates the wall, not removes it); H_004 glue-reservoir ceiling → room-T needs an electronic eV-glue (phonons cap ~91 K); H_005 2-factor capstone → ~319 K in the toy band, room-T FACTORIZED into 2 unsolved sub-problems; H_006 dimension lever (REAL-3D, src/fbgeom_3d.py) → L_3D=1.84x real-but-partial, native 3D flat bands band-touching (clean bypass BLOCKED); H_007 3-combination scan → stacking the real 3D lever relaxes the glue demand 1.84x (each lever necessary); H_008 retarded-vertex bipolaron ED (REAL many-body ED on pool host summer) → pair-channel <g>_pair exceeds the single-particle bound 4.27x in the anti-adiabatic corner (glue lever real, corner-confined); H_009 connector spacer (trilayer A/C/B) → a wide-gap/phonon-matched spacer (hBN-class) opens a fabricable [0.44,1.78 ML] electron-opaque/phonon-transparent window (the 3rd material is the link); H_010 top-down lever-count scan → more levers = achievability not redundancy (4 is the minimal achievable count; 3D crosses the sub-eV glue line, connector is structural). Real verdicts preserved as *.out in the state run dirs." },
-        { "id": "verification.harness", "role": "tool/rtsc_harness.py — shared deterministic stdlib-only harness (two_lever_box_check, geometric_bkt_tc_band, allen_dynes_tc, omega_for_bkt_tc, PHONON_CEILING_MEV, proximity_bilayer_levers + critical_electron_cost (+@ bilayer), THREED_TC_LEVER + stacked_tc + omega_for_stacked_tc (combination scan), spacer_window + spacer_electron_cost + spacer_phonon_transmission (connector C), Falsifier/evaluate). Anima-parity: shared machinery in repo-root tool/. Heavy real compute stays in src/ (fbgeom_3d.py 3D geometry · lane_a_explicit_phonon_bipolaron_ed.py many-body ED) and is dispatched to the shared pool (summer) per heavy-on-pool." },
-        { "id": "verification.runs", "role": "state/<hX>_<slug>_<date>/run_*.py + result.json — per-hypothesis deterministic run importing tool/; verdict = verbatim stdout (no LLM self-judge)." }
+        {
+          "id": "verification.registry",
+          "role": "HYPOTHESES/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis (id, slug, tier, title, card, verdict, artifacts)."
+        },
+        {
+          "id": "verification.cards",
+          "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE). +@ combination chain: H_003 bilayer division-of-labor SPLITs the two levers → box opens via a phonon-transparent/electron-opaque interface (relocates the wall, not removes it); H_004 glue-reservoir ceiling → room-T needs an electronic eV-glue (phonons cap ~91 K); H_005 2-factor capstone → ~319 K in the toy band, room-T FACTORIZED into 2 unsolved sub-problems; H_006 dimension lever (REAL-3D, src/fbgeom_3d.py) → L_3D=1.84x real-but-partial, native 3D flat bands band-touching (clean bypass BLOCKED); H_007 3-combination scan → stacking the real 3D lever relaxes the glue demand 1.84x (each lever necessary); H_008 retarded-vertex bipolaron ED (REAL many-body ED on pool host summer) → pair-channel <g>_pair exceeds the single-particle bound 4.27x in the anti-adiabatic corner (glue lever real, corner-confined); H_009 connector spacer (trilayer A/C/B) → a wide-gap/phonon-matched spacer (hBN-class) opens a fabricable [0.44,1.78 ML] electron-opaque/phonon-transparent window (the 3rd material is the link); H_010 top-down lever-count scan → more levers = achievability not redundancy (4 is the minimal achievable count; 3D crosses the sub-eV glue line, connector is structural). Real verdicts preserved as *.out in the state run dirs; H_011 +@ crux -> the trilayer is self-consistent only for a BOSONIC (exciton/plasmon, Coulomb-field-coupled) glue that penetrates the electron-opaque connector (fermionic transfer glue blocked); closed-form +@ deepening DEPLETED, remaining frontier = real DFT/cRPA trilayer (deferred)."
+        },
+        {
+          "id": "verification.harness",
+          "role": "tool/rtsc_harness.py — shared deterministic stdlib-only harness (two_lever_box_check, geometric_bkt_tc_band, allen_dynes_tc, omega_for_bkt_tc, PHONON_CEILING_MEV, proximity_bilayer_levers + critical_electron_cost (+@ bilayer), THREED_TC_LEVER + stacked_tc + omega_for_stacked_tc (combination scan), spacer_window + spacer_electron_cost + spacer_phonon_transmission (connector C), glue_through_spacer_window + coulomb_glue_coupling (bosonic-glue crux), Falsifier/evaluate). Anima-parity: shared machinery in repo-root tool/. Heavy real compute stays in src/ (fbgeom_3d.py 3D geometry · lane_a_explicit_phonon_bipolaron_ed.py many-body ED) and is dispatched to the shared pool (summer) per heavy-on-pool."
+        },
+        {
+          "id": "verification.runs",
+          "role": "state/<hX>_<slug>_<date>/run_*.py + result.json — per-hypothesis deterministic run importing tool/; verdict = verbatim stdout (no LLM self-judge)."
+        }
       ]
     },
     {
       "id": "dataflow",
       "role": "predict → screen → structure → deck → compute → gate → ledger; campaign questions also become falsifiable HYPOTHESES cards.",
       "children": [
-        { "id": "dataflow.predict-screen", "role": "Input — flat-band geometry predictor + Materials Project / OPTIMADE / AFLOW / JARVIS screening → light-element metallic candidate roster." },
-        { "id": "dataflow.structure-deck", "role": "Fetch structure → build turnkey QE deck (build_deck.py / hexa deck) → vc-relax/scf/ph." },
-        { "id": "dataflow.compute-gate", "role": "Run el-ph (DFPT λ/ω_log/Tc) → falsifier cascade (BETE-NET screen → Allen-Dynes → Eliashberg → RTSC5 gate). Heavy compute on cloud pods (per-material)." },
-        { "id": "dataflow.verdict-ledger", "role": "Output — verdict record in state/exports/ + one ledger line in RTSC_LEDGER.jsonl. Negative/inconclusive results preserved, not deleted." }
+        {
+          "id": "dataflow.predict-screen",
+          "role": "Input — flat-band geometry predictor + Materials Project / OPTIMADE / AFLOW / JARVIS screening → light-element metallic candidate roster."
+        },
+        {
+          "id": "dataflow.structure-deck",
+          "role": "Fetch structure → build turnkey QE deck (build_deck.py / hexa deck) → vc-relax/scf/ph."
+        },
+        {
+          "id": "dataflow.compute-gate",
+          "role": "Run el-ph (DFPT λ/ω_log/Tc) → falsifier cascade (BETE-NET screen → Allen-Dynes → Eliashberg → RTSC5 gate). Heavy compute on cloud pods (per-material)."
+        },
+        {
+          "id": "dataflow.verdict-ledger",
+          "role": "Output — verdict record in state/exports/ + one ledger line in RTSC_LEDGER.jsonl. Negative/inconclusive results preserved, not deleted."
+        }
       ]
     }
   ]
