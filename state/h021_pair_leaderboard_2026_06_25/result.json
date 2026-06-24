@@ -1,0 +1,127 @@
+{
+  "all_pass": true,
+  "best_iffilled_bkt_tc_3d_K": 251.6,
+  "best_iffilled_pair": "CsV3Sb5/hBN/Ta2NiSe5",
+  "best_verified_bkt_tc_2d_K": 136.8,
+  "best_verified_bkt_tc_3d_K": 251.6,
+  "best_verified_pair": "CoSn/hBN/Ta2NiSe5",
+  "domain": "rtsc",
+  "falsifiers": [
+    {
+      "name": "F1_verified_pair_exists",
+      "status": "PASS"
+    },
+    {
+      "name": "F2_leaderboard_monotone",
+      "status": "PASS"
+    },
+    {
+      "name": "F3_no_fabricated_values",
+      "status": "PASS"
+    },
+    {
+      "name": "F4_best_is_CoSn_Ta2NiSe5",
+      "status": "PASS"
+    },
+    {
+      "name": "F5_gaps_named",
+      "status": "PASS"
+    }
+  ],
+  "hypothesis": "H_021",
+  "leaderboard": [
+    {
+      "bkt_tc_2d_K": 136.8,
+      "bkt_tc_3d_K": 251.6,
+      "bkt_tc_3d_iffilled_K": 251.6,
+      "fully_verified": true,
+      "g_use": 2.87,
+      "gaps": [],
+      "in_box": true,
+      "omega_verified_meV": 300.0,
+      "pair": "CoSn/hBN/Ta2NiSe5",
+      "rank": 1
+    },
+    {
+      "bkt_tc_2d_K": 136.8,
+      "bkt_tc_3d_K": 251.6,
+      "bkt_tc_3d_iffilled_K": 251.6,
+      "fully_verified": true,
+      "g_use": 2.11,
+      "gaps": [],
+      "in_box": true,
+      "omega_verified_meV": 300.0,
+      "pair": "Nb3Cl8/hBN/Ta2NiSe5",
+      "rank": 2
+    },
+    {
+      "bkt_tc_2d_K": 136.8,
+      "bkt_tc_3d_K": 251.6,
+      "bkt_tc_3d_iffilled_K": 251.6,
+      "fully_verified": false,
+      "g_use": 0.0,
+      "gaps": [
+        "A.g_mean(CsV3Sb5): unknown"
+      ],
+      "in_box": false,
+      "omega_verified_meV": 300.0,
+      "pair": "CsV3Sb5/hBN/Ta2NiSe5",
+      "rank": 3
+    },
+    {
+      "bkt_tc_2d_K": null,
+      "bkt_tc_3d_K": null,
+      "bkt_tc_3d_iffilled_K": null,
+      "fully_verified": false,
+      "g_use": 2.87,
+      "gaps": [
+        "B.boson_meV(1T-TiSe2): unknown"
+      ],
+      "in_box": false,
+      "omega_verified_meV": 0.0,
+      "pair": "CoSn/hBN/1T-TiSe2",
+      "rank": 4
+    },
+    {
+      "bkt_tc_2d_K": null,
+      "bkt_tc_3d_K": null,
+      "bkt_tc_3d_iffilled_K": null,
+      "fully_verified": false,
+      "g_use": 2.11,
+      "gaps": [
+        "B.boson_meV(1T-TiSe2): unknown"
+      ],
+      "in_box": false,
+      "omega_verified_meV": 0.0,
+      "pair": "Nb3Cl8/hBN/1T-TiSe2",
+      "rank": 5
+    },
+    {
+      "bkt_tc_2d_K": null,
+      "bkt_tc_3d_K": null,
+      "bkt_tc_3d_iffilled_K": null,
+      "fully_verified": false,
+      "g_use": 0.0,
+      "gaps": [
+        "A.g_mean(CsV3Sb5): unknown",
+        "B.boson_meV(1T-TiSe2): unknown"
+      ],
+      "in_box": false,
+      "omega_verified_meV": 0.0,
+      "pair": "CsV3Sb5/hBN/1T-TiSe2",
+      "rank": 6
+    }
+  ],
+  "metrics": {
+    "best_verified_pair": "CoSn/hBN/Ta2NiSe5",
+    "gaps_named": true,
+    "monotone": true,
+    "n_fully_verified_in_box": 2,
+    "n_pairs": 6,
+    "no_fabrication": true
+  },
+  "registry_source": "imported from tool/rtsc_candidates.py",
+  "threed_lever": 1.84,
+  "u_over_omega": 2.0,
+  "verdict_block": "================ H_021  A x B PAIR LEADERBOARD (+@ trilayer) ================\nregistry: imported from tool/rtsc_candidates.py\nbox: g>=2.0  Omega>=130 meV  U/Omega>=1.5 (U/Omega held = 2.0, registry demo)\nbkt_Tc_2D = geometric_bkt_tc_band(Omega) = 0.4559*Omega[meV];  bkt_Tc_3D = 1.84x  (room_T target = 293 K)\npairs: 6  (3 A x 2 B)\n------------------------------------------------------------------------------\nrank pair                         in_box     g     Om   Tc2D   Tc3D   status\n------------------------------------------------------------------------------\n   1 CoSn/hBN/Ta2NiSe5               YES  2.87    300  136.8  251.6 VERIFIED\n   2 Nb3Cl8/hBN/Ta2NiSe5             YES  2.11    300  136.8  251.6 VERIFIED\n   3 CsV3Sb5/hBN/Ta2NiSe5             no     -    300  136.8  251.6  GAP-BLK\n   4 CoSn/hBN/1T-TiSe2                no  2.87      -      -      -  GAP-BLK\n   5 Nb3Cl8/hBN/1T-TiSe2              no  2.11      -      -      -  GAP-BLK\n   6 CsV3Sb5/hBN/1T-TiSe2             no     -      -      -      -  GAP-BLK\n------------------------------------------------------------------------------\ngap-blocked detail (what research must still confirm):\n  CsV3Sb5/hBN/Ta2NiSe5         Tc3D_if_filled=  251.6K  gaps: A.g_mean(CsV3Sb5): unknown\n  CoSn/hBN/1T-TiSe2            Tc3D_if_filled=     n/a  gaps: B.boson_meV(1T-TiSe2): unknown\n  Nb3Cl8/hBN/1T-TiSe2          Tc3D_if_filled=     n/a  gaps: B.boson_meV(1T-TiSe2): unknown\n  CsV3Sb5/hBN/1T-TiSe2         Tc3D_if_filled=     n/a  gaps: A.g_mean(CsV3Sb5): unknown; B.boson_meV(1T-TiSe2): unknown\n------------------------------------------------------------------------------\nBEST fully-verified pair : CoSn/hBN/Ta2NiSe5  in_box=True  bkt_Tc_2D=136.8K  bkt_Tc_3D=251.6K\nBEST if-gaps-filled pair : CsV3Sb5/hBN/Ta2NiSe5  bkt_Tc_3D_if_filled=251.6K  (needs: A.g_mean(CsV3Sb5): unknown)\n------------------------------------------------------------------------------\n  [PASS] F1_verified_pair_exists  (triggered=False)\n  [PASS] F2_leaderboard_monotone  (triggered=False)\n  [PASS] F3_no_fabricated_values  (triggered=False)\n  [PASS] F4_best_is_CoSn_Ta2NiSe5  (triggered=False)\n  [PASS] F5_gaps_named  (triggered=False)\nfalsifiers: 5/5 PASS  all_pass=True\nVERDICT: 🟠 CREDIBLE-PARTIAL — CoSn/hBN/Ta2NiSe5 tops the leaderboard (best of\n  two box-clearing pairs; ties Nb3Cl8/hBN/Ta2NiSe5 on bkt, wins on g=2.87>2.11).\n  bkt_Tc_2D=136.8K, bkt_Tc_3D=251.6K @ coordinate; the trio\n  is JOINTLY UNREALIZED and bkt_Tc is a COORDINATE not a prediction (H_018).\n  absorbed=false / GATE_OPEN. The strongest 🟠, not 🟢.\n============================================================================"
+}

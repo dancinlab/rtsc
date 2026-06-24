@@ -1,0 +1,44 @@
+{
+  "metrics": {
+    "omega_glue_meV": 300.0,
+    "g_A": 2.87,
+    "bkt_tc_2d_K": 136.8,
+    "stacked_tc_3d_K": 251.6,
+    "omega_req_3d_meV": 349.3,
+    "gap_K": 41.4,
+    "gap_meV": 49.3,
+    "L_3D": 1.84,
+    "phonon_ceiling_meV": 200.0,
+    "room_T_K": 293.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_named_trio_reaches_roomT",
+      "triggered": true,
+      "status": "FAIL"
+    },
+    {
+      "name": "F2_positive_glue_gap",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_high_tc_coordinate",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_glue_is_electronic",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_3d_alone_insufficient",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 4,
+  "n_total": 5,
+  "all_pass": false
+}
