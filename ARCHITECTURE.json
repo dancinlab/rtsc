@@ -39,7 +39,7 @@
       "children": [
         {
           "id": "predictor-tools",
-          "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published)."
+          "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published). tool/rtsc_candidates.py = LIVING +@ candidate-materials registry + verifier (reuses rtsc_harness engine); current lead CoSn/hBN/Ta2NiSe5 clears the +@ box on paper (137K coordinate) but jointly unrealized (🟠, absorbed=false)."
         },
         {
           "id": "pipeline-7verb",

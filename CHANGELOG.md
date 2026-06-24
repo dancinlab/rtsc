@@ -4,6 +4,18 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Wire the materials breakthrough into a tool — `tool/rtsc_candidates.py`** (living candidate
+  registry + verifier; the verifier 검증기 REUSES the rtsc_harness falsifier engine, not a new
+  one — answers "one tool? split?" = ONE new file, harness stays the engine). Each candidate
+  property = (value, source, verified); only verified properties pass, unverified surface as
+  `gaps` — grow it every research round, no fabrication. Seeded from the constructive research
+  (PR #10): layer-A CoSn (directly-measured QGT, arXiv:2412.17809) + Nb3Cl8 verified; layer-B
+  Ta2NiSe5 now VERIFIED (exciton ~0.16-0.35 eV at the ~349 meV glue target, q=0 non-nesting so
+  no pre-empting CDW/SDW, SC under pressure — arXiv:2007.08212/2106.04396). The named lead
+  **CoSn / hBN(2ML) / Ta2NiSe5** clears the +@ two-lever box on paper (bkt_Tc~137K @2D coordinate,
+  ~252K with the H_006 3D lever) but the trio is JOINTLY UNREALIZED -> 🟠 CREDIBLE-PARTIAL,
+  absorbed=false / GATE_OPEN (bkt_Tc is a coordinate not a prediction, H_018). Registered in
+  tool/CLAUDE.md. Also registered the "실측전 research" rule in CLAUDE.md (rtsc PR#8 + lumen PR#25).
 - **Research note — constructive candidate enumeration for the +@ trilayer (layer A flat-band metal · layer B
   bosonic glue) → 🟠 partial candidate** (read-only materials survey,
   `state/research-glue-material-candidates-2026-06-25.md`). The constructive complement to the wall-classification
