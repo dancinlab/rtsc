@@ -1,0 +1,68 @@
+{
+  "card": "H_001",
+  "verdict_class": "CLOSED-NEGATIVE",
+  "hosts": [
+    {
+      "name": "CoSn",
+      "g_mean": 2.87,
+      "omega_meV": 22.0,
+      "u_over_omega": 2.0,
+      "gates": {
+        "g": true,
+        "omega": false,
+        "u_over_omega": true
+      },
+      "in_box": false,
+      "bkt_tc_K": 10.03
+    },
+    {
+      "name": "Nb3Cl8",
+      "g_mean": 2.11,
+      "omega_meV": 20.0,
+      "u_over_omega": 2.0,
+      "gates": {
+        "g": true,
+        "omega": false,
+        "u_over_omega": true
+      },
+      "in_box": false,
+      "bkt_tc_K": 9.12
+    }
+  ],
+  "metrics": {
+    "n_hosts": 2,
+    "n_in_box": 0,
+    "ambient_tc_ceiling_K": 133.0,
+    "room_T_K": 293.0,
+    "max_bkt_tc_K": 10.03
+  },
+  "falsifier_ledger": {
+    "metrics": {
+      "n_hosts": 2,
+      "n_in_box": 0,
+      "ambient_tc_ceiling_K": 133.0,
+      "room_T_K": 293.0,
+      "max_bkt_tc_K": 10.03
+    },
+    "falsifiers": [
+      {
+        "name": "F1_box_entry",
+        "triggered": false,
+        "status": "PASS"
+      },
+      {
+        "name": "F2_ceiling_broken",
+        "triggered": false,
+        "status": "PASS"
+      },
+      {
+        "name": "F4_reaches_room_T",
+        "triggered": false,
+        "status": "PASS"
+      }
+    ],
+    "n_pass": 3,
+    "n_total": 3,
+    "all_pass": true
+  }
+}
