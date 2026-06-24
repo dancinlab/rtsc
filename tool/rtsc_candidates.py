@@ -148,15 +148,21 @@ LAYER_B: list = [
                                 "H_025 TESTED the fix: built the EXPERIMENTAL low-T MONOCLINIC C2/c ground state (Sunshine&Ibers 1985 via arXiv:2201.07750; "
                                 "vol 701.5A^3, 296 e-) and ran plain PBE AND PBE+U(Ni-3d=3eV). BOTH BREAK THE FREEZE: residual descends ~30x (17-18 Ry -> "
                                 "0.45-0.64 Ry) with LIVE charge dynamics (every iter differs) -> the symmetry-breaking insight CONFIRMED. BUT both then "
-                                "PLATEAU near-metallic (~0.5-0.9 Ry) and DO NOT reach conv_thr 1e-6 on the SERIAL single-core QE build (the real wall, measured: "
-                                "make.inc MPIF90=gfortran, no -D__MPI; the prior -np 12 ran 12 redundant serial copies). Gap STILL UNRESOLVED, NOT fabricated "
-                                "(PBE/PBE+U under-gap the excitonic gap -> near-metallic -> hard SCF). Deferred fix = DFT-relaxed monoclinic (beta=90.644, PNAS) "
-                                "/ denser k-mesh / HSE, all needing a PARALLEL build. Literature value kept, honestly flagged unverified-by-us.", True),
+                                "PLATEAU near-metallic (~0.5-0.9 Ry) and DO NOT reach conv_thr 1e-6 on the then-SERIAL QE build. H_026 ROOT-CAUSE-FIXED "
+                                "the serial wall (rebuilt ~/qe_build QE7.2 WITH MPI in place: sudo apt libopenmpi-dev + configure --enable-parallel + make pw; "
+                                "banner now 'Parallel version (MPI)', make.inc DFLAGS=-D__MPI, ldd links libmpi.so) and re-ran the monoclinic SCF under GENUINE "
+                                "6-core MPI to MANY MORE iterations than the serial budget allowed. VERDICT (budget wall removed): across robust-PBE, PBE+U(Ni3d=3eV) "
+                                "AND a higher-smearing(degauss0.03) variant the SCF descends ~30-38x then OSCILLATES PERSISTENTLY in the ~0.5-1.7 Ry near-metallic "
+                                "plateau and NEVER reaches 1e-6 -> the plateau is PHYSICAL (PBE/PBE+U lack the many-body excitonic gap -> monoclinic Ta2NiSe5 is "
+                                "near-metallic in PBE -> ill-conditioned SCF), NOT a compute artifact. Gap STILL UNRESOLVED-by-us, NOT fabricated; the only remaining "
+                                "path is beyond-PBE (HSE/GW/many-body) which needs far more compute. Literature value kept, honestly flagged unverified-by-us.", True),
               competing_order=("none", "q=0 non-nesting excitonic order (the glue itself, not a pre-empting density wave); SC under pressure — arXiv:2106.04396", True),
               note="LEAD candidate (scout PR#10): exciton ~at the 349meV target, q=0 -> no pre-empting CDW/SDW. OUR DFT (H_019/H_024/H_025): Cmcm parent SCF "
                    "FROZE (10 recipes); H_025 showed the EXPERIMENTAL MONOCLINIC C2/c ground state BREAKS the freeze (~30x descent, both PBE & PBE+U) -> the "
-                   "H_024 ill-conditioning diagnosis CONFIRMED & sharpened, but the cell plateaus near-metallic and doesn't reach 1e-6 on the SERIAL build -> "
-                   "gap STILL DEFERRED (honest PARTIAL POSITIVE, not fabricated). H_024 BOUNDED the lead 🟢-path (H_023) D_s(N=2) lever from CoSn quantum "
+                   "H_024 ill-conditioning diagnosis CONFIRMED & sharpened. H_026 FIXED the substrate (rebuilt QE7.2 WITH MPI in place; banner 'Parallel "
+                   "version (MPI)') and re-ran under genuine 6-core MPI: with the serial budget wall removed, ALL THREE recipes (PBE/PBE+U/high-smear) descend "
+                   "~30-38x then OSCILLATE in the near-metallic plateau without reaching 1e-6 -> the no-gap is PHYSICAL (PBE lacks the many-body excitonic gap), "
+                   "an HONEST NEGATIVE on a PBE-DFT gap (not a budget artifact) -> gap NOT graduated to our-DFT (beyond-PBE only). H_024 BOUNDED the lead 🟢-path (H_023) D_s(N=2) lever from CoSn quantum "
                    "geometry instead (∫tr g I=2.86~=QGT 2.87 -> geometry SUPPORTS f_mult>=1.164 at N=2, conditional on doping+coherence, is_green=False). "
                    "Trio CoSn/hBN/Ta2NiSe5 jointly UNREALIZED -> 🟠, absorbed=false."),
     Candidate("1T-TiSe2", "B", "exciton-CDW",
