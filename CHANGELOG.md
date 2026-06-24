@@ -4,6 +4,26 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Research note — cRPA glue-transparency go/no-go (NO-GO on renting GPU)** (read-only literature
+  survey, `state/research-crpa-glue-transparency-2026-06-25.md`). Before spending GPU on a
+  constrained-RPA calc of H_011's "bosonic glue penetrates the electron-opaque hBN spacer" claim,
+  surveyed the real literature (arXiv + Crossref-verified DOIs). **Verdict (a)+(b): NO-GO.** (a) The
+  literature already answers the qualitative question — interlayer **Coulomb drag** and **exciton
+  condensates** are *measured* to couple two electronic layers across hBN spacers up to **~2.5 nm
+  (~8 ML)** by pure Coulomb interaction (Hao–Kim arXiv:2508.09098; Liu–Kim arXiv:1608.03726), while
+  single-electron DOS dies by the first ML (our H_015). The pairing version (interlayer
+  plasmon/exciton-mediated SC) is already computed (in 't Veld–Rösner arXiv:2508.06195 / 2303.06220;
+  Kumar–Senthil arXiv:2410.09148). **Most important number:** out-of-plane static screening of 1–3 ML
+  hBN is only **ε⊥ ≈ 3.29→3.6** (Laturia *npj 2D Mater.* 2018, DOI 10.1038/s41699-018-0050-x) — the
+  interlayer field is attenuated **~3–4×, not exponentially killed.** (b) A **$0 Keldysh + RPA-W
+  proxy on summer** covers what's left. (c) A real cRPA campaign is **not justified now**, and is
+  mostly **CPU (RESPACK), not GPU** — GPU (Yambo/BerkeleyGW GW-BSE) only buys the exciton-dipole
+  tier, a 2nd-order question behind the still-open upstream "does a real flat-band A + ~349 meV glue
+  B without competing order exist?" (H_004/H_011 L2). Honest counterweight: the 1973 Allender–Bray–
+  Bardeen exciton-glue proposal (DOI 10.1103/PhysRevB.7.1020) got a **negative 1976 experimental
+  verdict** (Miller–Strongin, DOI 10.1103/PhysRevB.13.4834) — the field couples, but a useful Tc is
+  exactly where the historical program failed. `absorbed=false`, unaffected.
+
 - **H_015 — first REAL ab-initio DFT verdict for the +@ trilayer (electron-opacity half)**
   (`🟢 REAL-DFT`, summer pool). Promoted the H_009/H_011 closed-form decay-length opacity knob to
   a real finite-cell test: a **graphene / hBN(n) / graphene** heterostructure (the clean lattice-
