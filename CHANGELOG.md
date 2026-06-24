@@ -4,6 +4,24 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Fleet — 3 verification lanes** (`/fleet`, via Workflow; each lane wrote+ran a deterministic
+  probe, all re-verified by the main loop). **H_016 competing-order ESCAPE** (break-walls vs H_014):
+  sweeping the frustration knob eta_nest 0.85->0.10 flips the SDW-vs-SC race at a critical eta*=0.45
+  (above the pre-registered plausibility floor 0.30) -> competing order is a REMOVABLE wall (frustrate
+  the kagome/triangular host), not robust (5/5) — but the room-T AMPLITUDE axis stays uncleared
+  (relaxed room-T U=0.543 < SC threshold 2.22). **H_017 disorder flat-band** (seed O2): the same
+  disorder that flattens the band to >=2x DOS Anderson-localizes carriers below the Cooper-pair length
+  (xi_loc=0.55*xi_0 at the flat onset) -> flat-and-delocalized window EMPTY, O2 CLOSES (0/5;
+  escape = 3D mobility edge / BEC-side pair, untested). **H_018 adversarial predictor check** (the
+  campaign's self-audit): geometric_bkt_tc_band vs 8 held-out real SCs (tTLG, RTG, CsV3Sb5, MgB2, Pb,
+  YBCO...) -> gets the AVERAGE right (geomean 1.86x, bias +0.27dex, 50% within 3x, monotonic, 4/5 PASS)
+  but FAILS per-material SCATTER (1061x spread vs 6.8x in-sample) -> the central Tc estimator is a fair
+  order-of-magnitude average, NOT a reliable per-material predictor; every room-T Tc number carries
+  ~order-of-magnitude uncertainty (read as coordinates). The wall/closed-negative findings (gates,
+  leading-channel races) are NOT affected. Registry 17 rows (H_015 trilayer-DFT lane still in-flight on
+  summer). Net: one wall removed (H_016), one mechanism closed (H_017), and the campaign's own predictor
+  honestly down-weighted (H_018).
+
 - **Fleet — 3 parallel orthogonal-lever lanes** (`/fleet`, via Workflow; each lane wrote +
   ran a self-contained deterministic probe, all re-verified by the main loop). The remaining
   brainstorm +@ levers are NOT free wins: **H_012 topology gap** (B7) → 🟡 CLOSED-NEGATIVE

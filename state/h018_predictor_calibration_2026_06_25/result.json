@@ -1,0 +1,111 @@
+{
+  "domain": "rtsc",
+  "falsifiers": [
+    {
+      "name": "F1_geomean_within_3x",
+      "status": "PASS"
+    },
+    {
+      "name": "F2_no_systematic_bias",
+      "status": "PASS"
+    },
+    {
+      "name": "F3_majority_within_3x",
+      "status": "PASS"
+    },
+    {
+      "name": "F4_scatter_not_blown_open",
+      "status": "FAIL"
+    },
+    {
+      "name": "F5_monotonic_in_Omega",
+      "status": "PASS"
+    }
+  ],
+  "held_out": [
+    {
+      "Omega_meV": 30.0,
+      "Tc_meas_K": 2.9,
+      "name": "tTLG (magic-angle trilayer graphene)",
+      "omega_kind": "flat-band/coupling scale"
+    },
+    {
+      "Omega_meV": 12.0,
+      "Tc_meas_K": 0.026,
+      "name": "Bilayer graphene (RTG, e-doped)",
+      "omega_kind": "flat-band scale"
+    },
+    {
+      "Omega_meV": 11.0,
+      "Tc_meas_K": 2.5,
+      "name": "CsV3Sb5 (kagome)",
+      "omega_kind": "Debye/phonon scale"
+    },
+    {
+      "Omega_meV": 67.0,
+      "Tc_meas_K": 39.0,
+      "name": "MgB2",
+      "omega_kind": "phonon (E2g) scale"
+    },
+    {
+      "Omega_meV": 4.4,
+      "Tc_meas_K": 7.2,
+      "name": "Pb (lead)",
+      "omega_kind": "Debye phonon scale"
+    },
+    {
+      "Omega_meV": 23.7,
+      "Tc_meas_K": 9.25,
+      "name": "Nb (niobium)",
+      "omega_kind": "Debye phonon scale"
+    },
+    {
+      "Omega_meV": 60.0,
+      "Tc_meas_K": 19.0,
+      "name": "K3C60 (fulleride)",
+      "omega_kind": "intramolecular phonon scale"
+    },
+    {
+      "Omega_meV": 40.0,
+      "Tc_meas_K": 92.0,
+      "name": "YBCO (cuprate, optimal)",
+      "omega_kind": "magnetic/phonon boson scale"
+    }
+  ],
+  "id": "H_018",
+  "in_sample": [
+    {
+      "Omega_meV": 16.0,
+      "Tc_meas_K": 1.7,
+      "name": "MATBG"
+    },
+    {
+      "Omega_meV": 10.0,
+      "Tc_meas_K": 2.0,
+      "name": "tMoTe2"
+    },
+    {
+      "Omega_meV": 11.0,
+      "Tc_meas_K": 8.0,
+      "name": "Re6Se8Cl2"
+    }
+  ],
+  "metrics": {
+    "frac_within_3x": 0.5,
+    "ho_bias_dex": 0.2700662031712873,
+    "ho_geomean_ratio": 1.8623710119486032,
+    "ho_ratio_hi": 210.4021978021978,
+    "ho_ratio_lo": 0.19820496894409936,
+    "ho_spread": 1061.5384615384617,
+    "in_geomean_ratio": 1.8301652087763183,
+    "in_spread": 6.844919786096257,
+    "monotonic": true,
+    "n_held_out": 8,
+    "within_3x": 4
+  },
+  "n_pass": 4,
+  "n_total": 5,
+  "slug": "h018-predictor-calibration",
+  "tier": "MODEL-PROBE",
+  "verdict": "REFUTED-HELDOUT"
+}

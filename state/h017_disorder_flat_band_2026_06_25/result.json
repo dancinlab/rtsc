@@ -1,0 +1,55 @@
+{
+  "metrics": {
+    "W_band": 1.0,
+    "alpha_pileup": 1.0,
+    "dos_gain_thresh": 2.0,
+    "beta_loc": 0.5,
+    "xi_0": 3.0,
+    "W_flat_min": 1.0,
+    "W_deloc_max": 0.674626,
+    "window_exists": false,
+    "window_lo": null,
+    "window_hi": null,
+    "window_width": 0.0,
+    "analytic_window_exists": false,
+    "analytic_window_width": 0.0,
+    "xi_loc_at_W_flat_min": 1.648721,
+    "xi_over_xi0_at_flat_min": 0.549574,
+    "gdos_at_W_deloc_max": 1.674626
+  },
+  "falsifiers": [
+    {
+      "name": "F1_window_exists",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = a finite W_dis window exists where the band is flat-enough (DOS gain >= 2x) AND still delocalized (xi_loc > xi_0). FAIL = disorder-flatness and delocalization are mutually exclusive -> obstacle-as-resource CLOSES (O2 dead)."
+    },
+    {
+      "name": "F2_analytic_window_exists",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = the closed-form boundaries overlap (W_flat_min < W_deloc_max), confirming the window is real and not a grid artifact. FAIL = no overlap -> closed-negative."
+    },
+    {
+      "name": "F3_flat_point_delocalized",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = at the disorder that first makes the band flat-enough, xi_loc still exceeds the pair size xi_0. FAIL = reaching 2x DOS already localizes carriers below the Cooper-pair length -> the flatness you bought has no coherent carriers."
+    },
+    {
+      "name": "F4_window_has_width",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = the flat-and-delocalized window has finite W_dis tolerance (>0.02), not a fragile knife-edge. FAIL = the window is measure-zero / nonexistent."
+    },
+    {
+      "name": "F5_margin_above_pair",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = at flat-onset, xi_loc/xi_0 > 1.5 (comfortable delocalization margin). FAIL = even if a sliver of window exists, the pair barely fits -> fragile."
+    }
+  ],
+  "n_pass": 0,
+  "n_total": 5,
+  "all_pass": false
+}
