@@ -37,7 +37,7 @@
       "role": "HYPOTHESES — hypothesis-verification system (pre-register → falsify → run → verbatim verdict), modeled on anima's UNIVERSE/. Turns campaign questions into numerically falsifiable, runnable cards.",
       "children": [
         { "id": "verification.registry", "role": "HYPOTHESES/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis (id, slug, tier, title, card, verdict, artifacts)." },
-        { "id": "verification.cards", "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE)." },
+        { "id": "verification.cards", "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE), H_006 FS-bound dimension-invariance (MODEL-PROBE — toy: dimension-extensive, promoted from the SF brainstorm F2 seed)." },
         { "id": "verification.harness", "role": "tool/rtsc_harness.py — shared deterministic stdlib-only harness (two_lever_box_check, geometric_bkt_tc_band, allen_dynes_tc, Falsifier/evaluate). Anima-parity: shared machinery in repo-root tool/; heavy compute stays in src/." },
         { "id": "verification.runs", "role": "state/<hX>_<slug>_<date>/run_*.py + result.json — per-hypothesis deterministic run importing tool/; verdict = verbatim stdout (no LLM self-judge)." }
       ]

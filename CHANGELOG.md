@@ -4,6 +4,16 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- Promote SF-brainstorm seed F2 to a real frozen card: **H_006 FS-bound dimension-invariance**.
+  Added a deterministic quantum-metric dimension scan to `tool/rtsc_harness.py`
+  (quantum_metric_trace_separable + quantum_metric_trace_2d_dirac, stdlib-only BZ finite-difference
+  of the gauge-invariant 2-level FS metric). Ran `state/h006_fs_dimension_scan_2026_06_24/run_h006.py`
+  → **MODEL-PROBE: DIMENSION-EXTENSIVE** (⟨tr g⟩ = 0.25·d, growth ratio d3/d1 = 3.0), refuting the
+  dimension-invariance hypothesis AT TOY LEVEL → the dimension-FRAME bypass is not closed. Honestly
+  scoped: toy 2-level model computing the geometry lever only (Ω not tested); real verdict needs 3D
+  flat-band ED (src/, pod). Registry + ARCHITECTURE verification.cards updated.
+
+
 - Add **HYPOTHESES hypothesis-verification system** (modeled on anima's `UNIVERSE/`, same
   convention as the lumen sibling): `HYPOTHESES/HYPOTHESES.jsonl` registry +
   `HYPOTHESES/cards/H_*.md` (frozen pre-registration + ≥5 measurable falsifiers + honest

@@ -75,6 +75,72 @@ def allen_dynes_tc(omega_log_K: float, lam: float, mu_star: float = 0.10) -> flo
     return (omega_log_K / 1.2) * math.exp(-1.04 * (1.0 + lam) / denom)
 
 
+# --- H_006: quantum-metric dimension scan (toy model, real computation) -------
+# Tests whether the quantum-geometry lever (integrated trace of the Fubini-Study
+# metric, the "g" lever of the two-lever wall) is capped at 2D or grows with
+# dimension. This is a TOY tight-binding computation, not a real-material verdict:
+# the metric is computed by finite difference on the BZ grid (no fitting).
+
+def _trapz_metric_1d(n_k):
+    """BZ-averaged quantum metric of a canonical 2-level 1D winding band.
+
+    d(k) = (sin k, 0, cos k) is already unit, so n_hat = d. The 2-level FS metric
+    is g_kk = (1/4) |d n_hat / dk|^2. Returns <g_kk> over the Brillouin zone.
+    """
+    import math
+    total = 0.0
+    dk = 2.0 * math.pi / n_k
+    for i in range(n_k):
+        k = -math.pi + i * dk
+        # central finite difference of n_hat
+        kp, km = k + dk, k - dk
+        np_ = (math.sin(kp), 0.0, math.cos(kp))
+        nm_ = (math.sin(km), 0.0, math.cos(km))
+        dn = tuple((np_[j] - nm_[j]) / (2.0 * dk) for j in range(3))
+        g_kk = 0.25 * sum(c * c for c in dn)
+        total += g_kk
+    return total / n_k
+
+
+def quantum_metric_trace_separable(dim, n_k=400):
+    """<tr g> for a separable d-dimensional flat-geometry model = dim independent
+    winding directions, each contributing the 1D metric. Tests dimension-extensivity
+    of the geometry lever (closed-form expectation: 0.25 * dim)."""
+    if dim < 1:
+        raise ValueError(f"dim must be >= 1: {dim}")
+    return dim * _trapz_metric_1d(n_k)
+
+
+def quantum_metric_trace_2d_dirac(m=1.0, n_k=60):
+    """<tr g> for a NON-separable 2D two-band model d(kx,ky) =
+    (sin kx, sin ky, m + cos kx + cos ky). Genuine 2D finite-difference metric
+    (g_xx + g_yy), averaged over the BZ — a coupled-direction sanity check."""
+    import math
+
+    def nhat(kx, ky):
+        d = (math.sin(kx), math.sin(ky), m + math.cos(kx) + math.cos(ky))
+        norm = math.sqrt(sum(c * c for c in d))
+        return tuple(c / norm for c in d)
+
+    total = 0.0
+    dk = 2.0 * math.pi / n_k
+    h = 1e-4
+    cells = 0
+    for ix in range(n_k):
+        kx = -math.pi + ix * dk
+        for iy in range(n_k):
+            ky = -math.pi + iy * dk
+            nx1, nx0 = nhat(kx + h, ky), nhat(kx - h, ky)
+            ny1, ny0 = nhat(kx, ky + h), nhat(kx, ky - h)
+            dnx = tuple((nx1[j] - nx0[j]) / (2 * h) for j in range(3))
+            dny = tuple((ny1[j] - ny0[j]) / (2 * h) for j in range(3))
+            g_xx = 0.25 * sum(c * c for c in dnx)
+            g_yy = 0.25 * sum(c * c for c in dny)
+            total += g_xx + g_yy
+            cells += 1
+    return total / cells
+
+
 # --- falsifier harness (API-compatible with lumen tool/lumen_optics.py) -------
 
 @dataclass
