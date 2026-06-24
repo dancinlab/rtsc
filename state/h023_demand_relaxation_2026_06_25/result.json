@@ -1,0 +1,226 @@
+{
+  "verdict": {
+    "metrics": {
+      "ta2nise5_glue_meV": 300.0,
+      "L_3D": 1.84,
+      "room_T_K": 293.0,
+      "omega_required_roomT_3d_meV": 349.31,
+      "tc_3d_baseline_K": 251.64,
+      "baseline_clears_roomT": false,
+      "f_mult_required": 1.1644,
+      "f_mult_required_via_tc": 1.1644,
+      "linearity_self_consistent": true,
+      "relaxed_demand_meV": 300.0,
+      "phonon_ceiling_meV": 200.0,
+      "glue_is_electronic": true,
+      "f_mult_exponent_conservative": 0.25,
+      "N_sqrt": 2,
+      "f_at_N_sqrt": 1.4142,
+      "tc_at_N_sqrt_K": 355.87,
+      "N_pow025": 2,
+      "f_at_N_pow025": 1.1892,
+      "tc_at_N_pow025_K": 299.25,
+      "N_worst_case": 2,
+      "boost_is_modest": true,
+      "trio_tc_at_modest_N_K": 299.25,
+      "trio_clears_roomT_at_modest_N": true,
+      "host_is_clean_no_competing_order": true,
+      "multilayer_Ds_boost_dft_verified": false,
+      "path_amplitude_opens": true,
+      "is_green": false,
+      "sweep": [
+        {
+          "N": 1,
+          "f_sqrt": 1.0,
+          "tc_sqrt_K": 251.64,
+          "sqrt_clears": false,
+          "f_pow025": 1.0,
+          "tc_pow025_K": 251.64,
+          "pow025_clears": false
+        },
+        {
+          "N": 2,
+          "f_sqrt": 1.4142,
+          "tc_sqrt_K": 355.87,
+          "sqrt_clears": true,
+          "f_pow025": 1.1892,
+          "tc_pow025_K": 299.25,
+          "pow025_clears": true
+        },
+        {
+          "N": 3,
+          "f_sqrt": 1.7321,
+          "tc_sqrt_K": 435.86,
+          "sqrt_clears": true,
+          "f_pow025": 1.3161,
+          "tc_pow025_K": 331.18,
+          "pow025_clears": true
+        },
+        {
+          "N": 4,
+          "f_sqrt": 2.0,
+          "tc_sqrt_K": 503.28,
+          "sqrt_clears": true,
+          "f_pow025": 1.4142,
+          "tc_pow025_K": 355.87,
+          "pow025_clears": true
+        },
+        {
+          "N": 5,
+          "f_sqrt": 2.2361,
+          "tc_sqrt_K": 562.69,
+          "sqrt_clears": true,
+          "f_pow025": 1.4953,
+          "tc_pow025_K": 376.29,
+          "pow025_clears": true
+        },
+        {
+          "N": 6,
+          "f_sqrt": 2.4495,
+          "tc_sqrt_K": 616.39,
+          "sqrt_clears": true,
+          "f_pow025": 1.5651,
+          "tc_pow025_K": 393.84,
+          "pow025_clears": true
+        },
+        {
+          "N": 7,
+          "f_sqrt": 2.6458,
+          "tc_sqrt_K": 665.78,
+          "sqrt_clears": true,
+          "f_pow025": 1.6266,
+          "tc_pow025_K": 409.31,
+          "pow025_clears": true
+        },
+        {
+          "N": 8,
+          "f_sqrt": 2.8284,
+          "tc_sqrt_K": 711.75,
+          "sqrt_clears": true,
+          "f_pow025": 1.6818,
+          "tc_pow025_K": 423.21,
+          "pow025_clears": true
+        },
+        {
+          "N": 9,
+          "f_sqrt": 3.0,
+          "tc_sqrt_K": 754.92,
+          "sqrt_clears": true,
+          "f_pow025": 1.7321,
+          "tc_pow025_K": 435.86,
+          "pow025_clears": true
+        },
+        {
+          "N": 10,
+          "f_sqrt": 3.1623,
+          "tc_sqrt_K": 795.76,
+          "sqrt_clears": true,
+          "f_pow025": 1.7783,
+          "tc_pow025_K": 447.49,
+          "pow025_clears": true
+        },
+        {
+          "N": 11,
+          "f_sqrt": 3.3166,
+          "tc_sqrt_K": 834.6,
+          "sqrt_clears": true,
+          "f_pow025": 1.8212,
+          "tc_pow025_K": 458.28,
+          "pow025_clears": true
+        },
+        {
+          "N": 12,
+          "f_sqrt": 3.4641,
+          "tc_sqrt_K": 871.71,
+          "sqrt_clears": true,
+          "f_pow025": 1.8612,
+          "tc_pow025_K": 468.36,
+          "pow025_clears": true
+        },
+        {
+          "N": 13,
+          "f_sqrt": 3.6056,
+          "tc_sqrt_K": 907.3,
+          "sqrt_clears": true,
+          "f_pow025": 1.8988,
+          "tc_pow025_K": 477.82,
+          "pow025_clears": true
+        },
+        {
+          "N": 14,
+          "f_sqrt": 3.7417,
+          "tc_sqrt_K": 941.55,
+          "sqrt_clears": true,
+          "f_pow025": 1.9343,
+          "tc_pow025_K": 486.76,
+          "pow025_clears": true
+        },
+        {
+          "N": 15,
+          "f_sqrt": 3.873,
+          "tc_sqrt_K": 974.6,
+          "sqrt_clears": true,
+          "f_pow025": 1.968,
+          "tc_pow025_K": 495.23,
+          "pow025_clears": true
+        },
+        {
+          "N": 16,
+          "f_sqrt": 4.0,
+          "tc_sqrt_K": 1006.56,
+          "sqrt_clears": true,
+          "f_pow025": 2.0,
+          "tc_pow025_K": 503.28,
+          "pow025_clears": true
+        }
+      ]
+    },
+    "falsifiers": [
+      {
+        "name": "F1_required_f_mult_modest",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = the required boost f_mult = 349.3/300 = 1.164 is in (1.0, 1.5] \u2014 a MODEST ~16% superfluid-weight boost relaxes the room-T demand from 349 meV onto the clean 300 meV Ta2NiSe5 glue. FAIL = the demand-relaxation needs an unphysically large multiplier."
+      },
+      {
+        "name": "F2_linearity_self_consistent",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = f_mult_required via (ROOM_T/Tc_baseline) equals it via (omega_req/glue) to 1e-9 \u2014 stacked_tc is linear in Omega, so demand-relaxation and amplitude-boost are the same lever. FAIL = the two derivations disagree (a curvature/bookkeeping error)."
+      },
+      {
+        "name": "F3_smallest_N_modest",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = the worst-case (conservative N**0.25) smallest N reaching f_mult>=1.164 is <= 4 coupled layers \u2014 a physically modest few-layer multilayer. FAIL = even the optimistic sqrt(N) model needs a large N (the boost is not modest)."
+      },
+      {
+        "name": "F4_clean_trio_clears_roomT_at_modest_N",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = CoSn/hBN/Ta2NiSe5 reaches >= 293 K once the modest multilayer boost is applied to its clean 300 meV glue (stacked_tc(300,3D)*f_mult(N) >= room-T). FAIL = even at the modest N the trio stays below room-T."
+      },
+      {
+        "name": "F5_host_clean_no_competing_order",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = Ta2NiSe5's q=0 excitonic-insulator order parameter IS the pairing channel \u2014 no rival finite-q CDW/SDW, unlike 1T-TiSe2 whose 400 meV mode IS its CDW. The relaxed-demand path therefore has NO competing-order problem. FAIL = a competing order is present."
+      },
+      {
+        "name": "F6_control_baseline_misses_roomT",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = with NO multilayer boost (N=1) the clean trio sits at ~252 K and MISSES room-T \u2014 the room-T result is bought BY the multilayer D_s boost, not by construction. FAIL = the baseline already clears room-T (then the boost is doing nothing / over-claim)."
+      },
+      {
+        "name": "F7_not_green_model_needs_dft",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = is_green is False \u2014 the verdict stays \ud83d\udfe0-CONDITIONAL because the multilayer superfluid-weight boost f_mult(N) is a MODEL (Peotta-Torm\u00e4 / Josephson-stack); the REAL value of a fabricated CoSn/hBN/Ta2NiSe5 multilayer needs DFT. FAIL = the run claims \ud83d\udfe2 without that DFT boost measured (tune-to-green / over-claim)."
+      }
+    ],
+    "n_pass": 7,
+    "n_total": 7,
+    "all_pass": true
+  }
+}
