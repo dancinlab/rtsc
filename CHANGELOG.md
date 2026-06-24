@@ -4,9 +4,9 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
-- Add **UNIVERSE hypothesis-verification system** (modeled on anima's `UNIVERSE/`, same
-  convention as the lumen sibling): `UNIVERSE/HYPOTHESES.jsonl` registry +
-  `UNIVERSE/cards/H_*.md` (frozen pre-registration + ≥5 measurable falsifiers + honest
+- Add **HYPOTHESES hypothesis-verification system** (modeled on anima's `UNIVERSE/`, same
+  convention as the lumen sibling): `HYPOTHESES/HYPOTHESES.jsonl` registry +
+  `HYPOTHESES/cards/H_*.md` (frozen pre-registration + ≥5 measurable falsifiers + honest
   limits + verbatim verdict) + `cards/_TEMPLATE.md`. Shared deterministic stdlib-only
   harness in repo-root **`tool/rtsc_harness.py`** (two_lever_box_check, geometric_bkt_tc_band,
   allen_dynes_tc, Falsifier/evaluate — API-compatible with lumen `tool/lumen_optics.py`);
@@ -14,7 +14,7 @@ All notable changes to rtsc are recorded here (append-only).
   two-lever wall** run to verdict (`state/h001_flatband_twolever_2026_06_24/run_h001.py`
   → **CLOSED-NEGATIVE**, 0/2 hosts enter the box, verbatim stdout) and **H_002 ambient
   superhydride stability** (**INCONCLUSIVE**, deferred). Added `verification` node to
-  ARCHITECTURE.json + folder guides for `UNIVERSE/` and `tool/`.
+  ARCHITECTURE.json + folder guides for `HYPOTHESES/` and `tool/`.
 
 
 - Scaffold the `rtsc` project as the dedicated home for the room-temperature

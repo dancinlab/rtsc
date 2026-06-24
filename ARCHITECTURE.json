@@ -34,17 +34,17 @@
     },
     {
       "id": "verification",
-      "role": "UNIVERSE — hypothesis-verification system (pre-register → falsify → run → verbatim verdict), modeled on anima's UNIVERSE/. Turns campaign questions into numerically falsifiable, runnable cards.",
+      "role": "HYPOTHESES — hypothesis-verification system (pre-register → falsify → run → verbatim verdict), modeled on anima's UNIVERSE/. Turns campaign questions into numerically falsifiable, runnable cards.",
       "children": [
-        { "id": "verification.registry", "role": "UNIVERSE/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis (id, slug, tier, title, card, verdict, artifacts)." },
-        { "id": "verification.cards", "role": "UNIVERSE/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE)." },
+        { "id": "verification.registry", "role": "HYPOTHESES/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis (id, slug, tier, title, card, verdict, artifacts)." },
+        { "id": "verification.cards", "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE)." },
         { "id": "verification.harness", "role": "tool/rtsc_harness.py — shared deterministic stdlib-only harness (two_lever_box_check, geometric_bkt_tc_band, allen_dynes_tc, Falsifier/evaluate). Anima-parity: shared machinery in repo-root tool/; heavy compute stays in src/." },
         { "id": "verification.runs", "role": "state/<hX>_<slug>_<date>/run_*.py + result.json — per-hypothesis deterministic run importing tool/; verdict = verbatim stdout (no LLM self-judge)." }
       ]
     },
     {
       "id": "dataflow",
-      "role": "predict → screen → structure → deck → compute → gate → ledger; campaign questions also become falsifiable UNIVERSE cards.",
+      "role": "predict → screen → structure → deck → compute → gate → ledger; campaign questions also become falsifiable HYPOTHESES cards.",
       "children": [
         { "id": "dataflow.predict-screen", "role": "Input — flat-band geometry predictor + Materials Project / OPTIMADE / AFLOW / JARVIS screening → light-element metallic candidate roster." },
         { "id": "dataflow.structure-deck", "role": "Fetch structure → build turnkey QE deck (build_deck.py / hexa deck) → vc-relax/scf/ph." },

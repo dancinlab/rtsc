@@ -1,6 +1,6 @@
-# tool — shared UNIVERSE harness (rtsc)
+# tool — shared HYPOTHESES harness (rtsc)
 
-Anima-parity: the shared, deterministic execution skeleton for UNIVERSE hypothesis
+Anima-parity: the shared, deterministic execution skeleton for HYPOTHESES hypothesis
 cards lives here in repo-root `tool/`. Heavy compute (DFT / DFPT / el-ph predictors,
 ED solvers) stays in `src/`; `tool/` holds only the closed-form / threshold logic a
 card's falsifiers are evaluated against.

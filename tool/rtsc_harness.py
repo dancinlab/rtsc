@@ -1,7 +1,7 @@
-"""rtsc_harness — shared runnable harness for UNIVERSE hypothesis cards.
+"""rtsc_harness — shared runnable harness for HYPOTHESES hypothesis cards.
 
 Deterministic, dependency-free (stdlib `math` only) primitives for the
-room-temperature superconductor (RTSC) campaign. UNIVERSE cards reference these
+room-temperature superconductor (RTSC) campaign. HYPOTHESES cards reference these
 functions from their per-hypothesis run scripts under `state/<hX>/` (anima-parity:
 shared machinery lives in repo-root `tool/`, per-hypothesis runs live in `state/`).
 

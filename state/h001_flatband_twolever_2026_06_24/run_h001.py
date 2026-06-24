@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""run_h001 — deterministic verdict for UNIVERSE card H_001 (flat-band two-lever wall).
+"""run_h001 — deterministic verdict for HYPOTHESES card H_001 (flat-band two-lever wall).
 
 Tests whether any real, published flat-band host enters the honest room-T design box
 (g_mean >= 2.0 AND omega >= 130 meV AND U/Omega >= 1.5). Imports the shared harness

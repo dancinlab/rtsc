@@ -1,4 +1,4 @@
-# UNIVERSE — hypothesis-verification system (rtsc)
+# HYPOTHESES — hypothesis-verification system (rtsc)
 
 Popperian falsification lab, modeled on anima's `UNIVERSE/`. Each campaign question
 becomes a numerically falsifiable, runnable card.
