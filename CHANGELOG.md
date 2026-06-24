@@ -4,6 +4,18 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **+@ combination campaign — synthesis + honest computational terminal.** Consolidated H_001–H_028
+  into `state/papers/plus-at-combination-campaign-synthesis.md`. **H_028**: Ni3In is NOT a better
+  layer-A (flat band −0.84 to −1.57 eV below E_F, as deep as CoSn → no doping-wall dodge in PBE;
+  ∫tr g=2.854 met but ν=1.0 D_s-suppressed; spin-polarized SCF magnetically unstable = an SDW
+  competing-order CoSn lacks) — lead A-layer stays CoSn. **Net**: the computational mechanism-space
+  is honestly DRY — all 5 glue families (phonon/exciton/plasmon/magnon/CDW-exciton), 3 layer-A metals
+  (CoSn/Ni3In/CsV3Sb5), the driven lens, demand-relaxation, per-layer DFT, and the MPI infra fix are
+  all surveyed/closed. The named CoSn/hBN/Ta2NiSe5 trio is the strongest 🟠 with every
+  computationally-settleable lever confirmed (geometry ∫tr g=2.856, spacer DFT, D_s(N=2) supported) or
+  literature-bounded (Ta2NiSe5 ~300 meV many-body glue, beyond-PBE for us); the remaining obstacles
+  (no clean ≥349 meV glue, CoSn extreme-doping, joint fabrication, accredited transport) are physical
+  synthesis/measurement = absorbed=true requirements, outside compute. absorbed=false / GATE_OPEN.
 - **H_028 — Is Ni3In a BETTER layer-A flat-band metal than CoSn (flat band AT E_F, dodging
   H_027's extreme-doping wall)? 🟡 REAL-DFT.** `HYPOTHESES/cards/H_028_ni3in_layer_a.md`,
   artifacts in `state/h028_ni3in_layer_a_2026_06_25/`.
