@@ -141,6 +141,29 @@ LAYER_A: list = [
                    "-> the lead path is WEAKENED on ACCESSIBILITY, not on geometry. Live doped SCF (tot_charge=4) is delicate (high-DOS metal, slow under "
                    "MPI; prior tot_charge=2 MPI_ABORTed) -> no converged doped E_F, honest. soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) "
                    "-> needs the +@ glue layer."),
+    Candidate("Ni3In", "A", "kagome",
+              g_mean=(2.854, "research-backup A-backup-1 (Ye 2021 arXiv:2106.10824): Ni-3d kagome flat band ~50meV near E_F "
+                             "(a CORRELATED/DMFT position). OUR DFT (H_028): paramagnetic PBE QE7.2 MPI scf on the DO19 Ni3Sn-type "
+                             "cell (P6_3/mmc, a=5.286/c=4.243A, Ni6In2 8-atom 134 e-, Ni 6h kagome net NN=a/2, In 2c; conv 1e-7, "
+                             "E_F=16.5270eV) + Gamma-K-M-Gamma bands. NN-kagome TB-fit metric integral I=(1/2pi)int tr g d2k = 2.854 "
+                             "~= CoSn's 2.855 ~= measured QGT 2.87 -> GEOMETRY LEVER MET (the kagome geometry is real and strong). "
+                             "BUT the flat band sits -1.57eV BELOW E_F (band 56, W=0.255eV; whole narrow-d manifold -0.84 to -1.57eV) "
+                             "-> ν=1.0 fully occupied -> ν(1-ν)=0 edge-suppressed -> NO superfluid lever without doping. g verified, "
+                             "but flat-band-at-E_F (the dodge) FAILS in PBE", True),
+              frustrated=(True, "kagome lattice (Ni 6h forms a kagome net, NN=a/2, same in-plane net as CoSn; confirmed in OUR DFT)", True),
+              competing_order=("SDW", "OUR DFT (H_028): spin-polarized SCF is magnetically UNSTABLE across 3 recipes (accuracy "
+                                      "oscillates 11-37 Ry, absolute magnetization swings 11-27 uB/cell with small net ~2 uB = frustrated "
+                                      "large-local-moment kagome) -> a competing magnetic-order risk CoSn does not carry; "
+                                      "literature reports NO static CDW but a correlated strange metal (Ye 2021 arXiv:2106.10824)", True),
+              note="H_028 verdict: NOT a better layer-A than CoSn. Backup research (A-backup-1) named Ni3In as the kagome metal whose "
+                   "flat band sits ~50meV NEAR E_F (Ye 2021) -- the natural dodge of H_027's CoSn extreme-doping wall. OUR REAL PBE DFT "
+                   "does NOT confirm the dodge: the Ni-kagome flat-band manifold sits ~0.84-1.57eV BELOW E_F (paramagnetic PBE), AT LEAST "
+                   "as deep as CoSn's (-0.44 near / -1.45 deep), so Ni3In needs the SAME-or-worse doping-to-E_F. Geometry lever is genuinely "
+                   "MET (I=2.854~=CoSn 2.855~=QGT 2.87, kagome NN=a/2) but a geometry lever BELOW E_F is exactly CoSn's accessibility-limited "
+                   "situation (H_027). Filling ν=1.0 at native E_F -> D_s edge-suppressed. WORSE than CoSn on a second axis: spin-pol SCF is "
+                   "magnetically unstable (frustrated large-local-moment kagome, abs-mag 11-27uB) -> competing-order (H_014) risk CoSn lacks. "
+                   "CAVEAT: the cited ~50meV near-E_F flat band is a CORRELATED feature; DMFT/+U/GW could pull it toward E_F -> this is a "
+                   "PBE-level negative on the dodge, not a proof it can never be near-E_F. Lead A-layer stays CoSn; trio stays 🟠, absorbed=false."),
     Candidate("Nb3Cl8", "A", "breathing-kagome",
               g_mean=(2.11, "H_001 ledger / RTSC_LEDGER.jsonl", True),
               frustrated=(True, "breathing kagome", True),

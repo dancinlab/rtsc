@@ -1,0 +1,43 @@
+========================================================================
+H_028 — does Ni3In supply the flat-band GEOMETRY LEVER at/near E_F?
+  (dodging CoSn's H_027 extreme-doping wall)
+  source: OUR converged NON-SPIN-POL (paramagnetic ref) PBE SCF (8-atom
+          Ni6In2, 134 e-, conv 1e-7) -- spin-pol SCF is magnetically
+          UNSTABLE (high-DOS flat band at E_F, abs-mag swings 11-27 uB;
+          reported separately as competing-order evidence).
+          E_F=16.5270 eV, alat=9.9892 a.u. = a=5.2861 A)
+========================================================================
+
+--- (1) FLAT BAND on the Gamma-K-M-Gamma plane (flattest near E_F) ---
+band  meanE(eV)  W(eV)    dE=mean-EF
+  56   14.9600  0.2547  -1.5670
+  60   15.6866  0.2734  -0.8404
+  59   15.6148  0.3046  -0.9122
+  57   15.1692  0.3450  -1.3578
+  58   15.2936  0.4288  -1.2334
+  53   14.0563  0.4433  -2.4707
+=> FLAT BAND = band 56, centre 14.9600 eV (= -1.5670 eV rel E_F), W=0.2547 eV
+=> POSITION VERDICT: dE=-1.567 eV -> FAR from E_F (|dE|>0.50 eV) -> heavy doping (no dodge)
+   (compare CoSn near band -0.44 eV [H_027], deeper -1.45 eV [H_024])
+
+--- (2) GEOMETRY: NN-kagome TB fit + projector-FD tr g ---
+3-band kagome group bands [55, 56, 57], span=0.3758 eV -> t=0.0626 eV, e0=-1.6922 eV (rel E_F)
+Gamma band-touching: 30/3600 grid pts capped (integrable singularity)
+<tr g>_BZ = 10.9904 A^2 ; I = (1/2pi) int tr g d2k = 2.8536
+CoSn (H_027/H_024): I = 2.855 ~= measured QGT 2.87 (arXiv:2412.17809)
+=> GEOMETRY VERDICT: I=2.854 -> MET (I>=2, geometry lever supplied)
+
+--- (3) FILLING nu of the flat band at the NATIVE E_F (no doping) ---
+flat band (band 56) mean occupation at native E_F=16.5270: nu = 1.000
+D_s^geom ~ nu(1-nu) = 0.0000  (maximum 0.25 at nu=0.5)
+=> FILLING VERDICT: nu=1.000, nu(1-nu)=0.0000 = 0% of 0.25 max -> EDGE-SUPPRESSED (nu->0 or 1, D_s reduced)
+
+--- (rigid-band cross-check) doping to slide E_F onto flat centre ---
+rigid-band cross-check skipped: substring not found
+
+========================================================================
+SUMMARY (all from OUR converged PBE DFT; no tuning):
+  flat band     : band 56, W=0.255 eV, dE=-1.567 eV rel E_F -> FAR from E_F
+  geometry I    : 2.854 -> MET
+  flat filling  : nu=1.000, nu(1-nu)=0.000 -> EDGE-SUPPRESSED
+========================================================================

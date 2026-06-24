@@ -4,6 +4,35 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_028 — Is Ni3In a BETTER layer-A flat-band metal than CoSn (flat band AT E_F, dodging
+  H_027's extreme-doping wall)? 🟡 REAL-DFT.** `HYPOTHESES/cards/H_028_ni3in_layer_a.md`,
+  artifacts in `state/h028_ni3in_layer_a_2026_06_25/`.
+  - **Ni3In FAILS the dodge — it is NOT a better layer-A than CoSn.** Backup research (A-backup-1,
+    `state/research-backup-candidates-2026-06-25.md`) named Ni3In as the kagome metal whose flat band
+    sits ~50 meV NEAR E_F (Ye 2021 arXiv:2106.10824) — the natural escape from H_027's CoSn
+    extreme-doping wall. OUR REAL paramagnetic PBE DFT (DO19 Ni3Sn-type Ni6In2, P6₃/mmc a=5.286/c=4.243 Å,
+    Ni 6h kagome net NN=a/2 + In 2c, 134 e⁻, MPI per H_026 — verbatim banner "Parallel version (MPI),
+    running on 6 processors", 6 live pgrep ranks; conv 1e-7 in 22 iters, **E_F=16.5270 eV**) finds the
+    **Ni-kagome flat-band manifold sits −0.84 to −1.57 eV BELOW E_F** (band 56, W=0.255 eV at −1.567 eV)
+    — i.e. AT LEAST as deep as CoSn's (−0.44 eV near / −1.45 eV deep), so Ni3In needs the SAME-or-worse
+    doping-to-E_F → **NO dodge** in PBE. The cited ~50 meV-near-E_F is a CORRELATED/DMFT position PBE
+    does not reproduce (L1 caveat: DMFT/+U/GW could pull it toward E_F).
+  - **Geometry lever MET but below E_F; magnetic instability added.** The NN-kagome TB-fit metric
+    integral **I = (1/2π)∫tr g d²k = 2.854 ≈ CoSn's 2.855 ≈ measured QGT 2.87** (arXiv:2412.17809) →
+    the geometry lever IS supplied (kagome NN=a/2 confirmed) — but a geometry lever below E_F is exactly
+    CoSn's accessibility-limited situation. Native filling **ν=1.0 → ν(1−ν)=0 → D_s edge-suppressed**
+    (flat band fully occupied). **Worse than CoSn on a second axis:** the spin-polarized SCF is
+    magnetically UNSTABLE across 3 recipes (accuracy oscillates 11–37 Ry, **absolute magnetization
+    swings 11–27 μB/cell** with small net ~2 μB = frustrated large-local-moment kagome) → a competing
+    magnetic-order (H_014) risk CoSn does not carry. The paramagnetic nspin=1 reference (used for the
+    clean band/geometry measurement) converged; the magnetic SCF is reported honestly as non-converging,
+    no fabricated magnetic E_F.
+  - **Honest verdict: NOT a better layer-A — the lead A-layer stays CoSn.** is_green=False preserved;
+    the deterministic geometry/position/filling analysis is byte-reproducible (`out/h028_geometry.out`).
+    Registry: `tool/rtsc_candidates.py` LAYER_A adds Ni3In with the DFT g_mean=2.854 (verified geometry)
+    + the flat-band-far-below-E_F note + SDW competing-order flag. Trio CoSn/hBN/Ta2NiSe5 stays
+    **🟠 jointly-unrealized**; absorbed=false / GATE_OPEN — no simulation flips that.
+
 - **H_027 — does CoSn's flat-band GEOMETRY LEVER survive the DOPING required to bring the flat
   band onto E_F? (the last computationally-settleable risk on the lead 🟢-path). 🟡 REAL-DFT.**
   `HYPOTHESES/cards/H_027_doped_cosn_geometry_survival.md`, artifacts in
