@@ -4,6 +4,13 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **CENSUS — 검증-지식 레지스트리 전수수집(2026-06-25).** `state/knowledge-census-2026-06-25.md`
+  (additive, read-only harvest). 총 레지스트리 엔트리 114 (가설 22 + 물질원장 92): VERIFIED(🟢/GATE_PASS/
+  textbook-proof/measured/REAL-DFT/REAL-ED) 20 · REFUTED(🔴) 12 · INCONCLUSIVE(🟠) 9 · MODEL-PROBE 미실증
+  (🟡 real-pending) 17 · PENDING 36 · 기타 메타 20. 임베디드 hexa-atom atlas 부재(가설카드+원장 형식). 헤드라인
+  VERIFIED = H_015 REAL-DFT(hBN 전자-불투명 7.7×) · H_008 REAL-ED(retarded vertex 4.27×) · LaRu3Si2 GATE_PASS
+  (no-cooling RTSC lead). 모든 VERIFIED 20건 `absorbed=false`/GATE_OPEN — RTSC 단정 0건.
+
 - **RESEARCH — bounds H_023's binding L1 (the multilayer D_s boost): 🟠 plausible-but-host-unverified.**
   `state/research-multilayer-ds-boost-2026-06-25.md`. Directly tests whether the lead 🟢-path's single unknown — a
   ~1.16× (16%) superfluid-weight boost at the smallest N=2 — has empirical support. Findings: the flat-band D_s bound is
