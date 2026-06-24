@@ -1,0 +1,44 @@
+{
+  "metrics": {
+    "omega_req_2lever_meV": 642.7,
+    "omega_req_3lever_meV": 349.3,
+    "glue_relaxation_factor": 1.84,
+    "tc_1lever_K": 10.0,
+    "tc_2lever_K": 159.2,
+    "tc_3lever_K": 293.0,
+    "abl_drop_3d_K": 159.2,
+    "abl_drop_glue_K": 167.8,
+    "L_3D": 1.84,
+    "room_T_K": 293.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_3lever_reaches_roomT",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_3d_necessary",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_demand_relaxed",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_glue_necessary",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_order_monotone",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 5,
+  "n_total": 5,
+  "all_pass": true
+}

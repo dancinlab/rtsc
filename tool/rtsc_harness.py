@@ -78,6 +78,28 @@ def omega_for_bkt_tc(tc_K: float, deflate: float = 2.8) -> float:
     return (tc_K * deflate) / (0.11 * 11.604)
 
 
+#: Real 3D-vs-2D T_c lever, measured by src/fbgeom_3d.py (NOT a toy): BKT-vortex
+#: removal f_BKT=1.50 x coordination boost f_z=sqrt(z3d/z2d)=1.22 -> L_3D=1.84.
+#: A real but PARTIAL lever (~1.8x, not the ~5x room-T needs); native 3D flat bands
+#: are gapless band-touchings (geometry contaminated), so it carries its own bill.
+THREED_TC_LEVER = 1.84
+
+
+def stacked_tc(omega_meV: float, three_d: bool = False) -> float:
+    """Combination T_c (K): the calibrated geometric BKT band, optionally lifted by the
+    real 3D lever. Stacking levers multiplies; this is the N-combination T_c."""
+    base = geometric_bkt_tc_band(omega_meV)
+    return base * (THREED_TC_LEVER if three_d else 1.0)
+
+
+def omega_for_stacked_tc(tc_K: float, three_d: bool = False) -> float:
+    """Coupling scale Omega (meV) a stacked combination needs to reach target T_c.
+    Adding the 3D lever RELAXES the glue demand by THREED_TC_LEVER (the point of a
+    3-lever stack vs a 2-lever one)."""
+    eff_tc = tc_K / (THREED_TC_LEVER if three_d else 1.0)
+    return omega_for_bkt_tc(eff_tc)
+
+
 # --- H_002: Allen-Dynes T_c (ambient superhydride) ----------------------------
 
 def allen_dynes_tc(omega_log_K: float, lam: float, mu_star: float = 0.10) -> float:
@@ -235,6 +257,56 @@ def critical_electron_cost(
         "eta_at_critical": best_eta,
         "opens_at_ideal_interface": opens_ideal,
         "generic_interface_opens": best_ec >= 1.0,
+    }
+
+
+# --- H_009: connector spacer C as the third material (trilayer A/C/B) ---------
+# H_003 left the interface as an abstract electron_cost knob. The 3rd material is the
+# connector itself: a spacer C of thickness d (monolayers) whose job is to be
+# electron-OPAQUE (block hybridization) yet phonon-TRANSPARENT (pass the glue). Both
+# decay with thickness, at different rates set by C's electronic gap and phonon match.
+
+
+def spacer_electron_cost(d_ml: float, lambda_e: float) -> float:
+    """Electron-hybridization cost through a spacer of thickness d (monolayers).
+    Tunneling decays as exp(-d/lambda_e); lambda_e is short for a wide-gap spacer.
+    d=0 -> cost 1 (generic, no spacer); thick -> cost 0 (electron-opaque)."""
+    if lambda_e <= 0 or d_ml < 0:
+        raise ValueError("lambda_e > 0 and d_ml >= 0 required")
+    return math.exp(-d_ml / lambda_e)
+
+
+def spacer_phonon_transmission(d_ml: float, lambda_ph: float) -> float:
+    """Phonon (glue) transmission through the spacer = exp(-d/lambda_ph); lambda_ph is
+    long for a stiff, phonon-matched spacer. d=0 -> 1 (full transmission)."""
+    if lambda_ph <= 0 or d_ml < 0:
+        raise ValueError("lambda_ph > 0 and d_ml >= 0 required")
+    return math.exp(-d_ml / lambda_ph)
+
+
+def spacer_window(lambda_e: float, lambda_ph: float,
+                  ec_max: float = 0.415, eta_min: float = 0.70,
+                  n_d: int = 2001, d_max: float = 10.0) -> dict:
+    """Does a connector thickness window exist where the spacer is BOTH electron-opaque
+    (electron_cost <= ec_max, the H_003 critical) AND phonon-transparent (transmission
+    >= eta_min, enough to import the glue)? Sweeps d in [0, d_max] monolayers. The window
+    exists iff the spacer's electron decay is sufficiently faster than its phonon decay
+    (lambda_e << lambda_ph), i.e. a wide-gap, phonon-matched material like hBN."""
+    d_lo = None
+    d_hi = None
+    for i in range(n_d):
+        d = d_max * i / (n_d - 1)
+        ec = math.exp(-d / lambda_e)
+        eta = math.exp(-d / lambda_ph)
+        if ec <= ec_max and eta >= eta_min:
+            if d_lo is None:
+                d_lo = d
+            d_hi = d
+    return {
+        "window_exists": d_lo is not None,
+        "d_lo_ml": d_lo,
+        "d_hi_ml": d_hi,
+        "window_width_ml": (d_hi - d_lo) if d_lo is not None else 0.0,
     }
 
 

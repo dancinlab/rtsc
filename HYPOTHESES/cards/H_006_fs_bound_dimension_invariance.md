@@ -109,4 +109,30 @@ NOTE: toy 2-level model only — computes the GEOMETRY lever, not coupling Omega
   invariance is REJECTED; the lever is extensive. F3/F4 PASS = numerics valid + metric well-defined.
 - **so what**: the geometry lever is NOT 2D-capped in the toy → the dimension bypass survives, worth a
   real 3D flat-band ED. It does NOT prove the two-lever WALL breaks (Ω not tested — L2).
+
+### Real-3D verdict (the follow-on, now run — `src/fbgeom_3d.py`, mac local numpy)
+
+The toy's call for a real 3D computation was executed on real 3D flat-band hosts (pyrochlore,
+hyperkagome, 3D-Lieb), `⟨g⟩` = mean|⟨u_k|u_k'⟩|² over the 3D BZ (same normalization as 2D).
+Verbatim record: `state/h006_fs_dimension_scan_2026_06_24/fbgeom_3d_real.out`.
+
+```
+  host                <g>    width      gap   isolated?
+  pyrochlore        0.374   0.0000   0.0000   NO (touching)
+  pyrochlore+SOC    0.535   1.1897   0.0000   NO (touching)
+  hyperkagome       0.249   1.0000   0.0000   NO (touching)
+  3D-Lieb/perov     0.496   0.0000   0.0000   NO (touching)
+  [3D LEVER] f_BKT(vortex-restored)=1.50  f_z(sqrt z3d/z2d)=1.22  ->  L_3D = 1.84x
+  [5x QUESTION] 3D ALONE provides ~1.8x, NOT the full ~5x. Closes ~21% of the gap.
+  HONEST WALL (d6): native 3D flat bands are GAPLESS band-touchings -> D_s contaminated;
+  only the SOC-gapped variant has trustworthy stiffness, and gapping costs <g>. No free 5x.
+```
+
+- **real finding**: the 3D dimension lever is **real but PARTIAL** — L_3D = 1.84× (BKT-vortex
+  removal × coordination boost), closing only ~21% of the ~5× room-T gap. Native 3D flat bands
+  are gapless band-touchings (geometry contaminated); the clean dimension-FRAME *bypass* of the
+  two-lever wall is **BLOCKED** — 3D is an additive lever, not a wall-removal. This real 1.84×
+  lever is the third factor stacked in **H_007** (3-combination).
+- **tier**: still 🟡 MODEL-PROBE (tight-binding model hosts, not a synthesized material), but now
+  on REAL 3D lattices, not the separable toy.
 - **follow-on**: real 3D ED (src/ + pod) to compute geometry AND Ω vs dimension together.
