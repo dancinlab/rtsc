@@ -88,6 +88,36 @@ Stopped at round 13: new ideas were only recombinations of M1–M4 across alread
 families (orthogonal mechanism-families exhausted, ~22 families / 4 meta-principles).
 DEPLETION declared per the breadth-first runbook.
 
+## Round 2 — M3 BORROW deep dive (one lens, to depletion)
+
+Drill of meta-principle M3 (draw from a faster/denser reservoir), reservoir by reservoir.
+`A` = light-source wall, `B` = superconductor wall, `⚖` = the closing condition (falsifier seed).
+
+- **D1 nuclear isomer** — A: ²²⁹Th-class nuclear transition as an XUV lasing medium (bypass the electron-shell plasma ceiling). B: nuclear-moment bath as pairing glue (hyperfine-mediated, no phonon Ω). ⚖ closes if nuclear linewidth < coherence time.
+- **D2 zero-point vacuum (static Casimir)** — A: Casimir-cavity altered mode density Purcell-enhances short-λ emission. B: vacuum fluctuations as an effective Casimir-like attraction aiding pairs. ⚖ closes if mode-density gain exactly cancels added loss.
+- **D3 dynamical Casimir (moving boundary)** — A: relativistically shaken boundary pulls real photons out of vacuum, tuned to short λ. B: periodic boundary modulation parametrically amplifies the pairing mode → effective Ω↑. ⚖ closes if modulation-frequency ceiling is below target.
+- **D4 parametric vacuum (down/up-conversion)** — A: nonlinear ladder splits/sums photons into arbitrary short λ; quanta borrowed from vacuum. B: two-mode squeezing makes non-local pair correlations without glue. ⚖ closes if phase-matching bandwidth misses target.
+- **D5 entanglement-as-fuel** — A: entangled-pair quantum lithography (N00N) gives effective λ/N, no real short photon. B: remote entanglement → non-local Cooper pairs, no local Ω. ⚖ closes if entanglement rate < decoherence rate.
+- **D6 gain medium / lasing (external-power anti-damp)** — A: population-inverted XUV active medium, stimulated emission (= FEL abstracted). B: negative damping props the soft phonon → effective Ω↑ (active superconductor). ⚖ closes if coherence gain per pump-power < 1.
+- **D7 spin bath (squeezed spin reservoir)** — A: polarized spin ensemble collective emission (spin→XUV). B: squeezed spin bath suppresses pairing-channel noise → effective coupling↑. ⚖ closes if spin→photon/electron conversion is the ceiling.
+- **D8 Thouless quantized pump** — A: adiabatic topological pump emits a quantized quanta-bundle per cycle (one packet at a time). B: pump transports Cooper pairs in quantized fashion → phase, not strength, carries current. ⚖ closes if adiabaticity↔speed conflict bites.
+- **D9 chemical metastable (exothermic store)** — A: fast release of a metastable molecule/isomer as the pump (chemistry→XUV). B: latent heat of an exothermic transition borrowed as local pairing energy. ⚖ closes if release is incoherent heat only.
+- **D10 relativistic kinetic (inverse-Compton)** — A: low-energy photons inverse-Compton off a relativistic e-beam → short λ; reservoir = beam kinetic energy. B (weak): drift-current kinetic energy aids pairing (non-equilibrium SC). ⚖ closes if beam brightness/stability is the HVM-throughput ceiling.
+- **D11 information reservoir (Maxwell demon / feedback)** — A: measurement-feedback shapes photon statistics (noise→coherence). B: continuous-measurement feedback stabilizes the pairing phase → effective coherence↑. ⚖ closes if Landauer information cost > order gained.
+- **D12 squeezed vacuum reservoir** — A: squeezed-light pumping lowers emission threshold (borrow reduced quantum noise). B: squeezed phonon/photon bath suppresses pairing-channel fluctuation → effective U/Ω↑. ⚖ closes if squeezing un-squeezes faster than it helps.
+
+**M3 sub-axes (converged):** energy reservoirs (nuclear/chemical/gain/relativistic) · vacuum reservoirs (zero-point/dynamical-Casimir/parametric/squeezed) · order reservoirs (entanglement/spin/Thouless/information).
+
+**Meta-observation — the LEDGER-DEFICIT ceiling (d6, but structural):** nearly every BORROW
+family hits a conservation/cost wall (D11 Landauer is the sharpest): what is borrowed is paid
+for somewhere. This abstract ceiling mirrors the rtsc campaign's *measured* "~5× thermodynamic
+deficit" for ambient room-T SC — the same wall reappears in pure imagination, suggesting it is a
+genuine constraint rather than an artifact of any one approach. M3 BORROW does not remove the
+deficit; it relocates the bill.
+
+DEPLETION (M3) at D13 — orthogonal reservoirs (~12) exhausted; further entries were combinations
+(e.g. nuclear+squeezed, entanglement+feedback).
+
 ## Next-step note (when promoting a seed to a card)
 
 A seed → card requires: pick the wall, pick the meta-principle's concrete knob, write a
