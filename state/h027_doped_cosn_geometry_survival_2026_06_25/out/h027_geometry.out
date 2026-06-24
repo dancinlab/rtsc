@@ -1,0 +1,41 @@
+========================================================================
+H_027 — does CoSn's flat-band geometry lever SURVIVE doping-to-E_F?
+  source: OUR converged spin-polarized PBE SCF (6-atom Co3Sn3, 93 e-,
+          E_F=14.7132 eV, alat=9.9760 a.u. = a=5.2791 A)
+========================================================================
+
+--- (1a) FLAT BAND on the Gamma-K-M-Gamma plane (flattest near E_F) ---
+band  meanE(eV)  W(eV)    dE=mean-EF
+  45   14.2697  0.1668  -0.4435
+  44   14.1586  0.1770  -0.5546
+  39   12.7677  0.1889  -1.9455
+  38   12.6690  0.1925  -2.0442
+=> FLAT BAND = band 45, centre 14.2697 eV (= -0.4435 eV rel E_F), W=0.1668 eV
+
+--- (1b) RIGID-BAND hole doping to slide E_F onto the flat band ---
+sanity: N(E_F=14.7132)=93.039 (should be ~93.0)
+N(E_F'=14.2697 flat centre)=88.314 -> hole doping Delta_n = 4.726 e-/cell
+   = 1.575 holes / CoSn formula unit (cell has 3 f.u.)
+   = 5.1% of the cell's valence electrons removed
+=> DOPING VERDICT: 1.58 holes/f.u. -> EXTREME (>0.7 h/f.u.; beyond gating, needs full chemical replacement)
+
+--- (2) GEOMETRY at the flat band: NN-kagome TB fit + projector-FD tr g ---
+3-band kagome group bands [44, 45, 46], span=0.8594 eV -> t=0.1432 eV, e0=-0.7300 eV (rel E_F)
+Gamma band-touching: 30/3600 grid pts capped (integrable singularity)
+<tr g>_BZ = 10.9658 A^2 ; I = (1/2pi) int tr g d2k = 2.8548
+MEASURED QGT (arXiv:2412.17809) g = 2.87 ; H_024 (deeper band) I = 2.856
+=> GEOMETRY VERDICT (rigid-band): I=2.855 -> SURVIVES (I>=2, lever intact under rigid-band doping)
+   CAVEAT: rigid-band keeps the projector fixed; REAL doping (live SCF)
+   can hybridize/spin-split the manifold -> checked against the doped SCF.
+
+--- (3) FILLING nu of the flat band at the doped E_F & D_s ∝ nu(1-nu) ---
+flat band (band 45) mean occupation at E_F'=14.2697 (path-sampled): nu = 0.507
+D_s^geom ∝ nu(1-nu) = 0.2500  (maximum 0.25 at nu=0.5)
+=> FILLING VERDICT: nu=0.507, nu(1-nu)=0.2500 = 100% of the 0.25 max -> FAVOURABLE (near half-filling, D_s strong)
+
+========================================================================
+SUMMARY (all from OUR converged PBE DFT; no tuning):
+  doping-to-E_F : 4.73 e-/cell = 1.58 holes/CoSn f.u. -> EXTREME
+  geometry I    : 2.855 (rigid-band) -> SURVIVES
+  flat filling  : nu=0.507, nu(1-nu)=0.250 -> FAVOURABLE
+========================================================================

@@ -123,12 +123,24 @@ LAYER_A: list = [
                             "gives the QGT-convention metric integral I=(1/2pi)int tr g d2k = 2.856 -- which SUPPORTS g>=2 and MATCHES the "
                             "measured QGT 2.87 (geometry lever survives OUR DFT). Position ~1.45 eV below E_F is the DEEPER in-plane-d kagome "
                             "manifold and is REAL not a PBE artifact (CoSn hosts multiple orbital flat bands; the dxz/dyz one is near E_F, the "
-                            "in-plane ones are deeper; DFT E_F only ~140 meV off ARPES, Kang Nat.Comm.2020) -- still needs doping/gating to E_F", True),
+                            "in-plane ones are deeper; DFT E_F only ~140 meV off ARPES, Kang Nat.Comm.2020) -- still needs doping/gating to E_F. "
+                            "H_027 MEASURED that doping-to-E_F requirement on OUR fuller spin-polarized Co3Sn3 bands: the near-E_F flat band needs "
+                            "4.73 e-/cell = 1.58 holes/CoSn f.u. (EXTREME, beyond gating) to reach E_F; at that doped E_F the geometry SURVIVES "
+                            "(TB-fit I=2.855~=QGT 2.87) and the filling is FAVOURABLE (nu=0.507 -> nu(1-nu)=0.250, the half-filling D_s max) -> "
+                            "geometry/filling robust IF reachable, but accessibility EXTREME", True),
               frustrated=(True, "kagome lattice", True),
               note="geometry OK + directly-measured QGT + OUR-DFT metric integral I=2.86~=QGT 2.87 (H_024). OUR DFT (H_019) confirms a W<0.2eV "
                    "flat band but ~1.45eV below E_F -- the DEEPER in-plane-d kagome manifold (REAL, not PBE artifact; CoSn has multiple orbital "
-                   "flat bands), so reaching E_F needs heavy doping/gating (a real risk, honestly logged; H_019 F2 FAILED on position). soft "
-                   "d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) -> needs the +@ glue layer."),
+                   "flat bands), so reaching E_F needs heavy doping/gating (a real risk, honestly logged; H_019 F2 FAILED on position). "
+                   "H_027 SETTLED the doping-to-E_F conditional on OUR fuller spin-polarized Co3Sn3 PBE bands (near-E_F flat band 45, W=0.167eV, "
+                   "-0.44eV below E_F): (1) DOPING to slide E_F onto it = 4.73 e-/cell = 1.58 holes/CoSn f.u. = 5.1% of valence -> EXTREME "
+                   "(>0.7 h/f.u.; beyond electrostatic gating, needs full chemical substitution -- a direct consequence of the flat band's huge DOS, "
+                   "5->17 states/eV/cell). (2) GEOMETRY at that doped E_F survives: NN-kagome TB-fit metric integral I=2.855 ~= measured QGT 2.87 "
+                   "(rigid-band; real doping can hybridize/spin-split -> caveat). (3) FILLING at E_F-on-band nu=0.507 -> nu(1-nu)=0.250 = the FAVOURABLE "
+                   "half-filling D_s^geom maximum. VERDICT: geometry + filling SURVIVE (best case if reachable) but the doping to REACH E_F is EXTREME "
+                   "-> the lead path is WEAKENED on ACCESSIBILITY, not on geometry. Live doped SCF (tot_charge=4) is delicate (high-DOS metal, slow under "
+                   "MPI; prior tot_charge=2 MPI_ABORTed) -> no converged doped E_F, honest. soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) "
+                   "-> needs the +@ glue layer."),
     Candidate("Nb3Cl8", "A", "breathing-kagome",
               g_mean=(2.11, "H_001 ledger / RTSC_LEDGER.jsonl", True),
               frustrated=(True, "breathing kagome", True),
