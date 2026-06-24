@@ -4,6 +4,32 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_027 — does CoSn's flat-band GEOMETRY LEVER survive the DOPING required to bring the flat
+  band onto E_F? (the last computationally-settleable risk on the lead 🟢-path). 🟡 REAL-DFT.**
+  `HYPOTHESES/cards/H_027_doped_cosn_geometry_survival.md`, artifacts in
+  `state/h027_doped_cosn_geometry_survival_2026_06_25/`.
+  - **Geometry + favourable filling SURVIVE, but the doping to reach E_F is EXTREME.** From OUR
+    converged spin-polarized PBE bands of the fuller Co3Sn3 cell (near-E_F kagome flat band 45,
+    W=0.167 eV, −0.44 eV below E_F; on the H_026 MPI-fixed host, verbatim banner "Parallel version
+    (MPI), running on 6 processors"): (1) the rigid-band hole doping to slide E_F onto the flat band =
+    **4.73 e⁻/cell = 1.58 holes per CoSn formula unit = 5.1% of valence → EXTREME** (>0.7 h/f.u.;
+    beyond electrostatic gating, needs full chemical substitution — a direct consequence of the flat
+    band's huge DOS, which the rigid-band sweep shows rising 5→17 states/eV/cell); (2) at that doped
+    E_F the NN-kagome TB-fit metric integral **I = (1/2π)∫tr g d²k = 2.855 ≈ measured QGT 2.87**
+    (arXiv:2412.17809) → the geometry lever **SURVIVES** (I≥2), under the rigid-band assumption (real
+    doping can hybridize/spin-split — caveat named); (3) the flat-band filling at E_F-on-band
+    **ν = 0.507 → ν(1−ν) = 0.250 = the FAVOURABLE half-filling D_s^geom maximum**.
+  - **Honest verdict: the lead 🟢-path is WEAKENED on ACCESSIBILITY, not on geometry.** The geometry
+    and filling are the best case *if* E_F could be placed on the flat band — but the carrier density
+    to place it is unphysical for gating, and the live doped SCF (tot_charge=4, genuine 6-rank MPI)
+    shows the doped flat-band metal is delicate (iter-1 accuracy ~29 Ry sloshing, slow; the prior
+    tot_charge=2 run MPI_ABORTed) → no converged doped E_F, reported honestly, not fabricated.
+    is_green=False preserved. The deterministic rigid-band analysis is byte-reproducible
+    (`out/h027_geometry.out`). Trio CoSn/hBN/Ta2NiSe5 stays **🟠 jointly-unrealized**; absorbed=false /
+    GATE_OPEN — no simulation flips that.
+  - Registry: `tool/rtsc_candidates.py` LAYER_A[CoSn] records the doping-to-E_F magnitude + the
+    geometry/ν survival flags. ARCHITECTURE `campaigns.named-candidate-dft` updated in lockstep.
+
 - **H_026 — INFRA ROOT-CAUSE FIX (self-built QE 7.2 rebuilt WITH MPI on `summer`) + Ta2NiSe5
   monoclinic gap re-run under genuine 6-core parallelism. 🟡 REAL-DFT.**
   `HYPOTHESES/cards/H_026_qe_mpi_ta2nise5_gap.md`, artifacts in

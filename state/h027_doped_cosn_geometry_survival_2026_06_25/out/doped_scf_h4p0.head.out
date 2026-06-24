@@ -1,0 +1,67 @@
+
+     Program PWSCF v.7.5 starts on 25Jun2026 at  7:31:48 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on      12 processor cores
+     Number of MPI processes:                 6
+     Threads/MPI process:                     2
+
+     MPI processes distributed on     1 nodes
+     19359 MiB available memory on the printing compute node when the environment starts
+
+     Reading input from scf_h4p0.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+     file Co.pbe-spn-rrkjus_psl.0.3.1.UPF: wavefunction(s)  3P renormalized
+     file Sn.pbe-dn-rrkjus_psl.1.0.0.UPF: wavefunction(s)  5S 4D renormalized
+
+     K-points division:     npool     =       2
+     R & G space division:  proc/nbgrp/npool/nimage =       3
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        1190     596    170                46316    16380    2524
+     Max        1191     597    171                46319    16383    2527
+     Sum        3571    1789    511               138953    49145    7577
+
+     Using Slab Decomposition
+
+
+
+     bravais-lattice index     =            4
+     lattice parameter (alat)  =       9.9760  a.u.
+     unit-cell volume          =     693.6907 (a.u.)^3
+     number of atoms/cell      =            6
+     number of atomic types    =            2
+     number of electrons       =        89.00
+     number of Kohn-Sham states=           54
+     kinetic-energy cutoff     =      65.0000  Ry
+     charge density cutoff     =     520.0000  Ry
+     scf convergence threshold =      1.0E-06
+     mixing beta               =       0.2000
+     number of iterations used =            8  plain     mixing
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+
+     iteration #  1     ecut=    65.00 Ry     beta= 0.20
+     estimated scf accuracy    <      29.13544831 Ry
+     total magnetization       =     0.68 Bohr mag/cell
+     iteration #  2     ecut=    65.00 Ry     beta= 0.20
+     estimated scf accuracy    <       3.35503321 Ry
+     total magnetization       =     8.23 Bohr mag/cell
+     iteration #  3     ecut=    65.00 Ry     beta= 0.20
