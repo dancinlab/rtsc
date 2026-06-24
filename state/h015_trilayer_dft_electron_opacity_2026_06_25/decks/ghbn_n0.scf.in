@@ -1,0 +1,37 @@
+&CONTROL
+  calculation = 'scf'
+  prefix = 'ghbn_n0'
+  outdir = './tmp'
+  pseudo_dir = '/usr/share/espresso/pseudo'
+  verbosity = 'high'
+  tprnfor = .true.
+/
+&SYSTEM
+  ibrav = 0
+  nat = 4
+  ntyp = 1
+  ecutwfc = 50.0
+  ecutrho = 400.0
+  occupations = 'smearing'
+  smearing = 'mp'
+  degauss = 0.02
+  vdw_corr = 'grimme-d3'
+/
+&ELECTRONS
+  conv_thr = 1.0d-6
+  mixing_beta = 0.3
+  electron_maxstep = 200
+/
+ATOMIC_SPECIES
+  C  12.011  C.pbe-n-kjpaw_psl.0.1.UPF
+CELL_PARAMETERS angstrom
+  2.48000000  0.00000000  0.00000000
+  -1.24000000  2.14774300  0.00000000
+  0.00000000  0.00000000  31.35000000
+ATOMIC_POSITIONS angstrom
+  C  0.00000000  1.43182867  14.00000000
+  C  1.24000000  0.71591433  14.00000000
+  C  0.00000000  1.43182867  17.35000000
+  C  1.24000000  0.71591433  17.35000000
+K_POINTS automatic
+  12 12 1 0 0 0

@@ -1,0 +1,38 @@
+[
+  {
+    "n": 0,
+    "E_fermi_eV": -1.9252,
+    "D_graphene_pz_at_Ef": 0.0472,
+    "graphene_pz_DiracMin_value": 0.0472,
+    "graphene_pz_DiracMin_energy": -1.95,
+    "D_hBN_pz_at_Ef": null,
+    "D_hBN_pz_per_atom_at_Ef": null
+  },
+  {
+    "n": 1,
+    "E_fermi_eV": -1.1292,
+    "D_graphene_pz_at_Ef": 0.20813,
+    "graphene_pz_DiracMin_value": 0.00612,
+    "graphene_pz_DiracMin_energy": -0.55,
+    "D_hBN_pz_at_Ef": 0.00499,
+    "D_hBN_pz_per_atom_at_Ef": 0.00249
+  },
+  {
+    "n": 2,
+    "E_fermi_eV": -0.474,
+    "D_graphene_pz_at_Ef": 0.213,
+    "graphene_pz_DiracMin_value": 0.00526,
+    "graphene_pz_DiracMin_energy": 0.1,
+    "D_hBN_pz_at_Ef": 0.0064,
+    "D_hBN_pz_per_atom_at_Ef": 0.0016
+  },
+  {
+    "n": 3,
+    "E_fermi_eV": 0.0821,
+    "D_graphene_pz_at_Ef": 0.21336,
+    "graphene_pz_DiracMin_value": 0.00532,
+    "graphene_pz_DiracMin_energy": 0.65,
+    "D_hBN_pz_at_Ef": 0.00647,
+    "D_hBN_pz_per_atom_at_Ef": 0.00108
+  }
+]

@@ -1,0 +1,10 @@
+&PROJWFC
+  prefix = 'ghbn_n1'
+  outdir = './tmp'
+  DeltaE = 0.05
+  ngauss = 0
+  degauss = 0.02
+  Emin = -10.0
+  Emax = 10.0
+  filpdos = 'ghbn_n1'
+/

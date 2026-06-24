@@ -1,0 +1,112 @@
+{
+  "system": "graphene / hBN(n) / graphene (n=0,1,2,3)",
+  "lattice": {
+    "a_common_Ang": 2.48,
+    "a_graphene_cited": 2.461,
+    "a_hBN_cited": 2.504,
+    "mismatch_pct": 1.75,
+    "d_interlayer_Ang": 3.35,
+    "vacuum_Ang_each_side": 14.0
+  },
+  "method": {
+    "code": "Quantum ESPRESSO 7.2 (self-built; apt 6.7MaX aborts)",
+    "xc": "PBE (SLA PW PBX PBC)",
+    "vdw": "Grimme-D3",
+    "ecutwfc_Ry": 50,
+    "ecutrho_Ry": 400,
+    "kmesh": "12x12x1 MP",
+    "pseudo": "C/B/N .pbe-n-kjpaw_psl.0.1 PAW"
+  },
+  "per_n": [
+    {
+      "n": 0,
+      "nat": 4,
+      "E_fermi_eV": -1.9252,
+      "lowdin_total_charge": [
+        3.9585,
+        3.9585,
+        3.9585,
+        3.9585
+      ],
+      "D_graphene_pz_at_Ef": 0.0472,
+      "D_total_at_Ef": 0.0476,
+      "q_graphene_avg": 3.9585,
+      "coupling_ratio_vs_n0": 1.0,
+      "graphene_pz_DiracMin_value": 0.0472,
+      "graphene_pz_DiracMin_energy": -1.95,
+      "D_hBN_pz_at_Ef": null,
+      "D_hBN_pz_per_atom_at_Ef": null
+    },
+    {
+      "n": 1,
+      "nat": 6,
+      "E_fermi_eV": -1.1292,
+      "lowdin_total_charge": [
+        3.9625,
+        3.9526,
+        2.5468,
+        5.4002,
+        3.9625,
+        3.9526
+      ],
+      "D_graphene_pz_at_Ef": 0.20813,
+      "D_total_at_Ef": 0.21458,
+      "q_graphene_avg": 3.9575,
+      "coupling_ratio_vs_n0": 4.4095,
+      "graphene_pz_DiracMin_value": 0.00612,
+      "graphene_pz_DiracMin_energy": -0.55,
+      "D_hBN_pz_at_Ef": 0.00499,
+      "D_hBN_pz_per_atom_at_Ef": 0.00249
+    },
+    {
+      "n": 2,
+      "nat": 8,
+      "E_fermi_eV": -0.474,
+      "lowdin_total_charge": [
+        3.9627,
+        3.9525,
+        2.5491,
+        5.3958,
+        2.5491,
+        5.3958,
+        3.9627,
+        3.9525
+      ],
+      "D_graphene_pz_at_Ef": 0.213,
+      "D_total_at_Ef": 0.221,
+      "q_graphene_avg": 3.9576,
+      "coupling_ratio_vs_n0": 4.5127,
+      "graphene_pz_DiracMin_value": 0.00526,
+      "graphene_pz_DiracMin_energy": 0.1,
+      "D_hBN_pz_at_Ef": 0.0064,
+      "D_hBN_pz_per_atom_at_Ef": 0.0016
+    },
+    {
+      "n": 3,
+      "nat": 10,
+      "E_fermi_eV": 0.0821,
+      "lowdin_total_charge": [
+        3.9628,
+        3.9525,
+        2.5486,
+        5.3964,
+        2.5508,
+        5.3921,
+        2.5486,
+        5.3964,
+        3.9628,
+        3.9525
+      ],
+      "D_graphene_pz_at_Ef": 0.21336,
+      "D_total_at_Ef": 0.22128,
+      "q_graphene_avg": 3.9577,
+      "coupling_ratio_vs_n0": 4.5203,
+      "graphene_pz_DiracMin_value": 0.00532,
+      "graphene_pz_DiracMin_energy": 0.65,
+      "D_hBN_pz_at_Ef": 0.00647,
+      "D_hBN_pz_per_atom_at_Ef": 0.00108
+    }
+  ],
+  "primary_opacity_observable": "graphene_pz_DiracMin_value (doping-robust residual interlayer DOS at the Dirac point)",
+  "finding": "Dirac-min pz DOS: n0=0.0472 -> n1=0.0061 (7.7x drop) -> n2=0.0053 -> n3=0.0053 (plateau at isolated-graphene floor). hBN interior pz DOS at E_F /atom: n1=0.00249 -> n2=0.00160 -> n3=0.00108 (monotonic decay). Interlayer electronic coupling is suppressed by the hBN spacer; one layer already restores graphene decoupling, deeper interior opacity grows with thickness."
+}
