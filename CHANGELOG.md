@@ -4,6 +4,20 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Fleet round toward 🟢 success-material (goal "성공물질 발견까지 fleet")** — 3 cheap lanes while the
+  named-trio real DFT runs on summer. **H_020 named-trio amplitude** (closed-negative): the named
+  CoSn/hBN/Ta2NiSe5 with Ta2NiSe5's verified ~300 meV glue lands at ~252 K with the real 3D lever
+  (clears the 133 K ambient ceiling) but MISSES room-T by ~41 K / ~49 meV-of-glue (room-T needs
+  ~349 meV) — a high-Tc coordinate, not an RTSC (4/5, F1 correctly triggered). **H_021 pair
+  leaderboard**: CoSn/hBN/Ta2NiSe5 tops all A×B registry pairs (only fully-verified box-clearing
+  pair, ~252 K coordinate); higher-Tc pairs are gap-blocked (5/5). **Backup-candidate research**
+  (state/research-backup-candidates-2026-06-25.md): 🟠 no clearly-better-than-Ta2NiSe5 glue, but
+  the search now has a concrete 🟢-path — 1T-TiSe2 has a ~400 meV exciton (CLEARS room-T amplitude)
+  blocked only by a CDW (H_016-escapable by frustration); the clean q=0 hosts (Ta2NiSe5 ~300, Ta2Pd3Te5
+  ~100) sit at/below target; an engineered 2D plasmon can reach ≥349 meV cleanly. Backup rows
+  (Ta2Pd3Te5, 1T-TiSe2@400meV, Ni3In, YMn6Sn6, FeSn, tWSe2, ...) proposed for tool/rtsc_candidates.py
+  (folded in after the concurrent H_019 DFT edit lands). Net: best stays 🟠 (~252 K coordinate); the
+  named glue undershoots room-T by ~49 meV; the highest-energy candidate (1T-TiSe2) is CDW-blocked.
 - **Wire the materials breakthrough into a tool — `tool/rtsc_candidates.py`** (living candidate
   registry + verifier; the verifier 검증기 REUSES the rtsc_harness falsifier engine, not a new
   one — answers "one tool? split?" = ONE new file, harness stays the engine). Each candidate
