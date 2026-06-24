@@ -1,0 +1,17 @@
+======================================================================
+H_024 task 2 — CoSn kagome flat-band quantum metric (NN TB fit to OUR DFT)
+======================================================================
+TB params (from OUR cosn.bands.out, NO tuning): t = 0.0770 eV, e0 = -1.603 eV rel E_F
+DFT flat band (band 41): W = 0.158 eV, mid = -1.449 eV rel E_F
+TB band widths (eV): [0.231 0.231 0.   ] -> flat band ascending-index 2, W_TB=0.00 meV
+  (TB flat band is exactly flat; DFT W=158 meV is the real, smearing-broadened width)
+
+Gamma band-touching: 30/3600 grid pts capped at tr g=200.0 A^2 (integrable singularity, card L4)
+<tr g>_BZ (physical)              = 10.9314 A^2   (uncapped 13.140, max 949)
+A_uc = 24.046 A^2 ; BZ area = 1.6418 1/A^2
+
+I = (1/2pi) int_BZ tr g d2k     = 2.8564   <-- QGT-convention metric integral (the D_s lever)
+<tr g>/A_uc                       = 0.4546   (alt per-cell normalisation)
+
+MEASURED QGT (arXiv:2412.17809)   g = 2.87
+verdict: OUR-DFT-fit metric integral I = 2.856 -> SUPPORTS g>=2 (matches the measured QGT 2.87)

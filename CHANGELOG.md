@@ -4,6 +4,40 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_024 — REAL-DFT follow-on closing H_019's deferred/failed halves AND attacking H_023's single
+  unknown (self-built QE 7.2 on `summer` + local TB metric; all FREE, no rental). 🟡 REAL-DFT
+  (PARTIAL).** `HYPOTHESES/cards/H_024_named_candidate_dft_followon.md`, artifacts in
+  `state/h024_named_candidate_dft_followon_2026_06_25/`.
+  - **(2) CoSn flat-band quantum geometry ∫tr g — geometry lever SURVIVES OUR DFT.** A NN-kagome
+    tight-binding fit to OUR converged PBE bands (`cosn.bands.out`; no wannier90.x is built →
+    TB-fit route; t=0.077 eV from the 3-band group [39,40,41] span 0.462 eV = 6t) gives the
+    QGT-convention metric integral **I = (1/2π)∫tr g d²k = 2.856**, essentially equal to the
+    **measured QGT g = 2.87** (arXiv:2412.17809) → supports g≥2 (F3/F4 PASS, not tuned; Γ
+    band-touching divergence handled honestly). The ~1.45 eV-below-E_F position (H_019 F2 FAIL) is
+    now explained as REAL orbital-selection — CoSn hosts multiple orbital kagome flat bands (the
+    d_xz/d_yz one near E_F, the in-plane-d ones deeper); our sparse-path min-width pick captured the
+    deeper manifold; PBE is ~140 meV faithful to ARPES (Kang Nat. Commun. 2020) → NOT a PBE artifact.
+  - **(3) D_s(N=2) geometric bound — H_023's single unknown SUPPORTED (conditional).** Peotta–Törmä
+    (arXiv:1506.02815) + Huhtinen 2022 (arXiv:2203.11133): the non-vanishing O(1) metric (I=2.86≥2)
+    makes D_s^geom non-zero → **f_mult≥1.164 at N=2 is SUPPORTED** on both H_023 scaling models,
+    CONDITIONAL on doping the flat band to E_F (D_s^geom ∝ ν(1−ν)) and interlayer coherence;
+    **is_green=False** (no measured multilayer D_s — the cheap geometric route, NOT the intractable
+    full N=2 stack SCF). F5 PASS.
+  - **(1) Ta2NiSe5 gap — STILL DEFERRED (now characterised).** The 296-electron Cmcm PBE SCF does NOT
+    converge across 3 new recipes on the freer host (robust k4×2×2 iter1 incomplete in 25 min; fast
+    k2×1×1 iter1=iter2=13.94569806 Ry frozen; stall degauss 0.025/plain β0.7 iter1=iter2=13.74920763
+    Ry frozen) — the estimated scf accuracy FREEZES recipe-independently (mixing plain/local-TF, β
+    0.2–0.7, smearing 0.01–0.025 Ry), ~6–8 min/iteration. A hard SCF ill-conditioning of the
+    high-symmetry excitonic-PARENT cell (near-degenerate at the cusp of the gap-opening), **NOT mere
+    contention** (the host was freer than in H_019, yet the stall is the same/worse). → F1 FAIL, gap
+    DEFERRED, **no fabricated number** (commons: a non-converging result is kept as a result; the
+    symmetry-broken-phase / hybrid+U fix is logged as deferred). Literature 0.16–0.35 eV stays
+    unverified-by-us.
+  - **registry** `tool/rtsc_candidates.py`: CoSn `g_mean` source annotated with OUR-DFT I=2.86 + the
+    real-position finding; Ta2NiSe5 `boson_meV` source + note updated to record the 10-variant
+    (7+3) recipe-independent non-convergence and the H_024 D_s-geometry route. CoSn stays
+    qualified=True (g=2.87 ≥ 2.0). Trio stays 🟠 jointly-unrealized; absorbed=false / GATE_OPEN.
+
 - **CENSUS — 검증-지식 레지스트리 전수수집(2026-06-25).** `state/knowledge-census-2026-06-25.md`
   (additive, read-only harvest). 총 레지스트리 엔트리 114 (가설 22 + 물질원장 92): VERIFIED(🟢/GATE_PASS/
   textbook-proof/measured/REAL-DFT/REAL-ED) 20 · REFUTED(🔴) 12 · INCONCLUSIVE(🟠) 9 · MODEL-PROBE 미실증

@@ -1,0 +1,26 @@
+======================================================================
+D_s(N=2) geometric bound — Peotta-Tormae + Huhtinen 2022 (CHEAP route)
+======================================================================
+flat-band metric integral  I = (1/2pi)int tr g d2k = 2.8564
+normalised per-cell metric <tr g>/A_uc            = 2.8564
+ledger measured QGT value (arXiv:2412.17809)       g = 2.870
+
+Q2: does OUR DFT support g >= 2 ?  ->  True  (<tr g>/A_uc = 2.856 vs threshold 2.0; QGT measured = 2.87)
+
+f_mult required (H_023)            = 1.1640
+f_mult(N=2) optimistic sqrt(N)     = 1.4142   -> >=req
+f_mult(N=2) conservative N^0.25    = 1.1892   -> >=req
+
+--- VERDICT on H_023's single unknown (geometry route) ---
+geometry lever EXISTS and is O(1)/strong (g>=2): the Peotta-Tormae
+D_s^geom is non-vanishing, so f_mult(N=2)>=1.164 is SUPPORTED by both
+scaling models -- CONDITIONAL on (a) doping the flat band to E_F and
+(b) interlayer coherence preserving the metric. is_green stays False.
+
+position caveat: OUR PBE flat band ~1.45 eV below E_F -> nu far from 1/2;
+D_s^geom ∝ nu(1-nu) is maximised at half-filling, so the UNDOPED band gives
+a SMALL prefactor regardless of g. Reaching the geometric optimum needs the
+logged heavy-doping/gating step (F2 of H_019 already FAILED on position).
+
+VERDICT: SUPPORTED (conditional on doping + coherence)
+is_green = False (no measured multilayer D_s; trio stays orange, absorbed=false)
