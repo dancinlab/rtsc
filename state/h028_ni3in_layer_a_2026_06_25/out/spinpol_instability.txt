@@ -1,0 +1,22 @@
+=== SPIN-POL INSTABILITY EVIDENCE (3 recipes) ===
+--- recipe beta=0.05 MV smearing (scf_spinpol_unstable.out) accuracy + abs-mag swings:
+1: 33.70219043 Ry
+2: 27.86382818 Ry
+3: 15.29629890 Ry
+4: 30.24744868 Ry
+5: 11.33196583 Ry
+6: 37.26172928 Ry
+abs magnetization:
+18.16
+17.29
+11.03
+27.56
+20.47
+26.01
+total magnetization:
+1.37
+1.48
+2.19
+2.05
+2.13
+2.11
