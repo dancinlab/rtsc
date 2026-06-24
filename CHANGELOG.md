@@ -4,6 +4,19 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Demand-relaxation round — strongest 🟢-path found (still 🟠-CONDITIONAL).** **H_023**: instead of an
+  exotic ≥349 meV glue, RELAX the room-T demand via a multilayer superfluid-weight (D_s) boost. Required
+  f_mult = 349.3/300 = 1.164 (~16%), reached at the SAME smallest N=2 on BOTH a conservative (N^0.25
+  Josephson-stack) and an optimistic (sqrt N Peotta-Törmä) model; the CLEAN trio CoSn/hBN/Ta2NiSe5 then
+  reaches 299–356 K. Decisive advantage over every closed path: Ta2NiSe5's q=0 excitonic order IS the
+  pairing channel, so there is NO competing order to escape and NO exotic glue needed — the path needs
+  only a real multilayer D_s. 7/7, is_green=False (f_mult(N) is a model; the real value needs DFT — which
+  CONVERGES with the running real-DFT of the same trio, H_019). The **magnon-glue family**
+  (state/research-magnon-glue-2026-06-25.md) lands the SAME wall: single-magnon cuprate (~300 meV) → ~252 K
+  (= the H_020 wall), and only the bimagnon (~500 meV) clears 349 — but it is the soft mode of the magnetic
+  order (glue tied to competing order, like 1T-TiSe2). NET: the campaign's lead 🟢-path is now the CLEAN
+  demand-relaxation route (no competing-order problem, modest N=2 multilayer); the single unknown is the
+  real superfluid-weight boost of a fabricated CoSn/hBN/Ta2NiSe5 stack. absorbed=false / GATE_OPEN.
 - **🟢-unlock fleet round — both prime 🟢-paths CLOSED (honest 🟠, goal "성공물질 발견까지 fleet").**
   **H_022 frustration-unlock confluence**: 1T-TiSe2 closes BOTH model blockers at once — stacked_tc(400,3D)=335.5K
   clears room-T (+50.7meV glue margin), AND at a frustrated nesting (eta=0.35<eta*0.45) SC leads the CDW
