@@ -10,6 +10,33 @@ All notable changes to rtsc are recorded here (append-only).
   (🟡 real-pending) 17 · PENDING 36 · 기타 메타 20. 임베디드 hexa-atom atlas 부재(가설카드+원장 형식). 헤드라인
   VERIFIED = H_015 REAL-DFT(hBN 전자-불투명 7.7×) · H_008 REAL-ED(retarded vertex 4.27×) · LaRu3Si2 GATE_PASS
   (no-cooling RTSC lead). 모든 VERIFIED 20건 `absorbed=false`/GATE_OPEN — RTSC 단정 0건.
+- **H_019 — first REAL PBE DFT on the NAMED +@ trilayer's two load-bearing layers (self-built QE 7.2
+  on `summer`; apt 6.7 broken per H_015). PARTIAL real result, honestly tiered 🟡.**
+  `HYPOTHESES/cards/H_019_named_candidate_dft.md`, artifacts in
+  `state/h019_named_candidate_dft_2026_06_25/`.
+  - **CoSn (layer A) — flat band CONFIRMED, but with an HONEST POSITION-DISAGREEMENT.** Our PBE scf
+    (converged, 10 iter, E_F=16.00 eV, exp. lattice a=5.2693/c=4.2431 Å) + a Γ–M–K bands run finds the
+    kagome flat-band manifold is REAL: **W = 0.158 eV** (band 41, narrowest of a 0.16–0.25 eV cluster)
+    → **F1 PASS** (a genuine W<0.2 eV flat band). BUT it sits **~1.45 eV BELOW E_F**, DEEPER than the
+    cited ~0.2 eV (Liu arXiv:2001.11738) → **F2 FAIL**, reported as an honest PBE/orbital-character
+    disagreement (NOT tuned) — a real doping-to-E_F risk the paper-level cards H_020/H_021/H_023 had
+    assumed away. The registry CoSn `source` graduates from literature → our-own-DFT.
+  - **Ta2NiSe5 (layer B) — cell builds correctly, but the 296-electron PBE SCF would NOT converge
+    in-session (honest negative).** The 32-atom orthorhombic Cmcm cell is correct (vol 706.7 Å³,
+    296 e⁻, stoichiometry Ta8Ni4Se20 — all match experiment) but across **7 SCF recipe variants**
+    (k-mesh 6×2×2→4×1×1→Γ; ecutrho 400→360; mixing plain/local-TF, β 0.5/0.3/0.1; occupations
+    smearing/fixed; ±startingpot resume) the accuracy **plateaus at ~0.5 Ry** (never near 10⁻⁵) on the
+    heavily-contended shared host (load 11–14 from a co-tenant ML job) → **gap DEFERRED, not
+    fabricated** (F3/F4 deferred; literature 0.16–0.35 eV stays unverified-by-us). Commons: a partial
+    result is kept as a result.
+  - **Cross-spacer coupling — labeled ORDER-OF-MAGNITUDE estimate (NOT cRPA).** Screened-Coulomb kernel
+    with hBN ε_perp=3.3 (Laturia 2018) → steep ~4× geometry-dilution per hBN ML; at n=2 the effective
+    coupling is **tens of meV (λ≲0.1)** — the Krotov–Suslov dilution failure mode quantified. A bound,
+    not a prediction; the **full commensurate heterostructure cRPA is DEFERRED** (hexagonal-vs-
+    orthorhombic giant supercell = intractable this session).
+  - **Verdict: 🟡 (one layer DFT-confirmed-with-disagreement + one layer built-but-unconverged + an
+    analytic estimate). The trio CoSn/hBN/Ta2NiSe5 stays 🟠 jointly-unrealized; `absorbed=false` /
+    GATE_OPEN.** No tune-to-green, no fabricated numbers.
 
 - **RESEARCH — bounds H_023's binding L1 (the multilayer D_s boost): 🟠 plausible-but-host-unverified.**
   `state/research-multilayer-ds-boost-2026-06-25.md`. Directly tests whether the lead 🟢-path's single unknown — a

@@ -1,0 +1,16 @@
+Cross-spacer Coulomb-mediated coupling — ORDER-OF-MAGNITUDE ESTIMATE (NOT cRPA)
+  hBN eps_perp=3.3, eps_par=6.9, eps_eff=sqrt(eps_par*eps_perp)=4.77
+  omega_B=0.3 eV, q~0.4 1/A
+  n_hBN  d_sep(A)  W_screened(meV)  attenuation_vs_n0
+      0      3.33          12511.8              1.000
+      1      6.66           3302.5              0.264
+      2      9.99            871.7              0.070
+      3     13.32            230.1              0.018
+
+Interpretation: even with the field-transparency of hBN (eps_perp~3.3), the e^{-q d} factor
+from the FINITE in-plane momentum q of the exciton fluctuation dominates the attenuation:
+the cross-spacer W drops by ~exp(-q*3.3) ~ 0.27 per added hBN ML. At n=2 (H_015 opacity choice),
+W ~ tens of meV << omega_B (300 meV) -> dimensionless coupling lambda<<1 in this crude estimate.
+This is the Krotov-Suslov geometry-dilution failure mode quantified. A full cRPA (deferred) is
+needed because (a) the flat-band DOS enhancement of N(0), (b) the true exciton form factor f(q),
+and (c) dynamical (omega-dependent) screening can each change this by >1 order of magnitude.
