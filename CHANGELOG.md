@@ -4,6 +4,20 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **RESEARCH — bounds H_023's binding L1 (the multilayer D_s boost): 🟠 plausible-but-host-unverified.**
+  `state/research-multilayer-ds-boost-2026-06-25.md`. Directly tests whether the lead 🟢-path's single unknown — a
+  ~1.16× (16%) superfluid-weight boost at the smallest N=2 — has empirical support. Findings: the flat-band D_s bound is
+  real (**Peotta & Törmä, Nat.Commun.6,8944(2015), arXiv:1506.02815**: D_s≥|C|, D_s∝|U|×quantum-metric) but the corrected
+  mean-field (**Huhtinen/Bernevig/Törmä, PRB106,014518(2022), arXiv:2203.11133**) makes it a RATIO (N_flatband/N_orbital),
+  so extensivity is contingent, not automatic. Real small-N boosts ARE on record at the card's ~16% scale — bi→trilayer
+  graphene +~40% (Kim, Nature606,494(2022)), cuprate Hg-series 97→128→134 K n=1→3 +~32% then capped (Nat.Phys.19,1821(2023),
+  arXiv:2210.06348), direct quantum-geometric ρ_s measured (**arXiv:2406.13742**) — BUT every series SATURATES/REVERSES by
+  N≈3 (**Park family, arXiv:2112.10760**: 3,3,2.76,1.38 K for N=2..5; FeSe peaks at MONOLAYER). Worse, the one EI-specific
+  datum runs the WRONG way: Ta2NiSe5's excitonic order is **layer-confined** (ACS Nano 10,9966(2016)) and ultrathin T_c
+  **−9%**. No D_s-vs-N exists for Ta2NiSe5. VERDICT **🟠 CONDITIONAL** — +16% at N=2 is magnitude-PLAUSIBLE and in-range,
+  NOT well-supported (🟢) and NOT impossible (🔴); host-unverified. The H_019 N=2-stack DFT remains the decisive test; the
+  lead path stays 🟠-CONDITIONAL. absorbed=false; GATE_OPEN.
+
 - **NEW LENS — driven/non-equilibrium re-opens the 1T-TiSe2 path the STATIC research closed (honest 🟠).**
   `state/research-driven-tise2-reopen-2026-06-25.md`. The static survey closed the path on the equilibrium fact that
   TiSe2's ~400 meV exciton and its finite-q CDW are inseparable (Kogar/Abbamonte, Science 358,1314(2017) — mode softens
