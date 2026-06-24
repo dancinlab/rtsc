@@ -4,6 +4,21 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **NEW LENS — driven/non-equilibrium re-opens the 1T-TiSe2 path the STATIC research closed (honest 🟠).**
+  `state/research-driven-tise2-reopen-2026-06-25.md`. The static survey closed the path on the equilibrium fact that
+  TiSe2's ~400 meV exciton and its finite-q CDW are inseparable (Kogar/Abbamonte, Science 358,1314(2017) — mode softens
+  to 0 at T_CDW). The user's lens ("the WAY you pass current changes the result") OVERTURNS that premise out of
+  equilibrium: **Burian et al., PRR 3,013128(2021) (arXiv:2006.13702)** document a transient fluence window where the
+  structural CDW (PLD) is suppressed while the high-energy electronic/excitonic orbital order is RETAINED; **Porer et al.,
+  Nat.Mater.13,857(2014) (arXiv:1604.05627)** prove the electronic & structural orders are non-thermally SEPARABLE; and
+  **Duan et al. (arXiv:2306.00311)** reach a metastable METALLIC (SC-favorable) state within 100 fs (ps lifetime). Driven
+  SC is a real mechanism — **K3C60** light-induced SC at ~5× Tc, now metastable to **>10 ns** (Mitrano Nature 530,461(2016),
+  arXiv:1505.04529; Budden Nat.Phys.17,611(2021), arXiv:2002.12835) — but **contested in cuprates** (Zhang arXiv:2306.07869:
+  stripe-melt WITHOUT SC). VERDICT **🟠 DRIVEN-REOPEN**: the lens is productive (the static inseparability is false out of
+  equilibrium), but the honest power/lifetime bill is decisive — every driven state is **continuously powered + transient
+  (ps–ns), none at room T, and driven SC is NOT yet shown in TiSe2 itself** (only the metallic precondition). A
+  laser-powered ps–ns lab state is NOT the campaign's equilibrium 293 K turnkey conductor → re-opens the path as a LAB
+  COORDINATE, not a 🟢. absorbed=false / GATE_OPEN.
 - **Demand-relaxation round — strongest 🟢-path found (still 🟠-CONDITIONAL).** **H_023**: instead of an
   exotic ≥349 meV glue, RELAX the room-T demand via a multilayer superfluid-weight (D_s) boost. Required
   f_mult = 349.3/300 = 1.164 (~16%), reached at the SAME smallest N=2 on BOTH a conservative (N^0.25
