@@ -4,6 +4,20 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **🟢-unlock fleet round — both prime 🟢-paths CLOSED (honest 🟠, goal "성공물질 발견까지 fleet").**
+  **H_022 frustration-unlock confluence**: 1T-TiSe2 closes BOTH model blockers at once — stacked_tc(400,3D)=335.5K
+  clears room-T (+50.7meV glue margin), AND at a frustrated nesting (eta=0.35<eta*0.45) SC leads the CDW
+  (U_sc 2.22 < U_cdw 7.14), with the commensurate control SDW-leading (the unlock is bought by frustration). 6/6,
+  is_green=False by the honesty gate (the coexistence is unverified). Two research lanes then CLOSED both 🟢-paths:
+  (1) **1T-TiSe2 CDW-suppression** (state/research-tise2-cdw-suppression-2026-06-25.md) — every route (Cu intercalation
+  Tc~4K, pressure Tc~1.8K, monolayer) suppresses the CDW by KILLING the ~400meV exciton (the exciton IS the
+  excitonic-CDW) → exciton NOT retained; (2) **engineered plasmon** (state/research-engineered-plasmon-glue-2026-06-25.md)
+  — no turnkey ≥349meV clean plasmon today (graphene caps ~0.11eV by Pauli blocking; acoustic <0.2eV; the NbS2/hBN
+  2508.06195 class is computed-only, energy a design parameter). NET 🟠: no 🟢 success-material in the surveyed
+  exciton/plasmon families — the clean q=0 glues (Ta2NiSe5 300, Ta2Pd3Te5 100) undershoot the 349meV room-T demand,
+  and the only over-target boson (1T-TiSe2 400) is inseparable from its competing CDW. The precise modern statement of
+  the excitonic-SC graveyard. Remaining orthogonal moves (NOT dry): magnon-glue family + demand-relaxation (multilayer
+  D_s boost to drop the 349meV demand below the clean 300meV glue). absorbed=false / GATE_OPEN.
 - **Fleet round toward 🟢 success-material (goal "성공물질 발견까지 fleet")** — 3 cheap lanes while the
   named-trio real DFT runs on summer. **H_020 named-trio amplitude** (closed-negative): the named
   CoSn/hBN/Ta2NiSe5 with Ta2NiSe5's verified ~300 meV glue lands at ~252 K with the real 3D lever
