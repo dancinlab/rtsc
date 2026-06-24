@@ -310,6 +310,50 @@ def spacer_window(lambda_e: float, lambda_ph: float,
     }
 
 
+# --- H_011: does the electronic glue pass an electron-opaque spacer? ----------
+# The crux (H_009 L2): the connector must block single-electron tunneling (preserve
+# geometry) yet pass the electronic glue (reach room-T Omega). Resolution candidate:
+# a bosonic/neutral collective glue (exciton/plasmon) couples via a LONG-RANGE Coulomb/
+# dipole FIELD, not wavefunction overlap, so it penetrates an electron-tunneling barrier
+# (cf. Forster transfer / Coulomb drag across an insulator).
+
+
+def coulomb_glue_coupling(d_ml: float, lambda_coulomb: float) -> float:
+    """Cross-spacer coupling of a NEUTRAL/collective bosonic glue (exciton/plasmon) via its
+    Coulomb/dipole field: decays slowly (long lambda_coulomb) since the field is long-range,
+    unlike single-electron tunneling. exp(-d/lambda_coulomb), d in monolayers."""
+    if lambda_coulomb <= 0 or d_ml < 0:
+        raise ValueError("lambda_coulomb > 0 and d_ml >= 0 required")
+    return math.exp(-d_ml / lambda_coulomb)
+
+
+def glue_through_spacer_window(lambda_e: float, lambda_glue: float,
+                               glue_is_bosonic: bool,
+                               ec_max: float = 0.415, glue_min: float = 0.70,
+                               n_d: int = 2001, d_max: float = 10.0) -> dict:
+    """Does a thickness window exist where the spacer is electron-opaque (electron_cost
+    <= ec_max) AND still passes the glue (coupling >= glue_min)?
+    A BOSONIC glue couples via the long-range field (lambda_glue = lambda_coulomb, long);
+    a FERMIONIC glue (needs electron transfer) decays like the electron itself
+    (lambda_glue = lambda_e) -> blocked exactly where the electron is blocked (no window)."""
+    eff_lambda = lambda_glue if glue_is_bosonic else lambda_e
+    d_lo = d_hi = None
+    for i in range(n_d):
+        d = d_max * i / (n_d - 1)
+        ec = math.exp(-d / lambda_e)
+        glue = math.exp(-d / eff_lambda)
+        if ec <= ec_max and glue >= glue_min:
+            if d_lo is None:
+                d_lo = d
+            d_hi = d
+    return {
+        "window_exists": d_lo is not None,
+        "d_lo_ml": d_lo,
+        "d_hi_ml": d_hi,
+        "window_width_ml": (d_hi - d_lo) if d_lo is not None else 0.0,
+    }
+
+
 # --- falsifier harness (API-compatible with lumen tool/lumen_optics.py) -------
 
 @dataclass

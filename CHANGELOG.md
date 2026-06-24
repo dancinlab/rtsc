@@ -33,7 +33,14 @@ All notable changes to rtsc are recorded here (append-only).
   (the deficit is distributed so each lever's demand becomes material-reachable) — inverting the
   "fewer parts is better" intuition (4/4). Added `THREED_TC_LEVER`, `stacked_tc`, `omega_for_stacked_tc`,
   `spacer_window`/`spacer_electron_cost`/`spacer_phonon_transmission` to `tool/rtsc_harness.py`.
-  Registry now 10 rows (🔴1 🟠1 🟡6 🟢2).
+  **H_011 the +@ crux** (internal-consistency check) — does the electron-opaque connector block
+  the electronic glue too (self-contradiction)? No: a **bosonic** (exciton/plasmon) glue couples
+  via its long-range Coulomb field (λ_Coulomb=8 ≫ λ_e=0.5 ML) and penetrates the barrier (window
+  [0.44, 2.85 ML], wider than the phonon window; Förster/Coulomb-drag-like), while a **fermionic**
+  transfer glue is blocked (4/4). The whole closed-form +@ chain collapses to ONE open materials
+  requirement: **a bosonic, field-coupled, ~349 meV glue without competing order**. Registry now
+  11 rows (🔴1 🟠1 🟡7 🟢2). Closed-form +@ architecture deepening DEPLETED — the remaining
+  frontier is the real DFT/cRPA trilayer verdict (deferred, ING).
 
 - **+@ combination wall-breakthrough + deepening to depletion** (goal: "+@ 조합 벽돌파 및 돌파
   후 심화 고갈까지"). Three frozen MODEL-PROBE cards stack the brainstorm SPLIT/BORROW seeds to
