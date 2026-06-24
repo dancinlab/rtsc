@@ -1,0 +1,99 @@
+{
+  "verdict": {
+    "metrics": {
+      "tise2_exciton_meV": 400.0,
+      "L_3D": 1.84,
+      "room_T_K": 293.0,
+      "tc_2d_K": 182.35,
+      "tc_3d_K": 335.52,
+      "omega_required_roomT_3d_meV": 349.31,
+      "glue_margin_meV": 50.69,
+      "amplitude_clears_roomT": true,
+      "phonon_ceiling_meV": 200.0,
+      "glue_is_electronic": true,
+      "eta_crit_closed": 0.45,
+      "eta_plausible_floor": 0.3,
+      "eta_frustrated": 0.35,
+      "U_sc_closed": 2.2222,
+      "row_frustrated": {
+        "eta_nest": 0.35,
+        "U_sc": 2.2222,
+        "U_sdw": 2.8571,
+        "U_cdw": 7.1429,
+        "U_ps": 3.1182,
+        "leading_ph": "SDW",
+        "U_leading_ph": 2.8571,
+        "sc_leads": true,
+        "window_width": 0.6349
+      },
+      "row_boundary": {
+        "eta_nest": 0.45,
+        "U_sc": 2.2222,
+        "U_sdw": 2.2222,
+        "U_cdw": 5.5556,
+        "U_ps": 3.1182,
+        "leading_ph": "SDW",
+        "U_leading_ph": 2.2222,
+        "sc_leads": false,
+        "window_width": 0.0
+      },
+      "row_unfrustrated": {
+        "eta_nest": 0.85,
+        "U_sc": 2.2222,
+        "U_sdw": 1.1765,
+        "U_cdw": 2.9412,
+        "U_ps": 3.1182,
+        "leading_ph": "SDW",
+        "U_leading_ph": 1.1765,
+        "sc_leads": false,
+        "window_width": 0.0
+      },
+      "sc_leads_frustrated": true,
+      "sc_beats_cdw_frustrated": true,
+      "both_unlocks_pass": true,
+      "coexistence_verified": false,
+      "is_green": false
+    },
+    "falsifiers": [
+      {
+        "name": "F1_amplitude_clears_roomT",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = stacked_tc(400 meV, 3D) >= 293 K \u2014 the ~400 meV exciton + L_3D lever clears room-T amplitude (the axis H_020's 300 meV trio MISSED). FAIL = under 293 K."
+      },
+      {
+        "name": "F2_glue_over_clears_demand",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = 400 meV exceeds the omega required for room-T with the 3D lever (~349 meV) -> positive margin. FAIL = the exciton does not even meet the relaxed room-T demand."
+      },
+      {
+        "name": "F3_sc_leads_when_frustrated",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = at eta_nest=0.35 (below the critical 0.45) SC is the leading instability over SDW/CDW/PS \u2014 frustration unlocks SC-leading. FAIL = competing order still leads."
+      },
+      {
+        "name": "F4_sc_beats_cdw",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = U_sc < U_cdw at the frustrated nesting \u2014 SC pre-empts 1T-TiSe2's intrinsic CDW specifically. FAIL = the CDW channel still goes unstable before SC."
+      },
+      {
+        "name": "F5_control_unfrustrated_sc_subleads",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = at eta_nest=0.85 (commensurate, CDW-on) SC is NOT leading \u2014 the SC-leading result is bought BY frustration, not by construction. FAIL = SC leads even unfrustrated."
+      },
+      {
+        "name": "F6_not_green_conditional_only",
+        "triggered": false,
+        "status": "PASS",
+        "desc": "PASS = is_green is False \u2014 the verdict stays \ud83d\udfe0-CONDITIONAL because the coexistence (CDW suppression + surviving 400 meV exciton in a real host) is UNVERIFIED. FAIL = the run claims \ud83d\udfe2 without that coexistence proven (tune-to-green / over-claim)."
+      }
+    ],
+    "n_pass": 6,
+    "n_total": 6,
+    "all_pass": true
+  }
+}
