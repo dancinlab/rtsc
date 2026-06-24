@@ -4,6 +4,26 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Research note — classifying the excitonic-SC "electronic-glue graveyard" wall (🟠 MATERIALS-LIMITED)**
+  (read-only literature survey, `state/research-excitonic-sc-wall-classification-2026-06-25.md`). The prior
+  cRPA note (PR #7) moved the +@ trilayer binding wall upstream to a MATERIALS question — does a real "glue
+  layer B" exist? — which sits on the historical excitonic/electronic-glue SC graveyard (Allender–Bray–
+  Bardeen 1973 → Miller–Strongin 1976 negative). Per break-walls discipline, classified the wall:
+  **🟠 MATERIALS-LIMITED.** (Q1) **No no-go theorem** — the dielectric-stability bound that capped Tc is a
+  *restrictive assumption, not a prohibition*; Krotov–Suslov (arXiv:cond-mat/9912180) prove the 1970s
+  Ginzburg-sandwich null follows from film-thickness ≫ interatomic-spacing *geometry dilution*, removable by
+  engineering. (Q2) **The mechanism is a live, computed modern frontier** — interlayer plasmon SC up to an
+  order-of-magnitude enhancement (in 't Veld–Katsnelson–Millis–Rösner arXiv:2508.06195), exciton-density-wave
+  -fluctuation SC (Kumar–Patri–Senthil arXiv:2410.09148), electron-exciton-coupling Tc up to ~10% of T_F in
+  TMD heterostructures (von Milczewski–Imamoğlu–Schmidt arXiv:2310.10726). (Q3) **But NO concrete, named,
+  de-risked "glue layer B" exists today** with the required trio: 0.1–0.5 eV bosonic mode + demonstrated
+  cross-spacer coupling to a flat band + clean absence of a pre-empting CDW/SDW — and in Kumar–Senthil the
+  density wave *is* the mechanism's host, so the competing-order risk is intrinsic. No experiment has ever
+  measured a meaningful Tc from a purely bosonic electronic glue, let alone 293 K. **Verdict: a 60-year
+  graveyard with no tombstone (no no-go) and no birth certificate (no material) — materials-limited, with a
+  genuinely reopening theory frontier behind it.** Not a positive for the campaign; `absorbed=false` /
+  GATE_OPEN unchanged.
+
 - **Research note — cRPA glue-transparency go/no-go (NO-GO on renting GPU)** (read-only literature
   survey, `state/research-crpa-glue-transparency-2026-06-25.md`). Before spending GPU on a
   constrained-RPA calc of H_011's "bosonic glue penetrates the electron-opaque hBN spacer" claim,
