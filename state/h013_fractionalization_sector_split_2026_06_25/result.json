@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "fused_omega_cap_meV": 22.0,
+    "fused_in_box": false,
+    "ideal_split_g_eff": 2.87,
+    "ideal_split_omega_eff_meV": 170.0,
+    "ideal_split_in_box": true,
+    "delta_frac_crit_meV": 459.0,
+    "any_finite_delta_opens_box": true,
+    "min_delta_frac_opens_meV": 800.0,
+    "ideal_bkt_tc_K": 77.5,
+    "room_t_reached_ideal_split": false,
+    "room_t_K": 293.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_sector_split_opens_box",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_evades_fs_tie",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_fractionalization_gap_is_the_bill",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_no_free_room_t",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_monotone_in_gap",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F6_no_fabrication",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true
+}

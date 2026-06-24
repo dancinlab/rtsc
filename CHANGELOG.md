@@ -4,6 +4,23 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Fleet — 3 parallel orthogonal-lever lanes** (`/fleet`, via Workflow; each lane wrote +
+  ran a self-contained deterministic probe, all re-verified by the main loop). The remaining
+  brainstorm +@ levers are NOT free wins: **H_012 topology gap** (B7) → 🟡 CLOSED-NEGATIVE
+  (collapse): a protected gap is a pairing-AMPLITUDE lever, but the room-T stack is phase-
+  STIFFNESS-limited, so it never relaxes the 349 meV demand and the only stiffness it adds = the
+  FS quantum metric = the H_001 geometry lever — NOT a 5th orthogonal axis (4/5). **H_013
+  fractionalization** (S5) → 🟡 BOX-OPENS-BUT-NEW-BILL: sector-split genuinely evades the
+  single-electron FS tie but only above an exotic ~800 meV deconfinement gap and only to ~77 K
+  (6/6). **H_014 competing-order** (the dominant risk, H_004 L2 / H_011 L3) → 🟡 CLOSED-NEGATIVE:
+  under a toy Stoner/RPA multi-channel model the room-T glue drives **SDW (U*=1.0) before SC
+  (U*=2.22)** — no SC-leading window; the +@ architecture's biggest assumed risk is realized
+  (0/5; conditional on toy nesting η=0.85 → a measured THREAT escapable by suppressing nesting,
+  not a terminal ceiling). Net: topology collapses, fractionalization relocates, competing-order
+  pre-empts — the closed-form orthogonal-lever search is rigorously DEPLETED (break-walls), and
+  the binding open question is now **competing order** + the real DFT verdict. Registry 14 rows.
+  Real DFT trilayer lane (cost-gated) dispatched to a rented runpod CPU pod (user `go`).
+
 - **+@ deepening: real verdicts + 3-combination** (user: "explore 3-combinations too" + "summer pool").
   Three more cards, two backed by REAL computation (not closed-form):
   **H_006 real-3D verdict** — ran `src/fbgeom_3d.py` (mac local numpy) on real 3D flat-band hosts:
