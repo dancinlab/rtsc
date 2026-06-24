@@ -64,6 +64,20 @@ def geometric_bkt_tc_band(omega_meV: float, deflate: float = 2.8) -> float:
     return (0.11 * omega_K) / deflate
 
 
+#: Hardest optical-phonon scale at ambient (H–H stretch order, meV) — the phonon
+#: glue ceiling. Above this an effective coupling must come from a non-phonon
+#: (electronic: exciton / plasmon / magnon, eV-scale) reservoir.
+PHONON_CEILING_MEV = 200.0
+
+
+def omega_for_bkt_tc(tc_K: float, deflate: float = 2.8) -> float:
+    """Inverse of `geometric_bkt_tc_band`: the coupling scale Omega (meV) a geometric
+    flat band needs to reach target T_c. Tells whether room-T is phonon-reachable."""
+    if tc_K <= 0:
+        raise ValueError(f"tc_K must be > 0: {tc_K}")
+    return (tc_K * deflate) / (0.11 * 11.604)
+
+
 # --- H_002: Allen-Dynes T_c (ambient superhydride) ----------------------------
 
 def allen_dynes_tc(omega_log_K: float, lam: float, mu_star: float = 0.10) -> float:
@@ -139,6 +153,89 @@ def quantum_metric_trace_2d_dirac(m=1.0, n_k=60):
             total += g_xx + g_yy
             cells += 1
     return total / cells
+
+
+# --- H_003: +@ bilayer division-of-labor (SPLIT the two levers) ---------------
+# The two-lever wall (H_001) forbids one host from holding BOTH large geometry
+# g AND stiff coupling Omega. The +@ bypass (brainstorm seed B2, meta-principle
+# M1 SPLIT) puts geometry in layer A and glue in layer B, proximity-coupled.
+# This is a TOY transfer model, not a real heterostructure verdict: the proximity
+# weight eta and the electron-hybridization cost are explicit swept knobs.
+
+
+def proximity_bilayer_levers(
+    g_A: float,
+    omega_A_meV: float,
+    omega_B_meV: float,
+    eta: float,
+    electron_cost: float,
+) -> dict:
+    """Effective two-lever values of a +@ division-of-labor bilayer.
+
+    Layer A = flat-band geometry host (large `g_A`, soft `omega_A_meV`).
+    Layer B = stiff-glue host (large `omega_B_meV`, no flat-band geometry, g_B~0).
+    `eta` in [0,1] = proximity transfer weight (interface transparency to the glue).
+    `electron_cost` in [0,1] = how much generic electron hybridization the same
+    interface forces (0 = ideal phonon-transparent / electron-opaque spacer,
+    1 = generic interface where importing glue hybridizes electrons just as much).
+
+    Importing stiff phonons raises the coupling A's flat band feels:
+        omega_eff = omega_A + eta * (omega_B - omega_A)
+    but hybridization dilutes the flat-band geometry:
+        g_eff = g_A * (1 - electron_cost * eta)
+    The product g_eff * omega_eff is the relocated two-lever budget.
+    """
+    for nm, v in (("eta", eta), ("electron_cost", electron_cost)):
+        if not (0.0 <= v <= 1.0):
+            raise ValueError(f"{nm} out of [0,1]: {v}")
+    if g_A < 0 or omega_A_meV < 0 or omega_B_meV < 0:
+        raise ValueError("levers must be >= 0")
+    omega_eff = omega_A_meV + eta * (omega_B_meV - omega_A_meV)
+    g_eff = g_A * (1.0 - electron_cost * eta)
+    return {"g_eff": g_eff, "omega_eff": omega_eff, "eta": eta}
+
+
+def critical_electron_cost(
+    g_A: float,
+    omega_A_meV: float,
+    omega_B_meV: float,
+    g_min: float = 2.0,
+    omega_min_meV: float = 130.0,
+    n_eta: int = 1001,
+) -> dict:
+    """Sweep eta in [0,1]; for each, find the LARGEST electron_cost that still keeps
+    g_eff >= g_min while omega_eff >= omega_min_meV. The maximum over eta is the
+    interface-quality budget the +@ bilayer demands: the box opens iff a real
+    interface achieves electron_cost <= this threshold. Returns the threshold,
+    the eta that realizes it, and whether the box opens even at the ideal
+    interface (electron_cost = 0)."""
+    if omega_B_meV <= omega_A_meV:
+        raise ValueError("glue layer B must be stiffer than geometry layer A")
+    best_ec = -1.0
+    best_eta = None
+    opens_ideal = False
+    for i in range(n_eta):
+        eta = i / (n_eta - 1)
+        omega_eff = omega_A_meV + eta * (omega_B_meV - omega_A_meV)
+        if omega_eff < omega_min_meV:
+            continue
+        # ideal interface (electron_cost=0) keeps g_eff = g_A
+        if g_A >= g_min:
+            opens_ideal = True
+        # largest electron_cost with g_A*(1-ec*eta) >= g_min
+        if eta == 0:
+            ec = 1.0 if g_A >= g_min else -1.0
+        else:
+            ec = (1.0 - g_min / g_A) / eta
+        ec = max(-1.0, min(1.0, ec))
+        if ec > best_ec:
+            best_ec, best_eta = ec, eta
+    return {
+        "critical_electron_cost": best_ec,
+        "eta_at_critical": best_eta,
+        "opens_at_ideal_interface": opens_ideal,
+        "generic_interface_opens": best_ec >= 1.0,
+    }
 
 
 # --- falsifier harness (API-compatible with lumen tool/lumen_optics.py) -------

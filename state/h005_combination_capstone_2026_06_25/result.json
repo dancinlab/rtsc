@@ -1,0 +1,41 @@
+{
+  "metrics": {
+    "full_in_box": true,
+    "full_tc_K": 319.1,
+    "full_reaches_roomT": true,
+    "ablate_glue_tc_K": 91.2,
+    "ablate_geom_in_box": false,
+    "ablate_iface_in_box": false,
+    "room_T_K": 293.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_stack_reaches_roomT",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_glue_necessary",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_geometry_necessary",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_interface_necessary",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_bounds",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 5,
+  "n_total": 5,
+  "all_pass": true
+}

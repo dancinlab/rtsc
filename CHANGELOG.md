@@ -4,6 +4,26 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **+@ combination wall-breakthrough + deepening to depletion** (goal: "+@ 조합 벽돌파 및 돌파
+  후 심화 고갈까지"). Three frozen MODEL-PROBE cards stack the brainstorm SPLIT/BORROW seeds to
+  bypass the single-host two-lever wall (H_001):
+  **H_003 +@ bilayer division-of-labor** (M1 SPLIT / seed B2) — geometry in layer A (CoSn g=2.87),
+  stiff glue proximity-imported from layer B → the bilayer enters the box no single host can
+  (η*=0.73, Ω_eff=130 meV) but only via a phonon-transparent/electron-opaque interface
+  (critical electron_cost=0.415) and only to bkt_Tc~59 K → **the SPLIT relocates the wall into an
+  interface criterion, does not remove it** (6/6 falsifiers PASS). **H_004 glue-reservoir ceiling**
+  (M3 BORROW / seed B3) — room-T via the box needs Ω~643 meV, above the phonon ceiling (200 meV →
+  91 K); only an electronic eV-class reservoir can supply it (5/5 PASS). **H_005 combination capstone**
+  — the full stack (geometry × electronic glue × ideal interface) reaches **bkt_Tc~319 K (room-T
+  CLEARED in the toy band)** with **each lever necessary** (ablate glue→91 K, ablate geometry→box
+  closes, ablate interface→box closes; 5/5 PASS). Honest endpoint: the breakthrough is a
+  **FACTORIZATION** — the room-T wall becomes the conjunction of (a) an electron-opaque interface +
+  (b) a competing-order-free electronic glue, two stacked *real, unsolved* materials sub-problems;
+  closed-form deepening is **DEPLETED**, the real verdict needs a DFT/DFPT/el-ph heterostructure calc
+  (`src/` + cloud pod). Added `proximity_bilayer_levers`, `critical_electron_cost`, `omega_for_bkt_tc`,
+  `PHONON_CEILING_MEV` to `tool/rtsc_harness.py`; all runs deterministic (byte-equal). Registry +
+  ARCHITECTURE verification node updated.
+
 - Promote SF-brainstorm seed F2 to a real frozen card: **H_006 FS-bound dimension-invariance**.
   Added a deterministic quantum-metric dimension scan to `tool/rtsc_harness.py`
   (quantum_metric_trace_separable + quantum_metric_trace_2d_dirac, stdlib-only BZ finite-difference

@@ -1,0 +1,41 @@
+{
+  "metrics": {
+    "omega_req_roomT_meV": 642.7,
+    "omega_req_ceiling_meV": 291.7,
+    "phonon_ceiling_meV": 200.0,
+    "electronic_glue_meV": 1500.0,
+    "tc_phonon_max_K": 91.2,
+    "tc_electronic_K": 683.8,
+    "room_T_K": 293.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_phonon_insufficient",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_electronic_sufficient",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_phonon_below_roomT",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_monotone",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_bounds",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 5,
+  "n_total": 5,
+  "all_pass": true
+}
