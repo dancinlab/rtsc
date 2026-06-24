@@ -4,6 +4,16 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_023 RTSC 레버 — DFT 런 준비도 점검 (SAFE prep · 컴퓨트 미실행).** `state/h023-dft-readiness-2026-06-25.md`.
+  READ+VERIFY+DOCUMENT only (pw.x·클라우드·heavy compute 미실행). h019 DFT 덱 검증 →
+  의사퍼텐셜/컷오프/화학량은 sane 이나 **셀이 폐기된 Cmcm 부모상**(현역=h025 monoclinic)이고 모든 덱이
+  **밴드갭 SCF 덱이지 D_s 덱이 아님**. **판정 🔴 BLOCKED — 두 측정-벽 선행**: ⓐ *방법 벽* — 다층
+  초유체강성 D_s 는 평범한 pw.x 관측량이 아님(양자기하 QGT 또는 BSE 요함; "DFT 가 f_mult 클리어"는
+  한 번의 pw.x 런으로 환원 안 됨), ⓑ *PBE 이론 벽* — H_025/H_026 가 단층 갭조차 PBE 근금속 진동으로
+  측정(beyond-PBE 만 남음). cheap 양자기하 route 는 H_024 가 이미 닫음(f_mult≥1.164@N=2
+  SUPPORTED-conditional, is_green=False). 원-커맨드 승인 스펙(A/B/WALL) 명시. 정직성: 클리어해도
+  반증-생존 예측이지 발견 아님 — 게이트 닫힘=공인 4-프로브, absorbed=false 불변.
+
 - **H_026 — INFRA ROOT-CAUSE FIX (self-built QE 7.2 rebuilt WITH MPI on `summer`) + Ta2NiSe5
   monoclinic gap re-run under genuine 6-core parallelism. 🟡 REAL-DFT.**
   `HYPOTHESES/cards/H_026_qe_mpi_ta2nise5_gap.md`, artifacts in
