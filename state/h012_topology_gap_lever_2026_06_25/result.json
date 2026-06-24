@@ -1,0 +1,42 @@
+{
+  "metrics": {
+    "baseline_4lever_omega_meV": 349.3,
+    "delta_topo_needed_for_roomT_meV": 140.3,
+    "any_realistic_relax": false,
+    "stiffness_limited_at_baseline": true,
+    "t_stiff_baseline_K": 293.0,
+    "t_amp_100meV_K": 208.9,
+    "huge_gap_relaxes": false,
+    "topo_stiffness_is_geometry_lever": true
+  },
+  "falsifiers": [
+    {
+      "name": "F1_topo_relaxes_omega",
+      "triggered": true,
+      "status": "FAIL"
+    },
+    {
+      "name": "F2_topo_is_subthreshold",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_huge_gap_no_relax",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_collapse_to_geometry",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_topo_alone_insufficient",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 4,
+  "n_total": 5,
+  "all_pass": false
+}

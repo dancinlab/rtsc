@@ -1,0 +1,56 @@
+{
+  "metrics": {
+    "omega_roomt_2d_meV": 642.7,
+    "omega_relaxed_meV": 349.0,
+    "U_sc_threshold": 2.2222,
+    "U_sdw_threshold": 1.0,
+    "U_cdw_threshold": 2.9412,
+    "U_ps_threshold": 3.1182,
+    "leading_ph_competitor": "SDW",
+    "U_leading_ph": 1.0,
+    "sc_leads": false,
+    "sc_leading_window_lo": 2.2222,
+    "sc_leading_window_hi": 1.0,
+    "sc_leading_window_width": 0.0,
+    "window_exists": false,
+    "U_roomt_bare": 1.0,
+    "U_roomt_relaxed": 0.543,
+    "roomt_bare_inside_window": false,
+    "roomt_relaxed_inside_window": false
+  },
+  "falsifiers": [
+    {
+      "name": "F1_sc_window_exists",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = a finite interaction window exists where SC is the LEADING instability (no particle-hole order pre-empts it). FAIL = competing order always wins -> +@ dead."
+    },
+    {
+      "name": "F2_sc_leads_competitor",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = SC crosses its Stoner threshold BEFORE the leading CDW/SDW/PS competitor. FAIL = a density-wave / phase-separation order is the first instability."
+    },
+    {
+      "name": "F3_roomt_relaxed_inside",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = the relaxed room-T glue demand (349 meV mapped to U) lands inside the SC-leading window. FAIL = the coupling we NEED for room-T SC drives competing order."
+    },
+    {
+      "name": "F4_window_has_width",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = the SC-leading window has finite interaction tolerance (>0.05 in U units), not a fragile knife-edge. FAIL = the window is a measure-zero coincidence."
+    },
+    {
+      "name": "F5_sdw_not_first_mover",
+      "triggered": true,
+      "status": "FAIL",
+      "desc": "PASS = bare on-site SDW does not pre-empt SC. FAIL = flat-band magnetism (SDW) triggers first -> the canonical competing-order killer wins."
+    }
+  ],
+  "n_pass": 0,
+  "n_total": 5,
+  "all_pass": false
+}
