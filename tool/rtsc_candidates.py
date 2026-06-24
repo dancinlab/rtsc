@@ -143,17 +143,22 @@ LAYER_A: list = [
 LAYER_B: list = [
     Candidate("Ta2NiSe5", "B", "excitonic-insulator",
               boson_meV=(300.0, "exciton gap 0.16-0.35 eV, onset ~325K — arXiv:2007.08212 (Kim 2020) / arXiv:2106.04396 (Matsubayashi 2021). "
-                                "OUR DFT (H_019+H_024): the 32-atom orthorhombic Cmcm cell was BUILT CORRECTLY (vol 706.7A^3, 296 e-, matches exp) "
-                                "but the PBE SCF DOES NOT CONVERGE across 10 recipe variants (7 in H_019 + 3 in H_024 on the FREER host): the "
-                                "estimated scf accuracy FREEZES (~0.5 Ry H_019 / ~13.7-13.9 Ry H_024) and never drops, independent of mixing "
-                                "(plain/local-TF), beta (0.2-0.7), smearing (0.01-0.025 Ry) -> a recipe-independent SCF ill-conditioning of the "
-                                "high-symmetry excitonic-PARENT Cmcm cell, NOT mere contention. OUR gap stays DEFERRED, NOT confirmed by our own "
-                                "DFT (literature value kept, honestly flagged unverified-by-us; deferred fix = symmetry-broken low-T phase / hybrid+U)", True),
+                                "OUR DFT: the orthorhombic Cmcm parent SCF FROZE across 10 recipes (H_019+H_024; estimated scf accuracy byte-identical "
+                                "iter-to-iter, e.g. 13.94569806=13.94569806) -> H_024 diagnosed high-symmetry excitonic-PARENT ill-conditioning. "
+                                "H_025 TESTED the fix: built the EXPERIMENTAL low-T MONOCLINIC C2/c ground state (Sunshine&Ibers 1985 via arXiv:2201.07750; "
+                                "vol 701.5A^3, 296 e-) and ran plain PBE AND PBE+U(Ni-3d=3eV). BOTH BREAK THE FREEZE: residual descends ~30x (17-18 Ry -> "
+                                "0.45-0.64 Ry) with LIVE charge dynamics (every iter differs) -> the symmetry-breaking insight CONFIRMED. BUT both then "
+                                "PLATEAU near-metallic (~0.5-0.9 Ry) and DO NOT reach conv_thr 1e-6 on the SERIAL single-core QE build (the real wall, measured: "
+                                "make.inc MPIF90=gfortran, no -D__MPI; the prior -np 12 ran 12 redundant serial copies). Gap STILL UNRESOLVED, NOT fabricated "
+                                "(PBE/PBE+U under-gap the excitonic gap -> near-metallic -> hard SCF). Deferred fix = DFT-relaxed monoclinic (beta=90.644, PNAS) "
+                                "/ denser k-mesh / HSE, all needing a PARALLEL build. Literature value kept, honestly flagged unverified-by-us.", True),
               competing_order=("none", "q=0 non-nesting excitonic order (the glue itself, not a pre-empting density wave); SC under pressure — arXiv:2106.04396", True),
-              note="LEAD candidate (scout PR#10): exciton ~at the 349meV target, q=0 -> no pre-empting CDW/SDW. OUR DFT (H_019+H_024) built the cell "
-                   "but the 296-e PAW SCF DOES NOT CONVERGE (residual frozen, recipe-independent, 10 variants) -> gap DEFERRED (honest, not "
-                   "fabricated). H_024 BOUNDED the lead 🟢-path (H_023) D_s(N=2) lever from CoSn quantum geometry instead (∫tr g I=2.86~=QGT 2.87 -> "
-                   "geometry SUPPORTS f_mult>=1.164 at N=2, conditional on doping+coherence, is_green=False). Trio CoSn/hBN/Ta2NiSe5 jointly UNREALIZED -> 🟠, absorbed=false."),
+              note="LEAD candidate (scout PR#10): exciton ~at the 349meV target, q=0 -> no pre-empting CDW/SDW. OUR DFT (H_019/H_024/H_025): Cmcm parent SCF "
+                   "FROZE (10 recipes); H_025 showed the EXPERIMENTAL MONOCLINIC C2/c ground state BREAKS the freeze (~30x descent, both PBE & PBE+U) -> the "
+                   "H_024 ill-conditioning diagnosis CONFIRMED & sharpened, but the cell plateaus near-metallic and doesn't reach 1e-6 on the SERIAL build -> "
+                   "gap STILL DEFERRED (honest PARTIAL POSITIVE, not fabricated). H_024 BOUNDED the lead 🟢-path (H_023) D_s(N=2) lever from CoSn quantum "
+                   "geometry instead (∫tr g I=2.86~=QGT 2.87 -> geometry SUPPORTS f_mult>=1.164 at N=2, conditional on doping+coherence, is_green=False). "
+                   "Trio CoSn/hBN/Ta2NiSe5 jointly UNREALIZED -> 🟠, absorbed=false."),
     Candidate("1T-TiSe2", "B", "exciton-CDW",
               boson_meV=(None, "exciton-driven CDW scale — needs sourced value", False),
               competing_order=("CDW", "exciton condensation drives a CDW", False),
