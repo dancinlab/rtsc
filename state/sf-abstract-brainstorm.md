@@ -159,6 +159,61 @@ Combined protocol:
 DEPLETION (M2) at F11 — orthogonal frames (~10) exhausted; further entries were compositions
 (dimension+non-Hermitian, gauge+scale).
 
+## Round 4 — M1 SPLIT + M4 OBSTACLE deep dive (the remaining two lenses, to depletion)
+
+### M1 SPLIT — break a forbidden simultaneity across which axis?
+
+- **S1 time (Floquet/pulsed)** — A: time-multiplex weak sources into an effective bright/stable one. B: alternate ∫tr g / Ω phases. ⚖ closes if cycle > decoherence.
+- **S2 space (bilayer/moiré/superlattice)** — A: phase-locked emitter array synthesizes short λ. B: layer A = geometry, layer B = glue, proximity. ⚖ closes if interlayer-coupling loss eats the gain.
+- **S3 subsystem outsource (proximity/hybrid)** — A: generation stage (unstable) + stabilization stage (feedback). B: borrow glue from a neighbor by proximity. ⚖ closes if interface transparency is the ceiling.
+- **S4 mode/frequency multiplex** — A: synthesize effective short λ from many modes. B: multiband shares geometry/coupling. ⚖ closes if inter-mode phase-matching breaks.
+- **S5 particle species (fractionalization)** — B: charge/spin/orbital separation (spinon/holon) — geometry in one sector, pairing in another. ⚖ closes if fractionalization gap is unstable. **Most exotic B-family; an orthogonal bypass (geometry from a different sector).**
+- **S6 scale hierarchy (coarse/fine)** — A: coarse=band, fine=coherence. B: coarse lattice=geometry, fine=coupling. ⚖ closes if scale separation fails.
+- **S7 statistical ensemble** — A: some emitters carry frequency, some coherence. B: split carriers into geometry-bearing vs pairing-bearing. ⚖ closes if the two populations couple and dilute the average.
+
+M1 sub-axes: time · space · degree-of-freedom. **SPLIT adds no resource and classifies nothing — it only DEFERS the wall within whatever FRAME allows.**
+
+### M4 OBSTACLE-AS-RESOURCE — reinterpret which loss channel as the carrier?
+
+- **O1 instability → coherence** — A: order plasma turbulence into a coherent source (= A4). B: condense the soft mode as carrier (= B6). ⚖ closes if ordering cost > gain.
+- **O2 disorder → flat band** — A: disorder-induced narrowband emission. B: **disorder-induced flat band** — get the geometry lever (∫tr g) for free from randomness (no crystallinity needed). ⚖ closes if disorder also kills coherence. **Interesting bypass — the geometry lever from disorder.**
+- **O3 noise → stochastic resonance** — A: sharpen the signal via stochastic resonance on shot noise. B: noise-assisted pairing transport. ⚖ closes if noise leaves the optimal window.
+- **O4 dissipation → dissipation engineering** — A: loss-shaping keeps only target modes (PT). B: **driven-dissipative SC** — engineer dissipation so the pairing state is the stabilized target. ⚖ closes if pump power = ledger deficit (reduces to M3).
+- **O5 decoherence → measurement-induced phase** — A: measurement shapes photon statistics. B: measurement-induced transition fixes the pairing phase. ⚖ closes if Landauer information cost bites (reduces to M3).
+- **O6 entropy → entropy-stabilized order** — B: entropy-driven ordering stabilizes the pairing host. ⚖ closes if latent heat is incoherent.
+- **O7 scattering → coherent backscattering** — A: coherent backscattering enhances emission. B: Anderson-localization-protected states as a gap. ⚖ closes if localization also kills transport.
+
+M4 sub-axes: dynamical loss (instability/dissipation) · statistical loss (noise/entropy/decoherence) · structural loss (disorder/scattering). **OBSTACLE recycles within conservation laws — almost all entries reduce to the M3 ledger deficit or the M2 classification.**
+
+## Grand synthesis — all four meta-principles (d6)
+
+```
+Push each meta-principle to the limit and only TWO kinds of wall remain:
+  M3 BORROW   : MOVES the wall   ─┐
+  M1 SPLIT    : DEFERS the wall  ─┼─▶ all operate only WITHIN a resource/spacetime/conservation budget
+  M4 OBSTACLE : RECYCLES the wall─┘
+  M2 FRAME    : CLASSIFIES the wall ──▶ the only one that decides "real vs fake"
+
+The single converged law:
+  there are exactly two kinds of wall —
+   1. frame-invariant (scalar / topological / RG-fixed-point) = a REAL ceiling 🧱
+        → BORROW/SPLIT/OBSTACLE can only relocate its bill, never remove it.
+   2. frame-dependent (vanishes under a coordinate change) = FAKE = bypassable
+        → so FRAME-test FIRST.
+
+  The one executable bridge from imagination to verification:
+   F2 — "is the Fubini-Study two-lever lower bound dimension-invariant?"
+        deterministically checkable (3D / synthetic-dimension ED on rtsc tool/);
+        promotes a d6 coordinate into a falsifiable card (H_006-family).
+  Two orthogonal bypass seeds worth a card each:
+   S5 — charge/spin/orbital fractionalization (geometry lever from a different sector).
+   O2 — disorder-induced flat band (geometry lever from randomness, no crystallinity).
+```
+
+DEPLETION (whole brainstorm) — 4 meta-principles × sub-axes drilled (~43 families); converged to
+2 wall-classes + 1 executable bridge (F2) + 2 orthogonal bypasses (S5, O2). Further rounds are
+recombination only. Brainstorm closed.
+
 ## Next-step note (when promoting a seed to a card)
 
 A seed → card requires: pick the wall, pick the meta-principle's concrete knob, write a
