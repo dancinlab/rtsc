@@ -4,6 +4,33 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_025 — Ta2NiSe5 symmetry-broken (monoclinic C2/c) gap: the LAST deferred per-layer gap of the
+  named +@ trio, attacked with the PHYSICALLY-CORRECT cell on the free `summer` host. 🟡 REAL-DFT
+  (PARTIAL POSITIVE).** `HYPOTHESES/cards/H_025_ta2nise5_symbroken_gap.md`, artifacts in
+  `state/h025_ta2nise5_symbroken_gap_2026_06_25/`.
+  - **The symmetry-broken monoclinic C2/c cell BREAKS the Cmcm SCF freeze.** H_019/H_024 left the
+    Ta2NiSe5 gap DEFERRED because the high-symmetry orthorhombic **Cmcm parent** SCF FROZE
+    (byte-identical successive residuals, e.g. `13.94569806 = 13.94569806`) across 10 recipes —
+    diagnosed as the near-metallic excitonic-PARENT being ill-conditioned. H_025 TESTED the logged
+    fix by building the EXPERIMENTAL low-T **monoclinic C2/c** ground state (Sunshine & Ibers 1985
+    via arXiv:2201.07750: a=3.496 b=12.829 c=15.641 Å β=90.53°; vol 701.5 Å³, Ta8Ni4Se20=32, the Ta
+    chain carries the symmetry-breaking x-shift). Across BOTH a robust plain-PBE recipe AND
+    PBE+U(Ni-3d=3 eV ortho-atomic), the 296-e SCF residual descends MONOTONICALLY ~30× (17–18 Ry →
+    0.45–0.64 Ry) with LIVE charge dynamics (no two iterations identical) — categorically unlike the
+    Cmcm parent's dead freeze. The symmetry-breaking insight is CONFIRMED.
+  - **Gap still UNRESOLVED (honest, not fabricated).** Both monoclinic recipes then PLATEAU
+    near-metallic in the ~0.5–0.9 Ry band and do NOT reach conv_thr=1e-6 → no converged density → no
+    KS gap extracted (the 0.16–0.35 eV window stays unverified-by-us). This is consistent with
+    PBE/PBE+U under-gapping the many-body excitonic gap (near-metallic → hard SCF).
+  - **Measured this session — the real tractability wall: the QE 7.2 build is SERIAL.** `make.inc`
+    `MPIF90=gfortran`, `DFLAGS=-D__FFTW` only (no `-D__MPI`/`-D__OPENMP`); `ldd pw.x` shows no MPI;
+    pw.x prints "Serial version". Every SCF runs on **1 core** — the prior H_019/H_024 `mpirun -np 12`
+    launched 12 redundant serial copies. Deferred fix to actually reach the gap (logged, needs a
+    PARALLEL build): DFT-relaxed monoclinic coords (β=90.644°, PNAS) / denser k-mesh / HSE.
+  - **Registry**: `tool/rtsc_candidates.py` LAYER_B[Ta2NiSe5] — gap NOT graduated to our-DFT (no
+    in-window convergence); kept literature-flagged-unverified with the H_025 freeze-break finding +
+    sharpened recipe ladder logged. Trio stays 🟠 jointly-unrealized; absorbed=false / GATE_OPEN.
+
 - **H_024 — REAL-DFT follow-on closing H_019's deferred/failed halves AND attacking H_023's single
   unknown (self-built QE 7.2 on `summer` + local TB metric; all FREE, no rental). 🟡 REAL-DFT
   (PARTIAL).** `HYPOTHESES/cards/H_024_named_candidate_dft_followon.md`, artifacts in
