@@ -116,9 +116,13 @@ def verify_pair(a: Candidate, b: Candidate) -> dict:
 # Layer A — CoSn/Nb3Cl8 ⟨g⟩ are the campaign's published ledger anchors (H_001) -> verified.
 LAYER_A: list = [
     Candidate("CoSn", "A", "kagome",
-              g_mean=(2.87, "H_001 ledger; QGT directly measured arXiv:2412.17809 (Kang 2024); flat band W<0.2eV arXiv:2001.11738", True),
+              g_mean=(2.87, "H_001 ledger; QGT directly measured arXiv:2412.17809 (Kang 2024); flat band W<0.2eV arXiv:2001.11738; "
+                            "narrow-band CONFIRMED by our DFT (H_019): PBE QE7.2 scf+bands a=5.2693/c=4.2431A finds a kagome flat-band "
+                            "manifold W=0.158 eV (band 41, narrowest of a 0.16-0.25 eV cluster) -- but POSITIONED ~1.45 eV below E_F, "
+                            "DEEPER than the cited ~0.2 eV (PBE/orbital-character disagreement reported honestly, NOT tuned)", True),
               frustrated=(True, "kagome lattice", True),
-              note="geometry OK + directly-measured QGT; soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) -> needs the +@ glue layer."),
+              note="geometry OK + directly-measured QGT; OUR DFT (H_019) confirms a W<0.2eV flat band but ~1.45eV below E_F (needs heavy "
+                   "doping/gating to reach E_F -- a real risk, honestly logged). soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) -> needs the +@ glue layer."),
     Candidate("Nb3Cl8", "A", "breathing-kagome",
               g_mean=(2.11, "H_001 ledger / RTSC_LEDGER.jsonl", True),
               frustrated=(True, "breathing kagome", True),
@@ -132,9 +136,13 @@ LAYER_A: list = [
 # Layer B — bosonic-glue hosts. Energies seeded UNVERIFIED until a research round sources them.
 LAYER_B: list = [
     Candidate("Ta2NiSe5", "B", "excitonic-insulator",
-              boson_meV=(300.0, "exciton gap 0.16-0.35 eV, onset ~325K — arXiv:2007.08212 (Kim 2020) / arXiv:2106.04396 (Matsubayashi 2021)", True),
+              boson_meV=(300.0, "exciton gap 0.16-0.35 eV, onset ~325K — arXiv:2007.08212 (Kim 2020) / arXiv:2106.04396 (Matsubayashi 2021). "
+                                "OUR DFT (H_019): the 32-atom orthorhombic Cmcm cell was BUILT CORRECTLY (vol 706.7A^3, 296 e-, matches exp) "
+                                "but the PBE SCF DID NOT CONVERGE (plateau ~0.5 Ry over 7 recipe variants on the contended summer host) -> "
+                                "OUR gap is DEFERRED, NOT confirmed by our own DFT (literature value kept, honestly flagged unverified-by-us)", True),
               competing_order=("none", "q=0 non-nesting excitonic order (the glue itself, not a pre-empting density wave); SC under pressure — arXiv:2106.04396", True),
-              note="LEAD candidate (scout PR#10): exciton ~at the 349meV target, q=0 -> no pre-empting CDW/SDW. Trio CoSn/hBN/Ta2NiSe5 jointly UNREALIZED -> 🟠, absorbed=false."),
+              note="LEAD candidate (scout PR#10): exciton ~at the 349meV target, q=0 -> no pre-empting CDW/SDW. OUR DFT (H_019) built the cell "
+                   "but the 296-e PAW SCF stalled in-session -> gap DEFERRED (honest, not fabricated). Trio CoSn/hBN/Ta2NiSe5 jointly UNREALIZED -> 🟠, absorbed=false."),
     Candidate("1T-TiSe2", "B", "exciton-CDW",
               boson_meV=(None, "exciton-driven CDW scale — needs sourced value", False),
               competing_order=("CDW", "exciton condensation drives a CDW", False),
