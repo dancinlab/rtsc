@@ -4,6 +4,25 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Research note — constructive candidate enumeration for the +@ trilayer (layer A flat-band metal · layer B
+  bosonic glue) → 🟠 partial candidate** (read-only materials survey,
+  `state/research-glue-material-candidates-2026-06-25.md`). The constructive complement to the wall-classification
+  note (#9): instead of asking *whether* a glue material exists, it **enumerates and ranks concrete, named candidates**
+  and proposes one falsifiable trilayer. (§1 Layer A) Ranked flat-band metals — top: **CoSn** (kagome, non-magnetic,
+  flat-band W<0.2 eV / out-of-plane orbital <0.02 eV, and the one material with a *directly measured* quantum
+  geometric tensor — arXiv:2001.11738, arXiv:2412.17809); then MATBG (flattest but moiré-only), Ni3In (flat band at
+  E_F), FeSn/YMn6Sn6 (magnetic), CsV3Sb5 (has own CDW). (§2 Layer B) Ranked bosonic glues — top: **Ta2NiSe5**
+  excitonic insulator (gap ~0.16–0.35 eV, onset ~325–328 K — squarely at the ~349 meV target; arXiv:2007.08212,
+  arXiv:2203.06817) and TMD interlayer-exciton bilayers (ideal cross-spacer dipole). (§3 Competing-order screen)
+  **Ta2NiSe5 is the only named B whose order is q=0 / non-nesting** (no incommensurate CDW/SDW to pre-empt SC; it
+  superconducts under pressure — arXiv:2106.04396), whereas the TMD route carries the density wave *inside* the
+  mechanism (Kumar–Senthil arXiv:2410.09148). (§4) **Proposed recipe: CoSn (doped) / hBN(2) / Ta2NiSe5** — each lever
+  demonstrated in the named compound, instantiating the computed cross-spacer plasmon/exciton glue (in 't Veld–Rösner
+  arXiv:2508.06195). **Verdict 🟠** — a specific, fully-named, internally-consistent trilayer now exists (stronger than
+  "no candidate"), but the three pieces have never worked *together*: no measured cross-spacer coupling for this trio,
+  B's mode is a phonon-hybrid not a pure exciton, and no bosonic-glue Tc has ever been measured. The wall is
+  materials-engineering-limited and we can now name the exact brick to try first. `absorbed=false` / GATE_OPEN unchanged.
+
 - **Research note — classifying the excitonic-SC "electronic-glue graveyard" wall (🟠 MATERIALS-LIMITED)**
   (read-only literature survey, `state/research-excitonic-sc-wall-classification-2026-06-25.md`). The prior
   cRPA note (PR #7) moved the +@ trilayer binding wall upstream to a MATERIALS question — does a real "glue
