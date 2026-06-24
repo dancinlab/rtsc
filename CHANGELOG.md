@@ -4,6 +4,37 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **+@ deepening: real verdicts + 3-combination** (user: "explore 3-combinations too" + "summer pool").
+  Three more cards, two backed by REAL computation (not closed-form):
+  **H_006 real-3D verdict** — ran `src/fbgeom_3d.py` (mac local numpy) on real 3D flat-band hosts:
+  the 3D Tc lever **L_3D=1.84×** (BKT-vortex 1.50 × coordination 1.22) is real but PARTIAL (~21% of
+  the ~5× gap); native 3D flat bands (pyrochlore/hyperkagome/3D-Lieb) are gapless band-touchings →
+  geometry contaminated, the clean dimension-FRAME bypass is BLOCKED (additive lever, not wall-removal).
+  **H_007 combination-order scan** — a 3-lever stack (geometry × electronic glue × real 3D lever)
+  reaches room-T by **relaxing the glue demand 642.7→349.3 meV (1.84×)**; Tc by order 10→159→293 K
+  (1<2<3 monotone), each lever necessary by ablation (5/5, deterministic). 3-combination beats
+  2-combination by *dividing* the deficit, not adding Tc. **H_008 real bipolaron ED** — dispatched
+  the decisive sign-free 2e+phonon ED (`src/lane_a_explicit_phonon_bipolaron_ed.py`) to the shared
+  **pool host `summer`** (scipy sparse eigsh, dim up to 562500): the retarded explicit-phonon vertex
+  makes pair-channel ⟨g⟩_pair **EXCEED** the single-particle Peotta-Törmä value (0.822 vs 0.192,
+  **4.27×**) in the anti-adiabatic weak-coupling corner — the static mean-field had *closed* this
+  crack; the retarded vertex *reopens* it (corner-confined; strong-coupling ratio collapses to
+  0.08–0.78). Added `THREED_TC_LEVER`, `stacked_tc`, `omega_for_stacked_tc` to `tool/rtsc_harness.py`.
+  Real verdicts preserved in `state/h006…/fbgeom_3d_real.out` and `state/h008…/lane_a_summer.out`.
+  Two more cards from user directives — **H_009 connector spacer** ("use a 3rd material to join the
+  2"): the interface becomes a trilayer A/C/B where C is an engineered spacer; a wide-gap/phonon-
+  matched spacer (hBN-class) opens a fabricable window [0.44, 1.78 ML] that is both electron-opaque
+  (cost ≤ 0.415) AND phonon-transparent (T ≥ 0.70), a non-selective spacer none (4/4) — promotes
+  H_003's abstract interface knob to a real material lever. **H_010 top-down lever-count scan**
+  ("we're bottom-up; come down top-down on the count, might discover something"): stripping the full
+  {geometry, connector, glue, 3D} stack shows the full-4 glue demand (349 meV) is achievable (sub-eV)
+  but every removal is not — drop-3D → 643 meV (unachievable), drop-connector → wall (structural).
+  Minimal **achievable** count = 4: **more levers is the mechanism for achievability, not redundancy**
+  (the deficit is distributed so each lever's demand becomes material-reachable) — inverting the
+  "fewer parts is better" intuition (4/4). Added `THREED_TC_LEVER`, `stacked_tc`, `omega_for_stacked_tc`,
+  `spacer_window`/`spacer_electron_cost`/`spacer_phonon_transmission` to `tool/rtsc_harness.py`.
+  Registry now 10 rows (🔴1 🟠1 🟡6 🟢2).
+
 - **+@ combination wall-breakthrough + deepening to depletion** (goal: "+@ 조합 벽돌파 및 돌파
   후 심화 고갈까지"). Three frozen MODEL-PROBE cards stack the brainstorm SPLIT/BORROW seeds to
   bypass the single-host two-lever wall (H_001):

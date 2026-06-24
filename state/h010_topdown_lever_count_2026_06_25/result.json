@@ -1,0 +1,36 @@
+{
+  "metrics": {
+    "full4_demand_meV": 349.3,
+    "full4_achievable": true,
+    "drop3d_demand_meV": 642.7,
+    "drop3d_achievable": false,
+    "drop_connector_achievable": false,
+    "min_achievable_count": 4,
+    "glue_ceiling_meV": 500.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_full_achievable",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_3d_crosses_line",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_connector_structural",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_frontier_at_full",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 4,
+  "n_total": 4,
+  "all_pass": true
+}

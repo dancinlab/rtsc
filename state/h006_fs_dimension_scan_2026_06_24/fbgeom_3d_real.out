@@ -1,0 +1,36 @@
+========================================================================================
+FB-GEOM 3D-HOSTS LANE  (pyrochlore / hyperkagome / 3D-Lieb perovskite)
+  <g> normalization = mean|<u_k|u_k'>|^2 over 3D BZ (SAME as 2D tool, kagome~0.5)
+========================================================================================
+
+[COMPUTE 3D] <g>, flat-band width, gap-to-nearest-band  (nk=12^3)
+  host                <g>    width      gap   isolated?
+  pyrochlore        0.374   0.0000   0.0000   NO (touching)
+  pyrochlore+SOC    0.535   1.1897   0.0000   NO (touching)
+  hyperkagome       0.249   1.0000   0.0000   NO (touching)
+  3D-Lieb/perov     0.496   0.0000   0.0000   NO (touching)
+
+[TOPOLOGY] FHS Chern of flat band on kz=0 and kz=pi slices (gapped hosts)
+  pyrochlore       (band touching -> Chern ill-defined for flat band)
+  pyrochlore+SOC   (band touching -> Chern ill-defined for flat band)
+  hyperkagome      (band touching -> Chern ill-defined for flat band)
+  3D-Lieb/perov    (band touching -> Chern ill-defined for flat band)
+
+[3D LEVER] mean-field (no BKT cap) + coordination boost
+  f_BKT (vortex-restored) = 1.50   f_z (sqrt z3d/z2d=6/4) = 1.22
+  total 3D-vs-2D Tc lever  L_3D = 1.84x
+
+[PREDICT 3D] Tc = L_3D * calibrated-BKT  (Omega=150 meV, U/Om=1.5, nu=1/2)
+  host                <g>  Tc_2D(K)  Tc_3D(K)  x to 293K  isolated?
+  pyrochlore        0.374       131       241        1.2  TOUCH(spurious)
+  pyrochlore+SOC    0.535       188       345        0.8  TOUCH(spurious)
+  hyperkagome       0.249        88       161        1.8  TOUCH(spurious)
+  3D-Lieb/perov     0.496       174       320        0.9  TOUCH(spurious)
+
+[5x QUESTION] does 3D give the ~5x needed for room-T?
+  2D kagome/Lieb fell x4.7-5.6 SHORT. The 3D lever above is L_3D=1.84x.
+  => 3D ALONE provides ~1.8x, NOT the full ~5x. Closes ~21% of the gap.
+  Combined with a higher-<g> isolated 3D flat band it could approach it, BUT:
+  HONEST WALL (d6): pyrochlore native flat band is GAPLESS (touching, see gap col)
+  -> its D_s is contaminated; only the SOC-gapped variant has trustworthy stiffness,
+  and gapping costs <g>. No free 5x. Report L_3D as a real but partial lever.

@@ -1,0 +1,34 @@
+================================================================================
+LANE A — EXPLICIT-PHONON BIPOLARON ED (retarded bond-SSH vertex; sign-free 2e+phonon)
+================================================================================
+
+[baseline b] sawtooth single-particle <g> (Peotta-Torma FS metric) = 0.1924
+             flat band idx=1, widths=[4. 0.] (lower band ~flat)
+
+Ncells=3, sites=6, electron dim=(2N)^2=36, apex phonon modes=6
+
+--- baseline (a): STATIC-U flat-band pair stiffness (g=0, bare U) ---
+  U=-2.0  D_s(pair)=+0.07415  <g>_pair(static)=+0.0371  dim=36
+  U=-4.0  D_s(pair)=+0.07160  <g>_pair(static)=+0.0179  dim=36
+  U=-8.0  D_s(pair)=+0.05722  <g>_pair(static)=+0.0072  dim=36
+
+--- LANE A: EXPLICIT phonon (retarded vertex). U_eff=2g^2/Omega ---
+  Omega     g nmax    Ueff  D_s(pair)  <g>_pair ratio/sp      dim
+   8.00  0.60    3   0.090    0.07398     0.822    4.271   147456  <== EXCEEDS sp
+   8.00  1.00    3   0.250    0.07384     0.295    1.535   147456  <== EXCEEDS sp
+   8.00  1.40    3   0.490    0.07366     0.150    0.781   147456
+   4.00  0.60    3   0.180    0.07365     0.409    2.126   147456  <== EXCEEDS sp
+   4.00  1.00    3   0.500    0.07289     0.146    0.758   147456
+   4.00  1.40    3   0.980    0.07165     0.073    0.380   147456
+   2.00  0.60    3   0.360    0.07329     0.204    1.058   147456  <== EXCEEDS sp
+   2.00  1.00    3   1.000    0.07178     0.072    0.373   147456
+   2.00  1.40    3   1.960    0.06961     0.036    0.185   147456
+   1.00  0.60    4   0.720    0.07394     0.103    0.534   562500
+   1.00  1.00    4   2.000    0.07324     0.037    0.190   562500
+   1.00  1.40    4   3.920    0.07489     0.019    0.099   562500
+   0.50  0.60    4   1.440    0.07856     0.055    0.283   562500
+   0.50  1.00    4   4.000    0.09360     0.023    0.122   562500
+   0.50  1.40    4   7.840    0.11913     0.015    0.079   562500
+
+[verdict] single-particle <g>_sp=0.192.  best <g>_pair=0.822 at (8.0, 0.6, np.float64(4.271496193972472), 147456)
+          ratio to single-particle = 4.271  -> EXCEEDS (room-T path reopens)
