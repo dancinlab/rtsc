@@ -1,0 +1,53 @@
+&control
+  calculation = 'scf'
+  prefix = 'ganb4se8'
+  outdir = './out'
+  pseudo_dir = './pseudo'
+  tprnfor = .true.
+  tstress = .true.
+  verbosity = 'high'
+/
+&system
+  ! GaNb4Se8 lacunar spinel, cubic F-43m (No.216), PRIMITIVE FCC cell (13 atoms). ANCHOR (known P-induced SC, JACS 2005).
+  ! a_conv=10.41 Ang -> celldm(1)=19.6721 Bohr. Nb4 cluster Nb-Nb=2.91 A; inner Nb-Se=2.56 A (breathing-active).
+  ! Wyckoff x: Nb(16e)=0.5988 Se1(16e,inner)=0.3599 Se2(16e,outer)=0.865. bond-length-fitted.
+  ! nelec=113 (Ga13 + 4*Nb13 + 8*Se6). DFT+U on Nb-4d (U=2.5 eV).
+  ibrav = 2
+  celldm(1) = 19.6721
+  nat = 13
+  ntyp = 3
+  ecutwfc = 60
+  ecutrho = 600
+  occupations = 'smearing'
+  smearing = 'mp'
+  degauss = 0.01
+/
+&electrons
+  conv_thr = 1.0d-8
+  mixing_beta = 0.3
+  mixing_mode = 'local-TF'
+  electron_maxstep = 400
+  diagonalization = 'david'
+/
+ATOMIC_SPECIES
+  Ga 69.723  Ga.pbe-dn-rrkjus_psl.1.0.0.UPF
+  Nb 92.906  Nb.pbe-spn-rrkjus_psl.1.0.0.UPF
+  Se 78.971  Se.pbe-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal
+  Ga 0.000000 0.000000 0.000000
+  Nb 0.401200 0.796400 0.401200
+  Nb 0.401200 0.401200 0.401200
+  Nb 0.401200 0.401200 0.796400
+  Nb 0.796400 0.401200 0.401200
+  Se 0.640100 0.079700 0.640100
+  Se 0.640100 0.640100 0.640100
+  Se 0.640100 0.640100 0.079700
+  Se 0.079700 0.640100 0.640100
+  Se 0.135000 0.595000 0.135000
+  Se 0.135000 0.135000 0.135000
+  Se 0.135000 0.135000 0.595000
+  Se 0.595000 0.135000 0.135000
+K_POINTS automatic
+  4 4 4 0 0 0
+HUBBARD (ortho-atomic)
+  U Nb-4d 2.5

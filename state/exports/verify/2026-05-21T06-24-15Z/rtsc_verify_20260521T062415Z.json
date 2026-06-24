@@ -1,0 +1,22 @@
+{
+  "domain": "rtsc",
+  "verb": "verify",
+  "kind": "getdp_hts_3d_em",
+  "stamp": "20260521T062415Z",
+  "producer": "getdp@absent",
+  "measurement_gate": "GATE_OPEN",
+  "absorbed": false,
+  "scope_caveats": [
+    "getdp binary not on PATH \u2014 honest install-gated skip. Install: macOS `brew install getdp`; Linux `apt install getdp`. The HTS H-/A-\u03c6 formulation is multi-week scope \u2014 this producer lands the gate, not the full benchmark.",
+    "Reference HTS tape cuboid \u2014 NOT a sourced coil. Real absorption needs a measured tape J_c(B,T,\u03b8) + workgroup-shared geometry + ramp-rate-dependent loss validation."
+  ],
+  "citations": [
+    "arxiv:0811.2883 \u2014 3-D FEM HTS magnetization, GetDP H-/A-\u03c6 formulation (Pecher / Sirois).",
+    "HTS Modelling Workgroup shared model files \u2014 htsmodelling.com.",
+    "GetDP \u2014 get-dp.org (Geuzaine, U. Li\u00e8ge, Gmsh pair)."
+  ],
+  "skipped_reason": "getdp_binary_not_found",
+  "gate_type": "install-gated",
+  "provisional": false,
+  "kernel_note": "em-kernel-promotion candidate (2nd rtsc-EM consumer with pyfemm)"
+}

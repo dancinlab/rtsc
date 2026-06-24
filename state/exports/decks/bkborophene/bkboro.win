@@ -1,0 +1,49 @@
+ ! BK-borophene Wannier downfold of the kagome-active sp-sigma manifold
+ ! goal: real-DFT <tr g> (quantum metric) of the kagome bands + Wannier hoppings t
+ num_wann   = 6
+ num_bands  = 12
+ ! exclude the deep B-2s bands below the kagome manifold; keep the active 12 -> disentangle to 6
+ exclude_bands = 1-6
+
+ dis_win_min   = -8.5
+ dis_win_max   =  2.0
+ dis_froz_min  = -8.0
+ dis_froz_max  = -3.0
+ dis_num_iter  = 400
+ num_iter      = 500
+
+ ! kagome sites = 6 B atoms (edge-midpoints, 2 layers). s-like Wannier on each kagome node
+ begin projections
+ B:l=0
+ end projections
+
+ write_hr = .true.
+ write_xyz = .true.
+ ! quantum metric / band geometry
+ berry = .true.
+ berry_task = morb
+ berry_kmesh = 24 24 1
+
+ bands_plot = .false.
+
+ begin unit_cell_cart
+ bohr
+   6.474450   0.000000   0.000000
+  -3.237225   5.607374   0.000000
+   0.000000   0.000000  37.800000
+ end unit_cell_cart
+
+ begin atoms_frac
+ B  0.500000  0.000000  0.448779
+ B  0.000000  0.500000  0.448779
+ B  0.500000  0.500000  0.448779
+ B  0.500000  0.000000  0.551221
+ B  0.000000  0.500000  0.551221
+ B  0.500000  0.500000  0.551221
+ end atoms_frac
+
+ mp_grid = 8 8 1
+
+ begin kpoints
+ __KPTS__
+ end kpoints

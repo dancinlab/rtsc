@@ -1,0 +1,40 @@
+=== START 2026-05-26T23:52:53+09:00 host=aiden-B650M-K np=6 ===
+=== VC-RELAX begin 2026-05-26T23:52:53+09:00 ===
+=== VC-RELAX done 2026-05-27T00:25:00+09:00 ===
+     new unit-cell volume =    503.84742 a.u.^3 (    74.66248 Ang^3 )
+=== SCF begin 2026-05-27T00:25:00+09:00 using scf_relaxed.in ===
+=== SCF done 2026-05-27T00:26:29+09:00 ===
+     the Fermi energy is     5.3487 ev
+=== PH begin 2026-05-27T00:26:29+09:00 ===
+=== PH FAILED/INCOMPLETE 2026-05-27T03:13:44+09:00 ===
+
+      iter #   4 total cpu time :  8703.1 secs   av.it.:  12.5
+      thresh= 1.084E-04 alpha_mix =  0.700 |ddv_scf|^2 =  3.750E-07
+
+      iter #   5 total cpu time :  8835.9 secs   av.it.:  12.0
+      thresh= 6.124E-05 alpha_mix =  0.700 |ddv_scf|^2 =  5.330E-10
+
+      iter #   6 total cpu time :  8975.8 secs   av.it.:  12.6
+      thresh= 2.309E-06 alpha_mix =  0.700 |ddv_scf|^2 =  3.420E-10
+
+      iter #   7 total cpu time :  9105.1 secs   av.it.:  11.7
+      thresh= 1.849E-06 alpha_mix =  0.700 |ddv_scf|^2 =  2.624E-11
+
+      iter #   8 total cpu time :  9289.4 secs   av.it.:  13.2
+      thresh= 5.123E-07 alpha_mix =  0.700 |ddv_scf|^2 =  2.694E-11
+
+      iter #   9 total cpu time :  9427.3 secs   av.it.:  12.5
+      thresh= 5.190E-07 alpha_mix =  0.700 |ddv_scf|^2 =  1.371E-12
+
+      iter #  10 total cpu time :  9567.0 secs   av.it.:  12.6
+      thresh= 1.171E-07 alpha_mix =  0.700 |ddv_scf|^2 =  6.113E-13
+
+      iter #  11 total cpu time :  9707.2 secs   av.it.:  12.7
+      thresh= 7.819E-08 alpha_mix =  0.700 |ddv_scf|^2 =  7.166E-13
+
+      iter #  12 total cpu time :  9837.7 secs   av.it.:  11.5
+      thresh= 8.465E-08 alpha_mix =  0.700 |ddv_scf|^2 =  9.325E-14
+
+      iter #  13 total cpu time :  9979.4 secs   av.it.:  12.4
+      thresh= 3.054E-08 alpha_mix =  0.700 |ddv_scf|^2 =  1.626E-14
+DONE-PH-FAIL

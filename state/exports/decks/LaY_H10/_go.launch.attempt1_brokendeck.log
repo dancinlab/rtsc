@@ -1,0 +1,1 @@
+sh: line 1: 81547 Terminated: 15          '/Users/ghost/.hx/bin/bin/hexa-cloud' 'dft-run' 'LaY_H10' '--go' '--walltime-h' '24' '--owner' 'demiurge-rtsc' '--disk' '80' 2>&1

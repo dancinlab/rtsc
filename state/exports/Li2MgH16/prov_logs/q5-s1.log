@@ -1,0 +1,8 @@
+[q5-s1 01:55:06] ssh up
+HAVE_QE
+[q5-s1 01:55:12] qe install kicked
+[q5-s1 01:56:45] stage uploaded
+[q5-s1 01:56:48] qe ready
+[q5-s1 01:56:59] extracted + ph.in written
+FIRED
+[q5-s1 01:57:02] ph.x FIRED q5 irr 1-29

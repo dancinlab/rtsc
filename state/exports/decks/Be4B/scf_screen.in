@@ -1,0 +1,46 @@
+&CONTROL
+  calculation     = 'scf'
+  prefix          = 'be4b'
+  outdir          = './out'
+  pseudo_dir      = './pseudo'
+  verbosity       = 'high'
+  tstress         = .true.
+  tprnfor         = .true.
+/
+&SYSTEM
+  ibrav           = 0
+  nat             = 10
+  ntyp            = 2
+  ecutwfc         = 60
+  ecutrho         = 480
+  nosym           = .false.
+  occupations     = 'smearing'
+  smearing        = 'mp'
+  degauss         = 0.01
+/
+&ELECTRONS
+  conv_thr        = 1.0d-10
+  mixing_beta     = 0.3
+  diagonalization = 'david'
+  electron_maxstep = 400
+/
+CELL_PARAMETERS angstrom
+   3.356996840   0.000000000   0.000000000
+   0.000000000   3.356996840   0.000000000
+   0.000000000   0.000000000   7.006536470
+ATOMIC_SPECIES
+  Be    9.0122  Be.pbe-n-rrkjus_psl.1.0.0.UPF
+  B     10.811  B.pbe-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal
+  Be  0.750000000  0.250000000  0.000000000
+  Be  0.250000000  0.750000000  0.000000000
+  Be  0.250000000  0.250000000  0.480216160
+  Be  0.750000000  0.750000000  0.519783840
+  Be  0.250000000  0.750000000  0.304961430
+  Be  0.750000000  0.250000000  0.304961430
+  Be  0.750000000  0.250000000  0.695038570
+  Be  0.250000000  0.750000000  0.695038570
+  B   0.750000000  0.750000000  0.830491130
+  B   0.250000000  0.250000000  0.169508870
+K_POINTS automatic
+  8 8 8  0 0 0

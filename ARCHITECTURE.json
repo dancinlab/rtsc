@@ -1,0 +1,46 @@
+{
+  "$schema": "c4",
+  "role": "rtsc — Architecture (JSON tree · SSOT)",
+  "title": "rtsc — Architecture",
+  "updated": "2026-06-24",
+  "ssot_note": "JSON=SSOT (AI/tool parse); humans view architecture.html via `python3 serve.py`. Update in-place (not append). History/decisions/dates → CHANGELOG.md + git (never in tree). Hierarchy decomposes via `children` (commons single-doc); one fact per node. Per-material campaign SSOT = state/RTSC_LEDGER.jsonl. Materials carried over from the demiurge repo.",
+  "children": [
+    {
+      "id": "overview",
+      "role": "Room-temperature superconductor (RTSC) discovery as an HONEST falsification framework — predict/screen candidates, run the falsifier cascade, and report negative rulings as results. Target = 293 K @ 1 atm.",
+      "children": [
+        { "id": "stance", "role": "Falsifier-first. All gates stay GATE_OPEN / absorbed=false: no candidate is claimed to BE an RTSC. absorbed=true would require accredited 4-probe transport + Meissner expulsion + measured H_c2/T_c (none of which this map flips). 0 RTSC predicted of the funnel candidates." },
+        {
+          "id": "campaigns",
+          "role": "Research lanes run to date.",
+          "children": [
+            { "id": "campaigns.flatband-geometry", "role": "High-Chern flat-band quantum-geometry route to ambient room-T SC — CLOSED-NEGATIVE across 10 independent paths (paper: state/papers/flatband-geometry-ambient-roomt-closed). Structural cause = Fubini-Study bound (two levers — large ∫tr g AND strong coupling Ω — cannot coexist in one material)." },
+            { "id": "campaigns.superhydrides", "role": "Ambient superhydride lane (QE + QFORGE from-scratch): Li2CuH6 / Mg2IrH6 ambient-dynamically-unstable; AcBeH8, B-C clathrates inconclusive/deferred. High-pressure hydrides (H3S, LaH10, CaH6 …) recorded as references, deprioritized after the flat-band pivot." },
+            { "id": "campaigns.qforge-engine", "role": "QFORGE from-scratch el-ph engine (SCF→DFPT→el-ph→Tc), validated on Al/Nb/Pb. Gaps walled: magmom (k-Stoner) and pbe-scf (gate-grade ecut OOM); production uses a hybrid path." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "role": "Repository components.",
+      "children": [
+        { "id": "predictor-tools", "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published)." },
+        { "id": "pipeline-7verb", "role": "state/rtsc.demi — 7-verb pipeline manifest (specify · structure · design · analyze · synthesize · verify · handoff) on the hexa cellrun dispatcher. analyze=pyfemm HTS magnetics (macOS honest-skip), verify=GetDP HTS EM. All cells GATE_OPEN." },
+        { "id": "ledger", "role": "state/RTSC_LEDGER.jsonl — per-material campaign ledger (SSOT). One line/material: status·stage·λ·ω_log·Tc·stability·verdict·absorbed·record pointer. Verdict tiers: 🔵 formal · 🟢 GATE_CLOSED_MEASURED · 🔴 CLOSED-negative · 🟠 INCONCLUSIVE. Plus RTSC_HARVEST_PARTIAL.jsonl." },
+        { "id": "exports", "role": "state/exports/ — per-material verdict records + turnkey QE decks (LiBeB ambient deck-set, wave3 decks). Heavy raw staging tarball (Li2MgH16, 568 MB) intentionally excluded from this repo." },
+        { "id": "papers", "role": "state/papers/ — flatband-geometry-ambient-roomt-closed (closed-negative), rtsc-campaign-2026, rtsc-dft-h3s-textbook, rtsc-superconductor." }
+      ]
+    },
+    {
+      "id": "dataflow",
+      "role": "predict → screen → structure → deck → compute → gate → ledger.",
+      "children": [
+        { "id": "dataflow.predict-screen", "role": "Input — flat-band geometry predictor + Materials Project / OPTIMADE / AFLOW / JARVIS screening → light-element metallic candidate roster." },
+        { "id": "dataflow.structure-deck", "role": "Fetch structure → build turnkey QE deck (build_deck.py / hexa deck) → vc-relax/scf/ph." },
+        { "id": "dataflow.compute-gate", "role": "Run el-ph (DFPT λ/ω_log/Tc) → falsifier cascade (BETE-NET screen → Allen-Dynes → Eliashberg → RTSC5 gate). Heavy compute on cloud pods (per-material)." },
+        { "id": "dataflow.verdict-ledger", "role": "Output — verdict record in state/exports/ + one ledger line in RTSC_LEDGER.jsonl. Negative/inconclusive results preserved, not deleted." }
+      ]
+    }
+  ]
+}

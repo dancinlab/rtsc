@@ -1,0 +1,86 @@
+{
+  "domain": "rtsc",
+  "verb": "analyze",
+  "kind": "pyfemm_hts_axisym",
+  "stamp": "20260520T082607Z",
+  "producer": "pyfemm@0.1.3 + FEMM 4.2 (build 21Apr2019, x64) via Wine 9.0 on ubu-2",
+  "measurement_gate": "GATE_OPEN",
+  "absorbed": false,
+  "provisional": true,
+  "platform": "Linux",
+  "host": "ubu-2 (Ubuntu 24.04, kernel 6.17.0-23-generic, x86_64)",
+  "execution": {
+    "display": "xvfb-run -a (headless DISPLAY=:100 via Xvfb)",
+    "wine_prefix": "/home/summer/.wine",
+    "femm_binary": "/home/summer/.wine/drive_c/femm42/bin/femm.exe",
+    "femm_install": "femm42bin_x64_21Apr2019.exe via /VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+    "wine_arch_deps": "wine 9.0 (amd64) + wine32:i386 multiarch (FEMM is 32-bit PE32 Intel 80386)",
+    "wallclock_seconds": 60,
+    "exit_code": 0,
+    "stderr_note": "wine emitted benign 'Read access denied for device Z:' warnings — Z: is the mounted /tmp drive cross-link, harmless for /tmp-rooted solve."
+  },
+  "geometry": {
+    "problem_type": "axisymmetric magnetics",
+    "units": "centimeters",
+    "frequency_Hz": 0,
+    "precision": 1e-08,
+    "depth": 1,
+    "min_angle_deg": 30,
+    "tape_proxy": {
+      "shape": "rectangle",
+      "r_inner_cm": 1.0,
+      "r_outer_cm": 1.5,
+      "z_min_cm": -0.1,
+      "z_max_cm": 0.1,
+      "material": "HTS_proxy (mu_r=1, sigma=50 MS/m, no current source)"
+    },
+    "domain_box_cm": "0..5 r × -5..5 z (Air, mu_r=1)",
+    "current_source_A": 0,
+    "applied_field_T": 0
+  },
+  "measurement": {
+    "probe_point_cm": [1.25, 0.0],
+    "Bx_T": 0.0,
+    "By_T": 0.0,
+    "b_magnitude_T_at_centre_of_proxy_tape": 0.0,
+    "solver_artifacts": ["rtsc_axisym.fem", "rtsc_axisym.ans"],
+    "ans_size_bytes": 376575,
+    "fem_size_bytes": 1478
+  },
+  "oracle": {
+    "source": "HTS Modelling Workgroup shared models — htsmodelling.com",
+    "benchmark_referenced": "Benchmark #2 (single REBCO tape under transverse applied AC field)",
+    "expected_order_of_magnitude_T": 0.2,
+    "expected_note": "HTS Modelling shared models assume an applied source (transport current and/or external Bext ~ 100-200 mT). Their published B-field at tape centre is order 1e-1 T.",
+    "measured_T": 0.0,
+    "relative_error": null,
+    "relative_error_note": "UNDEFINED — measured |B| is exactly 0 because the toy proxy has no current source and no applied external field. The substrate runs FEMM end-to-end (artifacts prove it) but the geometry as currently written is unexcited. Rel-err vs oracle is therefore not a meaningful comparison number; the honest reading is 'solver loop closed, but excitation absent — record provisional, see scope_caveats'."
+  },
+  "scope_caveats": [
+    "(g3-a) Toy axisymmetric tape proxy — NOT a real HTS coil. The geometry is a single 5 mm × 2 mm rectangular HTS material block at r=10 mm; there is no current source, no transport current, no applied external field. The closed-form expectation is |B|=0 by Maxwell (no source ⇒ no field), and FEMM correctly returned 0.",
+    "(g3-b) FEMM is 2-D axisymmetric — NOT 3-D coupled EM-thermal-quench. AC loss, end-region screening, J_c(B,T,θ) anisotropy, quench dynamics, and mechanical strain coupling are all absent. The HTS Modelling Workgroup benchmarks require at minimum H-formulation 3-D coupling (per arxiv:2311.09177 / FiQuS reference).",
+    "(g3-c) hexa-native em_2d kernel absent — per D80 this record is provisional=true. Substrate is a Python adapter calling FEMM via Wine, not a hexa-lang-resident kernel. Kernel-promotion gated on 2nd EM consumer (D72 N+M rule per ABSORPTION.md kernels/em row).",
+    "Solver loop is honest-closed: pyfemm 0.1.3 imported, FEMM 4.2 binary launched under Wine 9.0 + Xvfb, .fem written, .ans solved, mo_getb() returned (0,0). The 'install-gated' branch is now NO LONGER blocking on this host. Re-runs with a proper excitation (mi_modifycircprop / mi_addcircprop applied to a coil) would produce nonzero |B| against a textbook closed-form (e.g. finite solenoid Wheeler formula).",
+    "Tiny HTS-tape-proxy axisymmetric demo — NOT a calibrated coil. Real rtsc analyze needs a sourced HTS tape J_c(B,T,θ) field dependence + measured V-I tape characteristic to claim absorption."
+  ],
+  "citations": [
+    "arxiv:0811.2883 — Pecher / Sirois et al., 3-D FEM HTS magnetization, single-time-step iteration (the GetDP HTS algorithm paper).",
+    "arxiv:2311.09177 — FiQuS / GetDP HTS reference (3-D coupled EM-thermal, cited in ABSORPTION.md L307).",
+    "FEMM 4.2 — David Meeker, femm.info (Aladdin Free Public License, 21Apr2019 x64 build).",
+    "pyfemm 0.1.3 — Python binding, Linux/Mac port by Melina Merkel (June 2021).",
+    "HTS Modelling Workgroup shared model files — htsmodelling.com (benchmark suite).",
+    "Demiurge cohort handoff: archive/session-notes/cohort-pickup-rtsc-femm-producer.md.",
+    "NEXT_SESSIONS.md H-6 (Track E partial) — this run lands the pyfemm-on-Linux-pool path that unblocks the rtsc+analyze cell."
+  ],
+  "headline": {
+    "b_magnitude_T_at_centre_of_proxy_tape": 0.0
+  },
+  "governance": {
+    "D80": "substrate provisional=true (hexa-native em_2d kernel absent)",
+    "D61": "substrate SSOT stays at ~/core/hexa-lang/stdlib/rtsc/pyfemm_magnetics.py; demiurge unchanged.",
+    "D72": "classify FIRST — FEMM ecosystem, thin adapter in rtsc/; kernel promotion gated on 2nd consumer.",
+    "g3": "scope_caveats lists (a) toy axisymmetric tape proxy, (b) 2-D not 3-D coupled, (c) hexa-native port absent."
+  },
+  "hexa_lang_sha": "44515e67fe125aa71f682722b9f4944c947ad98b",
+  "demiurge_sha": "f64e23bdff4c194113e5db0ca5d20dd693636e5a"
+}

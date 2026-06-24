@@ -1,0 +1,12 @@
+RhPb Gamma-point phonon (dynamical stability gate)
+&inputph
+  prefix    = 'rhpb'
+  outdir    = './out'
+  fildyn    = 'rhpb_gamma.dyn'
+  tr2_ph    = 1.0d-14
+  ldisp     = .false.
+  trans     = .true.
+  amass(1)  = 102.906
+  amass(2)  = 207.200
+/
+0.0 0.0 0.0

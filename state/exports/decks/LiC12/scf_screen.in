@@ -1,0 +1,49 @@
+&CONTROL
+  calculation     = 'scf'
+  prefix          = 'lic12'
+  outdir          = './out'
+  pseudo_dir      = './pseudo'
+  verbosity       = 'high'
+  tstress         = .true.
+  tprnfor         = .true.
+/
+&SYSTEM
+  ibrav           = 0
+  nat             = 13
+  ntyp            = 2
+  ecutwfc         = 60
+  ecutrho         = 480
+  nosym           = .false.
+  occupations     = 'smearing'
+  smearing        = 'mp'
+  degauss         = 0.01
+/
+&ELECTRONS
+  conv_thr        = 1.0d-10
+  mixing_beta     = 0.3
+  diagonalization = 'david'
+  electron_maxstep = 400
+/
+CELL_PARAMETERS angstrom
+  -2.139568380  -3.705839640   0.000000000
+  -2.139568380   3.705839640   0.000000000
+  -0.000000000   0.000000000  -7.026965260
+ATOMIC_SPECIES
+  Li     6.941  Li.pbe-s-rrkjus_psl.1.0.0.UPF
+  C     12.011  C.pbe-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal
+  Li   0.000000000  0.000000000  0.000000000
+  C    0.333180530  0.000000000  0.264470310
+  C    0.666819470  0.666819470  0.264470310
+  C    0.000000000  0.333180530  0.264470310
+  C    0.666819470  0.000000000  0.264470310
+  C    0.333180530  0.333180530  0.264470310
+  C    0.000000000  0.666819470  0.264470310
+  C    0.666819470  0.000000000  0.735529690
+  C    0.333180530  0.333180530  0.735529690
+  C    0.000000000  0.666819470  0.735529690
+  C    0.333180530  0.000000000  0.735529690
+  C    0.666819470  0.666819470  0.735529690
+  C    0.000000000  0.333180530  0.735529690
+K_POINTS automatic
+  8 8 6  0 0 0

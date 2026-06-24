@@ -1,0 +1,50 @@
+&CONTROL
+  calculation   = 'scf'
+  prefix        = 'kappa_h3'
+  outdir        = './out'
+  pseudo_dir    = './pseudo'
+  verbosity     = 'high'        ! d_deck_always: high verbosity (band/projwfc downstream)
+  tprnfor       = .true.
+  tstress       = .true.
+/
+&SYSTEM
+  ibrav         = 0             ! C2/c monoclinic — CELL_PARAMETERS given explicitly
+  nat           = 220           ! Z=4 x 55 (C24 H15 O4 S12) — REQUIRES CCDC coords (paywalled; see README)
+  ntyp          = 4
+  ecutwfc       = 60.0          ! NC; 12 S/cell -> raise+converge. (USPP: 40/320)
+  ecutrho       = 480.0
+  occupations   = 'smearing'    ! d15 small-gap aid (Mott near-gap; doped metal target)
+  smearing      = 'gaussian'
+  degauss       = 0.01          ! d15: smear 0.01
+  vdw_corr      = 'grimme-d3'   ! d12-analogue: molecular solid needs dispersion
+/
+&ELECTRONS
+  conv_thr      = 1.0d-7
+  mixing_beta   = 0.3           ! d15: damp for soft SCF
+  mixing_mode   = 'local-TF'
+  electron_maxstep = 400        ! d15: maxiter 400
+  diagonalization = 'david'
+/
+! ----------------------------------------------------------------------------
+! ATOMIC_SPECIES — masses verified (d_deck_always: correct atomic masses)
+ATOMIC_SPECIES
+  C   12.011   C.pbe-n-kjpaw_psl.1.0.0.UPF
+  H    1.008   H.pbe-kjpaw_psl.1.0.0.UPF
+  O   15.999   O.pbe-n-kjpaw_psl.1.0.0.UPF
+  S   32.060   S.pbe-n-kjpaw_psl.1.0.0.UPF
+! d13: grep ./pseudo for C/H/O/S coverage before firing.
+! ----------------------------------------------------------------------------
+! CELL_PARAMETERS from arXiv:1408.3162 (C2/c, 50 K): a=29.43 b=8.36 c=11.13, beta=100.92
+CELL_PARAMETERS (angstrom)
+  29.4300   0.0000   0.0000
+   0.0000   8.3600   0.0000
+  -2.1140   0.0000  10.9277      ! c*sin/cos(beta): cx=c*cos(beta)=-2.114, cz=c*sin(beta)=10.928
+! ----------------------------------------------------------------------------
+! ATOMIC_POSITIONS — *** PLACEHOLDER: needs the CCDC CIF coords (Isono NatComm 4,1344 /
+! Ueda JACS ja507132m SI; both paywalled). Resume: pull the CIF, expand C2/c Z=4 to 220 atoms,
+! paste fractional coords here. The bridge proton H_bridge is the frozen-phonon scan atom. ***
+ATOMIC_POSITIONS (crystal)
+! C  x y z  (x24 x Z) ... H ... O ... S ...  <-- FILL FROM CIF
+! ----------------------------------------------------------------------------
+K_POINTS (automatic)
+  2 6 4 0 0 0          ! coarse for a 29.4-A monoclinic cell; converge k before DFPT

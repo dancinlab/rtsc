@@ -1,0 +1,42 @@
+&CONTROL
+  calculation     = 'scf'
+  prefix          = 'rhpb'
+  outdir          = './out'
+  pseudo_dir      = './pseudo'
+  verbosity       = 'high'
+  tstress         = .true.
+  tprnfor         = .true.
+/
+&SYSTEM
+  ibrav           = 0
+  nat             = 6
+  ntyp            = 2
+  ecutwfc         = 70
+  ecutrho         = 560
+  nosym           = .false.
+  occupations     = 'smearing'
+  smearing        = 'mp'
+  degauss         = 0.02
+/
+&ELECTRONS
+  conv_thr        = 1.0d-9
+  mixing_beta     = 0.3
+  diagonalization = 'david'
+  electron_maxstep = 400
+/
+CELL_PARAMETERS angstrom
+   5.714895000   0.000000000   0.000000000
+  -2.857447000   4.949246000   0.000000000
+   0.000000000   0.000000000   4.464798000
+ATOMIC_SPECIES
+  Rh   102.906  Rh.pbe-spn-rrkjus_psl.1.0.0.UPF
+  Pb   207.200  Pb.pbe-dn-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal
+  Rh   0.000000000  0.500000000  0.000000000
+  Rh   0.500000000  0.500000000  0.000000000
+  Rh   0.500000000  0.000000000  0.000000000
+  Pb   0.666667000  0.333333000  0.500000000
+  Pb   0.333333000  0.666667000  0.500000000
+  Pb   0.000000000  0.000000000  0.000000000
+K_POINTS automatic
+  10 10 10  0 0 0

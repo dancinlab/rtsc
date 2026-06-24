@@ -1,0 +1,73 @@
+{
+  "domain": "rtsc",
+  "verb": "verify",
+  "kind": "solenoid_axisym_linear",
+  "stamp": "20260521T060621Z",
+  "axes": {
+    "device": "solenoid",
+    "conductor": "rebco_hts_linear_mu1",
+    "solver": "getdp",
+    "verb": "verify",
+    "formulation": "magstat_a_axisym_linear"
+  },
+  "geometry": {
+    "length_m": 0.2,
+    "inner_radius_m": 0.03,
+    "outer_radius_m": 0.055,
+    "turns": 120,
+    "current_A": 100.0,
+    "j_phi_A_per_m2": 2399999.9999999995
+  },
+  "headline": {
+    "B_center_T": 0.06842192986756554,
+    "B_max_on_axis_T": 0.06842192986756554,
+    "inductance_H": 0.00034019521475759127,
+    "stored_energy_J": 1.7009760737879565
+  },
+  "closed_form": {
+    "B_center_T": 0.06939131645521658,
+    "B_max_on_axis_T": 0.06939131645521658,
+    "inductance_H": 0.0004309899861025547,
+    "stored_energy_J": 2.1549499305127737,
+    "formula": "lorenz_finite_solenoid + wheeler_1928_inductance"
+  },
+  "fem": {
+    "B_center_T": 0.06842192986756554,
+    "Bz_center_T": 0.0,
+    "B_max_on_axis_T": 0.06842192986756554,
+    "stored_energy_J": 1.7009760737879565,
+    "inductance_H": 0.00034019521475759127,
+    "solver": "getdp@/Users/ghost/local/getdp/getdp-3.5.0-MacOSX/bin/getdp",
+    "mesher": "gmsh@/opt/homebrew/bin/gmsh",
+    "formulation": "magstat_a_axisym_linear_isotropic"
+  },
+  "cross_check": {
+    "B_center_closed_form_T": 0.06939131645521658,
+    "B_center_fem_T": 0.06842192986756554,
+    "rel_delta": -0.013969854402123347,
+    "rel_delta_pct": -1.3969854402123347,
+    "L_closed_form_H": 0.0004309899861025547,
+    "L_fem_H": 0.00034019521475759127,
+    "L_rel_delta_pct": -21.066561700428625
+  },
+  "measurement_gate": "GATE_OPEN",
+  "absorbed": false,
+  "gate_type": "hexa-native-absent",
+  "provisional": true,
+  "producer": "getdp_hts.py@5axis_v1",
+  "scope_caveats": [
+    "(s1) Linear magnetostatic \u2014 HTS critical-state / quench / E-J power law not modelled.",
+    "(s2) 2-D axisymmetric \u2014 leads, support, 3-D return paths absent.",
+    "(s3) \u03bc_r=1 assumed \u2014 HTS magnetization (M \u2260 0), persistent current, shielding currents not captured.",
+    "(s4) Procedural geometry \u2014 `htsSolenoidProxy` from RtscGeometry.swift, not a sourced/measured coil. absorbed=false, GATE_OPEN."
+  ],
+  "citations": [
+    "Lorenz 1879 \u2014 finite solenoid on-axis B closed form.",
+    "Wheeler 1928 \u2014 single-layer air-core solenoid inductance formula.",
+    "arxiv:0811.2883 \u2014 Pecher/Sirois 3-D FEM HTS magnetization (HTS-grade reference).",
+    "GetDP \u2014 get-dp.org (Geuzaine, U. Li\u00e8ge, Gmsh pair).",
+    "HTS Modelling Workgroup \u2014 htsmodelling.com."
+  ],
+  "skipped_reason": null,
+  "kernel_note": "em-kernel-promotion candidate (2nd rtsc-EM consumer with pyfemm)"
+}

@@ -1,0 +1,18 @@
+GaNb4S8 Gamma-point DFPT phonons (breathing-mode Omega + el-ph) — lacunar spinel
+&inputph
+  prefix = 'ganb4s8'
+  outdir = './out'
+  fildyn = 'ganb4s8.dyn'
+  fildvscf = 'dvscf'
+  ldisp = .false.
+  trans = .true.
+  epsil = .false.
+  tr2_ph = 1.0d-14
+  alpha_mix(1) = 0.3
+  nmix_ph = 8
+  electron_phonon = 'simple'
+  el_ph_sigma = 0.005
+  el_ph_nsigma = 10
+  fildvscf = 'dvscf'
+/
+0.0 0.0 0.0

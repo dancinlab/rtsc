@@ -1,0 +1,9 @@
+[q7-s3 02:39:50] ssh up
+[q7-s3 02:40:10] qe kicked
+Warning: Permanently added '[ssh6.vast.ai]:13340' (ED25519) to the list of known hosts.
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+[q7-s3 02:41:28] stage ok
+[q7-s3 02:41:33] qe ready
+F
+[q7-s3 02:41:41] FIRED q7 irr59-87

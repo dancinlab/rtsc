@@ -1,0 +1,22 @@
+{
+  "material": "Mg2PtH6",
+  "structure": "X2MH6 Fm-3m antifluorite (K2PtCl6), 9-atom",
+  "verdict": "KNOWN — novelty gate FAILED (d_novel_only)",
+  "date": "2026-06-19",
+  "prior_art": {
+    "ref": "arXiv:2604.04151",
+    "title": "Disentangling electronic and phononic contributions to high-temperature superconductivity in X2MH6 hydrides",
+    "authors": "Feng Zheng et al (10 authors)",
+    "posted": "2026-04-05",
+    "journal": "ScienceDirect S2542529326000805",
+    "reported_Tc_Mg2PtH6": "108 K (full el-ph, ambient)"
+  },
+  "our_progress_before_stop": {
+    "metal_gate": "PASS (DOS@EF=1.611 states/eV/cell, EF=12.0158 eV)",
+    "d6_gamma_stability": "PASS (dyn1 Γ: lowest mode 18.13 cm-1, NO imaginary modes)",
+    "phonon_run": "2x2x2 q on summer free pool, q1(Γ) done+stable, STOPPED at q2 when prior-art found",
+    "reason_stopped": "arXiv:2604.04151 already computed Mg2PtH6 full-BZ el-ph Tc=108K — continuing = reproduction (d_novel_only avoid-target)"
+  },
+  "family_closure": "X2MH6 (Mg2PtH6/PdH6/IrH6) + M3XH8 (Mg3OsH8~73K jpcc.5c00513 · AcRhH8>77K advs.202512696) + MXH3 (SrAuH3 2412.15488) ALL PUBLISHED 2024-2026 high-throughput. Ambient-pressure hydride el-ph space SATURATED.",
+  "pivot": "Non-hydride flat-band kagome with UNPUBLISHED el-ph lambda: NbRu3 (Cu3Au kagome, NM, no published lambda), YCr6Ge6 (kagome flat-band@EF ARPES-confirmed 1906.07140, paramagnetic). Carbonitride residue: TaC1-xNx / HEC-HEN DFPT lambda."
+}

@@ -1,0 +1,11 @@
+[dft-run] deck: wave2_fire/MgBeH8
+  relax        : found (vc-relax.in)
+  ph.in        : found
+  scf          : found (whole scf.in — auto-split at ATOMIC_POSITIONS)
+[dft-run] ① rent guard: offers `verified=true rentable=true reliability>0.97 cpu_cores_effective>=16 inet_down>=200` + create --direct
+[dft-run] ③ no local relax.out (the relax stage produces it on the pod).
+[dft-run] ① RENT — searching verified offers...
+[dft-run] picked offer 28705786
+[dft-run] created + registered instance 38552651
+[dft-run] ② transport: direct_endpoint: 22/tcp HostPort not yet mapped for 38552651
+[dft-run] instance 38552651 kept + tracked (cloud list); not auto-destroyed.

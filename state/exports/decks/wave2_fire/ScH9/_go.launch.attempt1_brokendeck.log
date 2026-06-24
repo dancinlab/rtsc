@@ -1,0 +1,61 @@
+[dft-run] deck: wave2_fire/ScH9
+  relax        : found (vc-relax.in)
+  ph.in        : found
+  scf          : found (whole scf.in — auto-split at ATOMIC_POSITIONS)
+[dft-run] ① rent guard: offers `verified=true rentable=true reliability>0.97 cpu_cores_effective>=16 inet_down>=200` + create --direct
+[dft-run] ③ no local relax.out (the relax stage produces it on the pod).
+[dft-run] ① RENT — searching verified offers...
+[dft-run] picked offer 30076445
+[dft-run] created + registered instance 38552653
+[dft-run] ② direct endpoint 93.91.156.99:45243 (identity /Users/ghost/.ssh/id_vast_anima)
+[dft-run] ① reachability OK
+[dft-run] ③ -np=112 (phys cores)
+[dft-run] ③ provision QE (apt quantum-espresso if pw.x absent)...
+[dft-run] ③ provision OK — pw.x + mpirun present
+[dft-run] ③ pseudo fetch (UPF → ./pseudo from QE PSL server)...
+[dft-run] ③ pseudo OK — UPFs in ./pseudo
+[dft-run] ③ relax (vc-relax.in, timeout 24h)...
+[dft-run] relax stage: remote exit 1
+[dft-run] ── relax.out tail ──
+
+     Program PWSCF v.6.7MaX starts on 30May2026 at  9:46:21 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on   112 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =     112
+     Reading input from vc-relax.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+
+mkdir fail: [2] No such file or directory
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     Error in routine check_tempdir (1):
+     temporary directory /root/ScH9/out/ cannot be created or accessed
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+     stopping ...
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 48 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+[79ea7e66219f:01049] 111 more processes have sent help message help-mpi-api.txt / mpi-abort
+[79ea7e66219f:01049] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[dft-run] ── end ──
+[dft-run] ④ teardown: destroying instance 38552653

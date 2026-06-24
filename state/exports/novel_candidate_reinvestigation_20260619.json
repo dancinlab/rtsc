@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-19",
+  "method": "d_novel_only / d18 — re-investigate EACH picked candidate for prior-art BEFORE firing compute (lesson: mg2pth6 looked novel, was published 108K)",
+  "reinvestigated": [
+    {"cand": "Mg2PtH6", "verdict": "PUBLISHED", "ref": "arXiv:2604.04151 (full el-ph, Tc=108K)", "status": "avoid"},
+    {"cand": "Mg3OsH8 / M3XH8", "verdict": "PUBLISHED", "ref": "jpcc.5c00513 (Tc~73K, 29 stable of 390)", "status": "avoid"},
+    {"cand": "AcRhH8 / AXH8", "verdict": "PUBLISHED", "ref": "advs.202512696 2025-09-04 (Tc>77K)", "status": "avoid"},
+    {"cand": "SrAuH3 / MXH3", "verdict": "PUBLISHED", "ref": "arXiv:2412.15488", "status": "avoid"},
+    {"cand": "NbRu3 (Cu3Au kagome)", "verdict": "PUBLISHED", "ref": "jpcc.4c05026 MRu3 (M=V,Nb,Ta) full el-ph, Tc~9.8K", "status": "avoid — re-investigation killed the pick"},
+    {"cand": "YCr6Ge6 (kagome flat-band@EF)", "verdict": "UNPUBLISHED el-ph, but NO SC reported; paramagnetic flat-band", "ref": "arXiv:1212.1976,1906.07140 (kagome metal/ARPES, NOT superconductivity)", "status": "open — likely CLOSED-NEGATIVE (flat-band correlated/magnetic, not conventional el-ph SC)"}
+  ],
+  "meta_finding": "Ambient-pressure CONVENTIONAL el-ph superconductor candidate space (binary/ternary hydrides + kagome intermetallics + carbonitrides) is SATURATED by the 2024-2026 high-throughput DFPT screening wave. Every clean high-Tc pick re-investigates to PUBLISHED. d_novel_only depletion confirmed (matches ARCHITECTURE novel_candidates_survey DEPLETION note).",
+  "breakthrough_paths_d2": [
+    "(a) YCr6Ge6 closed-negative — compute lambda, RULE OUT conventional SC in a flat-band@EF magnet (genuine unpublished Delta, even if negative)",
+    "(b) PIVOT axis — flat-band CORRELATION enhancement beyond conventional BCS (ARCHITECTURE note: room-temp needs a SEPARATE lever, not DFPT lambda)",
+    "(c) Off-screen stoichiometry / defect / interface el-ph NOT covered by bulk high-throughput screens",
+    "(d) qe-parity from-scratch QFORGE el-ph (method novelty, not material novelty) — parallel track"
+  ]
+}

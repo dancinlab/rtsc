@@ -1,0 +1,38 @@
+&control
+  calculation = 'scf'
+  prefix = 'bk_up003'
+  outdir = './out_fp'
+  pseudo_dir = './pseudo'
+  verbosity = 'high'
+/
+&system
+  ibrav = 4
+  celldm(1) = 6.474450
+  celldm(3) = 5.838710
+  nat = 6
+  ntyp = 1
+  ecutwfc = 50
+  ecutrho = 400
+  assume_isolated = '2D'
+  nbnd = 24
+  occupations = 'smearing'
+  smearing = 'mp'
+  degauss = 0.02
+/
+&electrons
+  conv_thr = 1.0d-9
+  mixing_beta = 0.3
+  mixing_mode = 'local-TF'
+  electron_maxstep = 400
+/
+ATOMIC_SPECIES
+  B 10.811 B.pbe-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS crystal
+  B 0.50291875 0.00583749 0.44877918
+  B -0.00583749 0.49708125 0.44877918
+  B 0.50291875 0.49708125 0.44877918
+  B 0.50000000 0.00000000 0.55122082
+  B 0.00000000 0.50000000 0.55122082
+  B 0.50000000 0.50000000 0.55122082
+K_POINTS automatic
+  18 18 1 0 0 0

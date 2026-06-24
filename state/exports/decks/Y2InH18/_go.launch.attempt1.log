@@ -1,0 +1,61 @@
+[dft-run] deck: Y2InH18
+  relax        : found (vc-relax.in)
+  ph.in        : found
+  scf          : found (whole scf.in — auto-split at ATOMIC_POSITIONS)
+[dft-run] ① rent guard: offers `verified=true rentable=true reliability>0.97 cpu_cores_effective>=16 inet_down>=200` + create --direct
+[dft-run] ③ no local relax.out (the relax stage produces it on the pod).
+[dft-run] ① RENT — searching verified offers...
+[dft-run] picked offer 33945597
+[dft-run] created + registered instance 38551493
+[dft-run] ② direct endpoint 52.10.135.190:42901 (identity /Users/ghost/.ssh/id_vast_anima)
+[dft-run] ① reachability OK
+[dft-run] ③ -np=96 (phys cores)
+[dft-run] ③ provision QE (apt quantum-espresso if pw.x absent)...
+[dft-run] ③ provision OK — pw.x + mpirun present
+[dft-run] ③ pseudo fetch (UPF → ./pseudo from QE PSL server)...
+[dft-run] ③ pseudo OK — UPFs in ./pseudo
+[dft-run] ③ relax (vc-relax.in, timeout 24h)...
+[dft-run] relax stage: cloud_exec: ssh transport failure (exit 255) — host unreachable (connection refused / timeout / auth / changed host key). The pod may be alive and billing but not accepting SSH — a vast.ai/RunPod transport outage. Stop retrying; verify reachability or tear the pod down. · ssh stderr: client_loop: send disconnect: Broken pipe
+[dft-run] ── relax.out tail ──
+        15           H   tau(  15) = (  -0.7500000   0.7500000   0.8750000  )
+        16           H   tau(  16) = (  -0.1250000   0.2500000   0.2500000  )
+        17           H   tau(  17) = (  -0.8750000   0.7500000   0.7500000  )
+        18           H   tau(  18) = (  -0.2500000   0.1250000   0.2500000  )
+        19           H   tau(  19) = (  -0.7500000   0.8750000   0.7500000  )
+        20           H   tau(  20) = (  -0.2500000   0.2500000   0.5000000  )
+        21           H   tau(  21) = (  -0.2500000   0.5000000   0.2500000  )
+
+     number of k points=   868  Methfessel-Paxton smearing, width (Ry)=  0.0100
+
+     Number of k-points >= 100: set verbosity='high' to print them.
+
+     Dense  grid:   101549 G-vectors     FFT dimensions: (  72,  72,  72)
+
+     Smooth grid:    25749 G-vectors     FFT dimensions: (  45,  45,  45)
+
+     Estimated max dynamical RAM per process >      32.42 MB
+
+     Estimated total dynamical RAM >       3.04 GB
+
+     Initial potential from superposition of free atoms
+
+     starting charge   52.98794, renormalised to   53.00000
+     Starting wfcs are   53 randomized atomic wfcs
+
+     total cpu time spent up to now is       52.1 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=    80.00 Ry     beta= 0.30
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations =  3.7
+
+     total cpu time spent up to now is      178.5 secs
+
+     total energy              =    -300.88631657 Ry
+     estimated scf accuracy    <       4.34493907 Ry
+
+     iteration #  2     ecut=    80.00 Ry     beta= 0.30
+     Davidson diagonalization with overlap
+[dft-run] ── end ──
+[dft-run] ④ teardown: destroying instance 38551493
