@@ -4,6 +4,26 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_015 — first REAL ab-initio DFT verdict for the +@ trilayer (electron-opacity half)**
+  (`🟢 REAL-DFT`, summer pool). Promoted the H_009/H_011 closed-form decay-length opacity knob to
+  a real finite-cell test: a **graphene / hBN(n) / graphene** heterostructure (the clean lattice-
+  matched proxy for metal/spacer/metal), n = 0,1,2,3, built with a stdlib deck generator (ASE not
+  on summer). Method: **Quantum ESPRESSO pw.x v7.2**, PBE + **Grimme-D3** vdW, 50/400 Ry,
+  **12×12×1** k-mesh, `{C,B,N}.pbe-n-kjpaw_psl.0.1` PAW pseudos; common in-plane **a = 2.48 Å**
+  (graphene 2.461 Å, hBN 2.504 Å — **1.75 % mismatch recorded honestly**), d = 3.35 Å, 14 Å vacuum.
+  **Toolchain block resolved honestly:** the host's apt `pw.x v6.7MaX` aborts on EVERY input with a
+  glibc `__snprintf_chk` *"buffer overflow detected"* (fortify packaging bug, independent of
+  input/pseudo/vdW/MPI) — so QE 7.2 was **built from source** on summer (system BLAS/LAPACK/FFTW,
+  serial gfortran); the same deck then runs clean (`JOB DONE.`). All 4 SCF converged.
+  **Result (`projwfc` Löwdin + pz PDOS):** the hBN spacer suppresses interlayer electronic coupling
+  — the **graphene Dirac-point residual pz DOS drops 7.7×** from direct contact (n0 = 0.0472) to one
+  hBN layer (n1 = 0.0061), then **plateaus** at the isolated-graphene floor (n2/n3 ≈ 0.0053); the
+  **hBN spacer-interior pz DOS at E_F per atom decays monotonically** (0.00249 → 0.00160 → 0.00108);
+  the two graphene layers stay charge-symmetric (|imbalance| = 0.0000 e). **4/4 falsifiers.**
+  **Scope (L1):** this verifies the +@ **electron-opacity half ONLY** — the glue-transparent /
+  bosonic-field cross-spacer coupling (H_011) remains a separate, harder cRPA campaign.
+  `absorbed=false`. Artifacts under `state/h015_trilayer_dft_electron_opacity_2026_06_25/`.
+
 - **Fleet — 3 verification lanes** (`/fleet`, via Workflow; each lane wrote+ran a deterministic
   probe, all re-verified by the main loop). **H_016 competing-order ESCAPE** (break-walls vs H_014):
   sweeping the frustration knob eta_nest 0.85->0.10 flips the SDW-vs-SC race at a critical eta*=0.45
