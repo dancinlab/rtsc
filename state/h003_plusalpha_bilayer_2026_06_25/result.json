@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "single_host_in_box": false,
+    "eta_star": 0.73,
+    "omega_eff_ideal_meV": 130.0,
+    "g_eff_ideal": 2.87,
+    "ideal_interface_in_box": true,
+    "generic_interface_in_box": false,
+    "critical_electron_cost": 0.415,
+    "bkt_tc_ideal_K": 59.3,
+    "room_T_K": 293.0
+  },
+  "falsifiers": [
+    {
+      "name": "F1_split_opens_box",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F2_generic_stays_closed",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F3_relocates_not_removes",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F4_glue_imported",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F5_bounds",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F6_no_fabrication",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true
+}
