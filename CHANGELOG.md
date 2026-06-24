@@ -4,6 +4,39 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_026 — INFRA ROOT-CAUSE FIX (self-built QE 7.2 rebuilt WITH MPI on `summer`) + Ta2NiSe5
+  monoclinic gap re-run under genuine 6-core parallelism. 🟡 REAL-DFT.**
+  `HYPOTHESES/cards/H_026_qe_mpi_ta2nise5_gap.md`, artifacts in
+  `state/h026_qe_mpi_ta2nise5_gap_2026_06_25/`.
+  - **The substrate root-cause that silently crippled EVERY campaign DFT (H_015→H_025) is FIXED.**
+    H_025 had measured that the canonical `~/qe_build/q-e-qe-7.2/bin/pw.x` was a **SERIAL** build
+    (`make.inc` `MPIF90=gfortran`, `DFLAGS=-D__FFTW` only, no `-D__MPI`; banner "Serial version"), so
+    every prior `mpirun -np 12 pw.x` launched **12 redundant serial copies on 1 core each** — the true
+    tractability wall behind every "won't converge in budget" DFT. Root cause: OpenMPI 4.1.6 *runtime*
+    was already present on summer, but the linkable dev package (`libopenmpi-dev`, providing the `.so`
+    symlinks the `mpif90` wrapper references) was missing, so `./configure` silently fell back to
+    "serial executables". Fix (all FREE): `sudo apt-get install -y libopenmpi-dev` →
+    `./configure MPIF90=mpif90 --enable-parallel` ("Parallel environment detected successfully") →
+    `make clean && make pw -j12`. Verbatim after: `make.inc` `DFLAGS = -D__FFTW -D__MPI`; `ldd pw.x`
+    links `libmpi.so.40`; banner under `mpirun -np 4/6` = **"Parallel version (MPI), running on 4/6
+    processors"**. Built in place (canonical build). Recorded in `tool/CLAUDE.md`. (A second, parallel
+    QE 7.5 also exists in the conda env `~/miniforge3/envs/qe/`.)
+  - **Ta2NiSe5 monoclinic gap — HONEST NEGATIVE under PBE-family (now definitive, budget wall removed).**
+    Re-ran the H_025 monoclinic C2/c cell (identical header: vol 701.5 Å³, Ta8Ni4Se20=32, 296 e⁻) via
+    `mpirun -np 6 pw.x -npool 2`, far past the serial-era cut-off. Across THREE recipes — robust plain
+    PBE (17.17→…→1.66 Ry, 14 iter), PBE+U(Ni-3d=3 eV ortho-atomic, Dudarev) (17.91→…→1.10 Ry, 12 iter),
+    and a higher-smearing PBE variant (degauss 0.03; 17.15→…→0.55 Ry, 12 iter) — the SCF breaks the
+    H_019/H_024 Cmcm byte-identical freeze (~28–38× descent, live charge dynamics) but then **OSCILLATES
+    persistently in a ~0.5–1.7 Ry near-metallic plateau and NEVER reaches conv_thr=1e-6**, even with the
+    MPI build running ≫ the serial budget. The plateau is therefore **PHYSICAL, not a compute artifact**:
+    PBE / PBE+U / higher-smearing all leave monoclinic Ta2NiSe5 near-metallic (the gap is many-body /
+    excitonic, absent in these functionals). No converged density → no KS gap → **gap UNRESOLVED-by-us,
+    reported as an honest negative on a PBE-DFT gap** (not fabricated; every residual is verbatim pw.x
+    stdout). The gap is NOT graduated to our-DFT in `tool/rtsc_candidates.py`; the only remaining path is
+    beyond-PBE (HSE/GW/many-body), far beyond 6 cores.
+  - **Trio stays 🟠 jointly-unrealized; absorbed=false / GATE_OPEN** — the infra fix and the honest gap
+    negative flip nothing on the RTSC gate.
+
 - **H_025 — Ta2NiSe5 symmetry-broken (monoclinic C2/c) gap: the LAST deferred per-layer gap of the
   named +@ trio, attacked with the PHYSICALLY-CORRECT cell on the free `summer` host. 🟡 REAL-DFT
   (PARTIAL POSITIVE).** `HYPOTHESES/cards/H_025_ta2nise5_symbroken_gap.md`, artifacts in

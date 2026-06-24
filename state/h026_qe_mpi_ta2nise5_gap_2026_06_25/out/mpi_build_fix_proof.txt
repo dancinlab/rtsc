@@ -1,0 +1,15 @@
+### make.inc (after MPI rebuild)
+DFLAGS         =  -D__FFTW -D__MPI
+MPIF90         = mpif90
+F90           = gfortran
+
+### ldd pw.x (MPI libs linked)
+	libmpi_mpifh.so.40 => /lib/x86_64-linux-gnu/libmpi_mpifh.so.40 (0x00007a7255ef4000)
+	libmpi.so.40 => /lib/x86_64-linux-gnu/libmpi.so.40 (0x00007a7254ece000)
+
+### banner under mpirun -np 4
+     Parallel version (MPI), running on     4 processors
+     MPI processes distributed on     1 nodes
+
+### banner under mpirun -np 6 (real run)
+     Parallel version (MPI), running on     6 processors
