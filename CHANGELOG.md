@@ -4,6 +4,25 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_037 DEFINITIVE verification: real hyperbolic {7,3} XY Monte-Carlo replaces the closed-form proxy
+  — verdict UNCHANGED (confirms-wall).** Built a verified combinatorial {7,3} tiling
+  (`state/h_037_bethe-ceiling-hyperbolic-lattice_2026_06_25/tiling73.py`; degree histogram EXACTLY
+  {2:boundary, 3:interior}, all faces heptagons, Euler-consistent; production patch rings=6, nV=5887)
+  and a Metropolis XY Monte-Carlo (`hyperbolic_xy_mc.py`, numpy+stdlib, deterministic) on it vs a periodic
+  square lattice (L=24) at IDENTICAL bare J. T_c read off BULK sites only (847 bulk of 5887; boundary
+  fraction f_bd=0.856 — empirically confirms the proxy's O(1)-boundary claim) via Binder-cumulant
+  steepest-drop and half-magnetization crossing. Research-before-real: the proxy LEANED on the measured
+  Baek-Minnhagen continuous-XY zero-T-glass; this DERIVES the bulk ordering from our own MC. RESULT:
+  BULK T_c^hyp/T_c^sq = 0.590 (Binder) / 0.463 (half-m) — the bulk hyperbolic T_c is LOWER than square
+  (negative curvature SUPPRESSES bulk ordering; bulk |m| caps ~0.60 then collapses non-monotonically below
+  T≈0.5 — the curvature-frustration glassy signature), far below both the 1.2 honest-null threshold and the
+  1.7 escape threshold. The honest-null is the decisive outcome WITH a real margin (ratio < 1, the opposite
+  of the escape direction); escape is now real-MC-falsified, not just proxy-argued. Frozen pre-registration
+  left intact; card updated in-place with a "## Definitive verification (real hyperbolic XY-MC)" addendum
+  (verbatim MC output + bulk T_c ratio); HYPOTHESES.jsonl H_037 row records the own-compute confirmation.
+  is_green=false, absorbed=false; no material claimed to BE an RTSC; in-silico lever settled.
+  Artifacts: tiling73.py, hyperbolic_xy_mc.py, out_definitive_mc.txt, mc_out_prod.json.
+
 - **H_041 DEFINITIVE verification: real Yukawa-SYK Schwinger-Dyson solve replaces the closed-form proxy
   — verdict UNCHANGED (confirms-wall).** Built an actual self-consistent Eliashberg-SYK Matsubara solver
   (`state/h_041_planckian-yukawa-syk_2026_06_25/sd_solver.py` + `run_definitive.py`, numpy, deterministic):
