@@ -4,6 +4,17 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Full SF-seed triage — wall undefeated but SF-escape space NOT closed (PR pending).** Triaged ALL 140
+  existing SF seeds (89 new pool + ~50 older d6 brainstorm) vs the frozen ~134-164K phase-stiffness wall:
+  56 already-carded, 32 pre-satisfied-by-freeze, 16 pure-SF, 7 pressure-hydride (different axis), 4
+  lab-handoff, and **25 genuinely-new in-silico escapes that remain UN-PROBED** (state/sf_seed_full_triage_2026_06_25/).
+  The freeze was measured on Q=0 / single-particle-flat / crystalline / quasiparticle-coherent / equilibrium
+  hosts; the 25 each violate exactly one premise (braiding-statistics, hyperbolic/quasicrystal connectivity,
+  SYK/non-quasiparticle stiffness, light negative-U pairs, static Coulomb-sign-flip, altermagnet spin-group,
+  flux/interference flat bands, FFLO finite-Q, disorder geometry) -> honest-null genuinely un-run. Honest
+  ruling: the wall stands undefeated, but the SF-escape space is NOT closed; ~25 wave-2 micro-experiments
+  remain as live leads. Corrects the earlier "tested against 4 escapes and held" to its honest scope.
+  absorbed=false / GATE_OPEN.
 - **micro-exp wave-1: 4 SF-shortlist wall-escape probes — ALL confirm-wall (PR pending).** Built+fired
   4 deterministic closed-form harness probes (honest-null falsifiers) for the SF-imagination shortlist's
   orthogonal phase-stiffness escape classes; all byte-equal x2, verbatim verdicts; cards H_032-H_035,

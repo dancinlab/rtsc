@@ -82,7 +82,18 @@ Not a single no-go theorem — a constellation, each precisely characterized:
    eigenstates / dissipative dark states, not an ambient 293 K equilibrium bulk SC; (d) **Amperean
    current-current glue** (H_035) — transverse-gauge coupling is (v_F/c)²-suppressed and favors competing
    finite-q pairing. ALL FOUR **confirm-wall** (closed-negative). The ceiling is no longer just
-   "measured on cuprates" — it has been tested against its four structural escapes and held.
+   "measured on cuprates" — it has been tested against four structural escapes and held.
+   **Honest scope correction (full SF-seed triage, `state/sf_seed_full_triage_2026_06_25/`):** the 4
+   probed escapes are NOT the whole space. Triaging ALL 140 existing SF seeds (89 new + ~50 older d6)
+   gave 56 already-carded, 32 pre-satisfied-by-freeze, 16 pure-SF, 7 pressure-hydride (a different axis),
+   4 lab-handoff — and **25 genuinely-new in-silico escapes that remain UN-PROBED**. The freeze's
+   geometric-stiffness verdict was measured on Q=0 / single-particle-flattened / crystalline /
+   quasiparticle-coherent / equilibrium hosts; each of the 25 deliberately violates exactly one of those
+   five premises (braiding-statistics, hyperbolic/quasicrystal connectivity, non-quasiparticle SYK
+   stiffness, light real-space negative-U pairs, static Coulomb-sign-flip, altermagnet spin-group pairing,
+   flux/interference-decoupled flat bands, FFLO finite-Q, disorder-induced geometry), so its honest-null is
+   genuinely un-run, not already-implied. **Honest ruling: the wall stands undefeated, but the SF-escape
+   space is NOT closed — ~25 clean wave-2 micro-experiments remain, each a live lead.** absorbed=false.
 
 ## 5. Lenses that did not rescue it
 
