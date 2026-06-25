@@ -1,0 +1,982 @@
+[
+ {
+  "name": "Chern-Simons Stiffness Pump (anyon statistical rigidity)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Statistical-gauge-field stiffness (composite-fermion polarizability) is a glue-free D_s source NOT among the 5 boson families nor H_032-035; honest-null is not pre-satisfied by the freeze and is closed-form ED-testable, though the FQAH host is exotic.",
+  "probe_sketch": "Doped-FQAH composite-fermion model at level k (theta=pi/k): compute D_s via the Chern-Simons response D_s = (chi_CF * sigma_xy^2)/(1+chi_CF*Pi) from composite-fermion compressibility chi_CF and polarizability Pi(q->0) using flatchern_pair_ed.py + kubo_pair_stiffness.py on a small lattice. Wall-prediction: there is a (filling, k) window where D_s > (2/pi)k_B*164K at fixed n. HONEST-NULL: D_s collapses back onto the Uemura/boson-limited line D_s ~ |U|*nu(1-nu)<g> for ALL k (the CS gauge field renormalizes to zero net stiffness), i.e. composite-fermion polarizability does not survive as physical phase rigidity."
+ },
+ {
+  "name": "Z_N Parafermion Charge-Ne Condensate (high-rigidity multi-charge order)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "The (Ne)^2 stiffness prefactor is the same donation-vs-density-penalty structure H_032 already settled: the no-go/fractionalization cap eats the gain; charge-Ne also has no ambient-equilibrium host, so it re-confirms the wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Statistical-Transmutation Fluctuation Trap-Breaker",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Targets the 'order traps' HALF of the meta-law via defect-braiding statistics (not the glue half) \u2014 a lever no card touches (H_032-035 all attack the stiffness/glue side); closed-form SC-vs-trap free-energy crossing is ED-testable and its honest-null is not pre-satisfied.",
+  "probe_sketch": "Two-channel (SC + CDW/SDW) attractive-extended-Hubbard ED with an added Chern-Simons flux-attachment term at statistical angle theta. Compute F_SC(theta) - F_trap(theta) (free-energy crossing) and the SC phase-ordering T over a theta-sweep. Wall-prediction: a theta-window exists where SC wins (and T_SC > the theta=0 trap-limited ceiling) where it lost at theta=0. HONEST-NULL: flux attachment shifts F_SC and F_trap by EQUAL amounts for all theta (no relative gain) \u2014 the braiding statistics renormalizes the SC and trap channels identically, so the trap-limited ceiling is unmoved."
+ },
+ {
+  "name": "Non-Abelian Vortex Entanglement Rigidity (braiding-protected phase coherence)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Majorana/non-abelian vortices as a coherence lever fall under the closed-negative topology-as-independent-lever ruling (H_012/H_013); the BKT vortex-pair degeneracy almost certainly contributes zero/entropic free energy \u2014 topology bought a gap, never phase rigidity.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Bethe-Ceiling Lattice (negative-curvature stiffness ladder)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Mermin-Wagner FAILURE on hyperbolic graphs replaces BKT (z=1, log vortex unbinding) with a mean-field crossing at fixed D_s \u2014 a connectivity-geometry universality change distinct from H_033's z=2 (dynamics) and directly XY-MC testable; honest-null not pre-satisfied.",
+  "probe_sketch": "Classical XY model (Cooper-pair phase field) Monte-Carlo on a {7,3} or {5,4} hyperbolic tiling vs a square lattice at IDENTICAL bare stiffness J (the J giving square-lattice T_BKT=134K). Compute T_c(J) on both. Wall-prediction: T_c^hyperbolic / T_c^square >= 1.7 at matched J (vortex entropy can no longer compensate vortex energy on an exponentially-growing graph). HONEST-NULL: T_c^hyperbolic <= 1.2x T_c^square \u2014 boundary-dominated finite-size effects / the negative curvature does NOT lift the bulk ordering temperature, BKT-like physics survives at matched D_s."
+ },
+ {
+  "name": "Moire-of-Moire Stiffness Cascade (hierarchical-scale phase rigidity)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Still routes coherence through the flat-band D_s the freeze capped; the ln(L2/L1) vortex-core enhancement multiplies the SAME glue-limited D_s in T_BKT~(pi/2)D_s, so it re-confirms the stiffness magnitude wall rather than escaping it.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Synthetic-Dimension Coordination Pump (extra hopping axis without extra space)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Claims to DECOUPLE flat-band pairing from stiffness-coordination by adding Josephson neighbors in an internal index \u2014 a structurally different escape from the 3D count (H_006) and multilayer-D_s; the quantum-metric no-go may or may not bind on a synthetic axis, so the honest-null is genuinely open and ED-testable.",
+  "probe_sketch": "Attractive-Hubbard BdG on a 2D flat band with an attached N-rung synthetic dimension (internal index, uniform synthetic hopping t_s), real-space flatness held fixed. Compute Kubo D_s(N) via kubo_pair_stiffness.py while monitoring the real-space quantum metric. Wall-prediction: D_s(N) ~ D_s(1)*(1+c(N-1)), c>0, with real-space <g> unchanged, so T_BKT clears 164K for N>=3. HONEST-NULL: D_s is pinned by the single-band minimal-quantum-metric bound regardless of N (synthetic neighbors do not contribute to the PHYSICAL Kubo phase rigidity, only to an internal-index susceptibility) \u2014 D_s(N) saturates at D_s(1), reproducing the freeze."
+ },
+ {
+  "name": "Aperiodic / Quasicrystal Vortex Localizer (no Goldstone soft mode to disorder phase)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Multifractal vortex pinning + absence of a clean q->0 Goldstone mode attacks the vortex-disordering channel (not D_s) on an aperiodic host \u2014 a mechanism the campaign never enumerated; attractive-Hubbard on a Penrose tiling is directly ED/MC-testable and the honest-null is not pre-satisfied.",
+  "probe_sketch": "Attractive-Hubbard ED/BdG on an Ammann-Beenker or Penrose tiling vs a periodic lattice of EQUAL mean coordination and EQUAL pairing; extract D_s and the vortex-unbinding (BKT) T from twisted-boundary / vortex-fugacity Monte-Carlo. Wall-prediction: T_c^quasicrystal >= 1.2x T_c^periodic at matched D_s, because multifractal critical states raise the vortex-core depinning energy and suppress the soft q->0 phase mode. HONEST-NULL: T_c^quasicrystal <= T_c^periodic at matched D_s (multifractality SUPPRESSES D_s or adds no pinning advantage) \u2014 quasiperiodicity reproduces or worsens the wall."
+ },
+ {
+  "name": "ETA-LOCK \u2014 single-seed Liouvillian dark-state pump (autonomous eta-pairing NESS)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Distance-independent eta-pairing ODLRO is exactly H_034 (the carded one long-shot): eta-pairs are non-thermal fine-tuned eigenstates / dissipative dark states, not an ambient 293K equilibrium bulk SC \u2014 H_034 ruled confirm-wall; the single-site-Lindblad framing is the same order, autonomous dissipator instead of pulsed drive.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "STIFFNESS-FREE TIME CRYSTAL \u2014 boundary-time-crystal rigidity as the order-protector",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "Casting the SC order parameter as an oscillating boundary-time-crystal observable has no electron-system host: BTC rigidity is a dynamical limit-cycle of an open spin/cavity ensemble, with no mapping to a charge-2e ambient bulk condensate and no in-silico path from a real screened metal to a collective-dissipation limit cycle.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "DARK-STATE PAIR PUMP \u2014 dissipation-induced topological SC steady state (loss-shaped attractor)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "A loss-shaped Liouvillian dark-state pair attractor is the same dissipative-engineered-ODLRO class as H_034/ETA-LOCK: the steady-state order is set by gamma/Delta_L (a maintenance power bill), reducing to the BORROW closure the freeze already records \u2014 not an ambient-equilibrium escape.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Vortex-Code Phase Lock (the superfluid phase as a protected logical variable)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "A static stabilizer string-tension term raising the vortex CORE ENERGY directly attacks the BKT vortex-unbinding mechanism (the wall's actual loss channel) at fixed D_s \u2014 orthogonal to all glue/geometry cards and, unlike measurement-induced O5, carries no continuous Landauer bill; XY-MC testable with honest-null not pre-satisfied.",
+  "probe_sketch": "Classical XY / lattice-Josephson Monte-Carlo with an added local plaquette-vorticity 'stabilizer' string-tension term S. Compute the renormalized rho_s(T) and T_BKT(S) over an S-sweep at FIXED bare stiffness. Wall-prediction: T_BKT(S) = T_BKT(0)*(1+alpha*S), alpha>0 monotone, so T_BKT rises continuously past the 134-164K-equivalent without more D_s. HONEST-NULL: T_BKT is independent of S (the stabilizer term renormalizes to zero under the phase field's coarse-graining, OR it merely shifts a prefactor without moving the universal-jump unbinding point) \u2014 defect-entropy balance is untouched and the wall holds."
+ },
+ {
+  "name": "Infinite-T Memory Graft (subsystem-code symmetry that does not melt)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Replaces energetic (stiffness-limited) order with a conserved subsystem-code symmetry charge that has no finite melting T by theorem \u2014 an order-class the campaign never enumerated; the crux (does the charge-2e coupling preserve the protecting symmetry?) is itself a clean ED/TN falsifier not pre-satisfied by the freeze.",
+  "probe_sketch": "Build the explicit Z2xZ2 subsystem-code Hamiltonian augmented with a pair-hopping term tying the logical operator to a charge-2e bilinear; in exact-diagonalization / tensor-network, compute the logical (= order-parameter) autocorrelation C(t) and its T-dependence vs a symmetry-broken control. Wall-prediction: C(t) shows NO Arrhenius decay and NO finite-T cusp up to the lattice cutoff. HONEST-NULL (crux, test first): adding the charge-2e coupling makes the protecting symmetry generator FAIL to commute with H ([S, H] != 0) \u2014 the conserved quantity is destroyed by the very coupling that makes it a superconductor, so the order reverts to a finite-T energetic condensate and the wall applies."
+ },
+ {
+  "name": "Zeno-Dragged Condensate (continuous weak measurement that freezes the phase)",
+  "category": "lab-handoff-out-of-domain",
+  "in_silico_testable": true,
+  "verdict_one_line": "An externally-powered continuous weak-measurement restoring force on the phase is a non-equilibrium DEVICE (measurement apparatus + feedback power), not an ambient-bulk material lever; its own honest prediction is gain-per-Landauer-joule<=1, re-confirming the O5/BORROW closure \u2014 the bulk stays 293K only because an external instrument holds it.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "DARK-MODE STIFFNESS: subradiant cavity protection of the superfluid phase",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "External-cavity stiffness donation to the Anderson-Bogoliubov phase mode = the BORROW/cavity-QED axis plus a single-channel D_s boost; its honest-null (cavity-renormalized D_s must clear 164K) is the geometric-stiffness wall the freeze already confirmed, and the dark-mode protection is self-admittedly speculative with no static-Hamiltonian host.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "VACUUM-DRESSED HOPPING: cavity renormalization of the bare bandwidth (photon-assisted flat band)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Cavity Lang-Firsov dressing t_eff=t*exp(-(g/Omega)^2) is just an in-situ knob on the SAME flat-band quantum-geometry lever (tr g, CoSn-class) already carded as the FS/flat-band geometric-stiffness wall; flattening the band only re-enters the D_s<=|U|*tr_g ceiling the freeze pinned.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "POLARITON-BEC PROXIMITY: condensed-photon-fluid phase injection into an adjacent electron layer",
+  "category": "lab-handoff-out-of-domain",
+  "in_silico_testable": false,
+  "verdict_one_line": "Requires a fabricated RT-polariton microcavity tunnel-coupled to a 2DEG to physically donate stiffness; the seed's own EI-order-trap falsifier reduces it to the DEAD exciton/EI glue family, and the proximity-transfer claim is a device hand-off, not a closed-form in-silico host.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Planckian Pair-Beat (Yukawa-SYK pairing of incoherent electrons)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Incoherent (no-quasiparticle) Yukawa-SYK metal: phase stiffness sourced from the FULL incoherent spectral weight rather than a vanishing QP residue Z, with no Migdal/boson-frequency cutoff; this attacks the Emery-Kivelson denominator's hidden quasiparticle assumption, a mechanism NOT among H_032-035 and whose honest-null is a clean self-consistent gap/stiffness comparison the freeze never ran.",
+  "probe_sketch": "Solve the large-N Yukawa-SYK self-consistent saddle G,Sigma,D,Pi at coupling g and boson scale w0 pinned to a real flat-band DOS N(E_F); extract D_s from the Kubo current-current bubble of the FULL Green's function (not a QP-residue). Probe: D_s(T)/[k_B*164K] vs g and the QP weight Z_inc->0. HONEST-NULL: if the computed Kubo D_s collapses back onto the Uemura/(pi/2)D_s boson-limited line (D_s ~ Z*n/m* saturating <=164K-equiv) for all g, OR T_c re-acquires a w0 boson-energy cap, the SYK incoherence buys nothing and the wall holds."
+ },
+ {
+  "name": "Chaos-Stiffness Inversion (Lyapunov-borrowed phase rigidity)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Conjectures the scrambling time t*=hbar/2*pi*k_B*T sets phase rigidity instead of n/m*, but the seed itself admits no paper links scrambling to superfluid stiffness; the twisted-BC stiffness extraction it proposes is exactly the (pi/2)D_s-vs-density test the geometric-stiffness freeze already ran, so its honest-null (stiffness collapses at the n/m* density scale) is pre-satisfied by the wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Conformal Window Pairing (scale-invariant glue, no boson frequency)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "The gamma-model critical-glue route is the magnon/spin-fluctuation family taken to its QCP limit (the clean spin-fluctuation lever, already carded); it raises the GAP via a scale-free kernel but says nothing new about D_s, so it re-confirms the same phase-stiffness ceiling that caps the spin-fluctuation route.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Holographic Pair Density Wall (semi-local quantum liquid stiffness from a horizon)",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "No material realizes a literal black-hole horizon; only an AdS2-EFT analog is computable and there is no in-silico path from a real screened electronic host to horizon-set scaling dimensions (flagged pure-sf in the pool).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Overhauser-Locked Phase Ballast (nuclear-spin co-condensate)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "A coherent Overhauser/nuclear-spin field as a SECOND phase-rigidity reservoir adding in PARALLEL (rho_s = rho_el + lambda^2*rho_nuc) sourced by nuclear-moment density, not carrier density; this is parallel-channel stiffness donation from a genuinely non-electronic bath (distinct from the multiband H_032 donation which borrows from another ELECTRON band), with a clean isotope-monotonic falsifier the freeze never tested.",
+  "probe_sketch": "Two-stiffness BKT/XY model: T_BKT = (pi/2)(rho_el + lambda^2*rho_nuc), lambda = A_hf/W (contact-hyperfine over electron bandwidth), rho_nuc = nuclear spin-wave stiffness of a high-moment high-abundance isotope (51V, I=7/2). Probe: T_BKT(A_hf) and isotope contrast Delta-T_BKT(spin-I vs spin-0 even-even isotope) on the SAME lattice. HONEST-NULL: if lambda^2*rho_nuc is parametrically negligible (A_hf/W~1e-3 => lambda^2~1e-6, requiring rho_nuc to exceed rho_el by ~1e6) OR the nuclear spin-wave stiffness itself orders only at neV-ueV (its own T_order << 1K), the parallel ballast contributes nothing and T_BKT collapses to the electronic-only ceiling. Likely confirm-wall, but a clean un-run structurally-orthogonal donation toy."
+ },
+ {
+  "name": "Hyperfine Two-Channel Suhl-Resonance (nuclear-moment Cooper bridge)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Anti-adiabatic nuclear pairing channel via a virtual nuclear-spin flip is a two-band Suhl-Matthias amplification on the GAP side (the multiband/interband amplification already carded as H_032 stiffness-donor / Suhl-Kondo class); it raises pairing amplitude, not D_s, and the omega_nuc->0 anti-adiabatic limit with Curie-growth still leaves T_c bounded by the same stiffness wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Isotopic Knight-Shift Pairing Resonance (hyperfine Feshbach knob)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A Feshbach-tuned resonant hyperfine channel injects GAP at a sharply selected energy and explicitly does not raise rho_s (the seed concedes it adds gap 'at fixed rho_s^el'); since the wall is a stiffness ceiling independent of gap, a resonant gap-only knob is pre-satisfied to confirm the wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Mossbauer-Lattice Recoilless Pair Channel (nuclear-recoil-free glue)",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "No demonstrated mechanism by which a recoilless nuclear isomeric/quadrupole transition mediates electron-electron attraction; the pairing vertex maps to no real host and the channel is flagged pure-sf in the pool (a kernel toy with no material realization).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Muonic Hydride Inversion (mu-H3S analog)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "Explicitly a conventional Migdal-Eliashberg phonon-class glue that attacks the <200meV PHONON omega_log ceiling via mediator-mass tuning in an H3S-class hydride (the seed itself states it does NOT route through spin fluctuations and sidesteps the stiffness wall the way H3S already did) \u2014 the hydride/chemical-precompression axis, not the phase-stiffness wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Bipolaron Effective-Mass Dial (anharmonic ZPM minimum)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Real-space bipolaron with rho_s proportional to 1/m* dialed to the Tc(m*) extremum is the bipolaron lever already carded (H_008); the inverse-isotope mass-dial is a re-parametrization of the same anharmonic-bipolaron stiffness mechanism.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Positronium-Channel Two-Boson Resonance",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "Requires a positron-rich solid that does not exist; the annihilation width Gamma is the seed's own honest killer (likely forbids net attraction), and virtual-Ps exchange maps to no engineerable host (flagged pure-sf).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Mediator-Mass Gradient Lattice (mass-engineered ZPM funnel)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "Bilayer hydride with a mu-mass-screened sublayer donating omega_log and an H-mass sublayer donating stiffness is a phonon-class anharmonic-Eliashberg hydride construction on the mediator-mass/precompression axis (attacks the <200meV phonon ceiling, not the spin-fluctuation phase-stiffness wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "ZPE Flat-Bander (quantum-nuclear band-flattening via proton delocalization)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Isotope-tuned ZPE is just a new actuator for a flat band; the resulting D_s ~ |U|.tr g is the exact geometric-stiffness quantity the freeze measured 20-90x below cuprate scale, so the honest-null (flat band => stiffness-limited) is already proven.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Isotopic Quantum-Critical Spacer (18O-tuned paraelectric stiffness donor)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Glue-through-spacer is carded (H_009/H_011); the 18O paraelectric soft-mode is a charge-lattice glue-family variant that is dome-ceilinged (~40K, dilute n) per the antiadiabatic-paraelectric analysis, donating mu*-screening not D_s.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Mass-Mismatch Anharmonic Cloak (geometry-protecting isotopic anharmonicity against competing order)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Even if isotopic ZPE quantum-melts the competing-order trap, the freed condensate still lives on the flat/geometric band whose D_s the freeze already pins below the wall; deleting the trap does not supply stiffness.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Vibronic Ratchet Antenna (the FMO-pair host)",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "A 2-site vibronic T-matrix is runnable but the seed's own honest prediction is fatal: a single chromophore wire has zero 3D stiffness and there is no real bulk host; it is at best a pairing-amplitude confirmation toy, not a stiffness escape.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Helical Berry-Phase Spinor Wire (the chiral-DNA pairing host)",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "Equal-spin-triplet CISS pairing on a 1D DNA/peptide wire has no real 3D superconducting host and notoriously fragile 1D stiffness (the seed admits it 'needs a bundle'); no in-silico-settleable bulk stiffness exists.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Self-Healing Stiffness Bundle (wet 3D phase-lock of soft wires)",
+  "category": "lab-handoff-out-of-domain",
+  "in_silico_testable": false,
+  "verdict_one_line": "The escape rests on a non-equilibrium ATP/turnover-driven self-annealing scaffold continuously re-forming inter-wire links - a wet biochemical device, not an in-silico-settleable Hamiltonian; the static-stiffness residue collapses to already-carded multilayer-D_s physics.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Proton-Polaron Conveyor (Grotthuss-glued bipolaron wire)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "A high-energy non-magnetic glue forming a composite bipolaron is the H_008 bipolaron lever; the seed's own honest limit (huge bipolaron mass => tiny stiffness, 'must be paired with a bundle') re-derives the carded bipolaron-mass/stiffness penalty.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "ENZ Screening Inversion (the Permittivity Mirror)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Re[eps]<0 cladding flips the STATIC screened Coulomb sign (no exchanged boson, no competing order) giving a real attraction at metallic n => high D_s; orthogonal to all 5 glue families and the stiffness freeze does not pre-satisfy its null (a cRPA W(q,0) sign test, gated by passivity).",
+  "probe_sketch": "Probe: embed a 2D electron layer in an effective medium with engineered eps_env(q,w~0); compute the cRPA/constrained static screened interaction W(q,0)=v(q)/eps_tot(q,0) for the embedded layer and scan the eps_env<0 window. ESCAPE if W(q,0)<0 (attractive) over a finite q-band q<q* with q*~2k_F (real scattering phase space) AND the implied pairing at metallic carrier density n gives Kubo D_s above the cuprate 7.4 meV scale. HONEST-NULL (most likely): Kramers-Kronig + passivity (Im eps>=0) force a compensating positive-screening lobe so the integrated W stays >0 for every passive cladding, or the W<0 window collapses to q=0 measure-zero - reproducing the known plasmonic-glue no-go and confirming no static-attraction escape."
+ },
+ {
+  "name": "Hyperbolic Pitch-Black Coulomb (Anisotropic Negative-Group-Velocity Glue Channel)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "An anisotropic eps-tensor cladding opens an attractive large-q (q~k_F) lobe in the screened kernel - a momentum-SELECTIVE attraction none of the q~0 glue families or flat-band geometry touches; in-silico via cRPA W(q) anisotropy, null not pre-satisfied by the stiffness freeze.",
+  "probe_sketch": "Probe: for an electron layer on a hyperbolic cladding (eps_par>0, eps_perp<0), compute the momentum-resolved W(q,w~0) via the anisotropic-medium dielectric and compare to an isotropic dielectric of equal mean eps. ESCAPE if W develops an attractive lobe (W<0) at large q ~ k_F that is ABSENT isotropically AND the lobe sits below 2k_F (connects Fermi-surface points), yielding tightly-bound light pairs at metallic n with D_s above the wall. HONEST-NULL: the hyperbolic tensor produces no sign change at any q, OR the attractive lobe lies at q>2k_F (no FS scattering phase space) - so the large-q channel cannot nucleate Fermi-surface pairing and the wall holds."
+ },
+ {
+  "name": "Frequency-Dependent Anti-Screening Notch (Dynamical eps<1 Overshoot)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A Reststrahlen-notch mu* suppression acts only on the Coulomb-repulsion side and explicitly 'stacks on top of any glue' - it raises an existing glue's pairing T_c but leaves D_s untouched, so it cannot lift a phase-stiffness wall (which bounds D_s, not mu*).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Effective-Medium Vacuum-Permittivity Dressing (Bulk Casimir-Polder Pair Glue)",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "A Lifshitz/macroscopic-QED kernel toy is writable, but the seed itself flags passivity (positive-Im eps) as almost certainly forbidding a net-attractive bulk vacuum tail; there is no host and the most-likely outcome is the known no-go - pure-SF.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Antadiabatic Paraelectric Saddle (the un-trapped soft mode)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Grounded SrTiO3 paraelectric-QCP glue, but the seed's own prediction is dome-ceilinged below ~40K at dilute n (small D_s); glue and stiffness trade off (doping away from the QCP kills eps), so it confirms the wall in new coordinates.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Flexoelectric Gradient Glue (pairing from strain-gradient, not strain)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "An invented finite-q pairing vertex ~q (vanishing at q=0, the inverse of every surveyed q~0 glue) that can in principle operate at metallic n (large D_s) - orthogonal to the 5 families and to flat-band geometry; BdG-gap-equation testable and its null (Landau-damping of chi_soft at metallic n) is not pre-satisfied by the stiffness freeze.",
+  "probe_sketch": "Probe: build the flexoelectric pairing kernel V(q,w) = (q*mu)^2 * chi_soft(q,w) (mu = flexocoupling, chi_soft = soft-TO-mode susceptibility) in a 2D BdG/ED toy at METALLIC carrier density and solve the linearized gap equation for the leading eigenvalue lambda and gap symmetry. ESCAPE if lambda>0.3 for physical mu (~nC/m) with a nodeless or extended-s gap on the Fermi surface at a density where Kubo D_s already exceeds the cuprate stiffness scale - then pairing and stiffness are decoupled (glue from chi_soft, D_s from metallic n). HONEST-NULL (likely): at metallic n the soft mode is Landau-damped so chi_soft(q,w->0) collapses exactly where D_s would be large, giving lambda<0.3 / no finite-q instability - the glue dies where the stiffness lives, confirming the wall."
+ },
+ {
+  "name": "Self-Straining Auxetic Pump (lattice that holds its own gradient)",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "No demonstrated auxetic+flexo+SC host exists (the seed is pure-sf at the device level) and its own prediction is self-defeating: a periodic strain-gradient potential flattens bands and lands the condensate right back under the frozen stiffness wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Internal-Negative-Pressure Cage (chemical tension stuffing)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "By its own statement it does NOT fight the spin-fluctuation stiffness wall - it routes around it via hydride/covalent phonon pairing at megabar-equivalent density delivered by built-in lattice tension at 1 atm; this is the chemical-precompression PRESSURE axis, a different campaign.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Anharmonic Cage Freeze (quartic stabilization recovers the metastable megabar phase at 1 atm)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "SSCHA rattler-stabilized hydride/covalent cage at 0 GPa \u2014 explicitly a phonon condensate that sidesteps the stiffness wall onto the chemical-precompression axis; right campaign, wrong wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Epitaxial Pressure-Equivalence (biaxial misfit strain == hydrostatic GPa via the bulk modulus)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "Misfit-strain-as-effective-GPa to recover a high-P el-ph spectrum at 1 atm \u2014 its own ceiling is the few-percent coherent-strain limit (~tens of GPa), a pressure/strain magnitude problem, not the Emery-Kivelson stiffness wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Guest-Charge Doublet (host cage geometry + guest f-electron charge reservoir as a two-job split)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "Host-guest precompression split in a hydride/B-C clathrate \u2014 a covalent/phonon condensate on the chemical-precompression axis; the spin-fluctuation stiffness ceiling does not bind by construction, so it answers a different question.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Ligand-Hole Negative-U: the pair lives on oxygen, not the cation",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "BaBiO3-class delocalized-ligand negative-U gives a LIGHT real-space pair (not flat-band quantum-metric, not phonon-H_008, not k-space Leggett-H_032) whose stiffness comes from low m* + high n_pair \u2014 honest-null (self-trapping) is not pre-satisfied by the freeze.",
+  "probe_sketch": "Two-particle Green function of an attractive extended-Hubbard / breathing-bond BaBiO3 lattice (U_eff<0 on the symmetric O6 MO, ligand bandwidth W tuned by M-O-M angle). Compute pair dispersion -> bipolaron m*(W) and rho_s = (hbar^2/4)(n_pair/m*)d, then T_BKT=(pi/2)D_s. CLAIM: m* drops below ~3 m_e as W grows at fixed |U_eff|, decoupling eV binding from stiffness, giving T_BKT>164K. HONEST-NULL (falsifier): m*(W) stays >10 m_e for all W with the pair bound (binding<->delocalization locked: large |U_eff| self-traps the pair, m* ~ exp(+|U_eff|/W)), so rho_s never clears the cuprate 7.4 meV scale and the wall holds \u2014 distinct from H_008 (phonon soft-mode bipolaron) which dials a vibrational mediator, not a chemical disproportionation orbital."
+ },
+ {
+  "name": "Frustrated Valence Skipper: the disproportionation that can't crystallize",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Geometric frustration of negative-U centers forbids the CHARGE-CDW trap, freeing eV on-site pairing \u2014 attacks the 'order traps' meta-law in the charge channel (H_022 was spin/frustration), honest-null (charge-glass/VBS instead) not pre-satisfied.",
+  "probe_sketch": "Extended-Hubbard with U_eff<0 and nearest-neighbor V on a frustrated (pyrochlore/triangular/checkerboard) lattice vs the unfrustrated cubic control, solved by ED/QMC. Track the charge-order gap Delta_CDW and the s-wave pair susceptibility chi_pair vs V/|U_eff|. CLAIM: on the frustrated lattice Delta_CDW->0 (no static checkerboard CDW) while chi_pair stays divergent at a V where the cubic lattice is a CDW insulator, so the eV pairing scale survives un-trapped and the pairing-limited Tc moves above 164K. HONEST-NULL (falsifier): frustration replaces the CDW with a DIFFERENT trap (charge glass / Wigner localization opening a gap, or a valence-bond crystal) that still localizes the pairs, OR chi_pair collapses with Delta_CDW (the same nesting feeds both) \u2014 re-confirming that the trap is conserved against the glue."
+ },
+ {
+  "name": "Charge-Kondo / Pair-Resonance Lattice: a negative-U impurity band of preformed pairs",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Dense valence-skipper lattice -> charge-Kondo pair-resonance band of preformed charge-2e bosons; Tc set by electronic eV-derived hybridization coherence Gamma, not the spin-fluctuation 7.4 meV stiffness \u2014 a many-body pair resonance (no quantum-metric ceiling), honest-null not pre-satisfied.",
+  "probe_sketch": "Lattice Anderson / extended negative-U model (skipper isospin hybridized to a conduction band, p-d coupling V_pd) solved by DMFT or cluster-ED. Extract the two-particle spectral function at E_F: width Gamma and charge-2e weight of the pair-resonance band; estimate T_c ~ Gamma/k_B for BEC of the preformed pairs. CLAIM: Gamma grows with skipper density and V_pd, exceeding ~14 meV (>164K) for strong Tl-O/Bi-O hybridization, with binding>>Gamma so pairs never break (no pseudogap competition). HONEST-NULL (falsifier): the resonance pins to a Kondo-INSULATING gap (no E_F spectral weight -> no condensation), or raising density opens inter-site charge order before Gamma reaches 14 meV \u2014 i.e. the same charge-order trap as the frustrated-skipper null reappears."
+ },
+ {
+  "name": "NODAL-SPIN-SPLITTER GLUE (d-wave altermagnet pair vertex)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Altermagnet spin splitting is a STATIC spin-group-symmetry band texture, not the soft AFM Goldstone the magnon family (carded) closed on \u2014 the pairing root decouples from the Neel stiffness, honest-null (collapses with rho_s = disguised magnon) is the crux and not pre-satisfied.",
+  "probe_sketch": "2-band altermagnet Hubbard/RPA at half-filling: build the spin-fluctuation pairing kernel on the d-wave-split Fermi surface and extract the leading attractive eigenvalue lambda_pair, then sweep the Neel-vector stiffness rho_s (soften the AFM order) at FIXED anisotropic inter-sublattice hopping. CLAIM: lambda_pair stays finite (>0.3) as rho_s->0 because the splitting is set by the crystal-field/hopping term, not by <S>, so pairing strength and magnetic phase stiffness are separated roots (unlike the Emery-Kivelson cuprate where J and rho_s share one root). HONEST-NULL (falsifier): lambda_pair tracks rho_s and collapses as the order softens -> the vertex is just a disguised magnon and re-confirms the carded magnon-family closure."
+ },
+ {
+  "name": "ZERO-MOMENT STIFFNESS LADDER (decoupled magnetic-vs-charge phase stiffness)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Metallic compensated altermagnet (n~10^22/cm^3) supplies high CHARGE superfluid stiffness while magnetic compensation is a lattice-symmetry property, not carrier starvation \u2014 directly attacks the wall's under-weighted root (cuprate low-D_s is doped-Mott scarcity), an untested host category.",
+  "probe_sketch": "Kubo superfluid-weight D_s for a RuO2-class metallic-altermagnet tight-binding model at carrier density n~10^22 cm^-3, given a pairing gap from the NODAL-SPIN-SPLITTER vertex; compare D_s^eff to the cuprate 7.4 meV (=134K) scale, then T_BKT=(pi/2)D_s^eff. CLAIM: because n is ~10-100x the underdoped-cuprate density and compensation is symmetry-enforced (not Mott-doping), D_s^eff>7.4 meV and T_BKT clears 164K. HONEST-NULL (falsifier): every altermagnet with usable spin splitting turns out to be a LOW-carrier insulator/semimetal (MnTe-class), forcing D_s^eff back below the cuprate wall, OR the high-n metal (RuO2-class) has too weak a pairing vertex to gap the Fermi surface \u2014 the carrier-density and pairing-strength knobs are anti-correlated, reproducing the wall."
+ },
+ {
+  "name": "ANISOTROPY-LOCKED GLUE (crystal-symmetry-protected pairing immune to order melting)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Spin-group-symmetry-locked altermagnet vertex degrades with moment amplitude much slower than a Goldstone-magnon vertex \u2014 a structurally new escape from the 'order traps' law (glue carried by anisotropy/symmetry, partially decoupled from order amplitude); honest-null (tracks <S>^2 like AFM) is the clean falsifier.",
+  "probe_sketch": "Finite-T classical-MC+RPA (or DMFT/QMC) of an altermagnet Hubbard model: extract lambda_pair(T) and compare against an AFM-magnon control vertex on the same lattice, both normalized to their T=0 value. CLAIM: lambda_pair(T) retains >50% at T~0.7 T_N (short-range altermagnetic correlations preserve the spin-group symmetry as <S> shrinks) while the AFM control falls below 50% by T~0.3 T_N, so the glue survives the temperature range where the carded magnon family thermally self-destructs. HONEST-NULL (falsifier): lambda_pair(T) tracks <S>^2 identically to the AFM control -> symmetry protection gives zero thermal robustness and the order-trap closes at the same T as the magnon family."
+ },
+ {
+  "name": "Stiffness-Native Inverse Design (the optimizer maximizes D_s, not the gap)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A search meta-experiment, not a mechanism \u2014 and its own prediction is that the D_s-maximizing Pareto front saturates <200K for all order-free hosts, which IS the frozen verdict re-stated as an optimization null; no new host, honest-null pre-satisfied.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Adversarial Trap-Hunter (a discriminator that learns 'order traps' and steers the generator around them)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Operationalizes the 'fluctuation glues / order traps' meta-law as a GAN; its prediction (chi_SC vs chi_order linearly correlated slope ~1 = conservation law) is exactly the freeze's order-trap finding cast as a discriminator \u2014 re-confirms, does not escape.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Out-of-Distribution Extrapolation Probe (does the surrogate hallucinate a >293 K host, and is the hallucination physical?)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Surrogate-saliency meta-experiment whose predicted outcome is that the aggregate-literature model points at a stiffness/n_s feature \u2014 i.e. independently 'rediscovers' the Emery-Kivelson phase-stiffness diagnosis the freeze already established; a re-confirmation, not a mechanism.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Constraint-Manifold Walker (search the disorder/strain/composition continuum, not the discrete crystal database)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Continuous strain/doping/disorder search whose own prediction is that the order-free manifold still caps T_BKT below ~200-250K (strain that raises D_s also softens the competing-order gap) \u2014 the freeze's stiffness/trade-off conclusion extended to the continuum; no new escape.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "AB-CAGE BREATHER \u2014 flux-detuned Aharonov-Bohm caging that LIFTS the cage just enough to pay stiffness",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Flux (a phase), not a small bandgap, enforces the caging, so |U| stays O(eV) while flux-detuning adds conventional velocity stiffness DECOUPLED from |U| \u2014 breaks the D_s ~ |U|.<g> coupling the freeze rests on; a flat-band origin (flux, not band-touching) the freeze never tested, honest-null not pre-satisfied.",
+  "probe_sketch": "Attractive-Hubbard ED/DMRG on a rhombic/diamond AB-caging chain threaded by synthetic flux phi = pi - delta; sweep the Kubo BKT stiffness D_s vs flux-detuning delta at FIXED |U|. CLAIM: D_s(delta) peaks at a NONZERO delta* exceeding the delta=0 caged (purely geometric, tiny) value by >2x, because the cage gap is set by hopping t (O(eV)) not by an avoided crossing, so |U| need not shrink to keep the band flat. HONEST-NULL (falsifier): D_s(delta) is monotone DECREASING from delta=0 (flux buys no |U|-independent stiffness), OR the detuning that adds velocity simultaneously closes the caging gap and reintroduces the |U|<gap (U-saturation) constraint, OR D_s at delta* still sits >=20x below the 7.4 meV cuprate scale \u2014 collapsing back to the frozen ceiling."
+ },
+ {
+  "name": "CLS-PHONON HYBRID GLUE \u2014 using the compact localized state's open continuum channel as a resonance reservoir (Friedrich-Wintgen BIC)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "A Friedrich-Wintgen BIC co-locates a flat (pairing) and a dispersive (stiffness) band at the SAME energy by destructive interference, so pairs draw DOS from the flat branch while coherence rides the continuum W_cont \u2014 decouples pairing from stiffness in a way no surveyed single-flat-band lever does; honest-null not pre-satisfied.",
+  "probe_sketch": "Two-channel attractive lattice ED: a flat BIC branch (zero width, high DOS) degenerate with a dispersive continuum band of bandwidth W_cont, coupled by the same |U|. Measure where the pair condensate weight resides and compute Kubo D_s as W_cont is swept at FIXED pairing gap. CLAIM: condensate weight sits in the flat branch while D_s ~ |U|.n_pair.(W_cont-derived) grows with W_cont, so T_BKT rises with continuum bandwidth and clears the flat-band-only ~134K stiffness limit. HONEST-NULL (falsifier): D_s is INDEPENDENT of W_cont (the continuum does not donate stiffness to the BIC-paired condensate because the BIC is by construction decoupled from the continuum \u2014 zero spectral overlap), so the condensate remains stiffness-limited by the flat branch alone and the wall holds."
+ },
+ {
+  "name": "LINE-GRAPH SATELLITE LADDER \u2014 stacking the dispersive partner band of a line-graph flat band to harvest its stiffness",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Hybridize the mandatory line-graph dispersive partner band to donate v^2/W velocity stiffness to the flat-band condensate \u2014 this is exactly the multiband-stiffness-donation lever (H_032 Leggett-locking), where the quantum-metric no-go caps the additive sum (confirm-wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "INTERFERENCE-PROTECTED PAIR BICs \u2014 a two-particle bound state in the continuum that cannot decay into single-particle channels",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Flatten the PAIR (two-body) band via a two-particle BIC while single particles stay dispersive, so pairing and phase stiffness live in DIFFERENT sectors \u2014 not carded (H_032-035 all flatten the single-particle band), not a glue family, not pre-satisfied by the Q=0 single-band freeze; closed-form attractive-Hubbard ED testable.",
+  "probe_sketch": "Build attractive-Hubbard ED on a cross-stitch / diamond chain tuned to the caging (BIC) point. Compute (i) the two-particle spectral function A2(K,omega) to confirm a flat, zero-width pair band sitting INSIDE the two-particle continuum (true BIC, not a broadened resonance), and (ii) the Kubo pair stiffness D_s of the resulting condensate. Closed-form probe: T_BKT = (pi/2)*D_s with D_s from kubo_pair_stiffness.py. Escape claim = D_s tracks the SINGLE-particle bandwidth W_1 (eV-scale), not the flat pair-band width. HONEST-NULL (confirm-wall): the pair-BIC acquires finite width once interactions dress the continuum (no protected BIC), OR D_s collapses to the flat-pair-band scale (~0.1-0.4 meV, the measured flat-band ceiling) because phase coherence is carried by the pair sector after all \u2014 reproducing D_s ~ |U|*<g> and re-confirming the 134-164 K wall."
+ },
+ {
+  "name": "Dipole-Locked Condensate (the pair that flows, the charge that cannot)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Kinematic pair-breaking suppression via dipole/multipole conservation (fractons) \u2014 restricted-mobility / fractionalized topological order, the independent fractionalization lever already closed-negative as H_012/H_013.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Tkachenko Ceiling-Breaker (quadratic Goldstone, no BKT wall)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Quadratic (z=2) phase Goldstone changing the BKT universality class so (pi/2)D_s no longer applies \u2014 this is verbatim the z=2-universality escape carded as H_033 (z merely labels the critical exponent; confirm-wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Fractal-Membrane Phase Coherence (sub-extensive defect cost)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "X-cube/Haah fracton order makes the phase-disordering vortex membrane-bounded (cost ~L); this is fracton/fractionalized-topological-order kinematic vortex suppression \u2014 the independent fractionalization lever closed as H_012/H_013.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Partially-Massless Higgs (rank-2 gauge eats the phase)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Rank-2 symmetric-tensor gauge Higgsed by a fracton condensate (tensor London stiffness) \u2014 emergent higher-rank gauge / fracton topological order, the fractionalization lever already closed as H_012/H_013.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Amperean Forge \u2014 transverse-gauge current-current glue (no boson, no cavity)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Transverse-gauge current-current (Amperean) pairing kernel \u2014 exactly the Amperean-current escape carded as H_035, where the transverse coupling is (v_F/c)^2-suppressed and favors competing order (confirm-wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "FFLO Stiffness Bypass \u2014 finite-Q phase rigidity from the depairing tensor, not n_s",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Finite-Q Larkin-Ovchinnikov condensate whose modulation/sliding-phase stiffness is set by the FS-mismatch/bandwidth energy, not the dilute Q=0 superfluid weight \u2014 orthogonal to H_032-035 (none are finite-Q), not a glue family, honest-null not pre-satisfied by the Q=0 freeze; BdG-testable.",
+  "probe_sketch": "2-band/valley-imbalanced lattice BdG with controllable FS mismatch delta. Self-consistently solve for the LO saddle Delta(r) ~ cos(Q.r), Q ~ 2*delta_kF. Closed-form probe: extract the GL stiffness TENSOR from the free-energy curvature d^2 F / d(grad theta)^2 about the LO saddle; the modulation-direction component D_s^|| (along Q) has Kelvin scale ~ delta * (bandwidth). Escape claim = D_s^|| grows with delta and exceeds (pi/2)D_s^{Q=0} of the same host, so order melting is governed by the large sliding stiffness. HONEST-NULL (confirm-wall): D_s^|| <= D_s^{Q=0} across the entire mismatch range (the modulation stiffness is always sub-dominant), OR the LO window in delta is so narrow that the depairing tensor that opens it also caps Q-stiffness at the same n_s-limited scale \u2014 re-confirming that the relevant rigidity is still the dilute superfluid weight and T_c stays under 164 K."
+ },
+ {
+  "name": "PDW Commensurate Lock \u2014 pair-density-wave pinned to the lattice for fluctuation-proof rigidity",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Commensurate (Q=G/n) pair-density-wave whose sliding Goldstone is gapped by an Umklapp pinning term ~cos(n*theta), converting the soft phase channel into a gapped phason \u2014 attacks the 'order traps' clause from momentum space; not in H_032-035, not topology, not a glue family; BdG-testable.",
+  "probe_sketch": "Lattice BdG/ED with a commensurate finite-Q pairing channel plus a lattice-commensurate Umklapp pinning term V_p*cos(n*theta). Closed-form probe: compute the phason spectrum; pinning opens a phase gap Delta_phason ~ sqrt(V_p * rho_s) (amplitudon-only low-energy spectrum). Free-vortex / phase-slip cost then = Delta_phason, not (pi/2)D_s, so T_melt ~ max[(pi/2)D_s, Delta_phason]. Escape claim = at accessible V_p, Delta_phason (Kelvin) > 164 K while the pairing eigenvalue is unchanged. HONEST-NULL (confirm-wall): the commensurate Umklapp that pins the phase ALSO suppresses the finite-Q pairing eigenvalue (lambda_pair drops as V_p rises), so T_c is unchanged or lowered \u2014 i.e. pinning gap and pairing scale cannot both be large (no-free-lunch), and the family closes at the same wall."
+ },
+ {
+  "name": "Stiffness Donor Co-Tenancy (the Leggett-locked composite condensate)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Two-band additive superfluid weight D_s^tot = D_s^flat + D_s^deep with intrinsic Leggett phase-lock \u2014 this IS the canonical multiband-stiffness-donation lever carded as H_032 (the quantum-metric no-go collapses the additive sum ~77%; confirm-wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Suhl-Kondo Pairing Amplification (interband scattering manufactures an effective coupling the single band cannot)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Interband pair-scattering g_12 amplified by sqrt(N_flat*N_deep) to make the high-v_F donor band self-superconduct-and-be-stiff \u2014 same two-band donation manifold as H_032 (multiband stiffness donation); confirm-wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Leggett-Mode Stiffness Shield (interband phase mode as a fluctuation gap that protects the condensate)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Use the gapped relative-phase Leggett mode to freeze out a thermal phase-fluctuation channel \u2014 a two-band/interband mechanism living entirely on the H_032 multiband-donation manifold (the shield-vs-donation no-free-lunch is the H_032 collapse mode).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Velocity-Asymmetric Pair Co-Drag (light donor carries the phase, heavy flat band carries the gap, one condensate)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Asymmetric two-band role split \u2014 heavy flat band carries the gap, light Dirac band donates band-velocity stiffness (1/2)N v_F^2 \u2014 explicitly the multiband stiffness-donation lever H_032 (self-described as 'distinct from seed-1' but the same v_F-decoupling kill-switch; confirm-wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Cavity-Bound Defect Polariton Glue (the optical-mode commons)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Cavity/ZPL-photon-mediated long-range pairing of a defect-band \u2014 a boson-glue family on the BORROW (engineered-vacuum/cavity) axis; still produces a Q=0 stiffness-limited condensate, so its honest-null reduces to a glue-family confirmation, not a universality-class or finite-Q escape.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Hund-Locked Lambda-Doublet Defect Molecule (internal-orbital pairing)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Negative-U dynamic-Jahn-Teller bipolaron array (E_JT > U/2) whose phase orders by pair-hopping t_B \u2014 real-space preformed-pair / bipolaron pairing, the bipolaron lever already carded as H_008.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Spin-Addressed Pair-Symmetry Selector (optical glue gating)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Continuous optical spin-pumping = a driven non-equilibrium Lindblad steady state that 'switches off in the dark' \u2014 not an ambient 293K@1atm equilibrium SC; falls under the campaign's driven/Floquet=transient freeze and the \u03b7-pairing/dissipative-dark-state class already carded as H_034.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Rare-Earth 4f Ultra-Flat Impurity Band (atomic-localization flat band)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Self-describes its own null: W_f ~ exp(-a/xi) makes D_s exponentially tiny, reproducing the stiffness wall from the flat-band side; the only escape it offers is a Fubini-Study geometric term \u2014 exactly the Peotta-T\u00f6rm\u00e4 flat-band quantum-geometry lever already frozen (PR#40, geometric weight 20-90x below cuprate stiffness).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Gurzhi Quench Channel \u2014 viscous current with no order parameter to disorder",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "Explicitly abandons pairing \u2014 a viscous NORMAL fluid has no order parameter, no zero-DC-resistance, no Meissner; it is not a superconductor (the seed concedes 'makes the ceiling irrelevant' by not being SC), so there is no RTSC host to settle on this axis.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Odd-Viscosity Edge Lane \u2014 chiral dissipationless boundary current from Hall viscosity",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "eta_H is a dissipationless coefficient of the NORMAL fluid with no Tc, no condensate, no Meissner \u2014 a low-longitudinal-R edge lane is not zero resistance and not a superconductor; no SC host, off the phase-stiffness axis entirely.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Second-Sound Supercurrent \u2014 coherent collective hydrodynamic mode as the carrier",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "Uses a normal-state collective mode AS the carrier with no pairing and no phase rigidity \u2014 a resonant AC conductance peak is not a DC superconductor (no persistent current, no Meissner); imaginative but no SC host.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Viscosity-Floor Inversion \u2014 push the Planckian viscosity minimum into a coherence maximum",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": true,
+  "verdict_one_line": "A 'most-perfect-fluid' conductance maximum with explicitly NO condensate \u2014 minimizing eta/n^2 viscous resistance is finite-R normal transport, not superconductivity; no SC host and not on the pairing/stiffness axis.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Critically-Damped Phason Bath (the Goldilocks-Damping Glue)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A pairing-side GLUE seed (damping enhances lambda, Tc peaks at Gamma~Omega) \u2014 but the frozen wall is STIFFNESS, not pairing; the freeze's deep law (no glue family beats a stiffness wall; geometric lens confirmed D_s-limited) pre-satisfies its null \u2014 raising lambda raises Delta but leaves the BKT (pi/2)D_s cap untouched.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Discommensuration-Lattice Emergent Boson (the Soliton-Mesh Glue)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Soliton-mesh sliding mode mediates an attractive interaction (a glue boson); its falsifiable prediction is Tc-vs-discommensuration-density = a pairing-vertex claim, and a 6th glue family does not beat a stiffness wall already frozen as universal \u2014 pre-satisfied like the other glue families.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Host-Guest Sliding-Chain Boson (the Incommensurate-Rail Glue)",
+  "category": "pressure-hydride-axis",
+  "in_silico_testable": true,
+  "verdict_one_line": "The named hosts (compressed elemental S, Bi, Sc, Ba; quasiperiodic host-guest strong-coupling SC) are HIGH-PRESSURE incommensurate phases adding an additive lambda_phason in parallel \u2014 a real conventional/chem-precompression lever on the PRESSURE axis (seed_pool flags this family as 'worth its own cards but on the pressure axis'), not the phase-stiffness wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Pinning-Memory Ratchet (the Glassy-Phason Non-Equilibrium Stiffness Ballast)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "Targets the STIFFNESS wall directly with a NON-electronic donor (a pinned structural-glass inertia term rho_s,phason added to the phase action) \u2014 distinct from H_032's electronic multiband donation (no Leggett mode between an SC condensate and a structural glass, so H_032's quantum-metric/Leggett cap does not apply); null not pre-satisfied by the freeze and closed-form testable.",
+  "probe_sketch": "Phase action S = (1/2)integral d^2r dtau [ rho_s^el (grad theta)^2 + chi_glass(omega) (dtau theta)^2 ] with a pinned-phason memory kernel chi_glass(omega) = sum_i w_i Gamma_i/(omega^2 + Gamma_i^2) (overdamped TLS bath, Setty arXiv:2305.05407). Compute the renormalized phase stiffness / vortex-core energy E_c(rho_s^el, chi_glass) and the BKT temperature T_BKT = (pi/2) rho_s^eff, then sweep pinning strength (peak Gamma, spectral weight w). HONEST-NULL: the glass is SLOW (Gamma -> 0) while the SC phase fluctuations that set the vortex unbinding live at the Josephson/plasma frequency omega_J >> Gamma; an adiabatic bath cannot follow the fast phase winding, so its contribution to the STATIC stiffness that bounds T_BKT vanishes (chi_glass(omega->omega_J) -> 0), giving rho_s^eff = rho_s^el and confirm-wall. Escape only if the kernel contributes a finite zero-frequency stiffness term that survives the omega_J cutoff \u2014 falsified if T_BKT is independent of pinning strength or tracks rho_s^el alone."
+ },
+ {
+  "name": "Janus-Orbital Stiffness Delegation (the pairing orbital and the stiffness orbital are different)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Two-channel stiffness donation (incoherent orbital pairs, coherent orbital carries D_s, coupled by inter-orbital pair-hopping ~J) \u2014 this is class (a) of the wave-2 map, already carded as H_032 multiband-donation, whose Leggett-locking x quantum-metric no-go caps donated stiffness at D_s_disp/4 (best two-channel Tc 111 K, confirm-wall).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Spin-Freezing Critical Glue at the OSMT Knee (sqrt-omega self-energy as the pairing kernel)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A broadband sqrt(omega) Hund-moment GLUE kernel with cutoff ~J \u2014 its falsifiable prediction is a higher mean-field Tc ceiling (pairing-side, McMillan/Allen-Dynes), but pairing/lambda enhancement does not beat a STIFFNESS wall; the same clean-spin-fluctuation pairing physics is already carded and the freeze caps it via D_s not the glue cutoff.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Negative-Effective-Hund Pair Channel a la Jahn-Teller Metal (A3C60 inverted-J, run to ambient via geometry)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Local inverted-J singlet pairing on an incoherent orbital with stiffness outsourced to a coherent eV-bandwidth orbital (Tc ~ W_coh) \u2014 this is the two-channel stiffness-donation move (class a / H_032) restated through a JT-overscreening glue; the donation cap (Leggett-locking) already carded and confirm-wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "Z-Quench Resonance: tuning quasiparticle weight Z_inc -> 0 to make the incoherent orbital an all-pairing, zero-Drude reservoir",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Z_inc->0 incoherent orbital pairs but carries ~0 D_s, stiffness outsourced to high-Z coherent orbital via inter-orbital pair-hopping \u2014 the seed_pool explicitly files #88 under class (a) two-channel stiffness donation = H_032 multiband-donation; the Leggett/quantum-metric cap already carded and confirm-wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B1 time-shared levers (Floquet)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Time-multiplex \u222btr g-on / \u03a9-on phases = the driven/Floquet lever; driven states are transient/power-bound (closed-negative driven family, \u00a75), the seed itself closes if cycle > decoherence.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B2 bilayer division of labor",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Geometry layer A + glue layer B + proximity = the +@ trilayer architecture (H_003/H_004/H_005); the multilayer-D_s lever is carded and closes on interlayer-coupling loss.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B3 faster boson glue",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Magnon/exciton/plasmon instead of soft phonon = the 5 boson-glue families already surveyed (H_004/H_005 + glue research); no clean \u2265349 meV q=0 glue exists.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B4 dynamical / non-Hermitian metric",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "FS-bound under a driven/non-Hermitian metric is the H_006 dimension/metric-invariance card's sibling; the driven branch is transient (driven family closed) and the static metric-deformation reduces to the geometric-stiffness freeze.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B5 synthetic / 3D dimension",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Decouple the two levers in 3D or a synthetic dimension = exactly H_006 (FS-bound dimension-invariance, the promoted F2 fork); already a card.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B6 bipolaron BEC from the soft mode",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Condense the soft phonon as carrier = H_008 lane-A bipolaron ED (and O1/B6 self-reference); already carded.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B7 topology-protected gap",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Buy the gap with symmetry/topology (Majorana/SPT) = H_012 topology-gap lever, closed-negative as an independent lever.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B8 cavity-QED vacuum coupling",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Cavity vacuum fluctuations raise effective \u03a9 = a glue-family/\u03a9-lever variant (seed-pool #15/#17 cavity gauge-glue / vacuum-dressed hopping); it boosts pairing, not the stiffness that the freeze caps.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B9 gain-medium anti-damping",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Negative damping under external power stiffens the soft mode = active/driven superconductor; the driven family is transient/power-bound (closed, \u00a75) and the seed closes if coherence-gain/pump < 1.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B10 entanglement-mediated pairing",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "Non-local Cooper correlations from an entanglement resource has no engineerable solid-state host (tagged H_012 fractionalization, closed); the entanglement reservoir is a device abstraction, not an in-silico host.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B11 effective-temperature redefinition",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Localize a cold effective electron temperature where pairing happens = FRAME F3, which the brainstorm itself shows reduces to the BORROW ledger deficit (cooling cost = the measured ~5\u00d7 thermodynamic deficit); honest-null already proven.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "B12 self-healing lattice network",
+  "category": "lab-handoff-out-of-domain",
+  "in_silico_testable": false,
+  "verdict_one_line": "A dynamic self-repairing lattice keeping geometry+coupling on average = the non-equilibrium self-annealing device (seed-pool #36, device/wet-drive bound); the static-disorder in-silico piece is already H_017 (disorder flat band).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D1-B nuclear-moment bath glue (hyperfine, no phonon \u03a9)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Hyperfine-mediated nuclear-moment pairing is a glue-family variant (seed-pool #23/#24/#25); a real boson-glue channel that boosts pairing, not stiffness, so it lands in the surveyed glue map and the hyperfine coupling scale (~neV-\u00b5eV) is orders below the gate.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D2-B vacuum Casimir-like pairing attraction",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Vacuum fluctuations as an effective Casimir attraction closes by its own \u2696 (mode-density gain cancels added loss) \u2014 the ledger-deficit ceiling the brainstorm itself flags; passivity-bound, no host.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D3-B dynamical-Casimir boundary modulation (effective \u03a9\u2191)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Periodic boundary modulation parametrically amplifying the pairing mode = the driven/Floquet lever (transient, closed \u00a75); closes if modulation-frequency ceiling < target.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D4-B two-mode-squeezing non-local pair correlations",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "Parametric two-mode squeezing making non-local pair correlations without glue has no bulk solid host; closes on phase-matching bandwidth \u2014 an optical/device abstraction, not an in-silico material.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D5-B remote-entanglement non-local Cooper pairs",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "Remote entanglement \u2192 non-local Cooper pairs with no local \u03a9 (same as B10/D5); no engineerable host, closes if entanglement rate < decoherence rate.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D6-B gain-medium negative-damping (active SC)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Negative damping props the soft phonon under pump = active/driven SC (same as B9); driven family transient/power-bound, closes if coherence-gain per pump-power < 1.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D7-B squeezed spin bath suppressing pairing-channel noise",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A squeezed spin bath lowering pairing-channel fluctuation = remove-the-disordering-noise (class c-variant), but its \u2696 is the BORROW ledger deficit (squeezing un-squeezes / spin-conversion ceiling), the same closure the \u03b7-ODLRO and Amperean escapes already established \u2014 honest-null pre-satisfied.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D8-B Thouless quantized Cooper-pair pump",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Phase (not strength) carries current via a quantized adiabatic pump = the topological-pump / driven-phase lever (H_012 topology + driven adiabaticity); closes on the adiabaticity\u2194speed conflict.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D9-B exothermic latent-heat local pairing energy",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Borrowing latent heat of an exothermic transition as pairing energy closes by its own \u2696 (release is incoherent heat only) \u2014 a BORROW that relocates the bill into incoherent entropy; no coherent in-silico host.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D10-B drift-current kinetic non-equilibrium SC",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Drift-current kinetic energy aiding pairing = non-equilibrium/driven SC (driven family, transient, closed \u00a75); the seed itself flags this as the weak B-half.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D11-B continuous-measurement feedback phase stabilization",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "Measurement-feedback stabilizing the pairing phase = the Zeno-dragged condensate (seed-pool #14); its \u2696 is the Landauer information cost > order gained \u2014 the sharpest BORROW ledger-deficit closure the brainstorm names, honest-null pre-satisfied.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "D12-B squeezed phonon/photon bath (effective U/\u03a9\u2191)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": true,
+  "verdict_one_line": "A squeezed bath suppressing pairing-channel fluctuation to raise effective U/\u03a9 closes by its own \u2696 (un-squeezing faster than it helps) = the BORROW ledger deficit; same pre-satisfied closure as D7, boosts the \u03a9/pairing side not the capped stiffness.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "M1 SPLIT (meta-principle)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "SPLIT = break a forbidden simultaneity across time/space/subsystem; this is the +@ bilayer architecture (H_003-H_011) plus Floquet (driven, H_022) \u2014 a meta-principle, not a new lever; its own synthesis says SPLIT only DEFERS the wall within a FRAME, adds no resource.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "M2 FRAME (meta-principle)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "FRAME = is the wall coordinate-invariant; its concrete executable bridge is the dimension test (F2) which IS H_006 (FS-bound dimension scan, already promoted to a card per the latest commit). As a meta-principle it CLASSIFIES, does not escape.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "M3 BORROW (meta-principle)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "BORROW = draw from a faster/denser reservoir; the brainstorm's own LEDGER-DEFICIT meta-observation proves every BORROW relocates the ~5x thermodynamic-deficit bill rather than removing it \u2014 exactly the freeze's measured deficit, so its honest-null is pre-satisfied.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "M4 OBSTACLE-AS-RESOURCE (meta-principle)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "OBSTACLE = recycle a loss channel as carrier; concretely this is the bipolaron-from-soft-mode (H_008) and driven-dissipative (H_022 driven), and the synthesis says it 'recycles within conservation laws \u2014 almost all entries reduce to the M3 ledger deficit or M2 classification'.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F1 inertial / relativistic-Doppler frame (B: pairing in a drift frame)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Its own closing condition declares it invariant: Lorentz scalars (total energy) don't change under a boost, so 'total energy' is a real ceiling \u2014 a self-classified confirm-wall, the freeze's deficit is a scalar.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F2 dimensional frame (B: FS two-lever wall may be 2D-specific, decouple in 3D/synthetic)",
+  "category": "already-carded",
+  "in_silico_testable": true,
+  "verdict_one_line": "Explicitly tagged the single most testable card and promoted to H_006 (FS-bound dimension scan, toy) per the latest commit cfc8bf1; the 3D lever is already L_3D=1.84 in fbgeom_3d.py \u2014 carded, not new.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F3 effective-temperature frame (B: bulk-warm, pairing-site locally cold)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Its own closing condition: effective-cooling cost is again the ledger deficit (FRAME reduces to BORROW/M3 D11) \u2014 the local-cold-site is a refrigeration bill identical to the frozen thermodynamic deficit.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F4 measurement-definition frame (B: redefine SC as effective lossless / ballistic-topological transport)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Redefining SC as topological/ballistic transport is the topology lever H_012/H_013 (closed-negative as independent levers); the redefinition fails true-zero-resistance = wordplay per its own closer.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F5 quasi-energy / Floquet frame (B: flat band + coupling coexist in quasi-energy band)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Floquet/driven coexistence is the driven-non-equilibrium lever (H_022): every driven state is transient (~ps) and power-bound, not the equilibrium 293K target; closes if drive heating breaks coherence (it does).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F6 gauge / duality frame (B: does the wall vanish in a dual boson-fermion basis)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Its own closer: a duality that preserves observables preserves the wall (invariant) \u2014 a dual basis cannot move D_s, a physical observable; self-classified confirm-wall.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F7 scale / RG frame (B: is the FS wall an RG fixed point or does it flow)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "The freeze records the phase-stiffness ceiling as UNIVERSAL (Emery-Kivelson, anchored across MATBG/tTLG/Re6Se8Cl2/kagome/cuprate) \u2014 i.e. an RG-invariant real ceiling; this seed's 'real-if-RG-fixed' verdict is already answered = real.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F8 non-Hermitian frame (B: non-Hermitian metric deforms the FS lower bound)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Explicitly tagged candidate H_006 (dynamical/non-Hermitian metric, B4) in the same file \u2014 same card as the dimension/dynamical-metric scan; closes if the exceptional point is washed out by noise (an equilibrium-bulk requirement).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F9 curved / accelerated (Unruh) frame",
+  "category": "pure-sf-no-host",
+  "in_silico_testable": false,
+  "verdict_one_line": "Pairing in an Unruh-temperature accelerated frame requires unphysical acceleration (~10^20 g for any relevant T); its own closer flags 'imagination limit' \u2014 no material host, not in-silico-settleable.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "F10 statistical-ensemble / NESS frame (B: SC as a drive-sustained NESS phase)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Its own closer: NESS-maintenance power IS the ledger deficit (reduces to BORROW); same as the driven-transient ruling (H_022) plus the ETA-LOCK NESS already carded closed-negative (H_034) \u2014 sustained drive is out-of-domain.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "O1 instability -> coherence (B: condense the soft mode as carrier)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Explicitly equals B6 = bipolaron BEC from the soft mode = H_008 (retarded-vertex ED, confirmed 4.27x but stiffness-limited); a re-pointer to an existing card.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "O2 disorder -> flat band (B: disorder-induced flat band, geometry lever for free from randomness)",
+  "category": "genuinely-new-in-silico-escape",
+  "in_silico_testable": true,
+  "verdict_one_line": "A genuinely untested route to the geometry lever (tr g) from Anderson/structural disorder without crystallinity \u2014 flagged in the grand synthesis as one of two orthogonal bypasses worth a card; honest-null is a clean Kubo-D_s test, NOT pre-satisfied (the freeze measured crystalline flat bands, never disorder-induced ones).",
+  "probe_sketch": "Attractive-Hubbard BdG on an L x L lattice with on-site disorder W drawn from [-W/2,W/2], sweep W to enter the disorder-induced-flat-band regime (DOS spike at E_F, IPR rising). Compute the Kubo geometric stiffness D_s(W) = (e^2/hbar^2) * [<-k_x> - Pi_xx(q->0,omega=0)] disorder-averaged over >=50 samples, and T_BKT = (pi/2) D_s(W). HONEST-NULL (confirm-wall): D_s(W) is non-monotone and its maximum stays >=20x below the cuprate 7.4 meV phase-stiffness scale (i.e. T_BKT_max << 134 K), OR disorder that flattens the band simultaneously localizes the pairs (xi_loc < lattice spacing) so the superfluid response vanishes (D_s -> 0 as IPR -> 1). ESCAPE only if a finite W* gives D_s(W*) with T_BKT > 134 K AND xi_loc > vortex-core size (pairs stay extended). Tooling: flatband_pair_ed.py + kubo_pair_stiffness.py with an added random on-site term."
+ },
+ {
+  "name": "O3 noise -> stochastic resonance (B: noise-assisted pairing transport)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Stochastic resonance is a drive-tuned non-equilibrium effect; its own closer (noise leaves the optimal window) plus the BORROW ledger-deficit make any noise-injected coherence a power bill = the frozen deficit; not an equilibrium 293K bulk phase.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "O4 dissipation -> dissipation engineering (B: driven-dissipative SC, pairing state as the stabilized target)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Driven-dissipative engineered SC = the Dark-State Pair Pump / Lindblad NESS family already carded closed-negative as ETA-LOCK H_034 (and driven-transient H_022); its own closer: pump power = ledger deficit (reduces to M3).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "O5 decoherence -> measurement-induced phase (B: measurement-induced transition fixes pairing phase)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Its own closer: Landauer information cost bites (reduces to M3 ledger deficit); the Zeno-dragged/measurement-feedback condensate (seed-pool #14) carries the same Landauer-cost honest-null already implied by the freeze's conservation argument.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "O6 entropy -> entropy-stabilized order (B: entropy-driven ordering stabilizes the pairing host)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Entropy-stabilization addresses HOST stability, not the phase-stiffness D_s that the wall bounds; its own closer (latent heat is incoherent) means it donates no coherent superfluid weight \u2014 the wall (a D_s magnitude) is untouched, so re-confirms it.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "O7 scattering -> coherent backscattering (B: Anderson-localization-protected states as a gap)",
+  "category": "pre-satisfied-by-freeze",
+  "in_silico_testable": false,
+  "verdict_one_line": "Anderson localization gives a gap but its own closer (localization also kills transport) is the canonical insulator-not-superconductor outcome; localized states have zero superfluid stiffness by construction \u2014 pre-satisfied confirm-wall (this is the localizing limit of the O2 probe, kept distinct as the negative pole).",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S1 time (Floquet/pulsed) split (B: alternate tr-g / Omega phases)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Time-multiplexing the two levers = Floquet/driven (B1 -> H_003 family, driven lever H_022); closes if cycle > decoherence; transient, not equilibrium 293K.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S2 space (bilayer/moire/superlattice) split (B: layer A geometry, layer B glue, proximity)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "The literal +@ trilayer architecture (B2 -> H_004; the CoSn/hBN/Ta2NiSe5 A/C/B stack of H_003-H_011); the interlayer-coupling-loss closer is exactly the multilayer-D_s tunneling-loss killer already characterized.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S3 subsystem outsource (proximity/hybrid) split (B: borrow glue from a neighbor by proximity)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Proximity glue-borrowing = the spacer/proximity lever (H_011 field-transparency, hBN drag-through, B3); interface transparency is the named ceiling and was DFT-confirmed (7.7x opacity, ML-saturating) \u2014 carded.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S4 mode/frequency multiplex split (B: multiband shares geometry/coupling)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Multiband sharing of geometry/coupling is the multiband-stiffness-donation escape already carded as H_032 (Leggett-locking x quantum-metric no-go caps donation at D_s_disp/4 -> confirm-wall); inter-mode phase-matching break = the Leggett-softening null.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S5 particle-species / fractionalization split (B: spinon/holon \u2014 geometry in one sector, pairing in another)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Charge/spin/orbital fractionalization = the topology/fractionalization lever H_012/H_013, closed-negative as independent levers; closes if the fractionalization gap is unstable (it is, outside a spin-liquid host) \u2014 already ruled.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S6 scale-hierarchy (coarse/fine) split (B: coarse lattice geometry, fine coupling)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Coarse-geometry/fine-coupling scale separation is the moire/superlattice spatial split (a re-skin of S2/B2 -> H_004 and the moire-cascade seed-pool #6); closes if scale separation fails (interlayer/inter-scale loss) \u2014 same tunneling-loss ceiling.",
+  "probe_sketch": ""
+ },
+ {
+  "name": "S7 statistical-ensemble split (B: geometry-bearing vs pairing-bearing carrier populations)",
+  "category": "already-carded",
+  "in_silico_testable": false,
+  "verdict_one_line": "Two carrier populations (one carries geometry, one pairing) is the multiband two-channel stiffness-donation picture = H_032; its own closer (the two populations couple and dilute the average) IS the Leggett-locking collapse already carded confirm-wall.",
+  "probe_sketch": ""
+ }
+]
