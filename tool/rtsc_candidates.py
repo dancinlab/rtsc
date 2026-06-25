@@ -149,6 +149,18 @@ LAYER_A: list = [
                    "INDUCES strong magnetic order (Co |mag| 0.43uB PBE -> 2.85/4.09/4.92/5.07/5.23uB at U=1/2/3/4/5) -> an H_014 competing-order signal CoSn "
                    "did not show in plain PBE. CAVEAT (honest, L1): DFT+U is a STATIC mean-field proxy; full DMFT (dynamical self-energy, paramagnetic T>T_N) "
                    "could still differ -> a two-lens negative on the dodge, not a proof the band can never reach E_F. doping_wall_dissolves=False. "
+                   "H_030 RECONCILED the doping wall against the method-lever research (measured CoSn flat d-band ~100meV below E_F, "
+                   "arXiv:2102.08979) by RE-PARSING OUR saved bands (NO new SCF): (a) CoSn hosts BOTH a SHALLOW narrow kagome flat-band pair "
+                   "(band45 -0.43eV, band44 -0.57eV, W~0.17eV) AND a DEEP manifold (~-1.45 to -2.0eV; H_024's -1.45eV band42 is the deep family) "
+                   "-- the H_019 non-spin-pol cell resolved ONLY the deep cluster, the spin-pol Co3Sn3 cell (H_027/H_029) resolves BOTH; "
+                   "(b) the ∫tr g~=2.855 lever is a NN-kagome SHAPE invariant, IDENTICAL on deep (H_024 I=2.856) and shallow (H_027 I=2.855) bands "
+                   "(both ≈ measured QGT 2.87) -> H_027/H_029 ALREADY used the SHALLOW near-E_F band, so the '1.58 h/f.u.' is NOT a wrong-band "
+                   "bookkeeping artifact; (c) but the EXTREME figure is TARGET-sensitive -- reaching the PBE flat-band CENTER (-0.44eV) costs "
+                   "1.58 h/f.u. EXTREME, while reaching the MEASURED ARPES depth (~-0.10eV) costs only 0.20 h/f.u. PHYSICAL (gating/few-%-Fe-In reach) "
+                   "-- an 8x swing from the flat-band DOS pileup. VERDICT = TRADE-OFF (wall PARTLY DISSOLVES): the lead path is RE-OPENED for a "
+                   "2D/onset-gated geometry device (E_F on the flat-band ONSET, cheap, but weak D_s^geom∝ν(1-ν) at the band edge), while the "
+                   "strong-D_s half-filled CENTER stays EXTREME. The measured ~100meV band and our shallow -0.44eV band are the SAME d_xz/d_yz "
+                   "kagome flat band with PBE over-deepening it ~0.2-0.3eV. doping_wall_dissolves=PARTIAL (onset MODEST, center EXTREME). "
                    "soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) -> needs the +@ glue layer."),
     Candidate("Ni3In", "A", "kagome",
               g_mean=(2.854, "research-backup A-backup-1 (Ye 2021 arXiv:2106.10824): Ni-3d kagome flat band ~50meV near E_F "

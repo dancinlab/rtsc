@@ -1,0 +1,24 @@
+81 k-points parsed, 52 bands, E_F=16.0015 eV (H_019 non-spin-pol cell)
+
+=== ALL narrow bands (W<0.30 eV) within +/-3 eV of E_F, by position ===
+band   W(eV)   mid-EF   min-EF   max-EF
+  38   0.254   -1.921   -2.048   -1.794
+  39   0.210   -1.877   -1.981   -1.772
+  40   0.183   -1.738   -1.829   -1.646
+  41   0.220   -1.578   -1.688   -1.468
+  42   0.158   -1.446   -1.525   -1.367
+  43   0.237   -1.299   -1.418   -1.180
+
+=== narrowest 12 overall within +/-3 eV ===
+band  42  W=0.158  mid=-1.446  range[-1.525,-1.367]
+band  40  W=0.183  mid=-1.738  range[-1.829,-1.646]
+band  39  W=0.210  mid=-1.877  range[-1.981,-1.772]
+band  41  W=0.220  mid=-1.578  range[-1.688,-1.468]
+band  43  W=0.237  mid=-1.299  range[-1.418,-1.180]
+band  38  W=0.254  mid=-1.921  range[-2.048,-1.794]
+band  37  W=0.553  mid=-2.225  range[-2.502,-1.948]
+band  45  W=0.587  mid=-0.815  range[-1.109,-0.522]
+band  44  W=0.632  mid=-1.101  range[-1.418,-0.785]
+band  46  W=0.709  mid=-0.355  range[-0.709,-0.001]
+band  36  W=1.056  mid=-2.669  range[-3.197,-2.141]
+band  49  W=1.112  mid=+2.613  range[+2.057,+3.169]

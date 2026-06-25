@@ -4,6 +4,25 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_030 CoSn flat-band reconciliation — the doping wall is a TRADE-OFF, not a bookkeeping artifact
+  (`HYPOTHESES/cards/H_030_cosn_flatband_reconciliation.md`, `state/h030_cosn_flatband_reconciliation_2026_06_25/`).**
+  RE-ANALYSIS (NO new SCF; deterministic re-parse of OUR saved CoSn pw.x output) settling the method-lever
+  research's discrepancy (measured CoSn flat d-band ~100 meV below E_F, arXiv:2102.08979, vs the campaign's
+  "1.45 eV / 1.58 h/f.u. EXTREME" wall). Findings: (1) CoSn hosts BOTH a SHALLOW narrow kagome flat-band pair
+  (band45 −0.43 eV, band44 −0.57 eV, W≈0.17 eV) AND a DEEP manifold (~−1.45 to −2.0 eV; H_024's −1.45 eV
+  band42 is the deep family) — the H_019 non-spin-pol cell resolved ONLY the deep cluster; the spin-pol Co3Sn3
+  cell (H_027/H_029) resolves BOTH. (2) The ∫tr g≈2.855 lever is a NN-kagome SHAPE invariant, IDENTICAL on
+  deep (H_024 I=2.856) and shallow (H_027 I=2.855) bands, both ≈ measured QGT 2.87 — so H_027/H_029 ALREADY
+  used the SHALLOW near-E_F band; the "1.58 h/f.u." is NOT a wrong-band artifact. (3) The EXTREME figure is
+  TARGET-sensitive: reaching the PBE flat-band CENTER (−0.44 eV) costs 1.58 h/f.u. EXTREME, but reaching the
+  MEASURED ARPES depth (~−0.10 eV) costs only 0.20 h/f.u. PHYSICAL — an 8× swing from the flat-band DOS
+  pileup. VERDICT = **TRADE-OFF (wall PARTLY DISSOLVES)**: the lead path is re-opened for a 2D/onset-gated
+  geometry device (E_F on the flat-band ONSET, gating-reachable but weak D_s^geom∝ν(1−ν) at the band edge),
+  while the strong-D_s half-filled CENTER stays EXTREME. The measured ~100 meV band and our shallow −0.44 eV
+  band are the SAME d_xz/d_yz kagome flat band, PBE over-deepening it ~0.2–0.3 eV. Registry CoSn row updated
+  (doping_wall_dissolves=PARTIAL: onset MODEST, center EXTREME). is_green=False; trio stays 🟠
+  jointly-unrealized; absorbed=false / GATE_OPEN — no re-analysis flips that.
+
 - **EI-glue family TRAP audit (`state/research-ei-family-trap-audit-2026-06-25.md`).** READ-ONLY cited pass
   EXTENDING the Ta2NiSe5 trap across the excitonic-insulator family. Verdict: the trap is **FAMILY-WIDE, not
   material-specific** — every real EI superconducts ONLY after its EI gap is destroyed/metallized
