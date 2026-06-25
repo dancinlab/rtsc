@@ -1,0 +1,61 @@
+==============================================================================
+H_055  AB-Cage Breather  -  flux-detuned Aharonov-Bohm caging (diamond chain)
+==============================================================================
+Cluster: spin-fluctuation / phase-stiffness ambient ceiling  T_BKT=(pi/2)D_s
+Variant twist: FLUX-DETUNE an AB-caged diamond chain (phi=pi-delta) to buy
+               |U|-INDEPENDENT velocity stiffness, breaking D_s ~ |U|*<g>.
+Bands: E0=0 (cage), E_pm=+/-2t sqrt(1+cos k * sin(delta/2))  [phi=pi-delta]
+Gap(delta)=2t sqrt(1-sin(delta/2)) CLOSES as delta->pi ; W1(delta) grows.
+Source: Vidal-Mosseri-Doucot PRL81,5888(1998) AB cages; rhombi-chain bands
+        arXiv:2604.13185 / 2602.23430 ; Peotta-Torma NatCommun6,8944 D_s.
+------------------------------------------------------------------------------
+  hopping t (O(eV), generous)        = 1000.0 meV
+  |U| FIXED (O(eV))                  = 500.0 meV
+  filling nu (half-filled cage)      = 0.500
+  pair-stiffness prefactor c_pair*z  = 2.000  (steel-man)
+  mean-field->realized deflation     = 2.80x  (freeze anchor)
+  binding gap Delta at delta=0       = 500.0000 meV  (eV-bound)
+  D_s at delta=0 (perfect cage)      = 0.0000 meV  (caged: t_eff=0)
+------------------------------------------------------------------------------
+  delta sweep (0 .. pi) at FIXED |U|:
+    D_s(delta=0)  baseline (pure cage) = 0.0000 meV  (caged condensate)
+    max D_s                            = 5.5753 meV  at delta=0.5011 rad
+    peak/baseline ratio                = inf  (baseline=0: caged)
+    bandwidth W1 at best delta         = 499.7745 meV
+    pair still eV-bound at best delta? = True  (W1<|U|)
+    caging gap at best delta           = 1734.4404 meV
+    |U| < Gap at best delta? (gap open)= True
+    D_s monotone-decreasing from 0?    = False
+    D_s ever rose above baseline?      = True
+------------------------------------------------------------------------------
+  D_s* (wall, 134 K) = (2/pi)kB*134 = 7.3512 meV
+  D_s* (wall, 164 K) = (2/pi)kB*164 = 8.9970 meV
+  D_s* (room, 293 K) = (2/pi)kB*293 = 16.0739 meV
+  T_BKT from best D_s = (pi/2)D_s/kB = 101.629 K
+  margin to wall_lo (134 K)          = -32.371 K
+  D_s deficit factor to reach 134 K  = 1.32x
+  D_s deficit vs cuprate 7.4 meV     = 1.33x  (null (c): >=20x)
+------------------------------------------------------------------------------
+  SCALE-INVARIANCE (decisive): D_s_peak / |U| across |U| (escape claim =
+  |U|-INDEPENDENT stiffness; honest-null = D_s_peak proportional to |U|):
+    |U|=  125.0 meV ->  D_s_peak/|U| = 0.010996
+    |U|=  250.0 meV ->  D_s_peak/|U| = 0.011125
+    |U|=  500.0 meV ->  D_s_peak/|U| = 0.011151
+    |U|=  750.0 meV ->  D_s_peak/|U| = 0.011147
+    |U|= 1000.0 meV ->  D_s_peak/|U| = 0.011146
+    mean D_s_peak/|U| = 0.011113   fractional spread = 1.394e-02
+    => stiffness COUPLED to |U| (constant ratio, spread<10%)? True
+    |U| needed for cage-optimal D_s to clear 134 K wall = 661.5 meV
+    |U| needed for cage-optimal D_s to reach 293 K room = 1446.5 meV
+------------------------------------------------------------------------------
+FALSIFIER LEDGER (PASS = not triggered):
+  [PASS] null_a_stiffness_decoupled_from_U
+  [PASS] null_b_cage_does_not_trap_pairs
+  [PASS] null_c_clears_wall_at_physical_U
+  [PASS] clears_room_293K
+------------------------------------------------------------------------------
+  honest-null defeated (escape)? False   wall cleared at physical |U|? False
+  best-case T_BKT margin to 134 K = -32.371 K
+  falsifiers_pass = 4/4
+VERDICT: confirms-wall
+==============================================================================

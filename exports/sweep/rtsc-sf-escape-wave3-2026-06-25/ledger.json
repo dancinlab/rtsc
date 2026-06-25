@@ -1,0 +1,141 @@
+{
+ "batch_id": "rtsc-sf-escape-wave3-2026-06-25",
+ "probes": [
+  {
+   "id": "H_044",
+   "name": "Chern-Simons Stiffness Pump (anyon statistical rigidity)",
+   "verdict": "confirms-wall",
+   "falsifiers": "4/4",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_044_chern-simons-stiffness-pump_2026_06_25"
+  },
+  {
+   "id": "H_045",
+   "name": "Synthetic-Dimension Coordination Pump (extra hopping axis without extra space)",
+   "verdict": "confirms-wall",
+   "falsifiers": "0/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_045_synthetic-dimension-coordination-pump_2026_06_25"
+  },
+  {
+   "id": "H_046",
+   "name": "Aperiodic / Quasicrystal Vortex Localizer (no Goldstone soft mode to disorder phase)",
+   "verdict": "confirms-wall",
+   "falsifiers": "2/4",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_046_quasicrystal-vortex-localizer_2026_06_25"
+  },
+  {
+   "id": "H_047",
+   "name": "Infinite-T Memory Graft (subsystem-code symmetry that does not melt)",
+   "verdict": "confirms-wall",
+   "falsifiers": "2/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_047_infinite-t-memory-graft_2026_06_25"
+  },
+  {
+   "id": "H_048",
+   "name": "Overhauser-Locked Phase Ballast (nuclear-spin co-condensate)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/6",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_048_overhauser-phase-ballast_2026_06_25"
+  },
+  {
+   "id": "H_049",
+   "name": "Hyperbolic Pitch-Black Coulomb (Anisotropic Negative-Group-Velocity Glue)",
+   "verdict": "confirms-wall",
+   "falsifiers": "4/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_049_hyperbolic-pitch-black-coulomb_2026_06_25"
+  },
+  {
+   "id": "H_050",
+   "name": "Flexoelectric Gradient Glue (pairing from strain-gradient, not strain)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_050_flexoelectric-gradient-glue_2026_06_25"
+  },
+  {
+   "id": "H_051",
+   "name": "Frustrated Valence Skipper: the disproportionation that can't crystallize",
+   "verdict": "confirms-wall",
+   "falsifiers": "0/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_051_frustrated-valence-skipper_2026_06_25"
+  },
+  {
+   "id": "H_052",
+   "name": "Charge-Kondo / Pair-Resonance Lattice (a negative-U impurity band of preformed pairs)",
+   "verdict": "confirms-wall",
+   "falsifiers": "4/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_052_charge-kondo-pair-resonance_2026_06_25"
+  },
+  {
+   "id": "H_053",
+   "name": "Zero-Moment Stiffness Ladder (decoupled magnetic-vs-charge phase stiffness)",
+   "verdict": "confirms-wall",
+   "falsifiers": "3/4",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_053_zero-moment-stiffness-ladder_2026_06_25"
+  },
+  {
+   "id": "H_054",
+   "name": "Anisotropy-Locked Glue (crystal-symmetry-protected pairing immune to order melting)",
+   "verdict": "confirms-wall",
+   "falsifiers": "3/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_054_anisotropy-locked-glue_2026_06_25"
+  },
+  {
+   "id": "H_055",
+   "name": "AB-Cage Breather (flux-detuned Aharonov-Bohm caging that lifts the cage)",
+   "verdict": "confirms-wall",
+   "falsifiers": "4/4",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_055_ab-cage-breather_2026_06_25"
+  },
+  {
+   "id": "H_056",
+   "name": "CLS-Phonon Hybrid Glue (Friedrich-Wintgen BIC reservoir)",
+   "verdict": "confirms-wall",
+   "falsifiers": "5/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_056_cls-phonon-hybrid-glue_2026_06_25"
+  },
+  {
+   "id": "H_057",
+   "name": "Interference-Protected Pair BICs (two-particle bound state in the continuum)",
+   "verdict": "confirms-wall",
+   "falsifiers": "0/4",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_057_interference-protected-pair-bics_2026_06_25"
+  },
+  {
+   "id": "H_058",
+   "name": "PDW Commensurate Lock: pair-density-wave pinned to the lattice",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_058_pdw-commensurate-lock_2026_06_25"
+  },
+  {
+   "id": "H_059",
+   "name": "Pinning-Memory Ratchet (Glassy-Phason Non-Equilibrium Stiffness Ballast)",
+   "verdict": "confirms-wall",
+   "falsifiers": "2/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_059_pinning-memory-ratchet_2026_06_25"
+  },
+  {
+   "id": "H_060",
+   "name": "O2 Disorder -> Flat Band (disorder-induced flat band as a free geometry lever)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "deterministic": true,
+   "run_dir": "/Users/mini/dancinlab/rtsc/state/h_060_o2-disorder-flat-band_2026_06_25"
+  }
+ ]
+}
