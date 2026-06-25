@@ -4,6 +4,16 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **SF-imagination brainstorm seed pool — 89 seeds, NOT depleted (PR pending).** loop-until-dry
+  Workflow (29 agents, 4 rounds, dry_rounds=0 → hit the round cap, imagination space did NOT run dry).
+  89 unique speculative orthogonal room-T SC mechanism seeds (speculative 69 / grounded 15 / pure-sf 5),
+  preserved at state/sf_imagination_seed_pool_2026_06_25/. Synthesis shortlist = 3 wall-escape CLASSES that
+  attack the phase-stiffness wall's ASSUMPTIONS (not magnitude): (a) multi-channel stiffness donation
+  (pairing on flat band, D_s borrowed from a co-resident high-v_F band), (b) change the universality class
+  so (pi/2)D_s is the wrong formula (z=2 Goldstone), (c) replace stiffness with a different rigidity
+  (eta-pairing ODLRO / Liouvillian dark-state gap). Honest synthesis prediction: (a)/(b) most likely CONFIRM
+  the wall with a number (closed-negative); (c) eta-ODLRO is the one genuinely orthogonal long shot. These
+  are SEEDS not claims; the in-silico shortlist = micro-exp build-then-fire candidates. absorbed=false.
 - **Geometric-stiffness ceiling FROZEN 🧱 + harness conflation corrected (PR#40, synthesis update).**
   Break-walls multi-lens test: applied the campaign's foundational flat-band quantum-geometry lens
   (Peotta-Törmä) to the spin-fluctuation phase-stiffness ceiling (H_031 L1) — it does NOT escape the
