@@ -92,8 +92,17 @@ Not a single no-go theorem — a constellation, each precisely characterized:
    five premises (braiding-statistics, hyperbolic/quasicrystal connectivity, non-quasiparticle SYK
    stiffness, light real-space negative-U pairs, static Coulomb-sign-flip, altermagnet spin-group pairing,
    flux/interference-decoupled flat bands, FFLO finite-Q, disorder-induced geometry), so its honest-null is
-   genuinely un-run, not already-implied. **Honest ruling: the wall stands undefeated, but the SF-escape
-   space is NOT closed — ~25 clean wave-2 micro-experiments remain, each a live lead.** absorbed=false.
+   genuinely un-run, not already-implied. **micro-exp wave-2 then probed one deterministic representative
+   of EACH of the 8 escape clusters (H_036 statistical-transmutation, H_037 hyperbolic-connectivity, H_038
+   ligand-hole negative-U, H_039 ENZ Coulomb-sign-flip, H_040 altermagnet spin-group, H_041 Yukawa-SYK
+   incoherent stiffness, H_042 FFLO finite-Q, H_043 vortex-code) — ALL 8 confirm-wall (byte-equal, honest-null
+   triggered). So 12/12 SF-escape probes across wave-1 (H_032-035) + wave-2 (H_036-043) hold the wall;
+   each cluster's central mechanism is now tested and held, and the ~17 remaining un-probed seeds are
+   within-cluster variants of an already-confirmed representative.** Honest ruling: across 5 premise-violating
+   axes and 12 orthogonal probes, the ~134-164K phase-stiffness wall stands UNDEFEATED — the no-go is not
+   formally proven (within-cluster variants and heavier ED/MC remain), but no in-silico escape has been found.
+   This is the campaign's honest terminal map: every computationally-settleable lever and every SF-escape
+   cluster surveyed, wall holds, absorbed=false / GATE_OPEN, no material claimed to BE an RTSC.
 
 ## 5. Lenses that did not rescue it
 

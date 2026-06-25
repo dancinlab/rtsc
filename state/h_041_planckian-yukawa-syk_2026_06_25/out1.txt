@@ -1,0 +1,38 @@
+==============================================================================
+H_041 — Planckian Pair-Beat (Yukawa-SYK pairing of incoherent electrons)
+       escape class: stiffness from a non-quasiparticle reservoir
+       freeze premise violated: QUASIPARTICLE-COHERENCE (Z->0, incoherent NFL)
+==============================================================================
+ceiling band top                   : 164.0 K
+D_s required for (pi/2)D_s=164K     : 8.9970 meV
+bare (Z=1) stiffness n/m* (set 1.5x): 13.4955 meV   (generous: clears ceiling at Z=1)
+boson scale w0 / Fermi eps_F        : 50.0 / 300.0 meV
+------------------------------------------------------------------------------
+  g     Z       Ds_full(meV)  Ds_hope(meV)  T_BKT(K)   Tc^MF(K)
+   0.1  0.9901     13.2296     13.4955     241.15        1.4
+   0.5  0.8000      8.6371     13.4955     157.44       27.9
+   1.0  0.5000      3.3739     13.4955      61.50       69.6
+   2.0  0.2000      0.5398     13.4955       9.84      111.4
+   3.0  0.1000      0.1350     13.4955       2.46      125.3
+   5.0  0.0385      0.0200     13.4955       0.36      133.9
+   7.0  0.0200      0.0054     13.4955       0.10      136.5
+  10.0  0.0099      0.0013     13.4955       0.02      137.9
+------------------------------------------------------------------------------
+best BKT T in INCOHERENT (Z<0.2) NFL: 8.405 K
+best full-G D_s in INCOHERENT NFL    : 0.4611 meV  (req 8.997)
+max Z^2 in NFL (=Ds_full/Ds_hope)    : 3.417e-02  (escape needs ~1, gets ~0)
+best BKT T over ALL g                : 241.153 K  at g=0.1
+mean-field Tc: max 137.9 K, cap(g=10) 137.9 K (saturates, no divergence)
+------------------------------------------------------------------------------
+  [TRIGGER] F1_HONEST_NULL_full_G_stiffness_collapses_to_Z2_suppressed_line
+  [TRIGGER] F2_incoherent_stiffness_clears_ceiling
+  [PASS   ] F3_any_coupling_clears_ceiling
+  [TRIGGER] F4_mean_field_Tc_acquires_boson_epsF_cap
+  [TRIGGER] F5_full_G_stiffness_exceeds_required_Ds
+------------------------------------------------------------------------------
+honest-null (F1) PASS (survives)     : False
+falsifiers_pass                      : 1/5
+is_green                             : False
+absorbed                             : False
+VERDICT                              : confirms-wall
+==============================================================================

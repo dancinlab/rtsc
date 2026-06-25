@@ -1,0 +1,36 @@
+==========================================================================
+H_042  FFLO Stiffness Bypass — finite-Q phase rigidity from the depairing tensor
+==========================================================================
+cluster: finite-Q rigidity (violates the Q=0 premise of the freeze)
+host band: t=0.300 eV, W=8t=2.400 eV, Delta0=20.0 meV
+Pauli/Clogston critical mismatch delta_c = Delta0/sqrt(2) = 14.14 meV
+host Q=0 rigidity (pi/2)D_s^Q0 anchor    = 164.0 K  (top of frozen band)
+--------------------------------------------------------------------------
+  delta(meV)   R_par   R_perp   D_s||(K)  D_s_perp(K)  Tc_BCS(K)  Tc_LO_onset(K)
+     0.000   1.000   1.000    164.00     164.00    131.87       73.85
+     2.828   0.980   0.960    160.69     157.44    129.21       72.35
+     5.657   0.917   0.840    150.31     137.76    120.86       67.68
+     8.485   0.800   0.640    131.20     104.96    105.50       59.08
+    11.314   0.600   0.360     98.40      59.04     79.12       44.31
+    14.142   0.000   0.000      0.00       0.00      0.00        0.00
+--------------------------------------------------------------------------
+max R_par over window               = 1.0000  (at delta=0.000 meV)
+best D_s^|| (modulation direction)  = 164.00 K   [vs Q=0 anchor 164.0 K]
+  D_s^perp at that point            = 164.00 K   [transverse smectic-soft]
+max FFLO onset T = 0.56*Tc_BCS      = 73.85 K
+campaign ceiling                    = 134-164 K  (room-T target 293 K)
+--------------------------------------------------------------------------
+  [FAIL] honest_null_N1_Ds_par_not_above_Q0
+  [FAIL] honest_null_N2_onset_T_below_ceiling
+  [FAIL] transverse_softens_not_long_hardens
+  [FAIL] joint_escape_unsatisfiable
+  [PASS] window_bounded_guard
+--------------------------------------------------------------------------
+HONEST-NULL N1 (D_s|| not > Q0) status = FAIL
+HONEST-NULL N2 (onset T < ceiling)     = FAIL
+joint-escape falsifier status          = FAIL
+falsifiers_pass                        = 1/5
+is_green                               = False
+absorbed                               = false
+VERDICT: confirms-wall
+==========================================================================
