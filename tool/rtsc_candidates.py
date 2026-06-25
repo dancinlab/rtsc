@@ -200,7 +200,10 @@ LAYER_B: list = [
                                 "plateau and NEVER reaches 1e-6 -> the plateau is PHYSICAL (PBE/PBE+U lack the many-body excitonic gap -> monoclinic Ta2NiSe5 is "
                                 "near-metallic in PBE -> ill-conditioned SCF), NOT a compute artifact. Gap STILL UNRESOLVED-by-us, NOT fabricated; the only remaining "
                                 "path is beyond-PBE (HSE/GW/many-body) which needs far more compute. Literature value kept, honestly flagged unverified-by-us.", True),
-              competing_order=("none", "q=0 non-nesting excitonic order (the glue itself, not a pre-empting density wave); SC under pressure — arXiv:2106.04396", True),
+              competing_order=("excitonic-order-competes-with-SC", "PRIOR-ART CORRECTION (research PR#30, state/research-plus-at-realization-prior-art-*.md): "
+                               "the excitonic order is NOT clean. Ta2NiSe5 superconducts ONLY when its exciton condensate is DESTROYED (Tc~1.2K @8GPa, "
+                               "phonon-mediated — arXiv:2106.04396); proximity-SC-from-an-excitonic-insulator NEVER measured in 50y (ABB graveyard). The "
+                               "exciton COMPETES with / suppresses SC — the opposite of a glue. The earlier 'none' flag was wrong (overstated cleanliness).", True),
               note="LEAD candidate (scout PR#10): exciton ~at the 349meV target, q=0 -> no pre-empting CDW/SDW. OUR DFT (H_019/H_024/H_025): Cmcm parent SCF "
                    "FROZE (10 recipes); H_025 showed the EXPERIMENTAL MONOCLINIC C2/c ground state BREAKS the freeze (~30x descent, both PBE & PBE+U) -> the "
                    "H_024 ill-conditioning diagnosis CONFIRMED & sharpened. H_026 FIXED the substrate (rebuilt QE7.2 WITH MPI in place; banner 'Parallel "
@@ -213,6 +216,27 @@ LAYER_B: list = [
               boson_meV=(None, "exciton-driven CDW scale — needs sourced value", False),
               competing_order=("CDW", "exciton condensation drives a CDW", False),
               note="competing-order intrinsic; classic exciton-CDW."),
+    # CLEAN-GLUE candidates (research PR#32, state/research-clean-glue-candidates-*.md): bosons that MEDIATE +
+    # COEXIST with SC (the opposite of the exciton/CDW traps). Honest energy-vs-349meV gap flagged per row.
+    Candidate("cuprate-spin-fluctuation", "B", "spin-fluctuation",
+              boson_meV=(300.0, "single-magnon zone-boundary ~300 meV (cuprate RIXS); bimagnon ~500 meV continuum. The strongest CLEAN family "
+                                "(research PR#32): the spin fluctuation CAUSES & COEXISTS with SC across the doped phase diagram — Hg-1223 Tc 134K "
+                                "ambient / 164K @31GPa (real high-Tc). VERIFIED.", True),
+              competing_order=("none", "spin-fluctuation MEDIATES SC (not a pre-empting order) — CLEAN, beats Ta2NiSe5 on both filters (research PR#32)", True),
+              note="NEW LEAD CLEAN GLUE (replaces the Ta2NiSe5 exciton trap). BUT sharp single-magnon ~300 meV -> stacked_tc(300,3D)=252K (the H_020 wall) "
+                   "and ambient-Tc-capped in practice; only the non-sharp ~500 meV bimagnon CONTINUUM crosses the 349 meV room-T demand and that is not a "
+                   "usable sharp boson. Clean glue buys a REAL mechanism + honesty, NOT room temperature. absorbed=false."),
+    Candidate("TbMn6Sn6-Au", "B", "kagome-magnet/metal-interface",
+              boson_meV=(None, "spin-fluctuation glue energy unverified", False),
+              competing_order=("none", "the ONLY real MEASURED proximity-SC-from-a-boson-layer in the campaign: TbMn6Sn6/Au kagome-magnet/metal interface, "
+                               "emergent Tc~3.6K (PMC10622413) — clean spin-fluctuation glue, real +@-geometry precedent", True),
+              note="Architectural insight: a kagome MAGNET supplies BOTH flat-band geometry AND a clean spin-fluctuation glue in one layer (vs metal+EI). "
+                   "Real measured interface SC, but Tc~3.6K (3 orders below room-T). The campaign's single real proximity-SC datum. absorbed=false."),
+    Candidate("FeSe-SrTiO3", "B", "interface-phonon",
+              boson_meV=(100.0, "SrTiO3 polar/Fuchs-Kliewer phonon ~90-100 meV; the cleanest + most-REAL method-not-material glue: FeSe bulk Tc~8K -> "
+                                "FeSe monolayer on SrTiO3 Tc~65-100K MEASURED (interface-phonon boosted). VERIFIED.", True),
+              competing_order=("none", "interface phonon boosts SC, no competing order — clean + real (research PR#32)", True),
+              note="Cleanest+realest glue, but LOW energy: stacked_tc(100,3D)~84K. Real proof of 'change the method not the material' (bulk 8K -> monolayer-on-substrate ~100K). absorbed=false."),
 ]
 
 
@@ -231,10 +255,12 @@ def leaderboard() -> None:
     print("  -- verify_pair demo (best A x best B) --")
     p = verify_pair(LAYER_A[0], LAYER_B[0])
     print(f"    {p['pair']}: in_box={p['in_box']} bkt_Tc~{p['bkt_tc_K']}K A_ok={p['A_qualified']} B_ok={p['B_qualified']}")
-    print("  VERDICT: 🟠 CREDIBLE-PARTIAL — a NAMED per-layer-verified candidate (CoSn/hBN/Ta2NiSe5) now")
-    print("    clears the +@ box on paper (bkt_Tc~137K @ 2D coordinate, ~252K with the 3D lever H_006) —")
-    print("    but the trio is JOINTLY UNREALIZED (never built/measured together) and bkt_Tc is a coordinate,")
-    print("    NOT a prediction (H_018 scatter). absorbed=false / GATE_OPEN. The strongest 🟠, not 🟢.")
+    print("  VERDICT: 🟠 CREDIBLE-PARTIAL — CoSn/hBN/Ta2NiSe5 clears the +@ box on the energy axis (bkt_Tc~137K @ 2D,")
+    print("    ~252K with the 3D lever H_006) BUT its Ta2NiSe5 exciton glue is now B_ok=False: research PR#30 found the")
+    print("    excitonic order COMPETES with SC (the glue is a TRAP, not clean). The CLEAN glues (cuprate-spin-fluctuation,")
+    print("    FeSe/SrTiO3 — research PR#32) qualify and MEDIATE SC, but are energy-capped (~252K / ~84K), NOT room-T.")
+    print("    Net: no candidate is BOTH clean AND room-T-energy. Trio jointly UNREALIZED; bkt_Tc is a coordinate (H_018);")
+    print("    absorbed=false / GATE_OPEN. The strongest 🟠, not 🟢.")
 
 
 if __name__ == "__main__":

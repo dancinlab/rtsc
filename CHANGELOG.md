@@ -4,6 +4,18 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Clean-glue research (PR#32) + registry correction.** Found the clean glue the prior-art's exciton-trap
+  demanded: **spin-fluctuation / paramagnon** is the strongest CLEAN family (🟢) — it MEDIATES and COEXISTS with
+  SC (opposite of the Ta2NiSe5 exciton), with real precedent (cuprate Hg-1223 134K ambient/164K@31GPa; and
+  decisively TbMn6Sn6/Au kagome-magnet/metal interface SC Tc~3.6K, the ONLY real measured proximity-SC-from-a-
+  boson-layer in the campaign). Interface-phonon (FeSe/SrTiO3, bulk 8K->monolayer ~100K) is 🟠 cleanest+realest
+  but low-energy. **But NO clean glue reaches the 349 meV room-T demand**: sharp spin-fluctuation ~300meV ->
+  stacked_tc=252K (the H_020 wall), interface phonon ~100meV -> 84K; only the non-sharp ~500meV bimagnon
+  continuum crosses 349 and it is not a usable sharp boson. A clean glue buys a REAL mechanism + honesty, NOT
+  room temperature. Registry corrected in lockstep (tool/rtsc_candidates.py): Ta2NiSe5 competing_order flipped
+  none->trap (PR#30 honesty fix — B_ok now False), added clean-glue rows (cuprate-spin-fluctuation, TbMn6Sn6/Au,
+  FeSe/SrTiO3). Architectural insight: a kagome MAGNET supplies geometry AND clean spin-fluctuation glue in one
+  layer (TbMn6Sn6/Au real precedent). absorbed=false / GATE_OPEN.
 - **CLEAN bosonic-glue candidate survey (`state/research-clean-glue-candidates-2026-06-25.md`).** READ-ONLY
   cited literature pass fixing the lead glue's competing-order trap (prior-art pass: Ta2NiSe5's exciton is the
   ENEMY of SC — SC only when the exciton is destroyed, arXiv:2106.04396; same trap as 1T-TiSe2's CDW). Surveyed
