@@ -22,7 +22,13 @@ compute can settle. This document consolidates the campaign; per-hypothesis trut
 
 2D-BKT band `Tc[K] = 0.4559·Ω[meV]` (deflated ×2.8 to MATBG/tMoTe2/Re6Se8Cl2 anchors); real 3D
 lever `L_3D = 1.84` (`src/fbgeom_3d.py`). Room-T (293 K) with the 3D lever needs **Ω ≈ 349 meV**.
-`Tc` is a COORDINATE, not a prediction (H_018 predictor scatter 1061×).
+`Tc` is a COORDINATE, not a prediction (H_018 predictor scatter 1061×). **Correction (PR#40): the
+band is a PAIRING coordinate and over-reads the real Tc — it omits the superfluid-stiffness cap, and
+the geometry input was conflated. The QGT integral `∫tr g = 2.86` (= `I=(1/2π)∮tr g`) is NOT the
+per-BZ `⟨g⟩ ≈ 0.1–0.5` that enters `D_s = 4|U|ν(1−ν)⟨g⟩` — using the integral as `⟨g⟩` inflated D_s
+~6–30×. The real flat-band geometric stiffness is ~0.06–0.44 meV (≈1–8 K), ~20–90× BELOW the cuprate
+phase stiffness, so a flat-band SC is STIFFNESS-limited (MATBG: 10× stiffness yet Tc~1 K), not
+pairing-limited. The 252 K / 292.9 K coordinates (H_023/H_031) were this conflation × BKT optimism.**
 
 ## 3. What the real DFT confirmed (summer pool, QE 7.2/7.5 MPI)
 
@@ -55,6 +61,15 @@ Not a single no-go theorem — a constellation, each precisely characterized:
    D_s ~16% → room-T on paper (299–356 K, H_023) with NO competing-order problem — but conditional
    on the doping-to-E_F and on a multilayer D_s that is a model, not measured.
 5. **Jointly unrealized.** CoSn, hBN, and Ta2NiSe5 have never been stacked or co-measured.
+6. **The geometric-stiffness ceiling — the foundational lens, frozen 🧱 (PR#40).** Applying the
+   campaign's own flat-band quantum-geometry lens (Peotta-Törmä) to the spin-fluctuation phase-stiffness
+   ceiling does NOT escape it — it confirms it at higher confidence. The flat-band geometric superfluid
+   weight is ~20–90× BELOW the cuprate phase stiffness (and the geometry input was conflated, §2), so the
+   candidate is STIFFNESS-limited; every measured flat-band geometric SC (MATBG ~1 K, tTLG ~2–3 K,
+   Re6Se8Cl2 ~8 K, kagome ~3–6 K) lands FAR below the cuprate 133 K record — the geometric route is the
+   LOWEST rung on the ambient ladder. The clean spin-fluctuation ceiling (~134–164 K, Emery-Kivelson
+   phase stiffness) is the honest UNIVERSAL wall; room-T (293 K) is beyond it. This is the campaign's
+   strongest negative result, and it freezes the conventional-mechanism map.
 
 ## 5. Lenses that did not rescue it
 

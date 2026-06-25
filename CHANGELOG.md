@@ -4,6 +4,18 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Geometric-stiffness ceiling FROZEN 🧱 + harness conflation corrected (PR#40, synthesis update).**
+  Break-walls multi-lens test: applied the campaign's foundational flat-band quantum-geometry lens
+  (Peotta-Törmä) to the spin-fluctuation phase-stiffness ceiling (H_031 L1) — it does NOT escape the
+  wall, it confirms it. Flat-band geometric superfluid weight ~0.06-0.44 meV (1-8 K) = ~20-90x BELOW
+  the cuprate phase stiffness (7.4 meV / 134 K); the candidate is STIFFNESS-limited (MATBG 10x stiffness
+  yet Tc~1 K, measured). HARNESS CORRECTION: the QGT integral integral-tr-g=2.86 (I=(1/2pi)int tr g) is
+  NOT the per-BZ <g>~0.1-0.5 that enters D_s=4|U|nu(1-nu)<g> — conflating them inflated D_s ~6-30x; that
+  conflation x BKT optimism produced the 252K/292.9K coordinates (H_023/H_031). Every measured flat-band
+  geometric SC (MATBG ~1K, tTLG ~2-3K, Re6Se8Cl2 ~8K) lands FAR below the cuprate 133K record. The
+  spin-fluctuation phase-stiffness ceiling ~134-164K is the honest UNIVERSAL wall; room-T is beyond it.
+  Conventional-mechanism map frozen. absorbed=false / GATE_OPEN. (Unconventional/SF-imagination orthogonal
+  lens still running to depletion before any FULL terminal.)
 - **Break-walls MULTI-LENS test — flat-band geometric stiffness vs the phase-stiffness ceiling
   (`state/research-geometric-stiffness-vs-phase-ceiling-2026-06-25.md`).** READ-ONLY cited pass
   applying the campaign's FOUNDATIONAL mechanism (flat-band quantum geometry, Peotta-Törmä
