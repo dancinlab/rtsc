@@ -43,7 +43,7 @@
       "children": [
         {
           "id": "predictor-tools",
-          "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published). tool/rtsc_candidates.py = LIVING +@ candidate-materials registry + verifier (reuses rtsc_harness engine); current lead CoSn/hBN/Ta2NiSe5 clears the +@ box on paper (137K coordinate) but jointly unrealized (🟠, absorbed=false)."
+          "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published). tool/rtsc_candidates.py = LIVING +@ candidate-materials registry + verifier (reuses rtsc_harness engine); current lead CoSn/hBN/Ta2NiSe5 clears the +@ box on paper (137K coordinate) but jointly unrealized (🟠, absorbed=false). gw_bse_tc.py = GW/BSE→exciton-glue→Eliashberg Tc pipeline (in-silico beyond-PBE: Stage-4 alpha^2F_exc→lambda,w_log→Allen-Dynes Tc LIVE+self-tested deterministic; GW/BSE engine Yambo = wiring point, dead-until-wired; computes IF-the-exciton-pairs Tc, absorbed=false — research-first PR#30 finds the exciton-glue lever graveyard-leaning: proximity-SC-from-an-EI never measured in 50y, Ta2NiSe5 SC is phonon-mediated only when the exciton is destroyed)."
         },
         {
           "id": "pipeline-7verb",
