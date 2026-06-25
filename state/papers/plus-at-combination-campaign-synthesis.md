@@ -98,7 +98,12 @@ Not a single no-go theorem — a constellation, each precisely characterized:
    incoherent stiffness, H_042 FFLO finite-Q, H_043 vortex-code) — ALL 8 confirm-wall (byte-equal, honest-null
    triggered). So 12/12 SF-escape probes across wave-1 (H_032-035) + wave-2 (H_036-043) hold the wall;
    each cluster's central mechanism is now tested and held, and the ~17 remaining un-probed seeds are
-   within-cluster variants of an already-confirmed representative.** Honest ruling: across 5 premise-violating
+   within-cluster variants of an already-confirmed representative.** The two clusters whose wave-2 probe
+   was a closed-form PROXY were then upgraded to DEFINITIVE real compute, both confirm-wall: H_041
+   (Yukawa-SYK) via a real Matsubara Schwinger-Dyson solver — the incoherent metal pairs but ρ_s collapses
+   ~Z², T_BKT 2.68 K vs the 164 K ceiling (arXiv:2406.07608 kernel); and H_037 (hyperbolic connectivity)
+   via a real classical XY Monte-Carlo on a {7,3} tiling — bulk T_c^hyperbolic/T_c^square ≈ 0.46–0.59 (the
+   wrong direction; negative curvature SUPPRESSES bulk ordering, reproducing Baek–Minnhagen). Honest ruling: across 5 premise-violating
    axes and 12 orthogonal probes, the ~134-164K phase-stiffness wall stands UNDEFEATED — the no-go is not
    formally proven (within-cluster variants and heavier ED/MC remain), but no in-silico escape has been found.
    This is the campaign's honest terminal map: every computationally-settleable lever and every SF-escape

@@ -4,6 +4,15 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Definitive verification of the 2 proxy-only wall-escape clusters — both confirm-wall (PR pending).**
+  The two wave-2 probes that rested on a closed-form proxy were upgraded to real compute, both confirm:
+  H_041 (Yukawa-SYK) via a real Matsubara Schwinger-Dyson solver (incoherent metal pairs but rho_s collapses
+  ~Z^2; T_BKT 2.68 K vs the 164 K ceiling; PR#46) and H_037 (hyperbolic connectivity) via a real classical
+  XY Monte-Carlo on a {7,3} tiling (bulk T_c^hyp/T_c^sq ~ 0.46-0.59 — the WRONG direction; negative curvature
+  SUPPRESSES bulk ordering, reproducing Baek-Minnhagen; PR#47). So all 12 SF-escape probes (H_032-043) hold
+  the ~134-164K phase-stiffness wall, and the 2 proxy-weak clusters are now definitively real-compute-backed.
+  Campaign honest terminal: every computationally-settleable lever + every SF-escape cluster representative
+  tested, wall UNDEFEATED, no in-silico room-T path found (no-go not formally proven). absorbed=false / GATE_OPEN.
 - **H_037 DEFINITIVE verification: real hyperbolic {7,3} XY Monte-Carlo replaces the closed-form proxy
   — verdict UNCHANGED (confirms-wall).** Built a verified combinatorial {7,3} tiling
   (`state/h_037_bethe-ceiling-hyperbolic-lattice_2026_06_25/tiling73.py`; degree histogram EXACTLY
