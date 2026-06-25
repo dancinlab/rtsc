@@ -1,0 +1,38 @@
+==========================================================================
+H_056  CLS-Phonon Hybrid Glue (Friedrich-Wintgen BIC reservoir) probe
+within-cluster VARIANT of the flat-band phase-stiffness wall
+==========================================================================
+ROOM_T target        : 293.0 K
+cluster wall band    : ~134-164 K  (T_BKT = (pi/2) D_s)
+flat-only D_s ceiling: 8.9970 meV  (<-> 164 K)
+fixed |U|=200.0 meV  n_pair=0.1  V=0.5  gamma_flat=0.4 gamma_cont=1.0  dE=0.0
+--------------------------------------------------------------------------
+SWEEP continuum bandwidth W_cont at FIXED pairing gap & BIC condition:
+ W_cont(meV)  BIC_overlap_O   cont_term   D_s(meV)   T_BKT(K)
+         0.0   0.000000e+00 0.000000e+00     8.9970    164.000
+        50.0   0.000000e+00 0.000000e+00     8.9970    164.000
+       100.0   0.000000e+00 0.000000e+00     8.9970    164.000
+       200.0   0.000000e+00 0.000000e+00     8.9970    164.000
+       400.0   0.000000e+00 0.000000e+00     8.9970    164.000
+       800.0   0.000000e+00 0.000000e+00     8.9970    164.000
+      1600.0   0.000000e+00 0.000000e+00     8.9970    164.000
+--------------------------------------------------------------------------
+CONTRAST: detune off the FW BIC condition (leaky resonance, NOT a BIC):
+     eps    overlap_O   D_s(meV)   T_BKT(K)  still_BIC
+    0.00 0.000000e+00     8.9970    164.000       True
+    0.50 2.840253e-01    60.9330   1110.708      False
+    2.00 1.136101e+00   216.7412   3950.831      False
+==========================================================================
+FALSIFIER LEDGER (PASS = not triggered = wall stands / escape fails):
+  [PASS] honest_null_zero_continuum_overlap
+  [PASS] Ds_grows_with_Wcont
+  [PASS] Tc_clears_cluster_wall
+  [PASS] Tc_reaches_room_T
+  [PASS] free_lunch_continuum_donation_keeps_BIC
+--------------------------------------------------------------------------
+falsifiers_pass = 5/5
+max BIC<->continuum overlap O = 0.000e+00 (0 => continuum decoupled, donates no stiffness)
+D_s growth over 1600x W_cont sweep = 0.000e+00 (0 => bandwidth irrelevant to condensate)
+T_BKT at eV-scale continuum = 164.000 K (wall = 164 K, room = 293 K)
+VERDICT = confirms-wall
+==========================================================================

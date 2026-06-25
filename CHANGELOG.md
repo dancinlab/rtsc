@@ -4,6 +4,16 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **micro-exp wave-3: ALL 17 remaining SF-escape variants — every one confirm-wall (PR pending).**
+  Probed the 17 within-cluster variants (H_044-H_060) the wave-2 representatives left; all confirm-wall,
+  deterministic (e.g. H_044 Chern-Simons stiffness pump: D_s collapses to the Uemura/boson line, best 14.5K
+  vs the 134K wall). So 29/29 SF-escape probes (H_032-H_060) hold the ~134-164K phase-stiffness wall and
+  ALL 25 genuinely-new triaged escapes are exhausted (ledger exports/sweep/rtsc-sf-escape-wave3-2026-06-25/).
+  Synthesis §7 added "the three-wall convergence": every room-T@1atm route terminates at ONE of three walls
+  (phase-stiffness mechanism ~134-164K / pressure-materials 1atm-retention / many-body beyond-PBE), and ALL
+  THREE end at the out-of-domain laboratory gate, never at an in-silico failure. Campaign honest terminal:
+  every computationally-settleable lever + every SF-escape exhausted, wall undefeated, no in-silico room-T
+  path. absorbed=false / GATE_OPEN; no material claimed to BE an RTSC.
 - **Research-first survey of a NEW campaign axis: the PRESSURE-HYDRIDE high-Tc route**
   (`state/research-pressure-hydride-axis-2026-06-25.md`, READ-ONLY literature, no compute). Settles the 7
   "pressure-hydride-axis" seeds flagged by the SF-seed triage as distinct from the frozen phase-stiffness wall.

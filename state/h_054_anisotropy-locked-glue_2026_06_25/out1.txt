@@ -1,0 +1,39 @@
+========================================================================
+H_054  ANISOTROPY-LOCKED GLUE (crystal-symmetry-protected pairing)
+cluster: spin-group-symmetry pairing decoupled from ORDER AMPLITUDE
+         (thermal-axis variant of H_040; H_033/H_034 magnon closures)
+========================================================================
+model: 2-band altermagnet, L=24x24, t=1.0, t_AM(FIXED)=0.4
+mean-field T_N = z*J = 1.0000 (t units); shared Weiss/Brillouin m(T)
+FS form factor <g^2>  AM (d-wave) = 0.277617
+FS form factor <g^2>  AFM (magnon)= 0.014916
+------------------------------------------------------------------------
+normalized lambda(T)/lambda(0) vs reduced T = T/T_N  (AM vs AFM control):
+    T/T_N   lam_AM/0  lam_AFM/0
+    0.000   1.000000   1.000000
+    0.200   0.999818   0.999818
+    0.400   0.971454   0.971454
+    0.600   0.823252   0.823252
+    0.800   0.504685   0.504685
+    1.000   0.150000   0.150000
+    1.200   0.125000   0.125000
+    1.400   0.107143   0.107143
+    1.600   0.093750   0.093750
+------------------------------------------------------------------------
+T50 (reduced) AM  (need >= 0.7)   = 0.8080
+T50 (reduced) AFM (need <= 0.3)   = 0.8080
+thermal-robustness margin T50_AM - T50_AFM = +0.0000  (need >= 0.3 to escape)
+max |lam_AM/0 - lam_AFM/0| over T          = 2.220446e-16
+AM charge T_BKT at 0.7 T_N                 = 160.49 K
+best surviving (>=50%) AM charge T_BKT     = 210.49 K  (wall 134-164 K)
+------------------------------------------------------------------------
+  [FAIL] F1_honest_null_tracks_S_squared
+  [PASS] F2_AM_fails_0p7TN_retention
+  [FAIL] F3_curves_identical
+  [PASS] F4_surviving_tbkt_below_wall
+  [PASS] F5_no_dwave_projection
+------------------------------------------------------------------------
+honest_null (F1) PASS = False
+falsifiers_pass = 3/5
+VERDICT: confirms-wall
+========================================================================

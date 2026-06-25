@@ -1,0 +1,55 @@
+==============================================================================
+H_053  Zero-Moment Stiffness Ladder  -  decoupled magnetic-vs-charge stiffness
+==============================================================================
+Cluster: spin-fluctuation / phase-stiffness ambient ceiling  T_BKT=(pi/2)D_s
+         (confirmed wall: H_032-043, 12/12 confirm-wall; deep law = no free lunch)
+Variant twist: metallic COMPENSATED ALTERMAGNET -- zero net moment is a lattice-
+    symmetry property (NOT carrier starvation), so charge density n is not Mott-
+    throttled; claim D_s^charge ~ n (n~10^22, 10-100x cuprate) clears 164 K.
+HONEST-NULL: n and pairing-survival ANTI-CORRELATE through a SINGLE J --
+    the J that makes it an altermagnet both SOURCES the glue Delta=G*J AND
+    PAIR-BREAKS it; D_s^sf=min(D_s^charge, K*Delta)*P_pair (gap-capped + CC).
+Sources: arXiv:2408.03999 (pairing constraints); CrSb Nat.Commun.2024 (J~1eV);
+    RuO2 npj Spintronics 2024 + Cell Rep.Phys.Sci.2025 (nonmagnetic, J~0);
+    MnTe arXiv:2603.00242 (1.3 eV-gap semiconductor, low n).
+------------------------------------------------------------------------------
+  glue strength G_GLUE (Delta=G_GLUE*J) = 0.300  (steel-man)
+  electronic gap ceiling DELTA_ELEC     = 30.000 meV (steel-man)
+  superfluid-weight gap cap K_cap       = 1.000  (D_s^sf<=K_cap*Delta)
+  D_s* (wall_lo,134 K) = (2/pi)kB*134 = 7.3512 meV
+  D_s* (wall_hi,164 K) = (2/pi)kB*164 = 8.9970 meV
+  D_s* (room, 293 K)   = (2/pi)kB*293 = 16.0739 meV
+------------------------------------------------------------------------------
+  HOST MENU  (Delta=min(G_GLUE*J,ceiling); D_s^sf=min(Dchg,K*Delta)*P_pair):
+    host                             n3d[cm^-3]  J[meV] Del[meV]     Dchg  P_pair  Dsf[meV]  real
+    CrSb (metal, large J)              2.00e+22    1000   30.000    957.6  0.0000    0.0000     Y
+    RuO2 (metal, ~null J)              3.00e+22      10    3.000    742.1  0.7778    2.3333     Y
+    MnTe (semicond, low n)             1.00e+20     200   30.000      2.8  0.1111    0.3103     Y
+    doped-altermagnet semimetal        1.00e+21     400   30.000     34.9  0.0000    0.0000     Y
+    ideal goldilocks (J-optimal)       3.00e+22     100   30.000   1436.3  0.7778   23.3333  HYPO
+------------------------------------------------------------------------------
+  DECISIVE NULL -- best REAL (sourced) altermagnet host:
+    host                              = RuO2 (metal, ~null J)
+    D_s^charge (uncapped Drude)       = 742.1035 meV
+    Delta (glue from J)               = 3.0000 meV
+    P_pair                            = 0.7778
+    D_s^sf (gap-capped, honest)       = 2.3333 meV
+    T_BKT from D_s^sf                 = (pi/2)D_s/kB = 42.533 K
+    margin to wall_lo (134 K)         = -91.467 K
+  DIAGNOSTIC -- engineered HYPOTHETICAL goldilocks (NOT a real material):
+    host                              = ideal goldilocks (J-optimal)
+    D_s^sf (needs UNMEASURED 30 meV gap) = 23.3333 meV  -> T_BKT=425.3 K
+    (this 'escape' rides on an unproven 30 meV altermagnetic gap =
+     a separate un-demonstrated room-T-glue claim = the H_032-035 glue wall.)
+  uncapped full-Drude upper bound (no gap cap, P_pair:=1) = 1436.3 meV (host ideal goldilocks (J-optimal))
+------------------------------------------------------------------------------
+FALSIFIER LEDGER (PASS = not triggered):
+  [PASS] honest_null_real_host_clears_wall
+  [PASS] real_high_n_and_pairing_coexist
+  [FAIL] uncapped_drude_clears_wall_positive_control
+  [PASS] real_host_reaches_room_T
+------------------------------------------------------------------------------
+  honest-null (F1) shows a REAL host clears wall? False   real-host margin = -91.467 K
+  falsifiers_pass = 3/4
+VERDICT: confirms-wall
+==============================================================================

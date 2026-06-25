@@ -1,0 +1,36 @@
+==============================================================================
+H_050 — Flexoelectric Gradient Glue (pairing from strain-gradient, not strain)
+        cluster: dielectric-engineering glue family (variant of H_039 / ENZ)
+==============================================================================
+flexo vertex V(q) = (q*mu)^2 * chi_soft(q,w->0)   [vanishes at q=0]
+optimistic mu_sq (flexocoupling^2, reduced)     : 1.000
+bare r0 (distance to FE-QCP, soft mode)         : 0.020
+------------------------------------------------------------------------------
+density scan (n_2D /cm^2 : lambda_lead  ch  D_s[meV]  T_BKT[K]  metallic? pairs?):
+  1.0e+11 : lam=0.0017  m=0  D_s=   0.002  T_BKT=     0.0  metal=False  pair=False
+  1.0e+12 : lam=0.0151  m=0  D_s=   0.016  T_BKT=     0.3  metal=False  pair=False
+  1.0e+13 : lam=0.0867  m=0  D_s=   0.159  T_BKT=     2.9  metal=False  pair=False
+  3.0e+13 : lam=0.1353  m=0  D_s=   0.476  T_BKT=     8.7  metal=False  pair=False
+  1.0e+14 : lam=0.1467  m=0  D_s=   1.587  T_BKT=    28.9  metal=False  pair=False
+------------------------------------------------------------------------------
+lambda at metallic n (1e14)                     : 0.1467  (escape needs > 0.30)
+D_s at metallic n (1e14)                        : 1.587 meV  (cuprate scale 7.4)
+lambda PEAK                                     : 0.1467  at n=1.0e+14 (D_s=1.587 meV)
+  -> peak density metallic (D_s>cuprate)?       : False
+single density with BOTH lambda>0.3 AND D_s>7.4 : NONE
+chi_soft collapse ratio (metallic/dilute)       : 1.6325e-01
+------------------------------------------------------------------------------
+  [PASS   ] F1_flexo_vertex_pairs_somewhere
+  [TRIGGER] F2_HONEST_NULL_lambda_above_escape_at_metallic_n
+  [TRIGGER] F3_HONEST_NULL_glue_and_stiffness_coexist_at_one_density
+  [TRIGGER] F4_HONEST_NULL_lambda_peak_is_metallic
+  [TRIGGER] F5_chi_soft_not_collapsed_by_metallic_landau_damping
+------------------------------------------------------------------------------
+decisive F2 (lambda>0.3 at metallic n) PASS     : False
+decisive F3 (glue+stiffness coexist)   PASS     : False
+decisive F4 (lambda peak is metallic)  PASS     : False
+falsifiers_pass : 1/5
+is_green        : False
+absorbed        : False
+VERDICT         : confirms-wall
+==============================================================================

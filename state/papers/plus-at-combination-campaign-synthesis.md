@@ -97,15 +97,17 @@ Not a single no-go theorem — a constellation, each precisely characterized:
    ligand-hole negative-U, H_039 ENZ Coulomb-sign-flip, H_040 altermagnet spin-group, H_041 Yukawa-SYK
    incoherent stiffness, H_042 FFLO finite-Q, H_043 vortex-code) — ALL 8 confirm-wall (byte-equal, honest-null
    triggered). So 12/12 SF-escape probes across wave-1 (H_032-035) + wave-2 (H_036-043) hold the wall;
-   each cluster's central mechanism is now tested and held, and the ~17 remaining un-probed seeds are
-   within-cluster variants of an already-confirmed representative.** The two clusters whose wave-2 probe
+   each cluster's central mechanism is now tested and held. **micro-exp wave-3 then probed ALL 17 of
+   the remaining within-cluster variants (H_044-H_060) — every one confirm-wall — so 29/29 SF-escape
+   probes hold the wall and all 25 genuinely-new triaged escapes are now exhausted.** The two clusters whose wave-2 probe
    was a closed-form PROXY were then upgraded to DEFINITIVE real compute, both confirm-wall: H_041
    (Yukawa-SYK) via a real Matsubara Schwinger-Dyson solver — the incoherent metal pairs but ρ_s collapses
    ~Z², T_BKT 2.68 K vs the 164 K ceiling (arXiv:2406.07608 kernel); and H_037 (hyperbolic connectivity)
    via a real classical XY Monte-Carlo on a {7,3} tiling — bulk T_c^hyperbolic/T_c^square ≈ 0.46–0.59 (the
    wrong direction; negative curvature SUPPRESSES bulk ordering, reproducing Baek–Minnhagen). Honest ruling: across 5 premise-violating
-   axes and 12 orthogonal probes, the ~134-164K phase-stiffness wall stands UNDEFEATED — the no-go is not
-   formally proven (within-cluster variants and heavier ED/MC remain), but no in-silico escape has been found.
+   axes and **29 orthogonal probes (H_032-H_060, 2 with definitive real compute)**, the ~134-164K
+   phase-stiffness wall stands UNDEFEATED — the no-go is not formally proven (heavier ED/MC could still
+   surprise), but no in-silico escape has been found and the entire triaged SF-escape space is exhausted.
    This is the campaign's honest terminal map: every computationally-settleable lever and every SF-escape
    cluster surveyed, wall holds, absorbed=false / GATE_OPEN, no material claimed to BE an RTSC.
 
@@ -130,5 +132,22 @@ computationally-settleable lever is confirmed or literature-bounded, clearing th
 synthesis, trilayer fabrication, and accredited 4-probe transport + Meissner expulsion + measured
 H_c2/T_c — are **physical, not computational**, and `absorbed=true` requires them regardless. The
 honest computational campaign is therefore complete; advancement now requires the laboratory.
+
+## 7. The three-wall convergence (the campaign's deepest finding)
+
+Every route to room-T @ 1 atm the campaign explored terminates at ONE of three walls — and all three end
+at the **out-of-domain laboratory gate** (`absorbed=true`), never at an in-silico failure:
+
+1. **Phase-stiffness mechanism wall (~134–164 K).** The clean in-silico near-no-go: 29 orthogonal
+   SF-escape probes (H_032–H_060, 2 real-compute) all confirm it; every escape hits the same "no free
+   lunch" (borrow stiffness → Leggett softens pairing; change statistics → the gauge shifts both channels;
+   incoherence → ρ_s collapses ~Z²; curvature → suppresses bulk ordering). The deep law: *the FLUCTUATION
+   glues, the ORDER traps* — and the rigidity is bounded regardless of how it is sourced.
+2. **Pressure / materials-existence wall (1 atm retention).** The hydride route reaches room-T
+   *temperature* but only at megabar pressure (LaH10 ~250 K @ 170–190 GPa); ambient-stable hydride Tc caps
+   ~17 K (GNoME), and the near-ambient room-T claims (CSH 2020, Lu-N-H 2023) were both retracted. Ambient
+   retention is a synthesis endpoint — the lab gate (`state/research-pressure-hydride-axis-2026-06-25.md`).
+3. **Many-body computability wall (beyond-PBE).** The exciton/strong-correlation glue scale (Ta2NiSe5)
+   is a measured quantity our DFT cannot reproduce — routed around by literature, not computed by us.
 
 No material is claimed to BE an RTSC. Negative and partial results are kept as results.

@@ -1,0 +1,36 @@
+==============================================================================
+H_044  Chern-Simons Stiffness Pump  -  anyon statistical rigidity (FQAH host)
+==============================================================================
+Cluster: spin-fluctuation / phase-stiffness ambient ceiling  T_BKT=(pi/2)D_s
+Variant twist: STATISTICAL gauge field of doped FQAH composite fermions as a
+               glue-free D_s source (NOT a boson glue family, NOT a vortex code).
+Mechanism: D_s = kappa = delta/(3 m*) ; flat Chern band -> 1/m* = c_m*U_int
+           => D_s(CS) collapses to c_geom*delta(1-delta)*U_int (boson line).
+Source: Nosov-Han-Khalaf arXiv:2506.02108 (kappa~omega_c, omega_c=pi*delta/m*);
+        Halperin-Lee-Read CF/Chern-Simons RPA; tMoTe2 FQAH host (2308.06177).
+------------------------------------------------------------------------------
+  GENEROUS host interaction ceiling U_int      = 30.000 meV
+  CF-mass prefactor c_m (1/m*=c_m*U_int)       = 1.000  (steel-man)
+  level/geom prefactor c_geom=1/(3pi) (literature) = 0.10610
+------------------------------------------------------------------------------
+  (delta,k) grid scan at the generous ceiling:
+    max D_s(CS)              = 0.7958 meV  at delta=0.500, k=1
+    max (D_s_CS - boson line) over grid = 0.000000e+00 meV
+------------------------------------------------------------------------------
+  D_s* (wall, 134 K)  = (2/pi)kB*134 = 7.3512 meV
+  D_s* (wall, 164 K)  = (2/pi)kB*164 = 8.9970 meV
+  D_s* (room, 293 K)  = (2/pi)kB*293 = 16.0739 meV
+  T_BKT from best CS D_s = (pi/2)D_s/kB = 14.506 K
+  margin to wall_lo (134 K)            = -119.494 K
+  bare-D_s deficit factor to reach 134 K = 9.24x
+------------------------------------------------------------------------------
+FALSIFIER LEDGER (PASS = not triggered):
+  [PASS] honest_null_cs_clears_wall
+  [PASS] cs_beats_boson_line
+  [PASS] cs_exceeds_interaction_ceiling
+  [PASS] cs_reaches_room_T
+------------------------------------------------------------------------------
+  honest-null (F1) shows CS clears wall? False   best-case margin = -119.494 K
+  falsifiers_pass = 4/4
+VERDICT: confirms-wall
+==============================================================================

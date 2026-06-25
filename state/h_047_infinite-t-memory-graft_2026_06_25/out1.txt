@@ -1,0 +1,48 @@
+==========================================================================
+H_047  Infinite-T Memory Graft (subsystem-code symmetry that does not melt)
+cluster: code-/symmetry-protected order-class (variant of H_043 vortex-code)
+==========================================================================
+host: 4-site (2x2 plaquette) Xu-Moore subsystem code,  K_plaq=100.0 meV
+      subsystem generators S_R0=Z0Z1 S_R1=Z2Z3 S_C0=Z0Z2 S_C1=Z1Z3 (Z2xZ2)
+      logical O_L=Z0 ; SC graft = -g*sum_<ij>(X_iX_j+Y_iY_j)/2, g=50.0 meV
+--------------------------------------------------------------------------
+(1) CRUX -- does the charge-2e SC graft preserve the protecting subsystem symmetry?
+  generator   ||[S,H_code]||     ||[S,H_SC]||
+      S_R0     0.000000e+00     4.000000e+02
+      S_R1     0.000000e+00     4.000000e+02
+      S_C0     0.000000e+00     4.000000e+02
+      S_C1     0.000000e+00     4.000000e+02
+  max ||[S,H_code]|| = 0.000000e+00  (~0 => code preserves the subsystem charge)
+  max ||[S,H_SC]||   = 4.000000e+02  (>0 => SC graft BREAKS it: [S,H]!=0)
+  symmetry preserved by bare code? True
+  symmetry BROKEN by SC graft?     True   <== CRUX honest-null
+--------------------------------------------------------------------------
+(2) logical autocorrelation plateau C(inf) vs T  (1 => protected/no-melt, 0 => melts)
+        T(K)   plateau_code   plateau_SC
+        50.0       1.000000     0.000000
+       150.0       1.000000     0.000000
+       293.0       1.000000     0.000029  <- room T
+      1000.0       1.000000     0.011568
+   1000000.0       1.000000     0.031251
+  infinite-T plateau: code=1.000000  SC-grafted=0.031250
+  code logical protected at inf T? True  (positive control)
+  SC-grafted logical protected?    False  (escape needs True)
+--------------------------------------------------------------------------
+(3) resulting ordering T vs the energetic (pi/2)D_s ceiling and the wall
+  frozen flat-band D_s window           = 0.06-0.44 meV
+  energetic ceiling (pi/2)D_s           = 1.09-8.02 K
+  D_s needed to put ceiling at 134 K    = 7.351 meV (~16.7x above frozen hi D_s)
+  best resulting ordering T             = 8.02 K   wall = 134.0-164.0 K
+--------------------------------------------------------------------------
+  [FAIL] F1_CRUX_HONEST_NULL_SC_graft_breaks_subsystem_symmetry
+  [FAIL] F2_HONEST_NULL_grafted_logical_not_protected_at_infinite_T
+  [FAIL] F3_best_order_tc_below_wall
+  [PASS] F4_code_logical_IS_protected_positive_control
+  [PASS] F5_code_symmetry_commutes_positive_control
+falsifiers_pass = 2/5
+CRUX honest-null (F1) triggered = True  (triggered => SC graft breaks the symmetry => wall confirmed)
+--------------------------------------------------------------------------
+VERDICT: confirms-wall
+falsifiers_pass: 2
+is_green: False   absorbed: false
+==========================================================================

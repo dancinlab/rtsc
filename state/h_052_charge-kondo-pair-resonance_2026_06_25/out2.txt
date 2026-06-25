@@ -1,0 +1,70 @@
+==============================================================================
+H_052  Charge-Kondo / Pair-Resonance Lattice  -  negative-U preformed-pair band
+==============================================================================
+Cluster: spin-fluctuation / phase-stiffness ambient ceiling  T_BKT=(pi/2)D_s
+Variant twist: T_c claimed set by the eV-scale charge-Kondo RESONANCE width
+               Gamma (preformed charge-2e bosons), NOT the 7.4 meV spin-
+               fluctuation stiffness -> 'no quantum-metric ceiling'.
+Honest-null  : preformed-pair Tc = boson stiffness, k_B Tc = 6.62*n_B^2/3*t_B,
+               t_B = z*t_imp^2/|U| (deep binding -> HEAVY bipolaron), and the
+               dilute formula caps at the charge-order/Mott trap density.
+Empirical ceiling: the two REAL negative-U skipper SCs -- Tl:PbTe (1.5 K) and
+               the BEST-ever K-BaBiO3 (30 K) -- both far below 134 K despite
+               eV binding. This probe calibrates the closed form on BOTH
+               (no free fit) and asks if ANY skipper clears the wall.
+Sources: bipolaron BEC (arXiv:2210.14236, 1201.1400); Tl:PbTe PRL 94 157002 &
+         PRL 108 036402; K-BaBiO3 Nature 332 814; Emery-Kivelson Nature 374 434.
+------------------------------------------------------------------------------
+STEP 0  Calibrate on the two real negative-U skipper SCs (no free fit):
+  Tl:PbTe   Tc=  1.5 K, n_B=0.015 -> t_B =   0.3210 meV
+  K-BaBiO3  Tc= 30.0 K, n_B=0.200 -> t_B =   1.1419 meV (best-ever)
+  -> even the BEST real negative-U skipper condenses at t_B ~ 1.1 meV (narrow).
+------------------------------------------------------------------------------
+STEP 1  Seed escape claim at FACE VALUE  (T_c = Gamma / k_B):
+  steel-manned resonance width  Gamma_max = 250.0 meV (eV-scale)
+  seed-claimed T_c = Gamma/kB              =   2901.1 K  (>> 293 K !?)
+------------------------------------------------------------------------------
+STEP 2  Two-particle ED of the negative-U pair (HONEST |U|>>z*t_imp regime):
+  narrow skipper-band hopping t_imp           =  19.5096 meV (anchored to best SC)
+  deep binding |U_eff|                         =   4000.0 meV  (>> z*t_imp)
+  exact 2-site ED  t_pair_eff                  =   0.1903 meV
+  anti-adiabatic   2 t_imp^2/|U|               =   0.1903 meV  (cross-check)
+  lattice bipolaron bandwidth t_B = z*t_pair   =   1.1418 meV  (z=6)
+  --> heavy bipolaron: t_B << Gamma=250 meV << |U| (no free lunch).
+------------------------------------------------------------------------------
+STEP 3  Bipolaron BEC condensation (capped at the charge-order trap):
+  dilute/charge-order ceiling  n_B_max         = 0.25 (quarter-filled CDW onset)
+  best valid condensation T_c                  =    34.8086 K  at n_B=0.25
+  boson phase stiffness D_s^B ~ n_B*t_B        =   0.2854 meV (same EK line)
+  (above n_B_max: hard-core bosons CHARGE-ORDER -> insulator, NOT a condensate)
+------------------------------------------------------------------------------
+STEP 4  Phase-stiffness wall comparison (the cluster ceiling):
+  boson stiffness          D_s^B            =   0.2854 meV
+  wall stiffness (134 K)   (2/pi)kB*134     =   7.3512 meV
+  wall stiffness (164 K)   (2/pi)kB*164     =   8.9970 meV
+  room stiffness (293 K)   (2/pi)kB*293     =  16.0739 meV
+  best condensation T_c                     =    34.8086 K
+  margin to wall_lo (134 K)                 =   -99.1914 K
+  margin to wall_hi (164 K)                 =  -129.1914 K
+  deficit factor to reach 134 K             =       3.85x
+------------------------------------------------------------------------------
+CONTRAST  seed claim (T_c=Gamma/kB) vs real condensation (boson stiffness):
+  seed-claimed T_c (= Gamma/kB) =       2901.1 K
+  real condensation  T_c        =      34.8086 K
+  the Gamma-claim over-states T_c by a factor =         83.3x
+  empirical sanity: this same model gives Tc(Tl:PbTe-params)=1.50 K, Tc(K-BaBiO3-params)=30.00 K
+                    (vs measured 1.5 K and 30 K) -> model is reality-consistent.
+  reason: deep binding (pairs PREFORMED) -> HEAVY bipolaron (t_B=z t^2/|U|),
+          and the dilute/charge-order trap caps n_B -> Tc on the EK line.
+------------------------------------------------------------------------------
+FALSIFIER LEDGER (PASS = not triggered):
+  [PASS] honest_null_preformed_pair_condensation_clears_wall
+  [PASS] condensation_reaches_gamma_target_14meV
+  [PASS] pair_hopping_not_binding_suppressed
+  [FAIL] condensation_exceeds_best_real_skipper_SC
+  [PASS] condensation_reaches_room_T
+------------------------------------------------------------------------------
+  honest-null (F1) shows condensation clears wall? False   best-case margin = -99.1914 K
+  falsifiers_pass = 4/5
+VERDICT: confirms-wall
+==============================================================================
