@@ -4,6 +4,16 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_031 clean spin-fluctuation candidate + DUAL multilayer (closed-form).** Consolidated the research
+  round into a NEW clean lead: swap the dead Ta2NiSe5 exciton TRAP (EI family is dead, PR#36) for the
+  clean spin-fluctuation glue (~300 meV, MEDIATES+COEXISTS, real precedent TbMn6Sn6/Au 3.6K) — this
+  REVIVES the H_023 demand-relaxation path. stacked_tc(300,3D)=251.6K; geometry-multilayer N=2
+  (f_geom=1.164) -> 292.9 K (sits AT the room-T threshold). The user's lever — also stack the GLUE
+  layers (coupling boost f_glue) — needs only f_glue>=1.0003 (0.03%) to cross 293 K (f_glue=1.05 -> 308K).
+  5/5 falsifiers, deterministic. HONEST GATE: the BKT coordinate (300meV->252K) is OPTIMISTIC vs the real
+  spin-fluctuation ambient cap (~134 K cuprate); f_geom AND f_glue are MODELS that saturate at N=1-3
+  (research-first + DFT needed); Tc is a coordinate not a prediction (H_018). The cleanest 🟠 the campaign
+  has produced, but stands on three model assumptions. is_green=False, absorbed=false / GATE_OPEN.
 - **H_030 CoSn flat-band reconciliation — the doping wall is a TRADE-OFF, not a bookkeeping artifact
   (`HYPOTHESES/cards/H_030_cosn_flatband_reconciliation.md`, `state/h030_cosn_flatband_reconciliation_2026_06_25/`).**
   RE-ANALYSIS (NO new SCF; deterministic re-parse of OUR saved CoSn pw.x output) settling the method-lever
