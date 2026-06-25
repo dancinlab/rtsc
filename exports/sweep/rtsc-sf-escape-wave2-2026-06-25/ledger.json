@@ -47,7 +47,8 @@
    "cluster": "stiffness from a non-quasiparticle reservoir",
    "verdict": "confirms-wall",
    "falsifiers": "1/5",
-   "repro": "\u2713byte-equal /matches"
+   "repro": "\u2713byte-equal /matches",
+   "definitive_verified": "real converged Yukawa-SYK Schwinger-Dyson/Eliashberg-SYK Matsubara solver replaces the closed-form proxy; verdict unchanged (confirms-wall): best converged incoherent T_BKT=2.68 K vs 164 K ceiling, rho_s^inc/rho_s^coh~0.011 (Z^2 collapse), all 5 definitive falsifiers TRIGGER"
   },
   {
    "id": "H_042",

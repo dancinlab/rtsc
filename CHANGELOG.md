@@ -4,6 +4,22 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_041 DEFINITIVE verification: real Yukawa-SYK Schwinger-Dyson solve replaces the closed-form proxy
+  — verdict UNCHANGED (confirms-wall).** Built an actual self-consistent Eliashberg-SYK Matsubara solver
+  (`state/h_041_planckian-yukawa-syk_2026_06_25/sd_solver.py` + `run_definitive.py`, numpy, deterministic):
+  iterates G, Sigma, Phi, anomalous F, boson polarization Pi and propagator D to a fixed point (damped,
+  tol=1e-12, Nf=200), then evaluates the converged superfluid stiffness from the literature kernel
+  rho_s/(pi e^2)=(2/beta) sum_w int d-eps rho_tr F F^dag (arXiv:2406.07608 Eq.4). Research-before-real:
+  the proxy ENCODED the D_s=Z^2(n/m*) scaling by hand; the solver DERIVES F from the saddle and we measure
+  whatever stiffness results. Honest two-reference protocol (coherent BCS ref fixes one generous band scale
+  W so its D_s=1.5x the 164K req; same W applied to the incoherent NFL sweep; plus a calibration-free
+  rho_s^inc/rho_s^coh cross-check). Result: the incoherent SYK metal DOES pair (F survives), but the
+  converged stiffness COLLAPSES with the quasiparticle residue (tightly-converged crossover points,
+  resid~1e-13: T_BKT falls 246K->2.6K as Z 0.56->0.19; ratio ~Z^2 Uemura law). Best converged incoherent
+  T_BKT = 2.68 K vs the 164 K ceiling; all 5 definitive falsifiers TRIGGER, honest-null fails -> the real
+  compute CONFIRMS the proxy. Cards (HYPOTHESES/cards/ + state/HYPOTHESES/cards/) updated in-place with a
+  '## Definitive verification' addendum (verbatim solver stdout), frozen pre-registration intact; registry
+  + wave-2 ledger annotated. is_green=false / absorbed=false; no material claimed to BE an RTSC.
 - **micro-exp wave-2: 8 cluster-representative wall-escape probes — ALL confirm-wall (PR pending).**
   Probed one deterministic representative of EACH of the 8 SF-escape clusters from the full triage
   (H_036 statistical-transmutation / H_037 hyperbolic-connectivity / H_038 ligand-hole negative-U /

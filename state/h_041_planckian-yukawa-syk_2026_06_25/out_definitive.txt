@@ -1,0 +1,44 @@
+==============================================================================
+H_041 DEFINITIVE — real Yukawa-SYK Schwinger-Dyson stiffness vs the ceiling
+       (replaces the closed-form proxy with a converged Matsubara SD solve)
+       freeze premise violated: QUASIPARTICLE-COHERENCE (Z->0, incoherent NFL)
+==============================================================================
+ceiling band top                   : 164.0 K
+D_s required for (pi/2)D_s=164K     : 8.9970 meV
+boson w0 / Fermi epsF / SYK r       : 50.0 / 300.0 meV / 1.0
+solver: damped Matsubara SD (mix=0.2, tol=1e-12), Nf=200 (each side)
+------------------------------------------------------------------------------
+COHERENT reference (g^2=6000, T=0.20 meV): Z=0.5627  Fmax=3.4796e-01  rho_s^coh(W=1)=6.0277e-02  [resid 9.9e-13, 350 it]
+generous W (= n/m* band scale) so coherent D_s=1.5x req (13.495 meV) -> W=2.2389e+02
+  -> coherent D_s=13.4955 meV, T_BKT^coh=246.00 K (clears ceiling by construction)
+------------------------------------------------------------------------------
+  g^2(meV^2)    Z       Fmax        rho_s^inc(W=1)   D_s(meV)    T_BKT(K)   rho^inc/rho^coh  resid
+       30000  0.4817  7.518e-02   1.1196e-02     2.50671    45.6931   1.8574e-01     9.7e-13
+       70000  0.3939  3.880e-02   4.3345e-03     0.97045    17.6898   7.1910e-02     9.9e-13
+      150000  0.2887  2.008e-02   1.6476e-03     0.36888     6.7240   2.7333e-02     9.7e-13
+      300000  0.1877  1.093e-02   6.3542e-04     0.14226     2.5932   1.0542e-02     8.5e+00
+      700000  0.0079  8.782e-04   1.4335e-06     0.00032     0.0059   2.3782e-05     9.8e+02
+     1500000  0.0201  1.819e-03   7.3333e-06     0.00164     0.0299   1.2166e-04     4.9e+02
+     3000000  0.0029  1.752e-03   6.5693e-04     0.14708     2.6810   1.0899e-02     1.7e+04
+------------------------------------------------------------------------------
+COHERENT D_s (generous, by construction)     : 13.4955 meV  (T_BKT=246.0 K, clears ceiling)
+best converged D_s in INCOHERENT (Z<0.2) NFL : 0.147081 meV  (req 8.997)
+best converged Fmax in INCOHERENT NFL        : 1.0926e-02  (coherent gap Fmax=3.480e-01)
+best T_BKT in INCOHERENT NFL                 : 2.6810 K
+calib-free rho_s^inc/rho_s^coh (= ~Z^2 law)  : 1.0899e-02  (escape needs ~1)
+best T_BKT over ALL incoherent g             : 45.6931 K  at g^2=30000 (Z=0.4817)
+------------------------------------------------------------------------------
+  [TRIGGER] F1_HONEST_NULL_converged_SYK_stiffness_collapses_in_incoherent_regime
+  [TRIGGER] F2_incoherent_converged_stiffness_clears_ceiling
+  [TRIGGER] F3_any_incoherent_coupling_clears_ceiling
+  [TRIGGER] F4_incoherent_Ds_exceeds_required
+  [TRIGGER] F5_incoherent_stiffness_within_factor2_of_coherent
+------------------------------------------------------------------------------
+honest-null (F1) PASS (survives)     : False
+incoherent regime clears 164K margin : False
+falsifiers_pass                      : 0/5
+is_green                             : False
+absorbed                             : False
+VERDICT                              : confirms-wall
+solver wall-time                     : (deterministic; ~33s local; timing line elided)
+==============================================================================
