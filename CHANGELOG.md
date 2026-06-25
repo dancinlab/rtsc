@@ -4,6 +4,17 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **GW/BSE→Tc in-silico pipeline (`src/gw_bse_tc.py`) + research-first prior-art (PR#30).** Wrote the
+  beyond-PBE Tc tool: DFT→GW(quasiparticle gap)→BSE(exciton spectrum)→alpha^2F_exc→Eliashberg/Allen-Dynes
+  Tc. Stage-4 math (excitons→lambda,w_log→Tc) is LIVE + deterministic self-test (toy 0.30eV exciton,
+  lambda=2.13, byte-equal x2); the GW/BSE engine (Yambo, GPU summer) is the wiring point (dead-until-wired,
+  raises a clear error if absent); the electron-exciton vertex is an explicit documented knob (coupling_eV),
+  not fabricated. absorbed=false (no sim flips it). **Research-first prior-art** (state/research-plus-at-realization-prior-art-2026-06-25.md,
+  PR#30): the +@ trio is 🟠 OPEN/NOVEL (no no-go, never built) BUT the exciton-glue sub-lever is a graveyard —
+  proximity-SC-from-an-excitonic-insulator has NEVER been measured in 50y (Allender-Bray-Bardeen 1973→2026 all
+  theory), and Ta2NiSe5 superconducts (Tc~1.2K @8GPa) ONLY when its exciton condensate is DESTROYED, phonon-mediated
+  (arXiv:2106.04396) — the opposite of the glue premise. Closest real precedent = TbMn6Sn6/Au kagome-interface SC
+  Tc~3.6K (ferromagnet glue, not EI; PMC10622413). Tempers any GW/BSE spend on the exciton-glue premise.
 - **In-silico-only domain rule (scope boundary, rtsc/CLAUDE.md).** Pinned the campaign's domain
   edge: our work is IN SILICO (predict/screen/simulate/falsify); physical synthesis, fabrication,
   doping-to-spec, and accredited measurement (the absorbed=true gate) are OUT OF DOMAIN — a hand-off
