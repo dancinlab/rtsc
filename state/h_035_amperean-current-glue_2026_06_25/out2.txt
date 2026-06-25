@@ -1,0 +1,26 @@
+========================================================================
+H_035  Amperean transverse-gauge current-current glue
+========================================================================
+branch(A) real-photon coupling      = 1.113e-05 eV
+  (v_F/c)^2 suppression             = 1.113e-05
+  -> T_c(real-photon)               = 0.000e+00 K
+branch(B) emergent-gauge pairing    = 1.000 eV (no (v_F/c)^2)
+  finite-momentum (PDW) pairing     = True
+  reintroduces competing order      = True
+  -> T_c(emergent, IF uniform)      = 4.269e+03 K  [not physical: PDW]
+literature Amperean-SC scale max    = 20.0 K  (arXiv:2210.10371)
+campaign ceiling                    = 134-164 K   (room-T target 293 K)
+------------------------------------------------------------------------
+  [FAIL] honest_null_competing_order_reintroduced
+  [FAIL] real_photon_tc_below_ceiling
+  [FAIL] lit_scale_below_ceiling
+  [FAIL] joint_promise_unsatisfiable
+  [PASS] suppression_not_microscopic
+------------------------------------------------------------------------
+HONEST-NULL (decisive) status       = FAIL
+joint-promise falsifier status      = FAIL
+falsifiers_pass                     = 1/5
+is_green                            = False
+absorbed                            = false
+VERDICT: confirms-wall
+========================================================================

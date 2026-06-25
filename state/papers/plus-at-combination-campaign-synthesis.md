@@ -70,6 +70,19 @@ Not a single no-go theorem — a constellation, each precisely characterized:
    LOWEST rung on the ambient ladder. The clean spin-fluctuation ceiling (~134–164 K, Emery-Kivelson
    phase stiffness) is the honest UNIVERSAL wall; room-T (293 K) is beyond it. This is the campaign's
    strongest negative result, and it freezes the conventional-mechanism map.
+7. **The wall survives its 4 SF-imagination escapes (micro-exp, deterministic).** An SF-imagination
+   brainstorm (89 seeds, NOT depleted) produced a shortlist of 4 orthogonal escape *classes* that attack
+   the phase-stiffness wall's ASSUMPTIONS, not its magnitude; each was built as a deterministic closed-form
+   harness probe with an honest-null falsifier (`exports/sweep/rtsc-sf-escape-2026-06-25/ledger.json`):
+   (a) **multiband stiffness donation** (H_032) — Leggett-locking × the quantum-metric no-go caps the
+   donated stiffness at D_s_disp/4 → best two-channel Tc 111 K (52.7 K below the ceiling; the naive
+   additive 484 K collapses 77%); (b) **z=2 Goldstone universality** (H_033) — z labels the critical
+   *dynamics* (τ∼ξ^z), not the *static* vortex-balance T_BKT, whose cap is the stiffness MAGNITUDE not the
+   exponent; (c) **η-pairing ODLRO** (H_034, the one long shot) — η-pairs are non-thermal fine-tuned
+   eigenstates / dissipative dark states, not an ambient 293 K equilibrium bulk SC; (d) **Amperean
+   current-current glue** (H_035) — transverse-gauge coupling is (v_F/c)²-suppressed and favors competing
+   finite-q pairing. ALL FOUR **confirm-wall** (closed-negative). The ceiling is no longer just
+   "measured on cuprates" — it has been tested against its four structural escapes and held.
 
 ## 5. Lenses that did not rescue it
 

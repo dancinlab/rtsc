@@ -4,6 +4,19 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **micro-exp wave-1: 4 SF-shortlist wall-escape probes — ALL confirm-wall (PR pending).** Built+fired
+  4 deterministic closed-form harness probes (honest-null falsifiers) for the SF-imagination shortlist's
+  orthogonal phase-stiffness escape classes; all byte-equal x2, verbatim verdicts; cards H_032-H_035,
+  ledger exports/sweep/rtsc-sf-escape-2026-06-25/ledger.json:
+  - H_032 multiband stiffness donation (a): Leggett-locking x quantum-metric no-go caps donation at
+    D_s_disp/4 -> best Tc 111.3K (x*=0.321), 52.7K below the 164K ceiling; naive additive 483.8K collapses 77%.
+  - H_033 z=2 Goldstone universality (b): z labels critical DYNAMICS not the STATIC vortex-balance T_BKT;
+    cap is the stiffness MAGNITUDE not the exponent. confirms-wall.
+  - H_034 eta-pairing ODLRO (c, the long shot): eta-pairs are non-thermal fine-tuned eigenstates / dark
+    states, not an ambient 293K equilibrium bulk SC. confirms-wall.
+  - H_035 Amperean transverse-gauge current glue: (v_F/c)^2-suppressed, favors competing finite-q. confirms-wall.
+  The ~134-164K phase-stiffness wall is no longer just "measured on cuprates" — tested against its 4
+  structural SF escapes and HELD. SF brainstorm NOT depleted (more rounds available). absorbed=false / GATE_OPEN.
 - **SF-imagination brainstorm seed pool — 89 seeds, NOT depleted (PR pending).** loop-until-dry
   Workflow (29 agents, 4 rounds, dry_rounds=0 → hit the round cap, imagination space did NOT run dry).
   89 unique speculative orthogonal room-T SC mechanism seeds (speculative 69 / grounded 15 / pure-sf 5),
