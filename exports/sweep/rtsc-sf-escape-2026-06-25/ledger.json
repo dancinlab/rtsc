@@ -1,0 +1,43 @@
+{
+ "batch_id": "rtsc-sf-escape-2026-06-25",
+ "kind": "closed-form-atom",
+ "probes": [
+  {
+   "id": "H_032",
+   "name": "Multi-channel stiffness donation",
+   "escape_class": "(a) borrow stiffness",
+   "verdict": "confirms-wall",
+   "falsifiers": "4/4",
+   "repro": "\u2713byte-equal /matches-report",
+   "card": "HYPOTHESES/cards/H_032_multiband_stiffness_donation.md"
+  },
+  {
+   "id": "H_033",
+   "name": "z=2 Goldstone universality-class change",
+   "escape_class": "(b) wrong formula",
+   "verdict": "confirms-wall",
+   "falsifiers": "5/5",
+   "repro": "\u2713byte-equal /matches-report",
+   "card": "HYPOTHESES/cards/H_033_z2_goldstone_universality.md"
+  },
+  {
+   "id": "H_034",
+   "name": "eta-pairing ODLRO / dark-state rigidity",
+   "escape_class": "(c) different rigidity",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "repro": "\u2713byte-equal /matches-report",
+   "card": "HYPOTHESES/cards/H_034_eta_pairing_odlro.md"
+  },
+  {
+   "id": "H_035",
+   "name": "Amperean transverse-gauge current-current glue",
+   "escape_class": "grounded (no boson)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "repro": "\u2713byte-equal /matches-report",
+   "card": "HYPOTHESES/cards/H_035_amperean_current_glue.md"
+  }
+ ],
+ "summary": "SF-shortlist phase-stiffness wall-escape probes; all CLOSED-negative (confirm wall) except where noted"
+}

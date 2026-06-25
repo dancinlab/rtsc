@@ -1,0 +1,39 @@
+==============================================================================
+H_033  z=2 Goldstone universality-class change  (escape class (b) wrong-formula)
+==============================================================================
+CLAIM: a quadratic (z=2) phase-mode dispersion changes the universality class
+       so k_B*T_BKT=(pi/2)*D_s is the WRONG formula -> a HIGHER T_phase(D_s),
+       lifting the ~134-164 K spin-fluctuation/phase-stiffness ceiling.
+NULL : T_BKT is fixed by the STATIC vortex free-energy balance (no time, no z);
+       z labels the CRITICAL DYNAMICS (tau~xi^z), not the static transition T.
+       The cap is the stiffness MAGNITUDE D_s, not the exponent z.
+------------------------------------------------------------------------------
+[1] STATIC vortex-balance prefactor vs z (honest physics):
+    z = 1.0   static prefactor = 1.000000   (pi/2 multiplier)
+    z = 1.5   static prefactor = 1.000000   (pi/2 multiplier)
+    z = 2.0   static prefactor = 1.000000   (pi/2 multiplier)
+    z = 3.0   static prefactor = 1.000000   (pi/2 multiplier)
+    -> prefactor spread over z in [1,3] = 0.000000e+00
+    -> the (pi/2) is z-INDEPENDENT: changing z does NOT change T_BKT(D_s).
+------------------------------------------------------------------------------
+[2] T_phase at the OPTIMISTIC flat-band stiffness D_s = 0.44 meV:
+    z=1 (linear)    T_phase =   8.0205 K
+    z=2 (quadratic) T_phase =   8.0205 K   (delta = +0.0000e+00 K)
+    cuprate-scale D_s =  8.997 meV -> 164.0 K  (the real ceiling: it is the MAGNITUDE)
+------------------------------------------------------------------------------
+[3] SEED BEST CASE: z=2 + a generous 1.5x O(1) prefactor uplift:
+    T_phase (uplifted)             =  12.0307 K
+    T_phase (uplifted + 3D 1.84x)  =  22.1351 K
+    ceiling band                   = 134-164 K
+------------------------------------------------------------------------------
+[4] FALSIFIER LEDGER (PASS = NOT triggered):
+    [PASS] F1_null_z_changes_static_T
+    [PASS] F2_seed_best_clears_ceiling
+    [PASS] F3_magnitude_is_the_cap
+    [PASS] F4_room_t_unreached
+    [PASS] F5_honest_not_green
+------------------------------------------------------------------------------
+VERDICT: confirms-wall   falsifiers_pass=5/5
+         null_holds=True  seed_best_stacked_Tc=22.1351K  ceiling_lo=134K  margin_below_ceiling=111.8649K
+         is_green=False  absorbed=false  target=293K  (GATE_OPEN)
+==============================================================================
