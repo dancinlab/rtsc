@@ -4,6 +4,27 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Break-walls MULTI-LENS test — flat-band geometric stiffness vs the phase-stiffness ceiling
+  (`state/research-geometric-stiffness-vs-phase-ceiling-2026-06-25.md`).** READ-ONLY cited pass
+  applying the campaign's FOUNDATIONAL mechanism (flat-band quantum geometry, Peotta-Törmä
+  arXiv:1506.02815 / H_024) to the spin-fluctuation phase-stiffness ceiling (H_031 L1, ~134-164 K)
+  BEFORE freezing it — does the geometric D_s ∝ ∫tr g escape the cuprate-measured ceiling, or is it
+  universal? Q1 (geometric stiffness LARGER or SMALLER?): SMALLER — in Kelvin-equivalent stiffness the
+  measured flat-band geometric D_s scale is **~0.06-0.44 meV (Tc 1-8 K) vs the cuprate phase stiffness
+  ~7.4 meV (134 K) — ~20-90× BELOW**, and ~700-5000× below the ~300 meV pairing scale; the harness's
+  ∫tr g≈2.86 is the QGT-convention INTEGRAL I=(1/2π)∫tr g, NOT the per-BZ ⟨g⟩~0.1-0.5 that enters
+  D_s=4|U|ν(1−ν)⟨g⟩ (conflating them inflates D_s ~6-30×). Q2 (pairing- or stiffness-limited?):
+  STIFFNESS-limited — measured directly (tTLG transition "phase-fluctuation-controlled," MATBG D_s ~10×
+  conventional yet Tc ~1K). Q3 counter-lenses all CONFIRM the wall: (a) geometric D_s has its OWN
+  ceiling — D_s∝|U|⟨g⟩ only for |U|<gap, large metric⇒small gap⇒small usable U, T_BKT saturates at
+  U~gap then falls as U^−1; synthesis-paper ⟨g⟩·U ~5× deficit; (b) low-carrier fluctuations bite
+  HARDER; (c) NO measured flat-band geometric SC reaches even 10K (MATBG ~1-1.7K Nature s41586-024-08494-7;
+  tTLG ~2-3K s41586-024-08444-3; Re6Se8Cl2 ~8K NanoLett.9b04891; CsV3Sb5 ~3-6K) — every one lands FAR
+  below the cuprate 133K. VERDICT: the flat-band geometric stiffness does NOT escape the ceiling — 🧱
+  **the ~134-164 K phase-stiffness wall is UNIVERSAL** (the foundational lens makes it higher-confidence,
+  not dissolved; the geometric route is the LOWEST rung, ~20-90× below cuprate, stiffness-limited). The
+  honest ambient ceiling stays ~134-164 K; the campaign is NOT promoted to the ~252 K clean-pairing
+  coordinate. is_green=False; absorbed=false / GATE_OPEN; no material claimed to BE an RTSC.
 - **Research-first pass — glue-multilayer (f_glue user lever) + spin-fluctuation ambient ceiling
   (`state/research-glue-multilayer-and-spinfluct-ceiling-2026-06-25.md`).** READ-ONLY cited literature
   pass gating H_031's NEW user lever (L3, f_glue) and its binding limit (L1, spin-fluctuation ceiling).
