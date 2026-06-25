@@ -4,6 +4,22 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **CLEAN bosonic-glue candidate survey (`state/research-clean-glue-candidates-2026-06-25.md`).** READ-ONLY
+  cited literature pass fixing the lead glue's competing-order trap (prior-art pass: Ta2NiSe5's exciton is the
+  ENEMY of SC — SC only when the exciton is destroyed, arXiv:2106.04396; same trap as 1T-TiSe2's CDW). Surveyed
+  4 glue families against two CLEAN filters — (1) not a competing-order soft mode, (2) real measured SC
+  precedent ideally in a proximity/interface geometry. Verdicts: **spin-fluctuation/paramagnon 🟢** (only family
+  passing BOTH with real data — cuprate Hg1223 134 K ambient/164 K@31GPa + the campaign's ONLY real
+  +@-geometry proximity-SC datum, TbMn6Sn6/Au interface Tc≈3.6 K, PMC10622413), **polar-phonon interface 🟠**
+  (FeSe/STO ~65 K, cleanest+most-real but ~90–100 meV → ~84 K ceiling; arXiv:2101.08307 = spin-fluc 46.8 K +
+  forward-scattering phonon), **plasmon 🟠** (clean, energy-scalable in theory, but NO measured SC), **hydride
+  H-phonon 🟠** (real >200 K but 170 GPa bulk, off +@-geometry); [traps: exciton-EI 🔴, exciton-CDW 🔴]. Honest
+  map: a CLEAN glue with a real measured proximity-SC precedent EXISTS and beats the Ta2NiSe5 trap, but **NO
+  clean glue reaches the 349 meV room-T demand** — spin-fluctuation sharp boson caps at ~300 meV (~252 K, the
+  H_020 wall); only the non-sharp ~500 meV bimagnon continuum crosses 349 meV. 6 proposed Layer-B registry rows
+  for the main loop to fold into `tool/rtsc_candidates.py` (not self-edited). absorbed=false / GATE_OPEN; no
+  material claimed to BE an RTSC.
+
 - **GW/BSE→Tc in-silico pipeline (`src/gw_bse_tc.py`) + research-first prior-art (PR#30).** Wrote the
   beyond-PBE Tc tool: DFT→GW(quasiparticle gap)→BSE(exciton spectrum)→alpha^2F_exc→Eliashberg/Allen-Dynes
   Tc. Stage-4 math (excitons→lambda,w_log→Tc) is LIVE + deterministic self-test (toy 0.30eV exciton,
