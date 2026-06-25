@@ -27,6 +27,15 @@ rtsc/
 - **Falsifier-first / honest (commons honesty).** All gates stay GATE_OPEN /
   absorbed=false. No candidate is claimed to BE an RTSC. `absorbed=true` requires
   accredited 4-probe transport + Meissner expulsion + measured H_c2 / T_c.
+- **In-silico-only domain (scope boundary).** This campaign's domain is IN SILICO — predict /
+  screen / simulate / falsify by computation. Physical synthesis, fabrication, doping-to-spec, and
+  accredited measurement (the `absorbed=true` gate) are **OUT OF DOMAIN**: a hand-off to the
+  laboratory, never our failure and never computationally satisfiable. **Our success criterion =
+  satisfy / characterize every in-silico-settleable lever** ("the rest"); a candidate clearing all
+  of those is *domain-complete* even while it stays `absorbed=false` (the lab gate is not ours).
+  Domain-complete is NOT a discovery claim — only a computationally-exhausted, honestly-characterized
+  hand-off; no simulation flips `absorbed=true`. Do NOT treat the un-built / un-measured state as a
+  campaign failure — it is the domain edge, not a wall to break.
 - Negative and inconclusive results are kept as results — never deleted (the ledger
   preserves deferred/crashed runs with retry recipes).
 - Artifacts go under `state/` only (commons preserve-state).

@@ -4,6 +4,15 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **In-silico-only domain rule (scope boundary, rtsc/CLAUDE.md).** Pinned the campaign's domain
+  edge: our work is IN SILICO (predict/screen/simulate/falsify); physical synthesis, fabrication,
+  doping-to-spec, and accredited measurement (the absorbed=true gate) are OUT OF DOMAIN — a hand-off
+  to the lab, never our failure and never computationally satisfiable. Success criterion = satisfy
+  every in-silico-settleable lever ("the rest"); a candidate clearing all of those is domain-complete
+  while staying absorbed=false (the lab gate is not ours). Domain-complete is NOT a discovery claim.
+  This reframes the +@ campaign terminal: CoSn/hBN/Ta2NiSe5 is in-silico domain-complete (geometry
+  ∫tr g=2.856, spacer, D_s(N=2), doping all characterized) — the remaining absorbed=true gate is the
+  domain edge, not a campaign failure.
 - **H_029 — CoSn correlation lens (DFT+U): the doping wall SURVIVES a second orthogonal lens.**
   Applied the electron-correlation lens to H_027's strongest adverse finding — whether semilocal PBE
   mis-places CoSn's correlated kagome flat band, so the ~1.58 holes/f.u. extreme-doping wall is a PBE
