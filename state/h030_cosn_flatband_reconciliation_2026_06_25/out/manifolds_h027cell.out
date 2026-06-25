@@ -1,0 +1,16 @@
+nbands=60 nk=161  E_F=14.7132 eV (H_027/H_029 SPIN-POL Co3Sn3 cell)
+
+=== ALL narrow bands (W<0.30 eV) within +/-3 eV of E_F, by position ===
+band   W(eV)   mid-EF   min-EF   max-EF
+  38   0.193   -1.998   -2.094   -1.902
+  39   0.189   -1.951   -2.045   -1.856
+  44   0.177   -0.567   -0.655   -0.478
+  45   0.167   -0.425   -0.508   -0.341
+
+=== bands within +/-1.0 eV of E_F (any width) ===
+band  42  W=0.487  mid=-0.832  range[-1.075,-0.588]
+band  43  W=0.492  mid=-0.805  range[-1.051,-0.559]
+band  44  W=0.177  mid=-0.567  range[-0.655,-0.478]
+band  45  W=0.167  mid=-0.425  range[-0.508,-0.341]
+band  46  W=1.441  mid=+0.255  range[-0.466,+0.975]
+band  47  W=0.856  mid=+0.830  range[+0.402,+1.258]
