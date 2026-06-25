@@ -4,6 +4,23 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Research-first pass — glue-multilayer (f_glue user lever) + spin-fluctuation ambient ceiling
+  (`state/research-glue-multilayer-and-spinfluct-ceiling-2026-06-25.md`).** READ-ONLY cited literature
+  pass gating H_031's NEW user lever (L3, f_glue) and its binding limit (L1, spin-fluctuation ceiling).
+  Q1 (does stacking glue layers boost coupling or saturate?): the measured analog is the Hg-cuprate
+  homologous series — stacking pairing/glue planes raises Tc **94 → 128 → 134 K for N=1→2→3** (+36% at
+  N=2, +43% at N=3), so the realistic f_glue boost at N=2-3 is **≈1.36-1.43 — it CLEARS H_031's 0.03%
+  AND 5% thresholds with margin** — BUT it SATURATES at N=3 and DECLINES (Hg-1234 ~127K, Hg-1245 ~111K,
+  →~80K at n=7) via inner/outer charge imbalance (R=1.14/1.49/1.64 for n=3/4/5); it is the SAME trilayer
+  cooperative boost that *defines* the ~134K ceiling, not an independent multiplicative knob on top of it
+  [VERIFIED WebSearch: arXiv:cond-mat/0511249, 0604026; npj QM s41535-025-00735-w; PRL p4c3-t34b].
+  Q2 (real spin-fluctuation ambient ceiling?): measured **~134 K ambient / ~164 K @31GPa / ~155 K
+  theoretical Tc(J)-max**, set by **phase stiffness (Emery-Kivelson Nature 374,434), pseudogap, and
+  competing charge/AF order — NOT magnon energy**; the harness BKT coordinate (300meV→252K) OVER-READS it
+  by **~1.5-1.9×**. VERDICT: H_031's 292.9 K crosses only the MODEL threshold — it is BKT-optimistic;
+  stripping the over-read, the honest coordinate is **~134-200 K**. The honest binding wall = the
+  **spin-fluctuation ambient ceiling ~134-164 K**, not 293 K. is_green=False; absorbed=false / GATE_OPEN;
+  no material claimed to BE an RTSC.
 - **H_031 clean spin-fluctuation candidate + DUAL multilayer (closed-form).** Consolidated the research
   round into a NEW clean lead: swap the dead Ta2NiSe5 exciton TRAP (EI family is dead, PR#36) for the
   clean spin-fluctuation glue (~300 meV, MEDIATES+COEXISTS, real precedent TbMn6Sn6/Au 3.6K) — this
