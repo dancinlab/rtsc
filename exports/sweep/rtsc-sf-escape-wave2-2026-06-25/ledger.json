@@ -1,0 +1,69 @@
+{
+ "batch_id": "rtsc-sf-escape-wave2-2026-06-25",
+ "probes": [
+  {
+   "id": "H_036",
+   "name": "Statistical-Transmutation Fluctuation Trap-Breaker",
+   "cluster": "order-traps-half (braiding statistics)",
+   "verdict": "confirms-wall",
+   "falsifiers": "0/4",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_037",
+   "name": "Bethe-Ceiling Lattice (negative-curvature stiffness ladder)",
+   "cluster": "connectivity-geometry universality (Mermin-Wagner fails)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_038",
+   "name": "Ligand-Hole Negative-U: the pair lives on oxygen, not the cation",
+   "cluster": "light real-space pairs decouple eV binding from stiffness",
+   "verdict": "confirms-wall",
+   "falsifiers": "0/5",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_039",
+   "name": "ENZ Screening Inversion (the Permittivity Mirror)",
+   "cluster": "static Coulomb sign-flip (no exchanged boson, no competing order)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_040",
+   "name": "Nodal-Spin-Splitter Glue \u2014 d-wave altermagnet pair vertex",
+   "cluster": "spin-group-symmetry pairing decoupled from Neel stiffness",
+   "verdict": "confirms-wall",
+   "falsifiers": "2/5",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_041",
+   "name": "Planckian Pair-Beat (Yukawa-SYK pairing of incoherent electrons)",
+   "cluster": "stiffness from a non-quasiparticle reservoir",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_042",
+   "name": "FFLO Stiffness Bypass \u2014 finite-Q phase rigidity from the depairing tensor",
+   "cluster": "finite-Q rigidity (violates Q=0 premise)",
+   "verdict": "confirms-wall",
+   "falsifiers": "1/5",
+   "repro": "\u2713byte-equal /matches"
+  },
+  {
+   "id": "H_043",
+   "name": "Vortex-Code Phase Lock \u2014 code-raised vortex core energy at fixed D_s",
+   "cluster": "code-raised vortex core energy at fixed D_s (violates the equilibrium order-trap / free-vortex premise)",
+   "verdict": "confirms-wall",
+   "falsifiers": "3/5",
+   "repro": "\u2713byte-equal /matches"
+  }
+ ]
+}

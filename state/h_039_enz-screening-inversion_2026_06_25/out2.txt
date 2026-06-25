@@ -1,0 +1,34 @@
+==============================================================================
+H_039 — ENZ Screening Inversion / the Permittivity Mirror  (static Coulomb
+        sign-flip; no exchanged boson, no competing order)
+==============================================================================
+q_TF / 2kF (metallic-layer screening)   : 1.500
+q_env / 2kF (ENZ cladding neg-eps reach) : 0.150  (long-wavelength)
+|Re eps_env| in its negative band        : 50.0
+------------------------------------------------------------------------------
+DKM: static overscreening (eps_tot<0) at : q = 0.030  (units of 2kF)
+  -> the seed's KK+passivity no-go is FALSE; overscreening is real & stable
+     (DKM RMP 53,81), but it sits in a tiny-q ENZ corner (q<<2kF), NOT the
+     finite-q FS scattering shell [kF,2kF] (outer-half coverage below).
+eps_tot at small q (q=0.02*2kF)          : 25.016  (metal self-screens -> large +)
+frac of FS shell (0,2kF] with W<0        : 0.2034
+frac of OUTER half [kF,2kF] with W<0     : 0.0000  (FS scattering phase space)
+------------------------------------------------------------------------------
+best intrinsic metallic D_s (layer)      : 1.058 meV  (T_BKT~19.3 K)
+D_s DONATED by external static cladding  : 0.000 meV  (changes no n/m*/d)
+cuprate phase-stiffness scale            : 7.4 meV  (= 134 K via (pi/2)D_s)
+frozen wall ceiling band                 : 134-164 K
+------------------------------------------------------------------------------
+  [PASS   ] F1_static_signflip_is_real_DKM
+  [TRIGGER] F2_HONEST_NULL_attraction_covers_FS_scattering_shell
+  [TRIGGER] F3_HONEST_NULL_implied_Ds_exceeds_cuprate_scale
+  [TRIGGER] F4_new_metallic_n_glue_not_mustar_renorm
+  [TRIGGER] F5_finiteq_attraction_beyond_intrinsic_KohnLuttinger
+------------------------------------------------------------------------------
+decisive F2 (FS-shell coverage) PASS     : False
+decisive F3 (implied D_s > cuprate) PASS : False
+falsifiers_pass : 1/5
+is_green        : False
+absorbed        : False
+VERDICT         : confirms-wall
+==============================================================================

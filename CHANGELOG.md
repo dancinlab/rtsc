@@ -4,6 +4,17 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **micro-exp wave-2: 8 cluster-representative wall-escape probes — ALL confirm-wall (PR pending).**
+  Probed one deterministic representative of EACH of the 8 SF-escape clusters from the full triage
+  (H_036 statistical-transmutation / H_037 hyperbolic-connectivity / H_038 ligand-hole negative-U /
+  H_039 ENZ Coulomb-sign-flip / H_040 altermagnet spin-group / H_041 Yukawa-SYK incoherent stiffness /
+  H_042 FFLO finite-Q / H_043 vortex-code), each with an honest-null falsifier; all byte-equal x2, verbatim
+  verdicts, cards + ledger exports/sweep/rtsc-sf-escape-wave2-2026-06-25/. ALL 8 confirm-wall (honest-null
+  triggered) — e.g. H_036 Chern-Simons margin-swing 3.6e-15 (the statistical gauge field is pure-phase,
+  shifts SC and trap channels identically). So 12/12 SF-escape probes (wave-1 H_032-035 + wave-2 H_036-043)
+  across 5 premise-violating axes HOLD the ~134-164K phase-stiffness wall; each cluster's central mechanism
+  is tested+held; the ~17 remaining seeds are within-cluster variants. Honest terminal: wall UNDEFEATED
+  (no-go not formally proven, but no in-silico escape found). absorbed=false / GATE_OPEN.
 - **Full SF-seed triage — wall undefeated but SF-escape space NOT closed (PR pending).** Triaged ALL 140
   existing SF seeds (89 new pool + ~50 older d6 brainstorm) vs the frozen ~134-164K phase-stiffness wall:
   56 already-carded, 32 pre-satisfied-by-freeze, 16 pure-SF, 7 pressure-hydride (different axis), 4
