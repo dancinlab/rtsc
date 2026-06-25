@@ -4,6 +4,22 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Research-first survey of a NEW campaign axis: the PRESSURE-HYDRIDE high-Tc route**
+  (`state/research-pressure-hydride-axis-2026-06-25.md`, READ-ONLY literature, no compute). Settles the 7
+  "pressure-hydride-axis" seeds flagged by the SF-seed triage as distinct from the frozen phase-stiffness wall.
+  Findings: hydride SC reaches room-T *temperature* (LaH10/(La,Y)H10 ~250-260 K) but only at MEGABAR pressure
+  (~170-190 GPa); the wall is the PRESSURE/materials-existence wall, not phase-stiffness. Lowest-pressure
+  Tc≥250 K datum = ~253 K @ ~183 GPa (saturating ~150-200 GPa, NOT bending to ambient). Chemical
+  precompression genuinely lowers pressure for *moderate* Tc (LaBH8 ~126 K @ 50 GPa, quenchable to ~40 GPa;
+  LaBeH8 measured ~110 K @ 80 GPa) but a robust stability-vs-Tc trade-off remains: the GNoME ambient-pressure
+  search finds the highest *thermodynamically-stable-at-1-atm* hydride Tc is only ~17 K (LiZrH6Ru), with
+  high-Tc "systematically linked to thermodynamical instability." Both near-ambient room-T claims (CSH 2020,
+  Lu-N-H 2023) RETRACTED. Verdict: ambient-retention is mostly walled (a materials-existence wall, akin in
+  spirit to the EI graveyard; the synthesis/measurement endpoint is OUT OF DOMAIN, the lab gate) — but ONE
+  narrow live in-silico slice exists: a carded SSCHA+Eliashberg metastable-decompression-window prediction for
+  a named ternary cage (conventional el-ph, NOT the EI beyond-PBE wall), partly redundant with published
+  high-throughput hydride databases. `absorbed=false`; no material claimed to BE an RTSC.
+
 - **Definitive verification of the 2 proxy-only wall-escape clusters — both confirm-wall (PR pending).**
   The two wave-2 probes that rested on a closed-form proxy were upgraded to real compute, both confirm:
   H_041 (Yukawa-SYK) via a real Matsubara Schwinger-Dyson solver (incoherent metal pairs but rho_s collapses
