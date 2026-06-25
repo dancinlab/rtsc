@@ -4,6 +4,24 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **EI-glue family TRAP audit (`state/research-ei-family-trap-audit-2026-06-25.md`).** READ-ONLY cited pass
+  EXTENDING the Ta2NiSe5 trap across the excitonic-insulator family. Verdict: the trap is **FAMILY-WIDE, not
+  material-specific** — every real EI superconducts ONLY after its EI gap is destroyed/metallized
+  (Ta2Pd3Te5 🔴 SC after ~20 GPa metallization, JACS 146,3890/arXiv:2310.05532; Ta2Ni3Te5 🔴 Tc 0.4→7.1 K only
+  above 3.3 GPa metallization, arXiv:2301.09641; 1T-TiSe2 🔴 CuxTiSe2 4.15 K needs exciton-suppression,
+  Nat.Phys.2,544; monolayer WTe2 🔴 SC is the doped-away phase across a QCP, Nat.Phys.19 s41567-023-02291-1;
+  TmSe0.45Te0.55 🔴 neutral exciton superfluid ≠ charge SC; InAs/GaSb 🔴 neutral topological-EI + external
+  proximity SC; ultra-compressed He 🔴 EI→metal→SC sequence by title, arXiv:2301.06756). Mechanism is generic
+  (JPSJ 94,012001/arXiv:2411.10985): the EI order is a charge-NEUTRAL e–h condensate that cannot carry
+  supercurrent and whose gap pre-empts the SC Fermi surface. BCS-BEC crossover does NOT rescue it (tunes the
+  neutral exciton superfluid, not charge SC); the only theory coexistence (arXiv:2606.01785) needs an
+  engineered FS mismatch and STILL does not use the exciton as glue. **Verdict: DROP the EI-glue family;**
+  the clean fluctuation/vibration glues (spin-fluctuation ~252 K, interface phonon ~84 K) stay the honest
+  ceiling. ONE keeper, NOT an EI: exciton-DENSITY-FLUCTUATION glue of an *incipient* EI (Bi-class,
+  Sci.Rep.7,11433) — the clean-fluctuation family. Proposed registry correction: flag ALL static-EI rows
+  (Ta2NiSe5, Ta2Pd3Te5, Ta2Ni3Te5, Ta2Pd3Se5, 1T-TiSe2, WTe2-ML) `competing_order="EI-order (TRAP)"`
+  (overriding prior `"none"`); main loop folds in (tool NOT self-edited). absorbed=false / GATE_OPEN.
+
 - **Every active hypothesis gets a card rule (rtsc/CLAUDE.md).** Pinned: any hypothesis under
   investigation MUST have its own pre-registered HYPOTHESES/cards/H_*.md (frozen predictions + >=4
   measurable falsifiers + >=5 honest limits + verbatim verdict + a HYPOTHESES.jsonl row), created
