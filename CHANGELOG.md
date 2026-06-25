@@ -4,6 +4,27 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **H_029 — CoSn correlation lens (DFT+U): the doping wall SURVIVES a second orthogonal lens.**
+  Applied the electron-correlation lens to H_027's strongest adverse finding — whether semilocal PBE
+  mis-places CoSn's correlated kagome flat band, so the ~1.58 holes/f.u. extreme-doping wall is a PBE
+  artifact. A defensible ortho-atomic Dudarev **DFT+U(Co-3d) scan U=1,2,3,4,5 eV** (bracketing the
+  literature CoSn DMFT U≈5 eV; the tractable mean-field proxy for the full DMFT) on OUR converged
+  spin-polarized Co3Sn3 cell, under genuine 6-rank MPI (conda QE 7.5, verbatim banner; ortho-atomic
+  Hubbard projectors; all 5 SCFs converged 12–20 iters; all FREE on the H_026-fixed summer host). RESULT
+  (honest, not tuned): correlation does the **OPPOSITE** of dissolving the wall — the kagome flat band
+  sinks **monotonically DEEPER below E_F** (PBE −0.44 eV → −1.16/−1.78/−2.80/−2.99/−3.3..−4.3 eV for
+  U=1..5), **NEVER within ~0.2 eV of E_F at any physical U** → the H_027 doping wall **SURVIVES two
+  orthogonal lenses (PBE AND +U) and HARDENS**, it is NOT a PBE artifact. The geometry lever stays intact
+  (NN-kagome TB-fit **I=(1/2π)∫tr g = 2.855 at every U** ≈ measured QGT 2.87) — but a stronger lever placed
+  ever deeper below E_F = MORE doping, not less. +U also **induces strong magnetic order** (Co |mag| 0.43 μB
+  PBE → 2.85/4.09/4.92/5.07/5.23 μB at U=1..5), a competing-order (H_014) signal CoSn did not show in plain
+  PBE. HONEST LIMIT: DFT+U is a static mean-field proxy; full DMFT (dynamical self-energy, paramagnetic)
+  could differ → a two-lens negative on the "correlation rescues the band" hypothesis, NOT a proof. Card
+  `HYPOTHESES/cards/H_029_cosn_correlation_lens.md` (≥4 falsifiers PASS, ≥5 honest limits, verbatim banner
+  + E_flat−E_F vs U table); `tool/rtsc_candidates.py` LAYER_A[CoSn] records `doping_wall_dissolves=False`;
+  artifacts in `state/h029_cosn_correlation_lens_2026_06_25/`. Trio stays 🟠 jointly-unrealized;
+  absorbed=false / GATE_OPEN (a wall that survives +U HARDENS the terminal — a valid, valuable result).
+
 - **+@ combination campaign — synthesis + honest computational terminal.** Consolidated H_001–H_028
   into `state/papers/plus-at-combination-campaign-synthesis.md`. **H_028**: Ni3In is NOT a better
   layer-A (flat band −0.84 to −1.57 eV below E_F, as deep as CoSn → no doping-wall dodge in PBE;

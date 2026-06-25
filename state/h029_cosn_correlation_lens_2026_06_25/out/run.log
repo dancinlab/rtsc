@@ -1,0 +1,27 @@
+RUN2 START 2026. 06. 25. (목) 10:10:54 KST
+=== U=1 SCF 2026. 06. 25. (목) 10:10:54 KST ===
+U=1 scf exit=0 conv=1 iters=13      the Fermi energy is    14.8107 ev mag=     total magnetization       =     2.30 Bohr mag/cell
+=== U=1 BANDS 2026. 06. 25. (목) 10:23:47 KST ===
+U=1 bands exit=0 conv=0
+U=1 bandsx exit=0 gnu=202920
+=== U=2 SCF 2026. 06. 25. (목) 10:36:33 KST ===
+U=2 scf exit=0 conv=1 iters=12      the Fermi energy is    14.9025 ev mag=     total magnetization       =     3.39 Bohr mag/cell
+=== U=2 BANDS 2026. 06. 25. (목) 10:47:49 KST ===
+U=2 bands exit=0 conv=0
+U=2 bandsx exit=0 gnu=202920
+=== U=3 SCF 2026. 06. 25. (목) 11:00:34 KST ===
+U=3 scf exit=0 conv=1 iters=20      the Fermi energy is    14.9817 ev mag=     total magnetization       =     4.25 Bohr mag/cell
+=== U=3 BANDS 2026. 06. 25. (목) 11:17:20 KST ===
+U=3 bands exit=0 conv=0
+U=3 bandsx exit=0 gnu=202920
+=== U=4 SCF 2026. 06. 25. (목) 11:29:42 KST ===
+U=4 scf exit=0 conv=1 iters=13      the Fermi energy is    14.9220 ev mag=     total magnetization       =     4.29 Bohr mag/cell
+=== U=4 BANDS 2026. 06. 25. (목) 11:41:50 KST ===
+U=4 bands exit=0 conv=0
+U=4 bandsx exit=0 gnu=202920
+=== U=5 SCF 2026. 06. 25. (목) 11:54:36 KST ===
+U=5 scf exit=0 conv=1 iters=13      the Fermi energy is    14.8952 ev mag=     total magnetization       =     4.35 Bohr mag/cell
+=== U=5 BANDS 2026. 06. 25. (목) 12:06:14 KST ===
+U=5 bands exit=0 conv=0
+U=5 bandsx exit=0 gnu=202920
+RUN2 DONE 2026. 06. 25. (목) 12:18:26 KST

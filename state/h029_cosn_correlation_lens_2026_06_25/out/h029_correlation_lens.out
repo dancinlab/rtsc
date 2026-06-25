@@ -1,0 +1,25 @@
+==============================================================================
+H_029 — CoSn CORRELATION LENS (DFT+U ortho-atomic on Co-3d): E_flat-E_F vs U
+  cell = H_027 spin-pol Co3Sn3 (a=9.9760 a.u., c/a=0.80680, 93 e-)
+  PBE baseline (U=0, H_027): near-E_F flat band 45, dE=-0.4435 eV, W=0.167, I=2.855
+==============================================================================
+
+ U(eV)  conv  niter   E_F(eV)  |mag|μB  band  E_flat-E_F   W(eV)  I=∫trg/2π    band45 dE(W)
+    0*     Y     25   14.7132     0.43    45     -0.4435   0.167      2.855    -0.444(0.17)
+     1     Y     13   14.8107     2.85    45     -1.1607  0.1724     2.8548    -1.161(0.17)
+     2     Y     12   14.9025     4.09    45     -1.7785  0.1548     2.8548    -1.778(0.15)
+     3     Y     20   14.9817     4.92    45     -2.7960  0.3546     2.8548    -2.796(0.35)
+     4     Y     13   14.9220     5.07    45     -2.9871  0.3604     2.8548    -2.987(0.36)
+     5     Y     13   14.8952     5.23    39     -4.2900  0.3452     2.8548    -3.283(0.68)
+
+* U=0 row = H_027 PBE baseline (reproduced verbatim, not recomputed here).
+  band/E_flat-E_F/W = the kagome FLAT band (genuinely narrow, W<0.40 eV) CLOSEST to E_F.
+  band45 dE(W) = the FIXED PBE near-E_F kagome flat-band index (45) trajectory
+  (orbital-consistent cross-check; same flat feature tracked down as +U sinks it).
+
+--- VERDICT LOGIC ---
+flat band within 0.2 eV of E_F at any U: NO
+∫tr g >= 2 (geometry survives) at: U=1,2,3,4,5
+E_flat-E_F range across U=1..5: [-4.290, -1.161] eV (PBE U=0: -0.444)
+absolute magnetization range: [2.85, 5.23] uB/cell (PBE residual ~0.43) -- watch for U-induced magnetic order
+==============================================================================
