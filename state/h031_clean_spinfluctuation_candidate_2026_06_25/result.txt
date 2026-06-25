@@ -1,0 +1,22 @@
+=== H_031 clean spin-fluctuation candidate — DUAL multilayer levers (geometry D_s + glue coupling) ===
+  glue Omega (spin-fluctuation, CLEAN) = 300.0 meV   g (kagome) = 2.86   L_3D = 1.84
+  in +@ box                            = True
+  stacked_Tc 3D (no multilayer)        = 251.6 K
+  + geometry N=2 (f_geom=1.164)           = 292.9 K   (room-T 293K: misses by 0.1K)
+  --- USER LEVER: also stack the GLUE layers (boost coupling by f_glue) ---
+  glue-multilayer boost to CROSS room-T = f_glue >= 1.0003  (= 0.03% boost)
+    f_glue=1.05 (glue-N=2-ish) -> Tc = 307.6 K   (room-T: CLEARED)
+    f_glue=1.10 (glue-N=2-ish) -> Tc = 322.2 K   (room-T: CLEARED)
+    f_glue=1.16 (glue-N=2-ish) -> Tc = 339.8 K   (room-T: CLEARED)
+  falsifier F1_in_box                   : PASS
+  falsifier F2_clean_glue               : PASS
+  falsifier F3_geom_lever_near_room_t   : PASS
+  falsifier F4_glue_lever_threshold_modest: PASS
+  falsifier F5_not_green                : PASS
+  falsifiers_pass = 5/5
+VERDICT: 🟠 CLEAN-CANDIDATE @ ROOM-T THRESHOLD — kagome-magnet geometry + CLEAN spin-fluctuation glue
+  (~300meV, mediates+coexists; real precedent TbMn6Sn6/Au) revives the H_023 path the Ta2NiSe5 trap killed.
+  Geometry-multilayer alone = 292.9 K (room-T threshold). The USER'S SECOND LEVER — stacking the GLUE
+  layers too — needs only f_glue>=1.0003 (0.03%) to CROSS 293K: a tiny dual-multilayer.
+  HONEST GATE (research-first + DFT): does glue-multilayer ACTUALLY boost the coupling, or saturate at N=1-3?
+  f_geom/f_glue are MODELS; spin-fluct ambient-Tc-capped; Tc=coordinate (H_018). is_green=False, absorbed=false / GATE_OPEN.
