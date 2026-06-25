@@ -1,0 +1,73 @@
+==============================================================================
+H_037 DEFINITIVE — hyperbolic {7,3} XY-MC vs square XY-MC at matched J
+==============================================================================
+hyperbolic {7,3}: rings=6  nV=5887  deg_hist={2: 2639, 3: 3248}
+  bulk-ring-cut=4  BULK vertices=847  (f_bd=0.856)
+square (periodic): L=24  nV=576  (all bulk)
+temps: 0.20 0.29 0.38 0.47 0.57 0.66 0.75 0.84 0.93 1.02 1.12 1.21 1.30 1.39 1.48 1.57 1.67 1.76 1.85 1.94 2.03 2.12 2.22 2.31 2.40
+therm=600 meas=2000 meas_every=2 J=1.000
+------------------------------------------------------------------------------
+SQUARE lattice MC (matched bare J):
+  [square] T=0.200  |m|_bulk=0.8624  binder=0.6435
+  [square] T=0.292  |m|_bulk=0.9201  binder=0.6665
+  [square] T=0.383  |m|_bulk=0.8551  binder=0.6575
+  [square] T=0.475  |m|_bulk=0.8646  binder=0.6659
+  [square] T=0.567  |m|_bulk=0.8254  binder=0.6657
+  [square] T=0.658  |m|_bulk=0.7994  binder=0.6642
+  [square] T=0.750  |m|_bulk=0.7552  binder=0.6623
+  [square] T=0.842  |m|_bulk=0.7136  binder=0.6618
+  [square] T=0.933  |m|_bulk=0.6715  binder=0.6613
+  [square] T=1.025  |m|_bulk=0.5200  binder=0.6235
+  [square] T=1.117  |m|_bulk=0.3550  binder=0.5117
+  [square] T=1.208  |m|_bulk=0.2639  binder=0.4511
+  [square] T=1.300  |m|_bulk=0.1582  binder=0.3891
+  [square] T=1.392  |m|_bulk=0.1367  binder=0.3209
+  [square] T=1.483  |m|_bulk=0.1110  binder=0.3395
+  [square] T=1.575  |m|_bulk=0.1122  binder=0.3558
+  [square] T=1.667  |m|_bulk=0.0889  binder=0.2924
+  [square] T=1.758  |m|_bulk=0.0813  binder=0.2654
+  [square] T=1.850  |m|_bulk=0.0825  binder=0.3147
+  [square] T=1.942  |m|_bulk=0.0783  binder=0.3338
+  [square] T=2.033  |m|_bulk=0.0699  binder=0.3163
+  [square] T=2.125  |m|_bulk=0.0720  binder=0.3608
+  [square] T=2.217  |m|_bulk=0.0684  binder=0.3200
+  [square] T=2.308  |m|_bulk=0.0687  binder=0.3227
+  [square] T=2.400  |m|_bulk=0.0640  binder=0.3700
+HYPERBOLIC {7,3} MC (BULK-only estimators, boundary excluded):
+  [hyp73] T=0.200  |m|_bulk=0.5976  binder=0.6482
+  [hyp73] T=0.292  |m|_bulk=0.1796  binder=0.6244
+  [hyp73] T=0.383  |m|_bulk=0.1657  binder=0.5313
+  [hyp73] T=0.475  |m|_bulk=0.3357  binder=0.5304
+  [hyp73] T=0.567  |m|_bulk=0.2444  binder=0.6009
+  [hyp73] T=0.658  |m|_bulk=0.1772  binder=0.4195
+  [hyp73] T=0.750  |m|_bulk=0.1174  binder=0.3943
+  [hyp73] T=0.842  |m|_bulk=0.0973  binder=0.2868
+  [hyp73] T=0.933  |m|_bulk=0.0796  binder=0.3664
+  [hyp73] T=1.025  |m|_bulk=0.0689  binder=0.3453
+  [hyp73] T=1.117  |m|_bulk=0.0660  binder=0.3017
+  [hyp73] T=1.208  |m|_bulk=0.0606  binder=0.3728
+  [hyp73] T=1.300  |m|_bulk=0.0559  binder=0.3443
+  [hyp73] T=1.392  |m|_bulk=0.0499  binder=0.3531
+  [hyp73] T=1.483  |m|_bulk=0.0504  binder=0.3254
+  [hyp73] T=1.575  |m|_bulk=0.0480  binder=0.3292
+  [hyp73] T=1.667  |m|_bulk=0.0494  binder=0.3385
+  [hyp73] T=1.758  |m|_bulk=0.0469  binder=0.3353
+  [hyp73] T=1.850  |m|_bulk=0.0438  binder=0.3317
+  [hyp73] T=1.942  |m|_bulk=0.0431  binder=0.3247
+  [hyp73] T=2.033  |m|_bulk=0.0424  binder=0.3475
+  [hyp73] T=2.125  |m|_bulk=0.0418  binder=0.3465
+  [hyp73] T=2.217  |m|_bulk=0.0406  binder=0.2934
+  [hyp73] T=2.308  |m|_bulk=0.0409  binder=0.2910
+  [hyp73] T=2.400  |m|_bulk=0.0397  binder=0.3271
+------------------------------------------------------------------------------
+SQUARE     T_c(binder)=1.117  T_c(half-m)=1.025
+HYP {7,3}  T_c(binder)=0.658  T_c(half-m)=0.475   [BULK only]
+------------------------------------------------------------------------------
+BULK  T_c^hyperbolic / T_c^square  at matched J :
+   via Binder steepest-drop : 0.590
+   via half-magnetization   : 0.463
+   escape threshold >= 1.7  ;  honest-null <= 1.2
+   VERDICT (real MC, bulk)  : confirms-wall
+==============================================================================
+wall-clock: 302.0 s
+wrote mc_out_prod.json

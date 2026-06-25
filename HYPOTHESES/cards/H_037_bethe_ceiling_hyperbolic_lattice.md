@@ -183,3 +183,76 @@ absorbed        : False
 VERDICT         : confirms-wall
 ==============================================================================
 ```
+
+## Definitive verification (real hyperbolic XY-MC) — 2026-06-25
+
+The original verdict above is a **closed-form PROXY** that leaned on the MEASURED
+continuous-XY literature (Baek-Minnhagen). This addendum **replaces the proxy with
+the real compute the seed demands**: a classical XY Monte-Carlo on a genuine {7,3}
+hyperbolic tiling vs a square lattice at **identical bare coupling J**, with T_c read
+off **BULK sites only** (the curvature-inflated boundary excluded). The frozen
+pre-registration (predictions, falsifiers, honest-null, proxy verdict) above is left
+**intact**; this only adds the own-compute confirmation that limit #1 flagged as the
+residual pool item.
+
+**Method (own compute, not literature):**
+- `tiling73.py` — combinatorial {7,3} builder, verified clean: degree histogram
+  EXACTLY `{2: boundary, 3: interior}`, all faces heptagons, Euler-consistent.
+  Production patch: **rings=6, nV=5887, deg_hist={2:2639, 3:3248}**.
+- BULK = interior degree-3 vertices within growth-ring ≤ rings−2 AND not adjacent to
+  any degree-2 boundary vertex. **847 bulk sites; boundary fraction f_bd = 0.856**
+  — empirically confirms the proxy's O(1)-boundary-fraction claim (the {7,3} graph is
+  ~86% boundary even at nV≈6k; "bulk mean-field" is genuinely never reached).
+- `hyperbolic_xy_mc.py` — Metropolis XY MC (numpy+stdlib, deterministic seed),
+  square L=24 (periodic, no boundary) at the SAME J=1, 25 temperatures T∈[0.2,2.4],
+  600 thermalization + 2000 measurement sweeps. T_c via Binder-cumulant steepest-drop
+  and half-magnetization crossing, **bulk magnetization only** on the hyperbolic graph.
+  (A Wolff cluster variant was prototyped but Metropolis was used as the reliable,
+  validated estimator — square T_c lands at the expected BKT finite-size value.)
+
+**Decisive result (BULK T_c ratio at matched J):**
+
+| estimator | T_c^square | T_c^hyp (BULK) | ratio hyp/sq |
+|-----------|-----------|----------------|--------------|
+| Binder steepest-drop | 1.117 | 0.658 | **0.590** |
+| half-magnetization   | 1.025 | 0.475 | **0.463** |
+
+The bulk hyperbolic T_c is **LOWER** than square (ratio < 1), not merely below the
+1.7 escape threshold and the 1.2 honest-null threshold. Negative curvature
+**SUPPRESSES** bulk continuous-phase ordering rather than lifting it. The bulk |m|
+never builds the square's ~0.87 ordered plateau (caps ~0.60 then collapses
+non-monotonically below T≈0.5 — the curvature-frustration glassy signature), exactly
+reproducing the Baek-Minnhagen zero-T-glass picture the proxy cited, now from our own
+MC and not from the literature.
+
+**The honest-null is the decisive outcome WITH a real margin: the lift is not real,
+it is the boundary-artifact null — and worse, the bulk is curvature-suppressed.**
+This is NOT a tuned-to-green result (the ratio is < 1, the opposite of the escape
+direction; both fixed estimators agree; bulk-only). Escape (ratio ≥ 1.7) is now
+**real-MC-falsified**, not just proxy-argued.
+
+**Updated verdict: confirms-wall (UNCHANGED — now confirmed by own hyperbolic XY-MC).**
+F2 (honest-null) and F3 (escape) verdicts stand; the real MC strengthens them from
+"literature-anchored proxy" to "own-compute reproduced." `is_green=false`,
+`absorbed=false`; no material claimed to BE an RTSC; the in-silico lever is settled.
+
+### Verbatim MC summary (full output: `out_definitive_mc.txt`; data: `mc_out_prod.json`)
+
+```
+hyperbolic {7,3}: rings=6  nV=5887  deg_hist={2: 2639, 3: 3248}
+  bulk-ring-cut=4  BULK vertices=847  (f_bd=0.856)
+square (periodic): L=24  nV=576  (all bulk)
+therm=600 meas=2000 meas_every=2 J=1.000
+------------------------------------------------------------------------------
+SQUARE     T_c(binder)=1.117  T_c(half-m)=1.025
+HYP {7,3}  T_c(binder)=0.658  T_c(half-m)=0.475   [BULK only]
+------------------------------------------------------------------------------
+BULK  T_c^hyperbolic / T_c^square  at matched J :
+   via Binder steepest-drop : 0.590
+   via half-magnetization   : 0.463
+   escape threshold >= 1.7  ;  honest-null <= 1.2
+   VERDICT (real MC, bulk)  : confirms-wall
+```
+
+Artifacts: `state/h_037_bethe-ceiling-hyperbolic-lattice_2026_06_25/{tiling73.py,
+hyperbolic_xy_mc.py, out_definitive_mc.txt, mc_out_prod.json}`.
