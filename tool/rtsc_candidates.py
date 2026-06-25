@@ -139,8 +139,17 @@ LAYER_A: list = [
                    "(rigid-band; real doping can hybridize/spin-split -> caveat). (3) FILLING at E_F-on-band nu=0.507 -> nu(1-nu)=0.250 = the FAVOURABLE "
                    "half-filling D_s^geom maximum. VERDICT: geometry + filling SURVIVE (best case if reachable) but the doping to REACH E_F is EXTREME "
                    "-> the lead path is WEAKENED on ACCESSIBILITY, not on geometry. Live doped SCF (tot_charge=4) is delicate (high-DOS metal, slow under "
-                   "MPI; prior tot_charge=2 MPI_ABORTed) -> no converged doped E_F, honest. soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) "
-                   "-> needs the +@ glue layer."),
+                   "MPI; prior tot_charge=2 MPI_ABORTed) -> no converged doped E_F, honest. "
+                   "H_029 applied the CORRELATION LENS (ortho-atomic DFT+U on Co-3d, Dudarev, U=1..5eV scan = the tractable DMFT proxy; lit Co-3d U~5eV "
+                   "Kang2020/cRPA) on OUR converged Co3Sn3 cell under MPI QE7.5, to test whether correlation pulls the flat band to E_F and DISSOLVES the "
+                   "doping wall. RESULT: it does the OPPOSITE -- the kagome flat band sinks MONOTONICALLY DEEPER below E_F with U (PBE -0.44eV -> U=1 -1.16 "
+                   "-> U=2 -1.78 -> U=3 -2.80 -> U=4 -2.99 -> U=5 -3.3..-4.3eV; 5/5 SCFs converged 12-20 iter), NEVER within ~0.2eV of E_F at any physical U "
+                   "-> the H_027 doping wall SURVIVES a SECOND, orthogonal lens (PBE AND +U) -> HARDENED, not dissolved. Geometry I=(1/2pi)int tr g stays "
+                   "=2.855 at EVERY U (kagome manifold shape preserved; lever intact but placed EVER deeper below E_F = MORE doping, not less). +U also "
+                   "INDUCES strong magnetic order (Co |mag| 0.43uB PBE -> 2.85/4.09/4.92/5.07/5.23uB at U=1/2/3/4/5) -> an H_014 competing-order signal CoSn "
+                   "did not show in plain PBE. CAVEAT (honest, L1): DFT+U is a STATIC mean-field proxy; full DMFT (dynamical self-energy, paramagnetic T>T_N) "
+                   "could still differ -> a two-lens negative on the dodge, not a proof the band can never reach E_F. doping_wall_dissolves=False. "
+                   "soft d-phonon (Ω~22meV) is why a SINGLE host fails (H_001) -> needs the +@ glue layer."),
     Candidate("Ni3In", "A", "kagome",
               g_mean=(2.854, "research-backup A-backup-1 (Ye 2021 arXiv:2106.10824): Ni-3d kagome flat band ~50meV near E_F "
                              "(a CORRELATED/DMFT position). OUR DFT (H_028): paramagnetic PBE QE7.2 MPI scf on the DO19 Ni3Sn-type "
