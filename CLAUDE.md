@@ -27,6 +27,13 @@ rtsc/
 - **Falsifier-first / honest (commons honesty).** All gates stay GATE_OPEN /
   absorbed=false. No candidate is claimed to BE an RTSC. `absorbed=true` requires
   accredited 4-probe transport + Meissner expulsion + measured H_c2 / T_c.
+- **Every active hypothesis gets a card (no orphan hypotheses).** Any hypothesis under investigation
+  MUST have its own pre-registered `HYPOTHESES/cards/H_*.md` — frozen predictions + ≥4 measurable
+  falsifiers + ≥5 honest limits + the **verbatim** run verdict (no LLM self-judge) + a row in
+  `HYPOTHESES/HYPOTHESES.jsonl`. The card is created BEFORE/as the hypothesis is run, not after; a
+  hypothesis is never pursued, reported, or carried in the ledger without its card. Negative /
+  inconclusive / deferred verdicts are still carded (kept as results). One card per hypothesis,
+  canonical `H_NNN_<slug>.md`, update-in-place.
 - **In-silico-only domain (scope boundary).** This campaign's domain is IN SILICO — predict /
   screen / simulate / falsify by computation. Physical synthesis, fabrication, doping-to-spec, and
   accredited measurement (the `absorbed=true` gate) are **OUT OF DOMAIN**: a hand-off to the

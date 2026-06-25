@@ -4,6 +4,10 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Every active hypothesis gets a card rule (rtsc/CLAUDE.md).** Pinned: any hypothesis under
+  investigation MUST have its own pre-registered HYPOTHESES/cards/H_*.md (frozen predictions + >=4
+  measurable falsifiers + >=5 honest limits + verbatim verdict + a HYPOTHESES.jsonl row), created
+  before/as it is run — no orphan hypotheses, negatives/deferred still carded, one card per hypothesis.
 - **Fabrication-METHOD lever research (`state/research-fabrication-method-levers-2026-06-25.md`).** READ-ONLY
   cited literature pass on the user's meta-lever: change the PROCESS, not the material (the FeSe/STO analog of
   "copper can't replace gold, but a new making-method succeeded"). The lever is REAL+MEASURED (FeSe bulk Tc 8K
