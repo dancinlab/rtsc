@@ -13,6 +13,21 @@ All notable changes to rtsc are recorded here (append-only).
   This reframes the +@ campaign terminal: CoSn/hBN/Ta2NiSe5 is in-silico domain-complete (geometry
   ∫tr g=2.856, spacer, D_s(N=2), doping all characterized) — the remaining absorbed=true gate is the
   domain edge, not a campaign failure.
+- **research-first prior-art pass on the +@ lead candidate (CoSn/hBN/Ta2NiSe5) — 🟠 OPEN/NOVEL, but the
+  excitonic-glue sub-lever is 🔴-leaning.** Per the CLAUDE.md "실측전 research" rule, a READ-ONLY literature
+  pass (web + arXiv + WebFetch) was run BEFORE recommending physical synthesis + accredited transport of
+  the campaign's computational terminal. Findings (`state/research-plus-at-realization-prior-art-2026-06-25.md`):
+  the trio is jointly unrealized (no matching device), and the decisive result is that **proximity SC
+  induced in a metal by an excitonic insulator has NEVER been measured in ~50 years** — every 2024–2026
+  instance (PRL 133.226903; arXiv:2402.02747 / 2410.09148 / 2508.06195 / 2409.12201) is theory. The closest
+  REAL measured precedents are kagome-magnet/metal emergent interface SC (TbMn6Sn6/Au, **Tc≈3.6 K**,
+  PMC10622413 — but the glue is a magnet, not an EI) and a measured interlayer exciton *condensate* through
+  thin hBN (arXiv:2508.09098 — condensate, not SC). Key NEGATIVE: Ta2NiSe5's own SC (Tc≈1.2 K @ 8 GPa,
+  arXiv:2106.04396) appears only AFTER its excitonic state is destroyed and is phonon-mediated — the
+  opposite of using the live exciton as glue. Recommendation: do NOT green-light the excitonic-glue trilayer
+  fab as the next spend; first demonstrate proximity-SC-from-an-EI in isolation, or pivot the glue lever.
+  `absorbed=false` / GATE_OPEN unchanged. No material claimed to BE an RTSC.
+
 - **H_029 — CoSn correlation lens (DFT+U): the doping wall SURVIVES a second orthogonal lens.**
   Applied the electron-correlation lens to H_027's strongest adverse finding — whether semilocal PBE
   mis-places CoSn's correlated kagome flat band, so the ~1.58 holes/f.u. extreme-doping wall is a PBE
