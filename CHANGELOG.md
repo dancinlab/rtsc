@@ -4,6 +4,23 @@ All notable changes to rtsc are recorded here (append-only).
 
 ## Unreleased
 
+- **Fabrication-METHOD lever research (`state/research-fabrication-method-levers-2026-06-25.md`).** READ-ONLY
+  cited literature pass on the user's meta-lever: change the PROCESS, not the material (the FeSe/STO analog of
+  "copper can't replace gold, but a new making-method succeeded"). The lever is REAL+MEASURED (FeSe bulk Tc 8K
+  -> monolayer FeSe/SrTiO3 65-100K, ~10x; the interface adds 20-50K BEYOND identical doping, s41467-019-08560-z
+  / PMID 25419814). Applied to the two walls it is ASYMMETRIC: (1) **CoSn doping wall = METHOD-leaning 🟠 + a
+  bookkeeping discrepancy** — the MEASURED CoSn flat d-band is ~100 meV below E_F with "few % Fe/In" reaching it
+  (arXiv:2102.08979 / PRMat 5,044202), NOT the synthesis paper's 1.45 eV / 1.58 h/f.u. (a deeper manifold);
+  epitaxial-strain + electrostatic/ionic gating of a kagome thin film is the kagome community's own stated route
+  to push a flat band across E_F (arXiv:2307.15828), gating reaching n_2D 10^14-10^15 cm^-2 in the top ~1 u.c.
+  (screening length ~1 u.c. at 7e14, sciadv.abn4273) — enough for a 2D/monolayer +@ device, not bulk 1.58 h/f.u.
+  (2) **Ta2NiSe5 exciton trap = MATERIAL/physics wall 🔴-leaning** — strain/S-sub/dimensionality DO tune the
+  exciton along a dome (BCS-BEC crossover, s41467-023-43365-1) but in EVERY measured case SC appears only when
+  the exciton is DESTROYED (pressure, 1.2K, phonon-mediated, arXiv:2106.04396); exciton-COOPERATES-with-SC is
+  theory only. **IN-SILICO-testable next (our domain): reconcile the 100 meV-vs-1.45 eV CoSn band (post-process
+  H_024/H_027), gated/strained CoSn-slab E_F scan, strained-Ta2NiSe5-slab gap (lattice crossover only — PBE
+  can't settle the exciton).** Copper/gold anecdote treated as ANALOGY (real counterpart = FeSe/STO + metastable
+  synthesis PMC12931243), not a citation. absorbed=false / GATE_OPEN; no material claimed to BE an RTSC.
 - **Clean-glue research (PR#32) + registry correction.** Found the clean glue the prior-art's exciton-trap
   demanded: **spin-fluctuation / paramagnon** is the strongest CLEAN family (🟢) — it MEDIATES and COEXISTS with
   SC (opposite of the Ta2NiSe5 exciton), with real precedent (cuprate Hg-1223 134K ambient/164K@31GPa; and
