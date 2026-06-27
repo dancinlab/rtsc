@@ -1,111 +1,617 @@
 {
-  "$schema": "c4",
-  "role": "rtsc — Architecture (JSON tree · SSOT)",
+  "schemaVersion": "2.0",
+  "kind": "architecture-tree",
   "title": "rtsc — Architecture",
-  "updated": "2026-06-25",
-  "ssot_note": "JSON=SSOT (AI/tool parse); humans view architecture.html via `python3 serve.py`. Update in-place (not append). History/decisions/dates → CHANGELOG.md + git (never in tree). Hierarchy decomposes via `children` (commons single-doc); one fact per node. Per-material campaign SSOT = state/RTSC_LEDGER.jsonl. Materials carried over from the demiurge repo.",
-  "children": [
+  "summary": "Room-temperature superconductor (RTSC) discovery as an HONEST falsification framework — predict/screen candidates, run the falsifier cascade, report negative rulings as results. Target = 293 K @ 1 atm.",
+  "viewer": "architecture.html",
+  "serve": "python3 serve.py  (로컬 서버 + 브라우저 자동 오픈; file:// fetch 차단 우회)",
+  "columns": [
     {
-      "id": "overview",
-      "role": "Room-temperature superconductor (RTSC) discovery as an HONEST falsification framework — predict/screen candidates, run the falsifier cascade, and report negative rulings as results. Target = 293 K @ 1 atm.",
-      "children": [
-        {
-          "id": "stance",
-          "role": "Falsifier-first. All gates stay GATE_OPEN / absorbed=false: no candidate is claimed to BE an RTSC. absorbed=true would require accredited 4-probe transport + Meissner expulsion + measured H_c2/T_c (none of which this map flips). 0 RTSC predicted of the funnel candidates."
-        },
-        {
-          "id": "campaigns",
-          "role": "Research lanes run to date.",
-          "children": [
-            {
-              "id": "campaigns.flatband-geometry",
-              "role": "High-Chern flat-band quantum-geometry route to ambient room-T SC — CLOSED-NEGATIVE across 10 independent paths (paper: state/papers/flatband-geometry-ambient-roomt-closed). Structural cause = Fubini-Study bound (two levers — large ∫tr g AND strong coupling Ω — cannot coexist in one material)."
-            },
-            {
-              "id": "campaigns.superhydrides",
-              "role": "Ambient superhydride lane (QE + QFORGE from-scratch): Li2CuH6 / Mg2IrH6 ambient-dynamically-unstable; AcBeH8, B-C clathrates inconclusive/deferred. High-pressure hydrides (H3S, LaH10, CaH6 …) recorded as references, deprioritized after the flat-band pivot."
-            },
-            {
-              "id": "campaigns.qforge-engine",
-              "role": "QFORGE from-scratch el-ph engine (SCF→DFPT→el-ph→Tc), validated on Al/Nb/Pb. Gaps walled: magmom (k-Stoner) and pbe-scf (gate-grade ecut OOM); production uses a hybrid path."
-            },
-            {
-              "id": "campaigns.named-candidate-dft",
-              "role": "Named +@ trilayer real-DFT (H_019 + H_024/H_025/H_026/H_027 follow-ons, self-built QE 7.2 on summer — now an MPI/PARALLEL build per H_026 — + local TB metric). OUR PBE confirms CoSn (layer A) hosts a real kagome flat band (W=0.158 eV, < 0.2 eV). H_024 extracts its quantum geometry: a NN-kagome TB fit to OUR bands gives metric integral I=(1/2pi)∫tr g d2k = 2.856, MATCHING the measured QGT 2.87 (arXiv:2412.17809) -> the g>=2 geometry LEVER SURVIVES; and the ~1.45 eV-below-E_F position is REAL orbital-selection (CoSn has multiple orbital flat bands; PBE ~140 meV faithful to ARPES), NOT a PBE artifact -> resolves the H_019 F2 position-FAIL. H_024 also BOUNDS the lead 🟢-path's (H_023) single unknown via Peotta-Tormae+Huhtinen: the geometry SUPPORTS f_mult>=1.164 at N=2 (conditional on doping+coherence; is_green=False; the cheap route, NOT the intractable full N=2 stack SCF). Ta2NiSe5 (layer B) gap: H_019/H_024 Cmcm PBE SCF FROZE across 10 recipes (byte-identical residuals) -> high-symmetry excitonic-parent ill-conditioning. H_025 TESTED the logged fix: the EXPERIMENTAL low-T MONOCLINIC C2/c ground state (Sunshine&Ibers 1985 via arXiv:2201.07750; vol 701.5A^3, 296 e-) BREAKS the freeze -> residual descends ~30x (17-18 -> 0.45-0.64 Ry) with live charge dynamics across BOTH plain PBE and PBE+U(Ni-3d=3eV) -> symmetry-breaking insight CONFIRMED; but both PLATEAU near-metallic (~0.5-0.9 Ry) and don't reach conv_thr 1e-6 on the then-SERIAL single-core QE build. H_026 ROOT-CAUSE-FIXED the substrate: the canonical self-built ~/qe_build QE 7.2 pw.x was a SERIAL build (make.inc MPIF90=gfortran, no -D__MPI; banner 'Serial version'; the prior -np 12 = 12 redundant serial copies on 1 core each — the true wall behind EVERY DFT H_015->H_025) because OpenMPI 4.1.6 runtime was present but libopenmpi-dev (linkable .so) was missing -> configure fell back to serial; fixed FREE in place (sudo apt libopenmpi-dev + configure MPIF90=mpif90 --enable-parallel + make pw) -> banner now 'Parallel version (MPI)', make.inc DFLAGS=-D__MPI, ldd links libmpi.so. Re-ran the monoclinic SCF under genuine 6-core MPI far past the serial budget: across robust-PBE, PBE+U(Ni3d=3eV) AND high-smearing(degauss0.03) the SCF breaks the freeze (~28-38x descent) but OSCILLATES persistently in the ~0.5-1.7 Ry near-metallic plateau and NEVER reaches 1e-6 -> the no-gap is PHYSICAL (PBE-family lack the many-body excitonic gap), an HONEST NEGATIVE on a PBE-DFT gap (not a budget artifact, not fabricated) -> gap NOT graduated to our-DFT; only beyond-PBE (HSE/GW/many-body) could host it. H_027 SETTLED the last computationally-settleable risk on the lead 🟢-path — whether the CoSn geometry lever survives the doping-to-E_F it requires — on OUR fuller spin-polarized Co3Sn3 PBE bands (near-E_F flat band 45, W=0.167 eV, -0.44 eV below E_F): (1) the rigid-band hole doping to slide E_F onto it = 4.73 e/cell = 1.58 holes/CoSn f.u. = 5.1% of valence -> EXTREME (>0.7 h/f.u.; beyond electrostatic gating, needs chemical substitution — a direct consequence of the flat band's huge DOS, 5->17 states/eV/cell); (2) at that doped E_F the NN-kagome TB-fit metric integral I=2.855 ~= measured QGT 2.87 -> geometry SURVIVES (rigid-band; real doping can hybridize/spin-split, caveat named); (3) the flat-band filling at E_F-on-band nu=0.507 -> nu(1-nu)=0.250 = the FAVOURABLE half-filling D_s^geom maximum. VERDICT: geometry + filling SURVIVE (best case if reachable) but the doping to REACH E_F is EXTREME -> the lead path is WEAKENED on ACCESSIBILITY, not on geometry; is_green=False. Live doped SCF (tot_charge=4) under genuine 6-rank MPI is delicate (high-DOS flat-band metal, slow, prior tot_charge=2 MPI_ABORTed) -> no converged doped E_F, honest. Cross-spacer coupling = labeled order-of-magnitude estimate (Keldysh/Laturia hBN, steep geometry dilution ~4x/ML); FULL heterostructure cRPA DEFERRED. Trio stays 🟠 jointly-unrealized; absorbed=false. H_029 applied the CORRELATION LENS to that H_027 wall — whether semilocal PBE mis-places CoSn's correlated kagome flat band so the extreme-doping requirement is a PBE artifact: an ortho-atomic Dudarev DFT+U(Co-3d) scan U=1,2,3,4,5 eV (bracketing lit CoSn DMFT U~5 eV; the tractable mean-field DMFT proxy) on OUR converged Co3Sn3 cell under genuine 6-rank MPI (conda QE 7.5, all 5 SCFs converged 12-20 iter, FREE). RESULT (honest, not tuned): correlation does the OPPOSITE of dissolving the wall — the kagome flat band sinks MONOTONICALLY DEEPER below E_F (PBE -0.44 eV -> -1.16/-1.78/-2.80/-2.99/-3.3..-4.3 eV for U=1..5), NEVER within ~0.2 eV of E_F at any physical U -> the H_027 doping wall SURVIVES TWO orthogonal lenses (PBE AND +U) and HARDENS, it is NOT a PBE artifact. Geometry I=(1/2pi)int tr g = 2.855 at every U (kagome manifold shape preserved; a stronger lever placed ever deeper below E_F = MORE doping, not less). +U also INDUCES strong magnetic order (Co |mag| 0.43 uB PBE -> 5.23 uB at U=5), a competing-order (H_014) signal CoSn lacks in plain PBE. LIMIT: DFT+U is a static mean-field proxy; full DMFT could differ -> a two-lens negative on the correlation-rescues-the-band hypothesis, not a proof. H_030 RECONCILED that doping wall against the method-lever research (measured CoSn flat d-band ~100 meV below E_F, arXiv:2102.08979) by RE-PARSING OUR saved bands (NO new SCF): (1) CoSn hosts BOTH a SHALLOW narrow kagome flat-band pair (band45 -0.43 eV, band44 -0.57 eV, W~0.17 eV) AND a DEEP manifold (~-1.45 to -2.0 eV; H_024's -1.45 eV band42 is the deep family) -- the H_019 non-spin-pol cell resolved ONLY the deep cluster, the spin-pol Co3Sn3 cell (H_027/H_029) resolves BOTH; (2) the ∫tr g~=2.855 lever is a NN-kagome SHAPE invariant IDENTICAL on deep (H_024 I=2.856) and shallow (H_027 I=2.855) bands (both ~= measured QGT 2.87) -> H_027/H_029 ALREADY used the SHALLOW near-E_F band, so the '1.58 h/f.u.' is NOT a wrong-band bookkeeping artifact; (3) the EXTREME figure is TARGET-sensitive -- reaching the PBE flat-band CENTER (-0.44 eV) costs 1.58 h/f.u. EXTREME, but reaching the MEASURED ARPES depth (~-0.10 eV) costs only 0.20 h/f.u. PHYSICAL (gating/few-%-Fe-In reach) -- an 8x swing from the flat-band DOS pileup. VERDICT = TRADE-OFF (wall PARTLY DISSOLVES): the lead path is re-opened for a 2D/onset-gated geometry device (E_F on the flat-band ONSET, gating-reachable but weak D_s^geom proportional to nu(1-nu) at the band edge), while the strong-D_s half-filled CENTER stays EXTREME. The measured ~100 meV band and our shallow -0.44 eV band are the SAME d_xz/d_yz kagome flat band, PBE over-deepening it ~0.2-0.3 eV. doping_wall_dissolves=PARTIAL (onset MODEST, center EXTREME). Trio stays 🟠 jointly-unrealized; absorbed=false."
-            }
-          ]
-        }
-      ]
+      "key": "name",
+      "label": "name",
+      "tree": true
     },
     {
-      "id": "components",
-      "role": "Repository components.",
-      "children": [
-        {
-          "id": "predictor-tools",
-          "role": "src/ — flat-band geometry predictor + screening tools (fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …). Verification/ranking/education tools — NOT discovery tools (predicted materials are all published). tool/rtsc_candidates.py = LIVING +@ candidate-materials registry + verifier (reuses rtsc_harness engine); current lead CoSn/hBN/Ta2NiSe5 clears the +@ box on paper (137K coordinate) but jointly unrealized (🟠, absorbed=false). gw_bse_tc.py = GW/BSE→exciton-glue→Eliashberg Tc pipeline (in-silico beyond-PBE: Stage-4 alpha^2F_exc→lambda,w_log→Allen-Dynes Tc LIVE+self-tested deterministic; GW/BSE engine Yambo = wiring point, dead-until-wired; computes IF-the-exciton-pairs Tc, absorbed=false — research-first PR#30 finds the exciton-glue lever graveyard-leaning: proximity-SC-from-an-EI never measured in 50y, Ta2NiSe5 SC is phonon-mediated only when the exciton is destroyed). CLEAN-GLUE update (research PR#32): Ta2NiSe5 competing_order flag CORRECTED none->trap (PR#30: its exciton COMPETES with SC, not a glue); added clean-glue LAYER_B rows cuprate-spin-fluctuation (300meV, MEDIATES+COEXISTS, Hg-1223 134K, the strongest clean family) + TbMn6Sn6/Au (only real measured proximity-SC, 3.6K) + FeSe/SrTiO3 (interface-phonon ~100meV, bulk 8K->monolayer ~100K = 'method not material'). Net: clean glues qualify but are energy-capped (252K/84K); no glue is BOTH clean AND room-T-energy. absorbed=false."
-        },
-        {
-          "id": "pipeline-7verb",
-          "role": "state/rtsc.demi — 7-verb pipeline manifest (specify · structure · design · analyze · synthesize · verify · handoff) on the hexa cellrun dispatcher. analyze=pyfemm HTS magnetics (macOS honest-skip), verify=GetDP HTS EM. All cells GATE_OPEN."
-        },
-        {
-          "id": "ledger",
-          "role": "state/RTSC_LEDGER.jsonl — per-material campaign ledger (SSOT). One line/material: status·stage·λ·ω_log·Tc·stability·verdict·absorbed·record pointer. Verdict tiers: 🔵 formal · 🟢 GATE_CLOSED_MEASURED · 🔴 CLOSED-negative · 🟠 INCONCLUSIVE. Plus RTSC_HARVEST_PARTIAL.jsonl."
-        },
-        {
-          "id": "exports",
-          "role": "state/exports/ — per-material verdict records + turnkey QE decks (LiBeB ambient deck-set, wave3 decks). Heavy raw staging tarball (Li2MgH16, 568 MB) intentionally excluded from this repo."
-        },
-        {
-          "id": "papers",
-          "role": "state/papers/ — flatband-geometry-ambient-roomt-closed (closed-negative), rtsc-campaign-2026, rtsc-dft-h3s-textbook, rtsc-superconductor."
-        }
-      ]
+      "key": "role",
+      "label": "role"
     },
     {
-      "id": "verification",
-      "role": "HYPOTHESES — hypothesis-verification system (pre-register → falsify → run → verbatim verdict), modeled on anima's UNIVERSE/. Turns campaign questions into numerically falsifiable, runnable cards.",
-      "children": [
-        {
-          "id": "verification.registry",
-          "role": "HYPOTHESES/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis (id, slug, tier, title, card, verdict, artifacts)."
-        },
-        {
-          "id": "verification.cards",
-          "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis: frozen pre-registration + predictions + >=5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Seeded: H_001 flat-band two-lever wall (CLOSED-NEGATIVE), H_002 ambient superhydride stability (INCONCLUSIVE). +@ combination chain: H_003 bilayer division-of-labor SPLITs the two levers → box opens via a phonon-transparent/electron-opaque interface (relocates the wall, not removes it); H_004 glue-reservoir ceiling → room-T needs an electronic eV-glue (phonons cap ~91 K); H_005 2-factor capstone → ~319 K in the toy band, room-T FACTORIZED into 2 unsolved sub-problems; H_006 dimension lever (REAL-3D, src/fbgeom_3d.py) → L_3D=1.84x real-but-partial, native 3D flat bands band-touching (clean bypass BLOCKED); H_007 3-combination scan → stacking the real 3D lever relaxes the glue demand 1.84x (each lever necessary); H_008 retarded-vertex bipolaron ED (REAL many-body ED on pool host summer) → pair-channel <g>_pair exceeds the single-particle bound 4.27x in the anti-adiabatic corner (glue lever real, corner-confined); H_009 connector spacer (trilayer A/C/B) → a wide-gap/phonon-matched spacer (hBN-class) opens a fabricable [0.44,1.78 ML] electron-opaque/phonon-transparent window (the 3rd material is the link); H_010 top-down lever-count scan → more levers = achievability not redundancy (4 is the minimal achievable count; 3D crosses the sub-eV glue line, connector is structural). Real verdicts preserved as *.out in the state run dirs; H_011 +@ crux -> the trilayer is self-consistent only for a BOSONIC (exciton/plasmon, Coulomb-field-coupled) glue that penetrates the electron-opaque connector (fermionic transfer glue blocked); closed-form +@ deepening DEPLETED, remaining frontier = real DFT/cRPA trilayer (deferred). Fleet orthogonal-lever lanes (NOT free wins): H_012 topology gap COLLAPSES into the geometry lever (amplitude-only, room-T is stiffness-limited); H_013 fractionalization opens the box but needs an exotic ~800 meV deconfinement gap (relocated bill, ~77 K); H_014 competing-order CLOSED-NEGATIVE — the room-T glue drives SDW before SC (the dominant risk realized; conditional on toy nesting). Binding open question now = competing order + the real DFT verdict. H_015 trilayer DFT electron-opacity (🟢 REAL-DFT) — first REAL ab-initio verdict: self-built QE 7.2 PBE+D3 scan of graphene/hBN(n)/graphene (n=0..3, summer pool; apt pw.x 6.7 aborts on a fortify buffer-overflow); hBN suppresses interlayer electronic coupling (graphene Dirac-point residual DOS 7.7x lower at n=1 vs direct contact, plateau; spacer-interior DOS at E_F decays with n; 4/4) — confirms the +@ ELECTRON-OPACITY half ONLY (glue-transparent / bosonic cRPA half still deferred, L1). Verification lanes: H_016 competing-order ESCAPE (frustration eta*<0.45 lifts H_014's wall — removable, but room-T amplitude uncleared); H_017 disorder flat-band O2 CLOSED-NEGATIVE (disorder-flatness vs delocalization mutually exclusive); H_018 adversarial held-out check of the central Tc estimator — passes geomean/bias (4/5) but FAILS per-material scatter (1061x) -> room-T Tc extrapolations carry order-of-magnitude uncertainty (down-weight to coordinates; wall findings unaffected). H_015 trilayer-DFT electron-opacity lane in-flight on summer. H_019 first REAL PBE DFT of the named +@ trilayer's two layers (🟡 PARTIAL): CoSn kagome flat band W=0.158 eV CONFIRMED but ~1.45 eV below E_F; Ta2NiSe5 296-e SCF unconverged -> gap deferred. H_023 demand-relaxation (🟠-CONDITIONAL, strongest 🟢-path): a modest multilayer D_s boost f_mult>=1.164 at N=2 lets the clean q=0 Ta2NiSe5 trio clear room-T; single unknown = real multilayer D_s. H_024 real-DFT follow-on (🟡 PARTIAL): closes the GEOMETRY half — CoSn ∫tr g metric integral I=2.856 MATCHES measured QGT 2.87 (g>=2 lever survives), deep position is REAL orbital-selection not a PBE artifact, and the Peotta-Tormae+Huhtinen D_s(N=2) bound SUPPORTS H_023's f_mult>=1.164 (conditional on doping+coherence, is_green=False); the Ta2NiSe5 GAP half stays DEFERRED (296-e PBE SCF non-converging across 10 recipe variants, recipe-independent ill-conditioning of the excitonic-parent cell). H_025 ta2nise5-symbroken-gap (🟡 PARTIAL POSITIVE): TESTED H_024's logged fix — the EXPERIMENTAL low-T MONOCLINIC C2/c ground state (Sunshine&Ibers 1985) BREAKS the Cmcm freeze (residual descends ~30x, 17-18 -> 0.45-0.64 Ry, live charge dynamics, across BOTH plain PBE and PBE+U(Ni-3d=3eV)) -> the symmetry-breaking insight CONFIRMED; but both PLATEAU near-metallic (~0.5-0.9 Ry) and don't reach 1e-6 on the SERIAL single-core QE build (the real wall, measured: the prior -np 12 = 12 redundant serial copies) -> gap STILL UNRESOLVED, not fabricated (fix = DFT-relaxed coords / denser k-mesh / HSE, needs a parallel build). Trio stays 🟠; absorbed=false. H_023-readiness-prep (SAFE prep, no compute; state/h023-dft-readiness-2026-06-25.md): verified the h019 DFT decks (pseudos/cutoffs 45-360 Ry/Ta8Ni4Se20=32 sane, but the cell is the SUPERSEDED Cmcm parent and every deck is a band-gap SCF deck, NOT a D_s deck) and ruled the H_023 D_s lever 🔴 NOT run-ready as a plain pw.x deck — TWO measured walls precede a run: (a) METHOD wall — multilayer superfluid stiffness D_s is NOT a pw.x observable (needs Wannier quantum-geometry QGT or beyond-DFT BSE; 'DFT clears f_mult' does NOT reduce to one pw.x run), (b) PBE THEORY wall — H_025/H_026 measured the monolayer gap itself oscillates near-metallic in PBE/PBE+U (beyond-PBE only). The cheap quantum-geometry route is ALREADY closed by H_024 (f_mult>=1.164 at N=2 SUPPORTED-conditional, is_green=False); the decisive full N=2 stack is intractable + method-walled. Honesty: even a clearing result = a falsification-survived PREDICTION not a discovery — gate closes only on accredited 4-probe transport + Meissner + measured H_c2/T_c; absorbed=false unchanged. H_028 Ni3In layer-A dodge test (REAL-DFT, 🟡): backup research named Ni3In (Ye 2021 arXiv:2106.10824) as the kagome metal whose flat band sits ~50meV NEAR E_F -- the natural escape from H_027's CoSn extreme-doping wall. OUR paramagnetic PBE DFT (DO19 Ni6In2, MPI per H_026, E_F=16.527eV) finds the Ni-kagome flat-band manifold -0.84 to -1.57eV BELOW E_F (AT LEAST as deep as CoSn) -> NO dodge in PBE (the ~50meV is a correlated/DMFT position PBE doesn't reproduce). Geometry lever MET (I=2.854~=CoSn 2.855~=QGT 2.87, kagome NN=a/2) but below E_F (ν=1.0, D_s edge-suppressed); spin-pol SCF magnetically UNSTABLE (abs-mag swings 11-27uB) -> competing-order risk CoSn lacks. Verdict: NOT a better layer-A; lead stays CoSn; trio 🟠, absorbed=false."
-        },
-        {
-          "id": "verification.harness",
-          "role": "tool/rtsc_harness.py — shared deterministic stdlib-only harness (two_lever_box_check, geometric_bkt_tc_band, allen_dynes_tc, omega_for_bkt_tc, PHONON_CEILING_MEV, proximity_bilayer_levers + critical_electron_cost (+@ bilayer), THREED_TC_LEVER + stacked_tc + omega_for_stacked_tc (combination scan), spacer_window + spacer_electron_cost + spacer_phonon_transmission (connector C), glue_through_spacer_window + coulomb_glue_coupling (bosonic-glue crux), Falsifier/evaluate). Anima-parity: shared machinery in repo-root tool/. Heavy real compute stays in src/ (fbgeom_3d.py 3D geometry · lane_a_explicit_phonon_bipolaron_ed.py many-body ED) and is dispatched to the shared pool (summer) per heavy-on-pool."
-        },
-        {
-          "id": "verification.runs",
-          "role": "state/<hX>_<slug>_<date>/run_*.py + result.json — per-hypothesis deterministic run importing tool/; verdict = verbatim stdout (no LLM self-judge)."
-        }
-      ]
+      "key": "id",
+      "label": "id"
     },
     {
-      "id": "dataflow",
-      "role": "predict → screen → structure → deck → compute → gate → ledger; campaign questions also become falsifiable HYPOTHESES cards.",
-      "children": [
-        {
-          "id": "dataflow.predict-screen",
-          "role": "Input — flat-band geometry predictor + Materials Project / OPTIMADE / AFLOW / JARVIS screening → light-element metallic candidate roster."
-        },
-        {
-          "id": "dataflow.structure-deck",
-          "role": "Fetch structure → build turnkey QE deck (build_deck.py / hexa deck) → vc-relax/scf/ph."
-        },
-        {
-          "id": "dataflow.compute-gate",
-          "role": "Run el-ph (DFPT λ/ω_log/Tc) → falsifier cascade (BETE-NET screen → Allen-Dynes → Eliashberg → RTSC5 gate). Heavy compute on cloud pods (per-material)."
-        },
-        {
-          "id": "dataflow.verdict-ledger",
-          "role": "Output — verdict record in state/exports/ + one ledger line in RTSC_LEDGER.jsonl. Negative/inconclusive results preserved, not deleted."
-        }
-      ]
+      "key": "detail",
+      "label": "detail"
     }
-  ]
+  ],
+  "tree": {
+    "name": "rtsc",
+    "role": "Room-temperature superconductor (RTSC) discovery as an HONEST falsification framework",
+    "id": "rtsc",
+    "detail": "JSON=SSOT; humans view architecture.html via `python3 serve.py`. Update in-place (not append); dated changes→CHANGELOG+git. Hierarchy via children, one fact per node. Per-material campaign SSOT=state/RTSC_LEDGER.jsonl. Materials carried over from the demiurge repo.",
+    "children": [
+      {
+        "name": "overview",
+        "role": "RTSC discovery as an HONEST falsification framework",
+        "id": "overview",
+        "detail": "Predict/screen candidates, run the falsifier cascade, report negative rulings as results. Target = 293 K @ 1 atm.",
+        "children": [
+          {
+            "name": "stance",
+            "role": "Falsifier-first — all gates GATE_OPEN / absorbed=false; no candidate claimed to BE an RTSC",
+            "id": "stance",
+            "detail": "absorbed=true would require accredited 4-probe transport + Meissner expulsion + measured H_c2/T_c (none of which this map flips). 0 RTSC predicted of the funnel candidates."
+          },
+          {
+            "name": "campaigns",
+            "role": "Research lanes run to date",
+            "id": "campaigns",
+            "detail": "",
+            "children": [
+              {
+                "name": "flat-band geometry",
+                "role": "High-Chern flat-band quantum-geometry route — CLOSED-NEGATIVE across 10 independent paths",
+                "id": "campaign-flatband-geometry",
+                "detail": "paper: state/papers/flatband-geometry-ambient-roomt-closed. Structural cause = Fubini-Study bound (two levers — large ∫tr g AND strong coupling Ω — cannot coexist in one material)."
+              },
+              {
+                "name": "superhydrides",
+                "role": "Ambient superhydride lane (QE + QFORGE from-scratch)",
+                "id": "campaign-superhydrides",
+                "detail": "Li2CuH6 / Mg2IrH6 ambient-dynamically-unstable; AcBeH8, B-C clathrates inconclusive/deferred. High-pressure hydrides (H3S, LaH10, CaH6 …) recorded as references, deprioritized after the flat-band pivot."
+              },
+              {
+                "name": "QFORGE engine",
+                "role": "QFORGE from-scratch el-ph engine (SCF→DFPT→el-ph→Tc), validated on Al/Nb/Pb",
+                "id": "campaign-qforge-engine",
+                "detail": "Gaps walled: magmom (k-Stoner) and pbe-scf (gate-grade ecut OOM); production uses a hybrid path."
+              },
+              {
+                "name": "named-candidate DFT",
+                "role": "Named +@ trilayer real-DFT — CoSn/hBN/Ta2NiSe5 lead, jointly unrealized (🟠, absorbed=false)",
+                "id": "campaign-named-candidate-dft",
+                "detail": "Self-built QE 7.2 on summer (now an MPI/PARALLEL build per H_026) + local TB metric. Sub-findings H_019/H_024/H_025/H_026/H_027/H_029/H_030 below.",
+                "children": [
+                  {
+                    "name": "CoSn flat band",
+                    "role": "CoSn (layer A) hosts a real kagome flat band",
+                    "id": "cosn-flatband",
+                    "detail": "OUR PBE: W=0.158 eV (< 0.2 eV)."
+                  },
+                  {
+                    "name": "H_024 geometry lever",
+                    "role": "H_024: CoSn quantum-geometry lever SURVIVES",
+                    "id": "h024-geometry",
+                    "detail": "NN-kagome TB fit to OUR bands → metric integral I=(1/2π)∫tr g d²k = 2.856, MATCHES measured QGT 2.87 (arXiv:2412.17809) → the g≥2 geometry LEVER SURVIVES."
+                  },
+                  {
+                    "name": "H_024 position",
+                    "role": "H_024: deep position is REAL orbital-selection, not a PBE artifact",
+                    "id": "h024-position",
+                    "detail": "~1.45 eV-below-E_F position = real orbital-selection (CoSn has multiple orbital flat bands; PBE ~140 meV faithful to ARPES) → resolves the H_019 F2 position-FAIL."
+                  },
+                  {
+                    "name": "H_024 D_s bound",
+                    "role": "H_024: bounds H_023's single unknown (D_s) via Peotta-Törmä+Huhtinen",
+                    "id": "h024-dsbound",
+                    "detail": "Geometry SUPPORTS f_mult≥1.164 at N=2 (conditional on doping+coherence; is_green=False; the cheap route, NOT the intractable full N=2 stack SCF)."
+                  },
+                  {
+                    "name": "Ta2NiSe5 Cmcm freeze",
+                    "role": "Ta2NiSe5 (layer B) gap: Cmcm PBE SCF FROZE (H_019/H_024)",
+                    "id": "ta2nise5-cmcm-freeze",
+                    "detail": "Cmcm PBE SCF froze across 10 recipes (byte-identical residuals) → high-symmetry excitonic-parent ill-conditioning."
+                  },
+                  {
+                    "name": "H_025 sym-break",
+                    "role": "H_025: monoclinic C2/c ground state BREAKS the Cmcm freeze",
+                    "id": "h025-symbreak",
+                    "detail": "EXPERIMENTAL low-T monoclinic C2/c (Sunshine&Ibers 1985 via arXiv:2201.07750; vol 701.5Å³, 296 e⁻) → residual descends ~30× (17-18 → 0.45-0.64 Ry), live charge dynamics across plain PBE and PBE+U(Ni-3d=3eV). Symmetry-breaking insight CONFIRMED."
+                  },
+                  {
+                    "name": "H_025 plateau",
+                    "role": "H_025: but both PLATEAU near-metallic, miss conv_thr",
+                    "id": "h025-plateau",
+                    "detail": "Both plateau near-metallic (~0.5-0.9 Ry), don't reach conv_thr 1e-6 on the then-SERIAL single-core QE build."
+                  },
+                  {
+                    "name": "H_026 root-cause",
+                    "role": "H_026: QE 7.2 pw.x was a SERIAL build — the true wall behind every DFT H_015→H_025",
+                    "id": "h026-rootcause",
+                    "detail": "make.inc MPIF90=gfortran, no -D__MPI, banner 'Serial version'; prior -np 12 = 12 redundant serial copies on 1 core. Cause: OpenMPI 4.1.6 runtime present but libopenmpi-dev (.so) missing → configure fell back to serial."
+                  },
+                  {
+                    "name": "H_026 fix",
+                    "role": "H_026: fixed FREE in place → genuine parallel build",
+                    "id": "h026-fix",
+                    "detail": "sudo apt libopenmpi-dev + configure MPIF90=mpif90 --enable-parallel + make pw → banner 'Parallel version (MPI)', make.inc DFLAGS=-D__MPI, ldd links libmpi.so."
+                  },
+                  {
+                    "name": "H_026 verdict",
+                    "role": "H_026: re-ran monoclinic SCF under genuine 6-core MPI — no-gap is PHYSICAL",
+                    "id": "h026-verdict",
+                    "detail": "Across robust-PBE, PBE+U(Ni3d=3eV), high-smearing(degauss0.03): breaks freeze (~28-38× descent) but OSCILLATES in ~0.5-1.7 Ry near-metallic plateau, never 1e-6. HONEST NEGATIVE on a PBE-DFT gap (PBE-family lack the many-body excitonic gap; not a budget artifact, not fabricated)."
+                  },
+                  {
+                    "name": "H_026 beyond-PBE",
+                    "role": "H_026: gap NOT graduated to our-DFT",
+                    "id": "h026-beyondpbe",
+                    "detail": "Only beyond-PBE (HSE/GW/many-body) could host the excitonic gap."
+                  },
+                  {
+                    "name": "H_027 scope",
+                    "role": "H_027: settled whether CoSn geometry lever survives the doping-to-E_F it requires",
+                    "id": "h027-scope",
+                    "detail": "On OUR fuller spin-polarized Co3Sn3 PBE bands (near-E_F flat band 45, W=0.167 eV, -0.44 eV below E_F)."
+                  },
+                  {
+                    "name": "H_027 doping",
+                    "role": "H_027 (1): rigid-band hole doping to reach E_F is EXTREME",
+                    "id": "h027-doping",
+                    "detail": "4.73 e/cell = 1.58 holes/CoSn f.u. = 5.1% of valence → EXTREME (>0.7 h/f.u.; beyond electrostatic gating, needs chemical substitution). Direct consequence of the flat band's huge DOS (5→17 states/eV/cell)."
+                  },
+                  {
+                    "name": "H_027 geometry",
+                    "role": "H_027 (2): at that doped E_F geometry SURVIVES",
+                    "id": "h027-geometry",
+                    "detail": "NN-kagome TB-fit metric integral I=2.855 ≈ measured QGT 2.87 → geometry survives (rigid-band; real doping can hybridize/spin-split, caveat named)."
+                  },
+                  {
+                    "name": "H_027 filling",
+                    "role": "H_027 (3): flat-band filling at the FAVOURABLE half-filling maximum",
+                    "id": "h027-filling",
+                    "detail": "Filling at E_F-on-band ν=0.507 → ν(1-ν)=0.250 = the favourable half-filling D_s^geom maximum."
+                  },
+                  {
+                    "name": "H_027 verdict",
+                    "role": "H_027 verdict: geometry+filling SURVIVE but doping to reach E_F is EXTREME",
+                    "id": "h027-verdict",
+                    "detail": "Lead path WEAKENED on ACCESSIBILITY, not on geometry; is_green=False. Trio stays 🟠 jointly-unrealized; absorbed=false."
+                  },
+                  {
+                    "name": "H_027 doped SCF",
+                    "role": "H_027: no converged doped E_F (honest)",
+                    "id": "h027-doped-scf",
+                    "detail": "Live doped SCF (tot_charge=4) under genuine 6-rank MPI is delicate (high-DOS flat-band metal, slow, prior tot_charge=2 MPI_ABORTed)."
+                  },
+                  {
+                    "name": "H_027 cross-spacer",
+                    "role": "H_027: cross-spacer coupling = labeled order-of-magnitude estimate",
+                    "id": "h027-cross-spacer",
+                    "detail": "Keldysh/Laturia hBN, steep geometry dilution ~4×/ML; FULL heterostructure cRPA DEFERRED."
+                  },
+                  {
+                    "name": "H_029 scope",
+                    "role": "H_029: correlation lens on the H_027 wall — is extreme-doping a PBE artifact?",
+                    "id": "h029-scope",
+                    "detail": "Ortho-atomic Dudarev DFT+U(Co-3d) scan U=1..5 eV (bracketing lit CoSn DMFT U~5 eV; tractable mean-field DMFT proxy) on OUR converged Co3Sn3 cell, genuine 6-rank MPI (conda QE 7.5, all 5 SCFs converged 12-20 iter, FREE)."
+                  },
+                  {
+                    "name": "H_029 result",
+                    "role": "H_029: correlation does the OPPOSITE — flat band sinks DEEPER",
+                    "id": "h029-result",
+                    "detail": "Kagome flat band sinks MONOTONICALLY deeper below E_F (PBE -0.44 → -1.16/-1.78/-2.80/-2.99/-3.3..-4.3 eV for U=1..5), never within ~0.2 eV of E_F at any physical U → doping wall SURVIVES two orthogonal lenses (PBE AND +U) and HARDENS; NOT a PBE artifact."
+                  },
+                  {
+                    "name": "H_029 geometry",
+                    "role": "H_029: geometry invariant at every U",
+                    "id": "h029-geometry",
+                    "detail": "I=(1/2π)∫tr g = 2.855 at every U (kagome manifold shape preserved; a stronger lever placed ever deeper = MORE doping, not less)."
+                  },
+                  {
+                    "name": "H_029 magnetism",
+                    "role": "H_029: +U induces strong magnetic order (competing-order signal)",
+                    "id": "h029-magnetism",
+                    "detail": "Co |mag| 0.43 µB PBE → 5.23 µB at U=5, a competing-order (H_014) signal CoSn lacks in plain PBE."
+                  },
+                  {
+                    "name": "H_029 limit",
+                    "role": "H_029 limit: DFT+U is a static mean-field proxy",
+                    "id": "h029-limit",
+                    "detail": "Full DMFT could differ → a two-lens negative on the correlation-rescues-the-band hypothesis, not a proof."
+                  },
+                  {
+                    "name": "H_030 scope",
+                    "role": "H_030: reconciled the doping wall vs method-lever research (RE-PARSE, no new SCF)",
+                    "id": "h030-scope",
+                    "detail": "Measured CoSn flat d-band ~100 meV below E_F (arXiv:2102.08979); re-parsed OUR saved bands."
+                  },
+                  {
+                    "name": "H_030 two bands",
+                    "role": "H_030 (1): CoSn hosts BOTH a shallow pair AND a deep manifold",
+                    "id": "h030-twobands",
+                    "detail": "Shallow narrow kagome pair (band45 -0.43 eV, band44 -0.57 eV, W~0.17 eV) + deep manifold (~-1.45 to -2.0 eV; H_024's -1.45 eV band42). H_019 non-spin-pol resolved ONLY the deep cluster; spin-pol Co3Sn3 (H_027/H_029) resolves BOTH."
+                  },
+                  {
+                    "name": "H_030 shape invariant",
+                    "role": "H_030 (2): ∫tr g≈2.855 lever is a NN-kagome SHAPE invariant",
+                    "id": "h030-shapeinvariant",
+                    "detail": "IDENTICAL on deep (H_024 I=2.856) and shallow (H_027 I=2.855) bands (both ≈ measured QGT 2.87) → H_027/H_029 already used the shallow near-E_F band; the '1.58 h/f.u.' is NOT a wrong-band bookkeeping artifact."
+                  },
+                  {
+                    "name": "H_030 target-sensitive",
+                    "role": "H_030 (3): EXTREME figure is TARGET-sensitive (8× swing)",
+                    "id": "h030-targetsensitive",
+                    "detail": "Reaching PBE flat-band CENTER (-0.44 eV) costs 1.58 h/f.u. EXTREME; reaching MEASURED ARPES depth (~-0.10 eV) costs only 0.20 h/f.u. PHYSICAL (gating/few-%-Fe-In reach) — an 8× swing from the flat-band DOS pileup."
+                  },
+                  {
+                    "name": "H_030 verdict",
+                    "role": "H_030 verdict: TRADE-OFF — wall PARTLY DISSOLVES",
+                    "id": "h030-verdict",
+                    "detail": "Lead path re-opened for a 2D/onset-gated geometry device (E_F on flat-band ONSET, gating-reachable but weak D_s^geom ∝ ν(1-ν) at band edge); strong-D_s half-filled CENTER stays EXTREME."
+                  },
+                  {
+                    "name": "H_030 same band",
+                    "role": "H_030: measured ~100 meV band = our shallow -0.44 eV band",
+                    "id": "h030-sameband",
+                    "detail": "SAME d_xz/d_yz kagome flat band, PBE over-deepening it ~0.2-0.3 eV. doping_wall_dissolves=PARTIAL (onset MODEST, center EXTREME). Trio stays 🟠 jointly-unrealized; absorbed=false."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "components",
+        "role": "Repository components",
+        "id": "components",
+        "detail": "",
+        "children": [
+          {
+            "name": "predictor tools",
+            "role": "src/ — flat-band geometry predictor + screening tools",
+            "id": "predictor-tools",
+            "detail": "fbgeom_predictor.py, screen_catalogue.py, extract_candidates.py, kubo_pair_stiffness.py, lang_firsov_offdiag_metric.py, lane_* ED solvers, build_deck.py …. Verification/ranking/education tools — NOT discovery tools (predicted materials are all published).",
+            "children": [
+              {
+                "name": "rtsc_candidates.py",
+                "role": "tool/rtsc_candidates.py = LIVING +@ candidate-materials registry + verifier",
+                "id": "rtsc-candidates-py",
+                "detail": "Reuses rtsc_harness engine; current lead CoSn/hBN/Ta2NiSe5 clears the +@ box on paper (137K coordinate) but jointly unrealized (🟠, absorbed=false)."
+              },
+              {
+                "name": "gw_bse_tc.py",
+                "role": "gw_bse_tc.py = GW/BSE→exciton-glue→Eliashberg Tc pipeline (in-silico beyond-PBE)",
+                "id": "gw-bse-tc-py",
+                "detail": "Stage-4 α²F_exc→λ,w_log→Allen-Dynes Tc LIVE+self-tested deterministic; GW/BSE engine Yambo = wiring point, dead-until-wired; computes IF-the-exciton-pairs Tc, absorbed=false."
+              },
+              {
+                "name": "PR#30 exciton-glue",
+                "role": "PR#30: exciton-glue lever graveyard-leaning",
+                "id": "gw-bse-pr30",
+                "detail": "Research-first: proximity-SC-from-an-EI never measured in 50y; Ta2NiSe5 SC is phonon-mediated only when the exciton is destroyed."
+              },
+              {
+                "name": "PR#32 clean-glue update",
+                "role": "CLEAN-GLUE update (research PR#32): Ta2NiSe5 competing_order none→trap",
+                "id": "clean-glue-pr32",
+                "detail": "PR#30: its exciton COMPETES with SC, not a glue. Added clean-glue LAYER_B rows (below)."
+              },
+              {
+                "name": "clean-glue LAYER_B rows",
+                "role": "clean-glue LAYER_B rows added",
+                "id": "clean-glue-rows",
+                "detail": "cuprate-spin-fluctuation (300meV, MEDIATES+COEXISTS, Hg-1223 134K, strongest clean family); TbMn6Sn6/Au (only real measured proximity-SC, 3.6K); FeSe/SrTiO3 (interface-phonon ~100meV, bulk 8K→monolayer ~100K = 'method not material')."
+              },
+              {
+                "name": "clean-glue net",
+                "role": "Net: clean glues qualify but are energy-capped",
+                "id": "clean-glue-net",
+                "detail": "252K/84K; no glue is BOTH clean AND room-T-energy. absorbed=false."
+              }
+            ]
+          },
+          {
+            "name": "7-verb pipeline",
+            "role": "state/rtsc.demi — 7-verb pipeline manifest on the hexa cellrun dispatcher",
+            "id": "pipeline-7verb",
+            "detail": "Verbs: specify, structure, design, analyze, synthesize, verify, handoff. analyze=pyfemm HTS magnetics (macOS honest-skip), verify=GetDP HTS EM. All cells GATE_OPEN."
+          },
+          {
+            "name": "ledger",
+            "role": "state/RTSC_LEDGER.jsonl — per-material campaign ledger (SSOT)",
+            "id": "ledger",
+            "detail": "One line/material: status, stage, λ, ω_log, Tc, stability, verdict, absorbed, record-pointer. Verdict tiers: 🔵 formal · 🟢 GATE_CLOSED_MEASURED · 🔴 CLOSED-negative · 🟠 INCONCLUSIVE. Plus RTSC_HARVEST_PARTIAL.jsonl."
+          },
+          {
+            "name": "exports",
+            "role": "state/exports/ — per-material verdict records + turnkey QE decks",
+            "id": "exports",
+            "detail": "LiBeB ambient deck-set, wave3 decks. Heavy raw staging tarball (Li2MgH16, 568 MB) intentionally excluded from this repo."
+          },
+          {
+            "name": "papers",
+            "role": "state/papers/ — campaign papers",
+            "id": "papers",
+            "detail": "flatband-geometry-ambient-roomt-closed (closed-negative), rtsc-campaign-2026, rtsc-dft-h3s-textbook, rtsc-superconductor."
+          }
+        ]
+      },
+      {
+        "name": "verification",
+        "role": "HYPOTHESES — hypothesis-verification system (pre-register → falsify → run → verbatim verdict)",
+        "id": "verification",
+        "detail": "Modeled on anima's UNIVERSE/. Turns campaign questions into numerically falsifiable, runnable cards.",
+        "children": [
+          {
+            "name": "registry",
+            "role": "HYPOTHESES/HYPOTHESES.jsonl — flat registry, one JSON line per hypothesis",
+            "id": "verification-registry",
+            "detail": "Fields: id, slug, tier, title, card, verdict, artifacts."
+          },
+          {
+            "name": "cards",
+            "role": "HYPOTHESES/cards/H_*.md — one card per hypothesis",
+            "id": "verification-cards",
+            "detail": "Frozen pre-registration + predictions + ≥5 measurable falsifiers + honest limits + verbatim run verdict. _TEMPLATE.md is the skeleton. Cards below.",
+            "children": [
+              {
+                "name": "H_001/H_002",
+                "role": "H_001/H_002 (seeded)",
+                "id": "card-h001-h002",
+                "detail": "H_001 flat-band two-lever wall (CLOSED-NEGATIVE); H_002 ambient superhydride stability (INCONCLUSIVE)."
+              },
+              {
+                "name": "H_003",
+                "role": "H_003 bilayer division-of-labor SPLITs the two levers",
+                "id": "card-h003",
+                "detail": "Box opens via a phonon-transparent/electron-opaque interface (relocates the wall, not removes it)."
+              },
+              {
+                "name": "H_004",
+                "role": "H_004 glue-reservoir ceiling",
+                "id": "card-h004",
+                "detail": "Room-T needs an electronic eV-glue (phonons cap ~91 K)."
+              },
+              {
+                "name": "H_005",
+                "role": "H_005 2-factor capstone",
+                "id": "card-h005",
+                "detail": "~319 K in the toy band; room-T FACTORIZED into 2 unsolved sub-problems."
+              },
+              {
+                "name": "H_006",
+                "role": "H_006 dimension lever (REAL-3D, src/fbgeom_3d.py)",
+                "id": "card-h006",
+                "detail": "L_3D=1.84× real-but-partial; native 3D flat bands band-touching (clean bypass BLOCKED)."
+              },
+              {
+                "name": "H_007",
+                "role": "H_007 3-combination scan",
+                "id": "card-h007",
+                "detail": "Stacking the real 3D lever relaxes the glue demand 1.84× (each lever necessary)."
+              },
+              {
+                "name": "H_008",
+                "role": "H_008 retarded-vertex bipolaron ED (REAL many-body ED on pool host summer)",
+                "id": "card-h008",
+                "detail": "Pair-channel ⟨g⟩_pair exceeds the single-particle bound 4.27× in the anti-adiabatic corner (glue lever real, corner-confined)."
+              },
+              {
+                "name": "H_009",
+                "role": "H_009 connector spacer (trilayer A/C/B)",
+                "id": "card-h009",
+                "detail": "A wide-gap/phonon-matched spacer (hBN-class) opens a fabricable [0.44,1.78 ML] electron-opaque/phonon-transparent window (the 3rd material is the link)."
+              },
+              {
+                "name": "H_010",
+                "role": "H_010 top-down lever-count scan",
+                "id": "card-h010",
+                "detail": "More levers = achievability not redundancy (4 = minimal achievable count; 3D crosses the sub-eV glue line, connector is structural). Real verdicts preserved as *.out in the state run dirs."
+              },
+              {
+                "name": "H_011",
+                "role": "H_011 +@ crux: trilayer self-consistent only for a BOSONIC glue",
+                "id": "card-h011",
+                "detail": "Exciton/plasmon, Coulomb-field-coupled glue penetrates the electron-opaque connector (fermionic transfer glue blocked). Closed-form +@ deepening DEPLETED; remaining frontier = real DFT/cRPA trilayer (deferred)."
+              },
+              {
+                "name": "H_012",
+                "role": "H_012 topology gap COLLAPSES into the geometry lever",
+                "id": "card-h012",
+                "detail": "Amplitude-only; room-T is stiffness-limited. (Fleet orthogonal-lever lanes — NOT free wins.)"
+              },
+              {
+                "name": "H_013",
+                "role": "H_013 fractionalization opens the box but needs an exotic ~800 meV deconfinement gap",
+                "id": "card-h013",
+                "detail": "Relocated bill, ~77 K."
+              },
+              {
+                "name": "H_014",
+                "role": "H_014 competing-order CLOSED-NEGATIVE — room-T glue drives SDW before SC",
+                "id": "card-h014",
+                "detail": "Dominant risk realized; conditional on toy nesting. Binding open question now = competing order + the real DFT verdict."
+              },
+              {
+                "name": "H_015 setup",
+                "role": "H_015 trilayer DFT electron-opacity (🟢 REAL-DFT) — first REAL ab-initio verdict",
+                "id": "card-h015-setup",
+                "detail": "Self-built QE 7.2 PBE+D3 scan of graphene/hBN(n)/graphene (n=0..3, summer pool; apt pw.x 6.7 aborts on a fortify buffer-overflow)."
+              },
+              {
+                "name": "H_015 result",
+                "role": "H_015 result: hBN suppresses interlayer electronic coupling (4/4)",
+                "id": "card-h015-result",
+                "detail": "Graphene Dirac-point residual DOS 7.7× lower at n=1 vs direct contact (plateau); spacer-interior DOS at E_F decays with n. Confirms the +@ ELECTRON-OPACITY half ONLY (glue-transparent / bosonic cRPA half still deferred, L1)."
+              },
+              {
+                "name": "H_016",
+                "role": "H_016 competing-order ESCAPE",
+                "id": "card-h016",
+                "detail": "Frustration η*<0.45 lifts H_014's wall — removable, but room-T amplitude uncleared."
+              },
+              {
+                "name": "H_017",
+                "role": "H_017 disorder flat-band O2 CLOSED-NEGATIVE",
+                "id": "card-h017",
+                "detail": "Disorder-flatness vs delocalization mutually exclusive."
+              },
+              {
+                "name": "H_018",
+                "role": "H_018 adversarial held-out check of the central Tc estimator",
+                "id": "card-h018",
+                "detail": "Passes geomean/bias (4/5) but FAILS per-material scatter (1061×) → room-T Tc extrapolations carry order-of-magnitude uncertainty (down-weight to coordinates; wall findings unaffected)."
+              },
+              {
+                "name": "H_019",
+                "role": "H_019 first REAL PBE DFT of the named +@ trilayer's two layers (🟡 PARTIAL)",
+                "id": "card-h019",
+                "detail": "CoSn kagome flat band W=0.158 eV CONFIRMED but ~1.45 eV below E_F; Ta2NiSe5 296-e SCF unconverged → gap deferred."
+              },
+              {
+                "name": "H_023",
+                "role": "H_023 demand-relaxation (🟠-CONDITIONAL, strongest 🟢-path)",
+                "id": "card-h023",
+                "detail": "A modest multilayer D_s boost f_mult≥1.164 at N=2 lets the clean q=0 Ta2NiSe5 trio clear room-T; single unknown = real multilayer D_s."
+              },
+              {
+                "name": "H_024 geometry half",
+                "role": "H_024 real-DFT follow-on (🟡 PARTIAL): closes the GEOMETRY half",
+                "id": "card-h024-geom",
+                "detail": "CoSn ∫tr g metric integral I=2.856 MATCHES measured QGT 2.87 (g≥2 lever survives); deep position is REAL orbital-selection not a PBE artifact; Peotta-Törmä+Huhtinen D_s(N=2) bound SUPPORTS H_023's f_mult≥1.164 (conditional on doping+coherence, is_green=False)."
+              },
+              {
+                "name": "H_024 gap half",
+                "role": "H_024: Ta2NiSe5 GAP half stays DEFERRED",
+                "id": "card-h024-gap",
+                "detail": "296-e PBE SCF non-converging across 10 recipe variants; recipe-independent ill-conditioning of the excitonic-parent cell."
+              },
+              {
+                "name": "H_025 confirm",
+                "role": "H_025 ta2nise5-symbroken-gap (🟡 PARTIAL POSITIVE): tested H_024's logged fix",
+                "id": "card-h025-confirm",
+                "detail": "Experimental low-T monoclinic C2/c ground state (Sunshine&Ibers 1985) BREAKS the Cmcm freeze (residual ~30× descent, 17-18 → 0.45-0.64 Ry, live charge dynamics, across plain PBE and PBE+U(Ni-3d=3eV)). Symmetry-breaking insight CONFIRMED."
+              },
+              {
+                "name": "H_025 unresolved",
+                "role": "H_025: gap STILL UNRESOLVED (not fabricated)",
+                "id": "card-h025-unresolved",
+                "detail": "Both plateau near-metallic (~0.5-0.9 Ry), don't reach 1e-6 on the SERIAL single-core QE build (prior -np 12 = 12 redundant serial copies). Fix = DFT-relaxed coords / denser k-mesh / HSE, needs a parallel build. Trio stays 🟠; absorbed=false."
+              },
+              {
+                "name": "H_023-prep scope",
+                "role": "H_023-readiness-prep (SAFE prep, no compute)",
+                "id": "card-h023prep-scope",
+                "detail": "state/h023-dft-readiness-2026-06-25.md. Verified h019 DFT decks (pseudos/cutoffs 45-360 Ry/Ta8Ni4Se20=32 sane) but the cell is the SUPERSEDED Cmcm parent and every deck is a band-gap SCF deck, NOT a D_s deck."
+              },
+              {
+                "name": "H_023-prep walls",
+                "role": "H_023 D_s lever 🔴 NOT run-ready — two measured walls",
+                "id": "card-h023prep-walls",
+                "detail": "(a) METHOD wall — multilayer superfluid stiffness D_s is NOT a pw.x observable (needs Wannier QGT or beyond-DFT BSE); (b) PBE THEORY wall — H_025/H_026 measured the monolayer gap oscillates near-metallic in PBE/PBE+U (beyond-PBE only)."
+              },
+              {
+                "name": "H_023-prep honesty",
+                "role": "H_023-prep: cheap route already closed; honesty caveat",
+                "id": "card-h023prep-honesty",
+                "detail": "Cheap quantum-geometry route already closed by H_024 (f_mult≥1.164 at N=2, is_green=False); full N=2 stack intractable + method-walled. Even a clearing result = a falsification-survived PREDICTION not a discovery; gate closes only on accredited 4-probe + Meissner + measured H_c2/T_c; absorbed=false."
+              },
+              {
+                "name": "H_028 scope",
+                "role": "H_028 Ni3In layer-A dodge test (REAL-DFT, 🟡)",
+                "id": "card-h028-scope",
+                "detail": "Backup research named Ni3In (Ye 2021 arXiv:2106.10824) as the kagome metal whose flat band sits ~50meV NEAR E_F — the natural escape from H_027's CoSn extreme-doping wall."
+              },
+              {
+                "name": "H_028 result",
+                "role": "H_028 result: NO dodge in PBE",
+                "id": "card-h028-result",
+                "detail": "OUR paramagnetic PBE DFT (DO19 Ni6In2, MPI per H_026, E_F=16.527eV) finds Ni-kagome flat-band manifold -0.84 to -1.57eV BELOW E_F (at least as deep as CoSn); the ~50meV is a correlated/DMFT position PBE doesn't reproduce."
+              },
+              {
+                "name": "H_028 verdict",
+                "role": "H_028 verdict: NOT a better layer-A; lead stays CoSn",
+                "id": "card-h028-verdict",
+                "detail": "Geometry lever MET (I=2.854≈CoSn 2.855≈QGT 2.87, kagome NN=a/2) but below E_F (ν=1.0, D_s edge-suppressed); spin-pol SCF magnetically UNSTABLE (abs-mag swings 11-27µB) → competing-order risk CoSn lacks. Trio 🟠, absorbed=false."
+              }
+            ]
+          },
+          {
+            "name": "harness",
+            "role": "tool/rtsc_harness.py — shared deterministic stdlib-only harness",
+            "id": "verification-harness",
+            "detail": "Anima-parity: shared machinery in repo-root tool/. Falsifier/evaluate core. Function groups below.",
+            "children": [
+              {
+                "name": "core estimators",
+                "role": "core estimators",
+                "id": "harness-funcs-core",
+                "detail": "two_lever_box_check, geometric_bkt_tc_band, allen_dynes_tc, omega_for_bkt_tc, PHONON_CEILING_MEV."
+              },
+              {
+                "name": "+@ bilayer",
+                "role": "+@ bilayer functions",
+                "id": "harness-funcs-bilayer",
+                "detail": "proximity_bilayer_levers + critical_electron_cost."
+              },
+              {
+                "name": "combination scan",
+                "role": "combination-scan functions",
+                "id": "harness-funcs-combination",
+                "detail": "THREED_TC_LEVER + stacked_tc + omega_for_stacked_tc."
+              },
+              {
+                "name": "connector C",
+                "role": "connector-C functions",
+                "id": "harness-funcs-connector",
+                "detail": "spacer_window + spacer_electron_cost + spacer_phonon_transmission."
+              },
+              {
+                "name": "bosonic-glue crux",
+                "role": "bosonic-glue-crux functions",
+                "id": "harness-funcs-bosonic",
+                "detail": "glue_through_spacer_window + coulomb_glue_coupling."
+              },
+              {
+                "name": "heavy compute",
+                "role": "heavy real compute stays in src/, dispatched to the shared pool (summer)",
+                "id": "harness-heavy",
+                "detail": "fbgeom_3d.py 3D geometry; lane_a_explicit_phonon_bipolaron_ed.py many-body ED; per heavy-on-pool."
+              }
+            ]
+          },
+          {
+            "name": "runs",
+            "role": "state/<hX>_<slug>_<date>/run_*.py + result.json — per-hypothesis deterministic run",
+            "id": "verification-runs",
+            "detail": "Imports tool/; verdict = verbatim stdout (no LLM self-judge)."
+          }
+        ]
+      },
+      {
+        "name": "dataflow",
+        "role": "predict → screen → structure → deck → compute → gate → ledger",
+        "id": "dataflow",
+        "detail": "Campaign questions also become falsifiable HYPOTHESES cards.",
+        "children": [
+          {
+            "name": "predict / screen",
+            "role": "Input — flat-band geometry predictor + materials screening",
+            "id": "dataflow-predict-screen",
+            "detail": "Materials Project / OPTIMADE / AFLOW / JARVIS screening → light-element metallic candidate roster."
+          },
+          {
+            "name": "structure / deck",
+            "role": "Fetch structure → build turnkey QE deck → vc-relax/scf/ph",
+            "id": "dataflow-structure-deck",
+            "detail": "build_deck.py / hexa deck."
+          },
+          {
+            "name": "compute / gate",
+            "role": "Run el-ph (DFPT λ/ω_log/Tc) → falsifier cascade",
+            "id": "dataflow-compute-gate",
+            "detail": "BETE-NET screen → Allen-Dynes → Eliashberg → RTSC5 gate. Heavy compute on cloud pods (per-material)."
+          },
+          {
+            "name": "verdict / ledger",
+            "role": "Output — verdict record in state/exports/ + one ledger line in RTSC_LEDGER.jsonl",
+            "id": "dataflow-verdict-ledger",
+            "detail": "Negative/inconclusive results preserved, not deleted."
+          }
+        ]
+      }
+    ]
+  }
 }
